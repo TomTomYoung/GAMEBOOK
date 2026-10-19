@@ -1,0 +1,31 @@
+name: Gamebook checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Check generated story and asset data
+        run: node scripts/build-data.cjs --check
+      - name: Verify all state graphs and saves
+        run: npm test
+      - name: Install browser test dependency
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify the direct-file game in Chromium
+        run: npm run test:browser

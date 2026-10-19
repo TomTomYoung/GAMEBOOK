@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#172d30">
+  <meta name="description" content="二十の物語、あなたの選択。日本語の短編ゲームブックをブラウザで。">
+  <title>二十の分岐 — GAMEBOOK</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/stories.js" defer></script>
+  <script src="js/assets.js" defer></script>
+  <script src="js/engine.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <button id="brand-button" class="brand" aria-label="二十の分岐、本棚へ">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6h9l3 3 3-3h9v21h-9l-3 2-3-2H4zM16 10v16M8 11h4M8 16h4M20 11h4M20 16h4"/></svg>
+        <span>二十の分岐<small>GAMEBOOK COLLECTION</small></span>
+      </button>
+      <div class="top-actions">
+        <span id="save-status" class="save-status" role="status">この端末に自動保存</span>
+        <button id="music-button" class="text-button" hidden aria-pressed="false">音楽 OFF</button>
+        <button id="save-button" class="icon-button" aria-label="セーブの管理" title="セーブの管理"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12l3 3v15H4V3zM8 3v6h8V3M8 21v-7h8v7"/></svg><span class="wide-label">セーブ</span></button>
+        <button id="settings-button" class="icon-button" aria-label="表示設定" title="表示設定"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 3v6M16 9v6M10 15v6"/></svg><span class="wide-label">設定</span></button>
+      </div>
+    </header>
+
+    <main id="library-view" class="library-view">
+      <section class="shelf-heading" aria-labelledby="shelf-title">
+        <div><p class="eyebrow">TWENTY STORIES. YOUR CHOICES.</p><h1 id="shelf-title">物語の、その先を選ぶ。</h1><p class="shelf-intro">一冊を開く。言葉をたどる。結末は、あなたの選択の先に。</p></div>
+        <div id="library-art" class="library-art" hidden></div>
+        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="search-input" type="search" placeholder="物語を探す" aria-label="題名やジャンルから物語を探す" autocomplete="off"></label>
+      </section>
+      <section id="book-grid" class="book-grid" aria-label="作品一覧"></section>
+      <footer class="shelf-footer"><span id="shelf-summary"></span><nav class="pager" aria-label="本棚のページ"><button id="shelf-prev" class="round-button" aria-label="前の本棚">←</button><span id="shelf-page"></span><button id="shelf-next" class="round-button" aria-label="次の本棚">→</button></nav><button id="guide-button" class="text-button">遊び方 <span aria-hidden="true">↗</span></button></footer>
+    </main>
+
+    <main id="reader-view" class="reader-view" hidden>
+      <div class="reader-toolbar"><button id="shelf-button" class="text-button">← <span>本棚</span></button><div class="current-book"><span id="book-number"></span><span id="book-title"></span></div><div class="reader-tools"><button id="rules-button" class="text-button">前提・ルール</button><button id="history-button" class="text-button">足あと</button></div></div>
+      <div class="reading-layout">
+        <article id="paper" class="paper" aria-labelledby="chapter-title">
+          <header class="paper-header"><div class="chapter-heading"><p id="chapter-kicker" class="eyebrow"></p><h1 id="chapter-title" tabindex="-1"></h1><p id="chapter-subtitle" class="chapter-subtitle"></p></div><div id="scene-art" class="scene-art" aria-hidden="true"><span id="scene-number" class="scene-number"></span><span class="scene-lines"></span></div></header>
+          <div id="reader-text-frame" class="reader-text-frame"><div id="reader-text" class="reader-text" aria-label="物語の本文"></div></div>
+          <footer class="paper-footer"><span id="reading-hint">読む時間では進みません</span><nav class="pager" aria-label="本文のページ"><button id="text-prev" class="round-button" aria-label="本文の前のページ">←</button><span id="text-page" aria-live="polite"></span><button id="text-next" class="round-button" aria-label="本文の次のページ">→</button></nav></footer>
+        </article>
+        <aside class="decision-panel" aria-label="記録と選択">
+          <section class="records"><div class="section-heading"><h2>手元の記録</h2><button id="record-button" class="text-button" aria-label="記録の詳しい意味">詳細 ↗</button></div><div id="state-list" class="state-list"></div></section>
+          <section class="decisions"><div class="section-heading"><h2 id="choice-heading">次の一手</h2><span id="choice-count" class="tiny-label"></span></div><div id="choice-list" class="choice-list"></div><nav id="choice-pagination" class="choice-pagination pager" aria-label="選択肢のページ" hidden><button id="choice-prev" class="round-button" aria-label="前の選択肢">←</button><span id="choice-page"></span><button id="choice-next" class="round-button" aria-label="次の選択肢">→</button></nav><p id="choice-hint" class="choice-hint">選ぶと物語と記録が進みます。</p></section>
+          <div class="journey-progress"><span id="journey-label"></span><button id="restart-button" class="text-button">最初から</button></div>
+        </aside>
+      </div>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </div>
+
+  <dialog id="modal" aria-labelledby="modal-title"><div class="modal-shell"><header class="modal-header"><div><p id="modal-kicker" class="eyebrow">GAMEBOOK</p><h2 id="modal-title"></h2></div><button id="modal-close" class="round-button" aria-label="閉じる">×</button></header><div id="modal-content" class="modal-content"></div><footer id="modal-footer" class="modal-footer" hidden></footer></div></dialog>
+  <input id="import-input" type="file" accept="application/json,.json" hidden>
+  <noscript><div class="no-script"><h1>JavaScriptを有効にしてください</h1><p>このゲームブックは、JavaScriptで選択肢と記録を管理します。</p></div></noscript>
+</body>
+</html>

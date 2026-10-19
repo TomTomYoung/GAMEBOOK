@@ -1,0 +1,14 @@
+{
+  "name": "twenty-gamebooks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "20 Japanese gamebooks. Open index.html directly to play.",
+  "scripts": {
+    "build": "node scripts/build-data.cjs",
+    "check": "node scripts/build-data.cjs --check",
+    "test": "node --test --test-isolation=none tests/*.test.cjs",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "engines": { "node": ">=24" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

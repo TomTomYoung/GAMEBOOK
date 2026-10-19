@@ -1,0 +1,114 @@
+/* Generated from assets/manifest.json by scripts/build-data.cjs. Do not edit. */
+(function (root, value) {
+  'use strict';
+  if (typeof module === 'object' && module.exports) module.exports = value;
+  else root.GB_ASSETS = value;
+})(typeof globalThis !== 'undefined' ? globalThis : this, {
+  "schemaVersion": 1,
+  "library": {
+    "image": null,
+    "music": null
+  },
+  "stories": {
+    "GB01": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB02": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB03": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB04": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB05": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB06": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB07": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB08": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB09": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB10": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB11": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB12": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB13": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB14": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB15": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB16": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB17": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB18": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB19": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    },
+    "GB20": {
+      "image": null,
+      "music": null,
+      "scenes": {}
+    }
+  }
+});

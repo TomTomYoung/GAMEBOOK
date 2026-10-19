@@ -1,0 +1,129 @@
+{
+  "format": "gamebook-canonical-sources",
+  "version": 1,
+  "modelVersion": "1.2",
+  "description": "初回実装に収録した原稿のバイト単位の指紋。原稿を改訂する場合は contentRevision とこの記録を更新し、実装側の再生成・検証を行う。",
+  "collectionUrl": "https://app.notion.com/p/3fec3c1966b38171b760d9256de3015d",
+  "stories": [
+    {
+      "id": "GB01",
+      "file": "data/stories/gb01.json",
+      "contentRevision": 2,
+      "sha256": "10484bd3ff415d0a8c16f5aaa2f4c529b9bbbd59465fb896196abdf351d40f51"
+    },
+    {
+      "id": "GB02",
+      "file": "data/stories/gb02.json",
+      "contentRevision": 2,
+      "sha256": "e13eb718a5d58c15bcb57a6156d418cab61fe869ed8d23f5ff0d04ef256af4fa"
+    },
+    {
+      "id": "GB03",
+      "file": "data/stories/gb03.json",
+      "contentRevision": 2,
+      "sha256": "cae2e0c611c081155bb8574e060048bc858fa4f5ff68e475511d469f0aee0be0"
+    },
+    {
+      "id": "GB04",
+      "file": "data/stories/gb04.json",
+      "contentRevision": 2,
+      "sha256": "aed2652e8fb28050af6c8cebb8124df1bbb543d6945760a0148bf7bddab6a0c4"
+    },
+    {
+      "id": "GB05",
+      "file": "data/stories/gb05.json",
+      "contentRevision": 2,
+      "sha256": "86cf6c6e99855a352c910ac37d2cd486a66c9faef03f68f7e8e260e011a0ee59"
+    },
+    {
+      "id": "GB06",
+      "file": "data/stories/gb06.json",
+      "contentRevision": 2,
+      "sha256": "007b72be27ac9109c8701ec19f80e31c95ba0965475f2b934c9d1366dd629e38"
+    },
+    {
+      "id": "GB07",
+      "file": "data/stories/gb07.json",
+      "contentRevision": 1,
+      "sha256": "b2097270dfdd2ba35c3083dd51744ca3bbea92d2667b66de1c01c7e6a73681b3"
+    },
+    {
+      "id": "GB08",
+      "file": "data/stories/gb08.json",
+      "contentRevision": 2,
+      "sha256": "3a31ec6a58b863075c4a31dab418a35ea80c7f05ce73417b541482f1161f2db0"
+    },
+    {
+      "id": "GB09",
+      "file": "data/stories/gb09.json",
+      "contentRevision": 2,
+      "sha256": "398c371929a9c645fc2f13e7bb0609f826b99a5c7bfba63905f947a8c76ecaa4"
+    },
+    {
+      "id": "GB10",
+      "file": "data/stories/gb10.json",
+      "contentRevision": 2,
+      "sha256": "c6f86a7cfb5ef801844543980e2def264369d9f66627a70d67898b70b5c6b2da"
+    },
+    {
+      "id": "GB11",
+      "file": "data/stories/gb11.json",
+      "contentRevision": 1,
+      "sha256": "a2a1a5a9aa9971110c078fcf59cf97af8e573e3ee01eb79e081d42127bf5e3d2"
+    },
+    {
+      "id": "GB12",
+      "file": "data/stories/gb12.json",
+      "contentRevision": 1,
+      "sha256": "356a86cecd1c866ad562a8768b8f16b9eba776ace2e1ba347850b6bc2fdd54fb"
+    },
+    {
+      "id": "GB13",
+      "file": "data/stories/gb13.json",
+      "contentRevision": 1,
+      "sha256": "d5e8d7f9f2f9574300e7a7149923d729be8ef777d9506456d549748489d8b7ea"
+    },
+    {
+      "id": "GB14",
+      "file": "data/stories/gb14.json",
+      "contentRevision": 1,
+      "sha256": "42ffddeff98aea8aabba139d711680441675d95e3798b74a90982d4e9c1c311c"
+    },
+    {
+      "id": "GB15",
+      "file": "data/stories/gb15.json",
+      "contentRevision": 1,
+      "sha256": "2e9ef8f2ca5186ac1e7506c53f84a4efc4ebc3ea3a4317b657c48c7da0dacd66"
+    },
+    {
+      "id": "GB16",
+      "file": "data/stories/gb16.json",
+      "contentRevision": 2,
+      "sha256": "c228038cb0b638cdd11f90b0d5035efad2bb19c7ae3939c78fb5feb1a4eaa207"
+    },
+    {
+      "id": "GB17",
+      "file": "data/stories/gb17.json",
+      "contentRevision": 2,
+      "sha256": "13fe5e55758840407e29e7b367a156f59e93ecccc91e6ea99ea1e3639940d733"
+    },
+    {
+      "id": "GB18",
+      "file": "data/stories/gb18.json",
+      "contentRevision": 2,
+      "sha256": "89ae427fc53450a7c46ea17c34a2eb8fcad8148c1302a439dfae1cc72d00f89d"
+    },
+    {
+      "id": "GB19",
+      "file": "data/stories/gb19.json",
+      "contentRevision": 2,
+      "sha256": "10828b0852f57c6cdc6bd53a69b2b9229533638fceea0326061481761c4cb536"
+    },
+    {
+      "id": "GB20",
+      "file": "data/stories/gb20.json",
+      "contentRevision": 2,
+      "sha256": "46705ff3c52dd1c05e7c5d6891762982ed73d702bf8f55f81d0e83a7d0ab7a51"
+    }
+  ]
+}
