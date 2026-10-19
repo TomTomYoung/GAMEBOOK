@@ -160,28 +160,73 @@
       "scenes": {}
     },
     "GB11": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb11-cover.webp",
+        "alt": "暗礁の海と高さの異なる二つの灯台。遠い灯室は霧に隠れ、灯色は判別できない。",
+        "position": "center 20%"
+      },
+      "music": {
+        "src": "assets/audio/gb11-theme.ogg",
+        "title": "二本の塔へ",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB12": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb12-cover.webp",
+        "alt": "雲の上に浮かぶ市場の木の歩廊と屋根、店先の器、遠い外周網。",
+        "position": "center 55%"
+      },
+      "music": {
+        "src": "assets/audio/gb12-theme.ogg",
+        "title": "風に浮く店先",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB13": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb13-cover.webp",
+        "alt": "雪の谷の木橋と工房の窓。新雪には行先を示す足跡がない。",
+        "position": "center 60%"
+      },
+      "music": {
+        "src": "assets/audio/gb13-theme.ogg",
+        "title": "姓をなぞる雪",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB14": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb14-cover.webp",
+        "alt": "石床の白線の向こうにいる炉獣の丸い背。腹の炉窓は見えない。",
+        "position": "center 75%"
+      },
+      "music": {
+        "src": "assets/audio/gb14-theme.ogg",
+        "title": "足音の往復",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB15": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb15-cover.webp",
+        "alt": "白旗のある河港と、手前の渡し舟の舳先、向こうの避難船。",
+        "position": "center 25%"
+      },
+      "music": {
+        "src": "assets/audio/gb15-theme.ogg",
+        "title": "戻る川の記憶",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB16": {

@@ -30,3 +30,12 @@ python scripts/render-music.py --only gb02-theme gb03-theme gb04-theme gb05-them
 python sources/audio/compose-batch-03.py
 python scripts/render-music.py --only gb06-theme gb07-theme gb08-theme gb09-theme gb10-theme
 ```
+
+第4回の5曲（GB11〜GB15）は `audio/compose-batch-04.py` に構成元を保存しています。実行すると対象5曲だけのscore.jsonを上書きします。低い木琴風と控えめな手拍子風の合成音色を追加しました。第1〜3回の配布音源は変更していません。
+
+```sh
+python sources/audio/compose-batch-04.py
+python scripts/render-music.py --only gb11-theme gb12-theme gb13-theme gb14-theme gb15-theme
+```
+
+第4回から音源は一時ディレクトリで最後まで生成・検証し、書込みと同期が済んだファイルを最後に置換します。ブラウザ検査でもscore.jsonの小節数・BPMから求めた全長と実デコーダのdurationを照合し、途中で切れたファイルを検出します。

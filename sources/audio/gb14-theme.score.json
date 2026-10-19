@@ -1,0 +1,973 @@
+{
+  "id": "gb14-theme",
+  "title": "足音の往復",
+  "bpm": 64,
+  "bars": 24,
+  "meter": "4/4",
+  "key": "B-flat Dorian",
+  "form": "A8 B8 A′8",
+  "description": "低い木琴風の単音と柔らかな弦、ゆっくり膨らむパッド。物語の三拍の合図を再現せず、炉色・石炭・学習回数を示す効果音を置かない。",
+  "seed": 2026101934,
+  "events": [
+    {
+      "at": 0,
+      "note": "Bb2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 0,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 0.5,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 0.5,
+      "note": "Ab3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 2.75,
+      "note": "F3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 4,
+      "note": "Ab3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 4,
+      "note": "Db3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 4.5,
+      "note": "Eb4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 4.75,
+      "note": "Ab3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 7,
+      "note": "Db4",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 8,
+      "note": "Bb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 8,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 8.5,
+      "note": "C4",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 8.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 10.75,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 12,
+      "note": "Bb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 12,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 12.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 12.75,
+      "note": "F3",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 15,
+      "note": "Ab3",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 16,
+      "note": "Db3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 16,
+      "note": "Gb2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 16.5,
+      "note": "Db4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 16.5,
+      "note": "Ab3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 18.75,
+      "note": "Ab3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 20,
+      "note": "Ab2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 20,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 20.5,
+      "note": "Bb3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 20.75,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 23,
+      "note": "Eb4",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 24,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 24,
+      "note": "G3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 24.5,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 24.5,
+      "note": "Bb3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 26.75,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 28,
+      "note": "Ab3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 28,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 28.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 28.75,
+      "note": "C4",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 31,
+      "note": "F3",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 32,
+      "note": "Bb2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 32,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 32.5,
+      "note": "Ab3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 32.75,
+      "note": "F4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 35,
+      "note": "Db4",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 36,
+      "note": "Ab3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 36,
+      "note": "Db3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 36.5,
+      "note": "Eb4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 36.5,
+      "note": "Eb4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 38.75,
+      "note": "Ab3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 40,
+      "note": "Bb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 40,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 40.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 40.75,
+      "note": "G4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 43,
+      "note": "Eb4",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 44,
+      "note": "Bb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 44,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 44.5,
+      "note": "C4",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 44.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 46.75,
+      "note": "F4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 48,
+      "note": "Db3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 48,
+      "note": "Gb2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 48.5,
+      "note": "Ab3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 48.75,
+      "note": "Db4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 51,
+      "note": "Gb3",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 52,
+      "note": "Ab2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 52,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 52.5,
+      "note": "Eb4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 52.5,
+      "note": "Bb3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 54.75,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 56,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 56,
+      "note": "G3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 56.5,
+      "note": "Bb3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 56.75,
+      "note": "C4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 59,
+      "note": "G3",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 60,
+      "note": "Ab3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 60,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 60.5,
+      "note": "Ab3",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 60.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 62.75,
+      "note": "F3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 64,
+      "note": "Bb2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 64,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 64.5,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 64.5,
+      "note": "Ab3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 66.75,
+      "note": "F3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 68,
+      "note": "Ab3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 68,
+      "note": "Db3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 68.5,
+      "note": "Eb4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 68.75,
+      "note": "Ab3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 71,
+      "note": "Db4",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 72,
+      "note": "Bb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 72,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 72.5,
+      "note": "C4",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 72.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 74.75,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 76,
+      "note": "Bb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 76,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 76.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 76.75,
+      "note": "F3",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 79,
+      "note": "Ab3",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 80,
+      "note": "Db3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 80,
+      "note": "Gb2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 80.5,
+      "note": "Db4",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 80.5,
+      "note": "Ab3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 82.75,
+      "note": "Ab3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 84,
+      "note": "Ab2",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 84,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 84.5,
+      "note": "Bb3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 84.75,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 87,
+      "note": "Eb4",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 88,
+      "note": "Eb3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 88,
+      "note": "G3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 88.5,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 88.5,
+      "note": "Bb3",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 90.75,
+      "note": "Bb3",
+      "beats": 0.85,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 92,
+      "note": "Ab3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 92,
+      "note": "F3",
+      "beats": 4.6,
+      "instrument": "strings",
+      "gain": 0.027,
+      "pan": -0.15
+    },
+    {
+      "at": 92.5,
+      "note": "C4",
+      "beats": 5,
+      "instrument": "pad",
+      "gain": 0.022,
+      "pan": 0.12
+    },
+    {
+      "at": 92.75,
+      "note": "C4",
+      "beats": 0.9,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    },
+    {
+      "at": 95,
+      "note": "F3",
+      "beats": 0.7,
+      "instrument": "low-xylophone",
+      "gain": 0.095,
+      "pan": 0.05
+    }
+  ]
+}

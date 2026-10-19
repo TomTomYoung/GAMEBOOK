@@ -1,0 +1,1205 @@
+{
+  "id": "gb11-theme",
+  "title": "二本の塔へ",
+  "bpm": 70,
+  "bars": 26,
+  "meter": "4/4",
+  "key": "G minor / suspended fifths",
+  "form": "A8 B8 A′8 turn2",
+  "description": "低弦の長い音と疎らなピアノ、淡い持続音で海の広さを出す。警笛・鐘・波の効果音、航路の正誤を示す合図は置かない。",
+  "seed": 2026101931,
+  "events": [
+    {
+      "at": 0,
+      "note": "G2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 0,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 0,
+      "note": "G2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 0.5,
+      "note": "A3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 0.75,
+      "note": "D4",
+      "beats": 1.6,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 2.5,
+      "note": "Bb3",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 3,
+      "note": "G4",
+      "beats": 0.8,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 4,
+      "note": "Eb3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 4,
+      "note": "Bb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 4,
+      "note": "Eb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 4.5,
+      "note": "D4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 5,
+      "note": "F4",
+      "beats": 2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 8,
+      "note": "Bb2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 8,
+      "note": "Bb2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 8,
+      "note": "F3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 8.5,
+      "note": "A3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 8.75,
+      "note": "D4",
+      "beats": 1.8,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 10.5,
+      "note": "C4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 12,
+      "note": "F3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 12,
+      "note": "C4",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 12,
+      "note": "F3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 12.5,
+      "note": "G4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 13.25,
+      "note": "C5",
+      "beats": 1.7,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 16,
+      "note": "C3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 16,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 16,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 16.5,
+      "note": "Bb3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 16.75,
+      "note": "Bb4",
+      "beats": 1.2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 18.5,
+      "note": "D4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 18.5,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 20,
+      "note": "G2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 20,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 20,
+      "note": "G2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 20.5,
+      "note": "F3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 21,
+      "note": "F4",
+      "beats": 1.8,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 24,
+      "note": "Eb3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 24,
+      "note": "Bb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 24,
+      "note": "Eb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 24.5,
+      "note": "C4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 24.75,
+      "note": "G4",
+      "beats": 2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 26.5,
+      "note": "G4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 28,
+      "note": "D3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 28,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 28,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 28.5,
+      "note": "C4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 29.5,
+      "note": "A4",
+      "beats": 1.6,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 32,
+      "note": "G2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 32,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 32,
+      "note": "G2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 32.5,
+      "note": "A3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 33,
+      "note": "Bb4",
+      "beats": 1.7,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 34.5,
+      "note": "Bb3",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 36,
+      "note": "Eb3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 36,
+      "note": "Bb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 36,
+      "note": "Eb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 36.5,
+      "note": "D4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 36.75,
+      "note": "D5",
+      "beats": 1.2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 38.5,
+      "note": "C5",
+      "beats": 1,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 40,
+      "note": "Bb2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 40,
+      "note": "Bb2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 40,
+      "note": "F3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 40.5,
+      "note": "A3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 41,
+      "note": "A4",
+      "beats": 1.7,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 42.5,
+      "note": "C4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 44,
+      "note": "F3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 44,
+      "note": "C4",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 44,
+      "note": "F3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 44.5,
+      "note": "G4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 44.75,
+      "note": "G4",
+      "beats": 2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 48,
+      "note": "C3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 48,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 48,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 48.5,
+      "note": "Bb3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 49,
+      "note": "D5",
+      "beats": 1.2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 50.5,
+      "note": "D4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 50.75,
+      "note": "Bb4",
+      "beats": 0.8,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 52,
+      "note": "G2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 52,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 52,
+      "note": "G2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 52.5,
+      "note": "F3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 52.75,
+      "note": "A4",
+      "beats": 1.4,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 54.5,
+      "note": "F4",
+      "beats": 1,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 56,
+      "note": "Eb3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 56,
+      "note": "Bb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 56,
+      "note": "Eb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 56.5,
+      "note": "C4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 57,
+      "note": "Eb4",
+      "beats": 2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 58.5,
+      "note": "G4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 60,
+      "note": "D3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 60,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 60,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 60.5,
+      "note": "C4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 60.75,
+      "note": "D4",
+      "beats": 2.2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 64,
+      "note": "G2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 64,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 64,
+      "note": "G2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 64.5,
+      "note": "A3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 64.75,
+      "note": "D4",
+      "beats": 1.6,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 66.5,
+      "note": "Bb3",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 67,
+      "note": "G4",
+      "beats": 0.8,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 68,
+      "note": "Eb3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 68,
+      "note": "Bb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 68,
+      "note": "Eb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 68.5,
+      "note": "D4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 69,
+      "note": "F4",
+      "beats": 2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 72,
+      "note": "Bb2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 72,
+      "note": "Bb2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 72,
+      "note": "F3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 72.5,
+      "note": "A3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 72.75,
+      "note": "D4",
+      "beats": 1.8,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 74.5,
+      "note": "C4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 76,
+      "note": "F3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 76,
+      "note": "C4",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 76,
+      "note": "F3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 76.5,
+      "note": "G4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 77.25,
+      "note": "C5",
+      "beats": 1.7,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 80,
+      "note": "C3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 80,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 80,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 80.5,
+      "note": "Bb3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 80.75,
+      "note": "Bb4",
+      "beats": 1.2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 82.5,
+      "note": "D4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 82.5,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 84,
+      "note": "G2",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 84,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 84,
+      "note": "G2",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 84.5,
+      "note": "F3",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 85,
+      "note": "F4",
+      "beats": 1.8,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 88,
+      "note": "Eb3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 88,
+      "note": "Bb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 88,
+      "note": "Eb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 88.5,
+      "note": "C4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 88.75,
+      "note": "G4",
+      "beats": 2,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 90.5,
+      "note": "G4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 92,
+      "note": "D3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 92,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 92,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 92.5,
+      "note": "C4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 93.5,
+      "note": "A4",
+      "beats": 1.6,
+      "instrument": "piano",
+      "gain": 0.065,
+      "pan": 0.1
+    },
+    {
+      "at": 96,
+      "note": "Eb3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 96,
+      "note": "Bb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 96,
+      "note": "Eb3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 96.5,
+      "note": "C4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 98.5,
+      "note": "G4",
+      "beats": 2.8,
+      "instrument": "felt-piano",
+      "gain": 0.04,
+      "pan": 0.2
+    },
+    {
+      "at": 100,
+      "note": "D3",
+      "beats": 3.2,
+      "instrument": "felt-piano",
+      "gain": 0.065,
+      "pan": -0.12
+    },
+    {
+      "at": 100,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 100,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "strings",
+      "gain": 0.032,
+      "pan": -0.2
+    },
+    {
+      "at": 100.5,
+      "note": "C4",
+      "beats": 5.2,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": 0.15
+    },
+    {
+      "at": 101,
+      "note": "A4",
+      "beats": 2,
+      "instrument": "piano",
+      "gain": 0.05,
+      "pan": 0.1
+    }
+  ]
+}

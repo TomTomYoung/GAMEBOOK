@@ -10,6 +10,7 @@ import argparse
 import hashlib
 import json
 import math
+import os
 import subprocess
 import tempfile
 
@@ -34,7 +35,7 @@ def midi(note):
 def voice(note, duration, instrument, rng):
     t = np.arange(round(duration * RATE), dtype=np.float64) / RATE
     freq = 440 * 2 ** ((midi(note) - 69) / 12)
-    if instrument in ('felt-piano', 'electric-keys', 'marimba', 'harmonics', 'round-bass'):
+    if instrument in ('felt-piano', 'electric-keys', 'marimba', 'harmonics', 'round-bass', 'low-xylophone'):
         # Build-time additive voices; no recorded samples. Short upper partials
         # keep these colors soft enough to sit beneath the reading voice.
         profiles = {
@@ -43,6 +44,7 @@ def voice(note, duration, instrument, rng):
             'marimba': ([1, 3.98, 9.95], [1, .16, .025], 3.8, .006),
             'harmonics': ([1, 2, 3], [1, .045, .012], .55, .18),
             'round-bass': ([1, 2, 3], [1, .12, .035], .65, .045),
+            'low-xylophone': ([1, 3, 6.02], [1, .13, .025], 4.7, .009),
         }
         ratios, levels, damping, attack = profiles[instrument]
         signal = np.zeros(len(t))
@@ -63,6 +65,14 @@ def voice(note, duration, instrument, rng):
         for h, level in enumerate([1, .46, .21, .10, .05, .025], 1):
             signal += level * np.sin(2 * np.pi * freq * h * t) * np.exp(-t * (damping + h * .8))
         envelope = (1 - np.exp(-t / .004)) * np.minimum(1, (duration - t) / .12)
+    elif instrument == 'soft-clap':
+        noise = lfilter([.18], [1, -.82], rng.standard_normal(len(t)))
+        signal = lfilter([1, -.85], [1], noise)
+        envelope = np.zeros(len(t))
+        for onset, level in [(0, .5), (.012, .4), (.026, 1)]:
+            elapsed = np.maximum(0, t - onset)
+            envelope += (t >= onset) * level * (1 - np.exp(-elapsed / .002)) * np.exp(-elapsed * 40)
+        envelope *= np.minimum(1, (duration - t) / .06)
     elif instrument == 'brush':
         noise = rng.standard_normal(len(t))
         signal = lfilter([.08], [1, -.92], noise)
@@ -151,7 +161,9 @@ def main():
             gain_db = min(-18 - float(measured['input_i']), -1.5 - float(measured['input_tp']))
             master = temp / 'master.wav'
             run('-i', str(source), '-af', f'volume={gain_db:.6f}dB', '-c:a', 'pcm_s24le', str(master))
-            encoded = out / (name + '.ogg')
+            # Complete and validate the encoder output away from the live asset
+            # directory. Readers must never see a partially written Ogg stream.
+            encoded = temp / (name + '.ogg')
             run('-i', str(master), '-c:a', 'libvorbis', '-q:a', '4',
                 '-metadata', 'TITLE=' + score['title'], '-metadata', 'ARTIST=GAMEBOOK original score', str(encoded))
             decoded = temp / 'decoded.f32'
@@ -166,14 +178,21 @@ def main():
             assert float(metrics['input_tp']) <= -1
             assert seam <= max(.006, maximum_step * 1.5)
             assert encoded.stat().st_size <= 2 * 1024 * 1024
+            payload = encoded.read_bytes()
+            staged = out / (name + '.ogg.tmp')
+            with staged.open('wb') as handle:
+                handle.write(payload)
+                handle.flush()
+                os.fsync(handle.fileno())
+            staged.replace(out / (name + '.ogg'))
             report[name] = {
                 'title': score['title'], 'bpm': score['bpm'], 'bars': score['bars'],
                 'sampleRate': RATE, 'channels': 2, 'sampleCount': len(pcm),
                 'durationSeconds': len(pcm) / RATE, 'loopStartSample': 0, 'loopEndSampleExclusive': len(pcm),
                 'integratedLUFS': float(metrics['input_i']), 'truePeakDBTP': float(metrics['input_tp']),
                 'loudnessRangeLU': float(metrics['input_lra']), 'boundaryMaxDelta': seam,
-                'interiorMaxDelta': maximum_step, 'bytes': encoded.stat().st_size,
-                'sha256': hashlib.sha256(encoded.read_bytes()).hexdigest(),
+                'interiorMaxDelta': maximum_step, 'bytes': len(payload),
+                'sha256': hashlib.sha256(payload).hexdigest(),
                 'masterPCM24SHA256': hashlib.sha256(master.read_bytes()).hexdigest(),
                 'source': str(score_path.relative_to(ROOT)), 'renderer': 'scripts/render-music.py',
                 'masterPolicy': '24-bit WAV rendered in temporary build directory; reproducible from score and renderer',

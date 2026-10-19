@@ -51,6 +51,15 @@ async function screenshot(page, name) {
   screenshots.push(filename);
 }
 
+async function assertAudioDuration(page, src) {
+  const scorePath = path.join(ROOT, 'sources/audio', path.basename(src, '.ogg') + '.score.json');
+  const score = JSON.parse(fs.readFileSync(scorePath, 'utf8'));
+  const expected = score.bars * 240 / score.bpm;
+  const actual = await page.evaluate(() => window.__gamebookAudio[0].duration);
+  assert.ok(Number.isFinite(actual) && Math.abs(actual - expected) < .05,
+    `${src}: decoder duration ${actual}s must match the full score ${expected}s`);
+}
+
 async function newPage(viewport, seed, inspectAudio = false) {
   const context = await browser.newContext({ viewport, acceptDownloads: true, locale: 'ja-JP' });
   const page = await context.newPage();
@@ -515,10 +524,12 @@ async function testInstalledAssets() {
     await page.locator('#music-button').click();
     await page.waitForFunction(() => window.__gamebookAudio[0]?.currentTime > .1);
     assert.equal(await page.evaluate(() => window.__gamebookAudio[0].src.endsWith('/assets/audio/library.ogg')), true);
+    await assertAudioDuration(page, assets.library.music.src);
     await layout(page, 'library with artwork and music button');
     await screenshot(page, 'assets-library-1280x720');
     await openFromShelf(page, 'GB01');
     await page.waitForFunction(() => window.__gamebookAudio[0].src.endsWith('/assets/audio/gb01-theme.ogg') && window.__gamebookAudio[0].currentTime > .1);
+    await assertAudioDuration(page, assets.stories.GB01.music.src);
     await page.waitForFunction(() => document.querySelector('#scene-art img')?.naturalWidth > 0);
     await layout(page, 'GB01 with artwork and music button');
     await screenshot(page, 'assets-GB01-1280x720');
@@ -580,6 +591,7 @@ async function testStoryAssets() {
         const audio = window.__gamebookAudio[0];
         return audio?.src.endsWith('/' + src) && audio.currentTime > .1;
       }, media.music.src);
+      await assertAudioDuration(page, media.music.src);
       assert.equal(await page.evaluate(() => window.__gamebookAudio[0].volume), media.music.volume);
       assert.equal(await page.evaluate(() => window.__gamebookAudio[0].loop), true);
       await page.evaluate(() => { const audio = window.__gamebookAudio[0]; audio.currentTime = audio.duration - .12; });
