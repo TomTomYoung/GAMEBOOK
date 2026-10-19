@@ -1,0 +1,74 @@
+{
+  "started": "2026-10-19T22:53:47.901Z",
+  "finished": "2026-10-19T22:53:58.216Z",
+  "url": "index.html (file://)",
+  "browserVersion": "153.0.8010.0",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 360,
+      "height": 640
+    },
+    {
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "results": [
+    {
+      "name": "assets-GB16",
+      "status": "passed",
+      "durationMs": 2024
+    },
+    {
+      "name": "assets-GB17",
+      "status": "passed",
+      "durationMs": 2178
+    },
+    {
+      "name": "assets-GB18",
+      "status": "passed",
+      "durationMs": 1981
+    },
+    {
+      "name": "assets-GB19",
+      "status": "passed",
+      "durationMs": 1794
+    },
+    {
+      "name": "assets-GB20",
+      "status": "passed",
+      "durationMs": 2295
+    }
+  ],
+  "diagnostics": [],
+  "screenshots": [
+    "assets-GB16-1280x720.png",
+    "assets-GB16-390x844.png",
+    "assets-GB16-360x640.png",
+    "assets-GB16-844x390.png",
+    "assets-GB17-1280x720.png",
+    "assets-GB17-390x844.png",
+    "assets-GB17-360x640.png",
+    "assets-GB17-844x390.png",
+    "assets-GB18-1280x720.png",
+    "assets-GB18-390x844.png",
+    "assets-GB18-360x640.png",
+    "assets-GB18-844x390.png",
+    "assets-GB19-1280x720.png",
+    "assets-GB19-390x844.png",
+    "assets-GB19-360x640.png",
+    "assets-GB19-844x390.png",
+    "assets-GB20-1280x720.png",
+    "assets-GB20-390x844.png",
+    "assets-GB20-360x640.png",
+    "assets-GB20-844x390.png"
+  ]
+}

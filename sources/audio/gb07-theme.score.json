@@ -1,0 +1,1045 @@
+{
+  "id": "gb07-theme",
+  "title": "二つの間",
+  "bpm": 60,
+  "bars": 22,
+  "meter": "4/4",
+  "key": "A minor / Dorian color",
+  "form": "A8 B8 turn6",
+  "description": "温かな合成パッド、丸い低音、疎らな電気鍵盤。似た音型を異なる休符で一つずつ受け渡し、二人格の同時稼働を示す音声は使わない。",
+  "seed": 2026101917,
+  "events": [
+    {
+      "at": 0,
+      "note": "A2",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 0,
+      "note": "B3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 0,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 0,
+      "note": "A2",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 0.5,
+      "note": "E4",
+      "beats": 1,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 2,
+      "note": "B4",
+      "beats": 0.7,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 2.75,
+      "note": "B3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 3,
+      "note": "A4",
+      "beats": 0.7,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 4,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 4,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 4,
+      "note": "G2",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 4,
+      "note": "G2",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 5,
+      "note": "G4",
+      "beats": 1.8,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 8,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 8,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 8,
+      "note": "F#3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 8,
+      "note": "D3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 8.5,
+      "note": "F#4",
+      "beats": 1,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 10.5,
+      "note": "E4",
+      "beats": 1,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 10.75,
+      "note": "A3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 12,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 12,
+      "note": "B3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 12,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 12,
+      "note": "E3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 13,
+      "note": "B4",
+      "beats": 1.5,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 16,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 16,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 16,
+      "note": "F2",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 16,
+      "note": "F2",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 16.5,
+      "note": "E4",
+      "beats": 1,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 18,
+      "note": "G4",
+      "beats": 0.75,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 18.75,
+      "note": "E3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 19,
+      "note": "A4",
+      "beats": 0.65,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 20,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 20,
+      "note": "D4",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 20,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 20,
+      "note": "C3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 21,
+      "note": "G4",
+      "beats": 1.8,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 24,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 24,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 24,
+      "note": "F#3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 24,
+      "note": "D3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 24.5,
+      "note": "F#4",
+      "beats": 1.5,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 26.75,
+      "note": "A3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 28,
+      "note": "B3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 28,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 28,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 28,
+      "note": "E3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 29,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": -0.18
+    },
+    {
+      "at": 32,
+      "note": "E4",
+      "beats": 0.7,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 32,
+      "note": "A2",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 32,
+      "note": "B3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 32,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 32,
+      "note": "A2",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 33,
+      "note": "B4",
+      "beats": 1.2,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 34.75,
+      "note": "B3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 35,
+      "note": "A4",
+      "beats": 0.6,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 36,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 36,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 36,
+      "note": "G2",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 36,
+      "note": "G2",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 36.5,
+      "note": "G4",
+      "beats": 1.2,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 40,
+      "note": "F#4",
+      "beats": 0.75,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 40,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 40,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 40,
+      "note": "F#3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 40,
+      "note": "D3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 41.5,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 42.75,
+      "note": "A3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 44,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 44,
+      "note": "B3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 44,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 44,
+      "note": "E3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 44.5,
+      "note": "B4",
+      "beats": 1.4,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 48,
+      "note": "E4",
+      "beats": 0.75,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 48,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 48,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 48,
+      "note": "F2",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 48,
+      "note": "F2",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 49,
+      "note": "G4",
+      "beats": 1.2,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 50.75,
+      "note": "E3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 51,
+      "note": "A4",
+      "beats": 0.65,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 52,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 52,
+      "note": "D4",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 52,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 52,
+      "note": "C3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 52.5,
+      "note": "G4",
+      "beats": 1.2,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 56,
+      "note": "F#4",
+      "beats": 1.6,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 56,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 56,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 56,
+      "note": "F#3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 56,
+      "note": "D3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 58.75,
+      "note": "A3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 60,
+      "note": "B3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 60,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 60,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 60,
+      "note": "E3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 60.5,
+      "note": "E4",
+      "beats": 1.5,
+      "instrument": "electric-keys",
+      "gain": 0.09,
+      "pan": 0.18
+    },
+    {
+      "at": 64,
+      "note": "A2",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 64,
+      "note": "B3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 64,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 64,
+      "note": "A2",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 65,
+      "note": "B4",
+      "beats": 1.8,
+      "instrument": "electric-keys",
+      "gain": 0.065,
+      "pan": 0
+    },
+    {
+      "at": 66.75,
+      "note": "B3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 68,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 68,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 68,
+      "note": "F#3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 68,
+      "note": "D3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 72,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 72,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 72,
+      "note": "F2",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 72,
+      "note": "F2",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 73,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "electric-keys",
+      "gain": 0.065,
+      "pan": 0
+    },
+    {
+      "at": 74.75,
+      "note": "E3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 76,
+      "note": "C3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 76,
+      "note": "D4",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 76,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 76,
+      "note": "C3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 80,
+      "note": "A3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 80,
+      "note": "D3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 80,
+      "note": "F#3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 80,
+      "note": "D3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 81,
+      "note": "A4",
+      "beats": 1.8,
+      "instrument": "electric-keys",
+      "gain": 0.065,
+      "pan": 0
+    },
+    {
+      "at": 82.75,
+      "note": "A3",
+      "beats": 2.7,
+      "instrument": "electric-keys",
+      "gain": 0.04,
+      "pan": 0.05
+    },
+    {
+      "at": 84,
+      "note": "B3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 84,
+      "note": "E3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 84,
+      "note": "G3",
+      "beats": 4.8,
+      "instrument": "pad",
+      "gain": 0.018,
+      "pan": -0.1
+    },
+    {
+      "at": 84,
+      "note": "E3",
+      "beats": 3.1,
+      "instrument": "round-bass",
+      "gain": 0.075,
+      "pan": -0.05
+    },
+    {
+      "at": 85,
+      "note": "B4",
+      "beats": 1.8,
+      "instrument": "electric-keys",
+      "gain": 0.065,
+      "pan": 0
+    }
+  ]
+}

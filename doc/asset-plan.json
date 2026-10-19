@@ -1,19 +1,19 @@
 {
-  "planVersion": 4,
-  "updated": "2026-10-19",
+  "planVersion": 7,
+  "updated": "2026-10-20",
   "status": "in_progress",
-  "scope": "Aの少色ドット絵で制作中。共通画面とGB01〜GB05の画像6点・音楽6曲を導入。B・Cは比較資料として保持。",
+  "scope": "Aの少色ドット絵で制作中。共通画面と全20作の画像21点・音楽21曲を導入し、P1全42点が完了。残りは場面挿絵20点。B・Cは比較資料として保持。",
   "runtimeManifest": "assets/manifest.json",
   "imageSpecification": {
     "delivery": "WebP, sRGB, 8:5前後, opaque background。標準目安1600×1000px。生成原本の縦横比と実寸を優先し、寸法合わせの引き伸ばしは行わない。",
-    "editable_master": "PNG生成原本を保存。採用Aと第1回は1586×992px、第2回は1584×993pxまたは1586×992px。人工的な拡大は行わず、原寸・縦横比を保持。",
+    "editable_master": "PNG生成原本を保存。採用Aと第1回は1586×992px、第2・3回は1584×993pxまたは1586×992px、第4・5回は1586×992px。人工的な拡大は行わず、原寸・縦横比を保持。",
     "size_target": "配布画像1枚500KB以下を目安。文字と細部を潰す圧縮は避ける。",
     "style": "Aの少色ドット絵。大きな色面、少ない陰影段階、くっきりした階段状の輪郭。細かな中間色・材質・滑らかな階調を増やさない。舞台に応じて色相を変え、縦横比を保つ。",
     "safe_area": "中央60%×70%に主役を置く。見出し横176×110pxや作品カードの帯で読める大きな形にし、端に人物の顔・重要物を寄せない。",
     "text_policy": "題名・UI・読ませる文字を絵に焼き込まない。画像なしでも本文だけで判断できること。"
   },
   "musicSpecification": {
-    "delivery": "Ogg Vorbis, stereo, 44.1kHz。導入済み6曲はVorbis品質4。実ビットレート・音量・時間は各制作記録を参照。128〜160kbpsは当初の目安。聴感による確認は未完了。",
+    "delivery": "Ogg Vorbis, stereo, 44.1kHz。導入済み21曲はVorbis品質4。実ビットレート・音量・時間は各制作記録を参照。128〜160kbpsは当初の目安。聴感による確認は未完了。",
     "master": "音符・編成のscore.jsonと合成スクリプトを保管。24bit WAVを一時生成してOggへ変換。WAV自体は常設せず、同じ制作環境で再生成する。",
     "duration_seconds": 90,
     "loop": true,
@@ -30,16 +30,11 @@
     "sceneP2": 20
   },
   "nextBatch": [
-    "IMG-GB06-COVER",
-    "BGM-GB06",
-    "IMG-GB07-COVER",
-    "BGM-GB07",
-    "IMG-GB08-COVER",
-    "BGM-GB08",
-    "IMG-GB09-COVER",
-    "BGM-GB09",
-    "IMG-GB10-COVER",
-    "BGM-GB10"
+    "IMG-GB01-SCENE-03",
+    "IMG-GB02-SCENE-06",
+    "IMG-GB03-SCENE-06",
+    "IMG-GB04-SCENE-03",
+    "IMG-GB05-SCENE-03"
   ],
   "assets": [
     {
@@ -326,12 +321,16 @@
       "role": "story",
       "storyId": "GB06",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb06-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "閉館公演の劇場入口、赤い布と使い込まれた真鍮の取っ手。観客席の割当てや招待券の保持者は描かず、戻ってきた人の立てる余白を空ける。",
-      "alt": "最後の一席の作品イメージ",
-      "position": "center"
+      "alt": "夜の小劇場の入口。真鍮の把手と赤い幕、空いた敷居へ落ちる灯り。",
+      "position": "center",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB06",
@@ -339,12 +338,16 @@
       "role": "story",
       "storyId": "GB06",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb06-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "暗転前の入口",
       "brief": "フェルトピアノと細い弦、わずかな室内楽の呼吸。閉館を葬送だけで扱わず、劇団の活動が続く余韻を持たせる。",
-      "bpm": 64
+      "bpm": 64,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB06-SCENE-05",
@@ -368,12 +371,16 @@
       "role": "story",
       "storyId": "GB07",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb07-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "輸送船の静かな機器室。独立した二つの記憶槽と、一基だけの接続座の形が読み取れる。稼働中か休止中かは表紙で断定しない。",
-      "alt": "複製された遺言の作品イメージ",
-      "position": "center"
+      "alt": "宇宙船の机に並ぶ二つの記憶槽と、中央の空いた一基の接続座。",
+      "position": "center 65%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB07",
@@ -381,12 +388,16 @@
       "role": "story",
       "storyId": "GB07",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb07-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "二つの間",
       "brief": "穏やかなアナログシンセ、丸い低音、疎らな電子鍵盤。似た音色の二つの短い旋律に異なる間を持たせ、歌声や台詞を使わない。",
-      "bpm": 60
+      "bpm": 60,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB07-SCENE-05",
@@ -410,12 +421,16 @@
       "role": "story",
       "storyId": "GB08",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb08-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "川を挟む町と北塔、面談を求める白い布。戦果や降伏完了の図像ではなく、橋を渡す書類の余白を中心にする。",
-      "alt": "北塔の降伏旗の作品イメージ",
-      "position": "center"
+      "alt": "川町の橋と北塔。塔には面談を求める白い布が掛かっている。",
+      "position": "center 35%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB08",
@@ -423,12 +438,16 @@
       "role": "story",
       "storyId": "GB08",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb08-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "机の両側",
       "brief": "低いヴィオラ、柔らかなピアノ、控えめな息の音色。軍楽や勝利ファンファーレを避け、言葉を交わす張りつめた間を支える。",
-      "bpm": 66
+      "bpm": 66,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB08-SCENE-04",
@@ -452,12 +471,16 @@
       "role": "story",
       "storyId": "GB09",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb09-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "小人の高さから見た早朝の台所。巨大なパン箱、流し、乾いた高いカップ。鍵や道具の所持、王国への到着は表紙に示さない。",
-      "alt": "台所に住む小さな王の作品イメージ",
-      "position": "center"
+      "alt": "小人の高さから見た朝の台所。大きなパン箱と、高い乾いた足場のカップ。",
+      "position": "center 35%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB09",
@@ -465,12 +488,16 @@
       "role": "story",
       "storyId": "GB09",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb09-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "パン箱の遠景",
       "brief": "小さなマリンバ、ピチカート、軽い木管。道具を工夫する楽しさと大きな台所の距離感。切迫を急かす強い拍を避ける。",
-      "bpm": 92
+      "bpm": 92,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB09-SCENE-06",
@@ -494,12 +521,16 @@
       "role": "story",
       "storyId": "GB10",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb10-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "高い書棚と読書机、遠い窓に星の気配。取得済みの調整書、失った記憶、修理済みの星灯機を表紙で断定しない。",
-      "alt": "返却期限のない図書館の作品イメージ",
-      "position": "center"
+      "alt": "高い書架に囲まれた読書机と、星が見える遠い窓。",
+      "position": "center 70%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB10",
@@ -507,12 +538,16 @@
       "role": "story",
       "storyId": "GB10",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb10-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "頁の外の星",
       "brief": "静かなピアノ、薄い弦の持続、柔らかなハーモニクス。長い休符を取り、取引を悲しい正解や輝く正解へ誘導しない。",
-      "bpm": 58
+      "bpm": 58,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 3,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB10-SCENE-03",
@@ -536,12 +571,16 @@
       "role": "story",
       "storyId": "GB11",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb11-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "高低の違う灯台と暗礁の海、貨客船の舷側。表紙の灯火は遠景で信号色を特定できない構図とし、航路の安全を画像だけで示さない。",
-      "alt": "暗礁の二重灯台の作品イメージ",
-      "position": "center"
+      "alt": "暗礁の海と高さの異なる二つの灯台。遠い灯室は霧に隠れ、灯色は判別できない。",
+      "position": "center 20%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB11",
@@ -549,12 +588,16 @@
       "role": "story",
       "storyId": "GB11",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb11-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "二本の塔へ",
       "brief": "穏やかな低い弦、疎らなピアノ、風を思わせる持続音。海の広がりを出し、警笛や鐘の実音を曲内の物語イベントにしない。",
-      "bpm": 70
+      "bpm": 70,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB11-SCENE-05",
@@ -578,12 +621,16 @@
       "role": "story",
       "storyId": "GB12",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb12-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "空中市場の浮桟橋と遠い外周網。屋根や食器に当たる昼の光。どの床が誰の保持下にあるかは表紙で判断させない。",
-      "alt": "空中市場の盗まれた床の作品イメージ",
-      "position": "center"
+      "alt": "雲の上に浮かぶ市場の木の歩廊と屋根、店先の器、遠い外周網。",
+      "position": "center 55%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB12",
@@ -591,12 +638,16 @@
       "role": "story",
       "storyId": "GB12",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb12-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "風に浮く店先",
       "brief": "歯切れのよい木管、軽い撥弦、控えめな手拍子風の打音。おかしみと手際を出し、盗品の扱いを勝手な大団円へ塗り替えない。",
-      "bpm": 96
+      "bpm": 96,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB12-SCENE-07",
@@ -620,12 +671,16 @@
       "role": "story",
       "storyId": "GB13",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb13-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "雪の谷の橋と工房の木肌。名前や人の足跡の行先を具体的な証拠として表紙に置かず、静かな不在を描く。",
-      "alt": "雪に埋めた名前の作品イメージ",
-      "position": "center"
+      "alt": "雪の谷の木橋と工房の窓。新雪には行先を示す足跡がない。",
+      "position": "center 60%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB13",
@@ -633,12 +688,16 @@
       "role": "story",
       "storyId": "GB13",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb13-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "姓をなぞる雪",
       "brief": "温かな低音の木管、少ないピアノ、乾いた弦。冬の静けさに自分で進む意思を重ね、失踪を怪談の恐怖へ固定しない。",
-      "bpm": 62
+      "bpm": 62,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB13-SCENE-06",
@@ -662,12 +721,16 @@
       "role": "story",
       "storyId": "GB14",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb14-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "夜番の石床、白線、炉獣コルの背の輪郭。腹窓の光は見せず、燃料や炉色、学習回数を表紙から読み取れない構図にする。",
-      "alt": "朝焼けまでの怪物番の作品イメージ",
-      "position": "center"
+      "alt": "石床の白線の向こうにいる炉獣の丸い背。腹の炉窓は見えない。",
+      "position": "center 75%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB14",
@@ -675,12 +738,16 @@
       "role": "story",
       "storyId": "GB14",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb14-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "足音の往復",
       "brief": "低い木琴、柔らかな弦、ゆっくりした呼吸のようなパッド。三拍の呼び掛けを実際に自動反復する効果音や、加熱警報を入れない。",
-      "bpm": 64
+      "bpm": 64,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB14-SCENE-05",
@@ -704,12 +771,16 @@
       "role": "story",
       "storyId": "GB15",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb15-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "白旗のある河港と渡し舟の舳先、沖の避難船。乗船者の数、救出済みの組、返時針の使用前後は描かない。",
-      "alt": "一度だけ戻れる敗戦の作品イメージ",
-      "position": "center"
+      "alt": "白旗のある河港と、手前の渡し舟の舳先、向こうの避難船。",
+      "position": "center 25%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB15",
@@ -717,12 +788,16 @@
       "role": "story",
       "storyId": "GB15",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb15-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "戻る川の記憶",
       "brief": "低い弦の緩い脈、控えめなピアノ、短い旋律の再現。二度目も同じ音型に少し違う間を持たせる。警鐘や秒針の効果音は入れない。",
-      "bpm": 76
+      "bpm": 76,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 4,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB15-SCENE-08",
@@ -746,12 +821,16 @@
       "role": "story",
       "storyId": "GB16",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb16-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "海辺の町の細い道と遠い鐘楼。鐘は静止し、鳴っている波紋や出発の合図を描かない。誰が参列したか分からない建築中心の表紙。",
-      "alt": "鐘を鳴らさない葬列の作品イメージ",
-      "position": "center"
+      "alt": "海辺の細い道から見える、鐘が静止した鐘楼",
+      "position": "center 25%",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB16",
@@ -759,12 +838,16 @@
       "role": "story",
       "storyId": "GB16",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb16-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "門までの足音",
       "brief": "低い弦と息の長い木管、ごく少ないピアノ。音の少なさを中心にする。鐘、チャイム、グロッケン、鐘を連想させる一打を入れない。",
-      "bpm": 56
+      "bpm": 56,
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB16-SCENE-10",
@@ -788,12 +871,16 @@
       "role": "story",
       "storyId": "GB17",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb17-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "古い牢獄の手動装置、金属の輪と呼び管。歯や扉の接続は描き込みすぎず、時計として動いている印象を与えない。",
-      "alt": "砂時計のない牢獄の作品イメージ",
-      "position": "center"
+      "alt": "旧牢獄の手動レバー、金属の輪、壁の呼び管",
+      "position": "center 30%",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB17",
@@ -801,12 +888,16 @@
       "role": "story",
       "storyId": "GB17",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb17-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "人が送る一拍",
       "brief": "乾いた弦の短音、柔らかな電子音、長めの静かな間。操作を考えられる余白を優先し、時間制限に聞こえる時計の刻みを使わない。",
-      "bpm": 68
+      "bpm": 68,
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB17-SCENE-02",
@@ -830,12 +921,16 @@
       "role": "story",
       "storyId": "GB18",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb18-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
-      "brief": "山岳の水路と作業場、職人として働く竜ラハの落ち着いた輪郭。衣装や出演の成否を主題にせず、石と水の関係を描く。",
-      "alt": "花嫁ではない竜の作品イメージ",
-      "position": "center"
+      "brief": "山岳の水路と作業場、職人として働く竜ラハの落ち着いた輪郭。衣装や出演の成否を主題にせず、石と水の関係を描く。採用版は水路の内側・出口・調整板を石積みで隠し、通水の成否を固定しない。遠景の水面は自然の湖。",
+      "alt": "山岳の作業場で石積みの傍に立つ竜ラハ",
+      "position": "center 25%",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB18",
@@ -843,12 +938,16 @@
       "role": "story",
       "storyId": "GB18",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb18-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "石を運ぶ役",
       "brief": "温かな撥弦と木管、ほどよい低音。山の風と共同作業の歩調を出す。結婚行進曲や婚礼のチャイムは使わない。",
-      "bpm": 82
+      "bpm": 82,
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB18-SCENE-07",
@@ -872,12 +971,16 @@
       "role": "story",
       "storyId": "GB19",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb19-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "雪山の宿営所の門と灯り、帳面を置く受付台。帰還人数が数えられる人影を並べず、見たものと受け入れる身体の違いを表す余白を残す。",
-      "alt": "十二人目の帰還者の作品イメージ",
-      "position": "center"
+      "alt": "雪山の宿営所の門灯と受付台",
+      "position": "center 35%",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB19",
@@ -885,12 +988,16 @@
       "role": "story",
       "storyId": "GB19",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb19-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "重さのある声",
       "brief": "薄い弦と柔らかなピアノ、短く応答する木管。謎への注意と人の帰りを待つ暖かさを両立する。録音の声や返事を実音として挿入しない。",
-      "bpm": 66
+      "bpm": 66,
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB19-SCENE-13",
@@ -914,12 +1021,16 @@
       "role": "story",
       "storyId": "GB20",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb20-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "小さな雑貨店の表戸、窓の灯り、曲がり角の路地。奥の二つの接続の状態は見えない構図で、糸巻きや茶碗を現在の棚の品として描かない。",
-      "alt": "世界を閉じる小さな店の作品イメージ",
-      "position": "center"
+      "alt": "曲がり角にある小さな店の表戸と窓明かり",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB20",
@@ -927,12 +1038,16 @@
       "role": "story",
       "storyId": "GB20",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb20-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "曲がり角の灯り",
       "brief": "穏やかなピアノ、丸い木管、薄い弦。最後の営業と次の営業時間のどちらにも合う終止しすぎない旋律。扉の閉鎖や破滅を実音で断定しない。",
-      "bpm": 70
+      "bpm": 70,
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 5,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB20-SCENE-11",
@@ -965,13 +1080,13 @@
     "runtimeInstalled": true
   },
   "progress": {
-    "installedImages": 6,
-    "installedMusic": 6,
-    "installedTotal": 12,
-    "remainingImages": 35,
-    "remainingMusic": 15,
-    "remainingTotal": 50,
-    "remainingCoreP1": 30,
+    "installedImages": 21,
+    "installedMusic": 21,
+    "installedTotal": 42,
+    "remainingImages": 20,
+    "remainingMusic": 0,
+    "remainingTotal": 20,
+    "remainingCoreP1": 0,
     "remainingSceneP2": 20
   }
 }

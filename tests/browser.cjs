@@ -51,6 +51,15 @@ async function screenshot(page, name) {
   screenshots.push(filename);
 }
 
+async function assertAudioDuration(page, src) {
+  const scorePath = path.join(ROOT, 'sources/audio', path.basename(src, '.ogg') + '.score.json');
+  const score = JSON.parse(fs.readFileSync(scorePath, 'utf8'));
+  const expected = score.bars * 240 / score.bpm;
+  const actual = await page.evaluate(() => window.__gamebookAudio[0].duration);
+  assert.ok(Number.isFinite(actual) && Math.abs(actual - expected) < .05,
+    `${src}: decoder duration ${actual}s must match the full score ${expected}s`);
+}
+
 async function newPage(viewport, seed, inspectAudio = false) {
   const context = await browser.newContext({ viewport, acceptDownloads: true, locale: 'ja-JP' });
   const page = await context.newPage();
@@ -74,18 +83,25 @@ async function newPage(viewport, seed, inspectAudio = false) {
       diagnostics.push({ case: currentCase, type: 'unexpected-network', url: request.url() });
     }
   });
+  let seedSession, seedScript;
   if (seed) {
     S.validateShelf(stories, seed);
-    await page.addInitScript(({ key, shelf }) => {
-      // Seed an empty record only. A separate sessionStorage marker must not
-      // permit this fixture to overwrite an existing application autosave.
-      if (localStorage.getItem(key) === null) {
-        localStorage.setItem(key, JSON.stringify(shelf));
-      }
-    }, { key: STORAGE_KEY, shelf: seed });
+    // This suite runs Chromium. Install the fixture for the first document
+    // only, then remove it: reloads must exercise the real saved record, even
+    // when that record is unexpectedly absent. An enduring addInitScript can
+    // otherwise repopulate a lost record and obscure the actual failure.
+    seedSession = await context.newCDPSession(page);
+    await seedSession.send('Page.enable');
+    seedScript = await seedSession.send('Page.addScriptToEvaluateOnNewDocument', {
+      source: `localStorage.setItem(${JSON.stringify(STORAGE_KEY)}, ${JSON.stringify(JSON.stringify(seed))});`
+    });
   }
   await page.goto(URL);
   await page.waitForSelector('html[data-gamebook-ready="true"]');
+  if (seedSession) {
+    await seedSession.send('Page.removeScriptToEvaluateOnNewDocument', { identifier: seedScript.identifier });
+    await seedSession.detach();
+  }
   await page.evaluate(() => document.fonts.ready);
   await settle(page);
   return page;
@@ -259,6 +275,16 @@ async function openFromShelf(page, id) {
   await settle(page);
 }
 
+async function playTrail(page, story, trail) {
+  await openFromShelf(page, story.id);
+  await readEveryPage(page, introText(story), `${story.id} save setup`);
+  await page.locator('[data-action="begin"]').click();
+  await page.waitForTimeout(340);
+  let session = E.createSession(story);
+  for (const id of trail) session = await choose(page, story, session, id);
+  return session;
+}
+
 async function runCase(name, work) {
   if (CASE_FILTER && !CASE_FILTER.test(name)) return;
   currentCase = name;
@@ -388,12 +414,11 @@ async function testSavesAndHistory() {
   });
   await runCase('save-import-history-restart-doubleclick', async () => {
     const story = storyById('GB01');
-    const seed = seededShelf('GB01', ['01a']);
-    const other = E.replay(storyById('GB02'), ['01c', '12a']);
-    seed.sessions.GB02 = other;
-    seed.endingTrails.GB02 = { E4: other.trail };
-    seed.bookmarks.GB02 = { intro: false, page: 0, nodeId: other.nodeId, trailLength: other.trail.length };
-    const page = await newPage(VIEWPORTS[1], seed);
+    // Persistence tests start through real UI actions, without a storage fixture.
+    const page = await newPage(VIEWPORTS[1]);
+    const other = await playTrail(page, storyById('GB02'), ['01c', '12a']);
+    await playTrail(page, story, ['01a']);
+    const seed = await storedShelf(page);
     await page.locator('#save-button').click();
     const downloadPromise = page.waitForEvent('download');
     await page.getByRole('button', { name: 'ファイルに保存', exact: true }).click();
@@ -411,9 +436,14 @@ async function testSavesAndHistory() {
     assert.equal(session.state.tide, 2);
     assert.equal(session.state.kayo, true);
     const autosaved = await storedShelf(page);
+    await page.addInitScript(key => {
+      window.__savedBeforeApp = JSON.parse(localStorage.getItem(key));
+    }, STORAGE_KEY);
     await page.reload();
     await page.waitForSelector('html[data-gamebook-ready="true"]');
     await settle(page);
+    assert.deepEqual(await page.evaluate(() => window.__savedBeforeApp), autosaved,
+      'reload must retain the committed record before application initialization');
     assert.deepEqual(await storedShelf(page), autosaved, 'reload must retain the committed run and bookmark');
     assert.equal(await page.locator('#book-title').textContent(), story.title);
 
@@ -467,8 +497,9 @@ async function testSavesAndHistory() {
   });
   await runCase('cross-tab-conflict-protects-both-runs', async () => {
     const story = storyById('GB01');
-    const seed = seededShelf('GB01', ['01a']);
-    const first = await newPage(VIEWPORTS[0], seed);
+    const first = await newPage(VIEWPORTS[0]);
+    await playTrail(first, story, ['01a']);
+    const seed = await storedShelf(first);
     const second = await first.context().newPage();
     second.on('pageerror', error => diagnostics.push({ case: currentCase, type: 'pageerror', message: error.message }));
     second.on('console', message => {
@@ -477,7 +508,11 @@ async function testSavesAndHistory() {
     second.on('requestfailed', request => diagnostics.push({ case: currentCase, type: 'requestfailed', url: request.url(), message: request.failure()?.errorText }));
     await second.goto(URL);
     await second.waitForSelector('html[data-gamebook-ready="true"]');
+    await second.evaluate(() => document.fonts.ready);
     await settle(second);
+    assert.deepEqual(await storedShelf(second), seed, 'a new tab must read the run saved by real UI actions');
+    assert.equal(await second.locator('#chapter-title').textContent(), E.getNode(story, seed.sessions.GB01).title,
+      'a new tab must open the saved section before choosing an action');
     const otherRun = await choose(second, story, seed.sessions.GB01, '02a');
     await first.waitForFunction(() => document.querySelector('#save-status').textContent.includes('別の画面'));
     // An earlier success timer must not hide the still-active conflict notice.
@@ -515,10 +550,12 @@ async function testInstalledAssets() {
     await page.locator('#music-button').click();
     await page.waitForFunction(() => window.__gamebookAudio[0]?.currentTime > .1);
     assert.equal(await page.evaluate(() => window.__gamebookAudio[0].src.endsWith('/assets/audio/library.ogg')), true);
+    await assertAudioDuration(page, assets.library.music.src);
     await layout(page, 'library with artwork and music button');
     await screenshot(page, 'assets-library-1280x720');
     await openFromShelf(page, 'GB01');
     await page.waitForFunction(() => window.__gamebookAudio[0].src.endsWith('/assets/audio/gb01-theme.ogg') && window.__gamebookAudio[0].currentTime > .1);
+    await assertAudioDuration(page, assets.stories.GB01.music.src);
     await page.waitForFunction(() => document.querySelector('#scene-art img')?.naturalWidth > 0);
     await layout(page, 'GB01 with artwork and music button');
     await screenshot(page, 'assets-GB01-1280x720');
@@ -580,6 +617,7 @@ async function testStoryAssets() {
         const audio = window.__gamebookAudio[0];
         return audio?.src.endsWith('/' + src) && audio.currentTime > .1;
       }, media.music.src);
+      await assertAudioDuration(page, media.music.src);
       assert.equal(await page.evaluate(() => window.__gamebookAudio[0].volume), media.music.volume);
       assert.equal(await page.evaluate(() => window.__gamebookAudio[0].loop), true);
       await page.evaluate(() => { const audio = window.__gamebookAudio[0]; audio.currentTime = audio.duration - .12; });
