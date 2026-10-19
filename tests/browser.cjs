@@ -83,18 +83,25 @@ async function newPage(viewport, seed, inspectAudio = false) {
       diagnostics.push({ case: currentCase, type: 'unexpected-network', url: request.url() });
     }
   });
+  let seedSession, seedScript;
   if (seed) {
     S.validateShelf(stories, seed);
-    await page.addInitScript(({ key, shelf }) => {
-      // Seed an empty record only. A separate sessionStorage marker must not
-      // permit this fixture to overwrite an existing application autosave.
-      if (localStorage.getItem(key) === null) {
-        localStorage.setItem(key, JSON.stringify(shelf));
-      }
-    }, { key: STORAGE_KEY, shelf: seed });
+    // This suite runs Chromium. Install the fixture for the first document
+    // only, then remove it: reloads must exercise the real saved record, even
+    // when that record is unexpectedly absent. An enduring addInitScript can
+    // otherwise repopulate a lost record and obscure the actual failure.
+    seedSession = await context.newCDPSession(page);
+    await seedSession.send('Page.enable');
+    seedScript = await seedSession.send('Page.addScriptToEvaluateOnNewDocument', {
+      source: `localStorage.setItem(${JSON.stringify(STORAGE_KEY)}, ${JSON.stringify(JSON.stringify(seed))});`
+    });
   }
   await page.goto(URL);
   await page.waitForSelector('html[data-gamebook-ready="true"]');
+  if (seedSession) {
+    await seedSession.send('Page.removeScriptToEvaluateOnNewDocument', { identifier: seedScript.identifier });
+    await seedSession.detach();
+  }
   await page.evaluate(() => document.fonts.ready);
   await settle(page);
   return page;
@@ -420,9 +427,14 @@ async function testSavesAndHistory() {
     assert.equal(session.state.tide, 2);
     assert.equal(session.state.kayo, true);
     const autosaved = await storedShelf(page);
+    await page.addInitScript(key => {
+      window.__savedBeforeApp = JSON.parse(localStorage.getItem(key));
+    }, STORAGE_KEY);
     await page.reload();
     await page.waitForSelector('html[data-gamebook-ready="true"]');
     await settle(page);
+    assert.deepEqual(await page.evaluate(() => window.__savedBeforeApp), autosaved,
+      'reload must retain the committed record before application initialization');
     assert.deepEqual(await storedShelf(page), autosaved, 'reload must retain the committed run and bookmark');
     assert.equal(await page.locator('#book-title').textContent(), story.title);
 
