@@ -48,3 +48,5 @@ python scripts/render-music.py --only gb16-theme gb17-theme gb18-theme gb19-them
 ```
 
 第5回のGB16・GB18は初稿も `images/gb16-cover-draft.png`・`images/gb18-cover-draft.png` に保管しました。初稿はゲームへ登録せず、採用版は `*-cover-a.png` です。各prompt.txtに初稿指示と修正指示を記録しています。
+
+第6回はGB01〜GB05の場面挿絵です。採用版は `images/gbNN-scene-XX-a.png`、初稿は `*-draft.png`、指示は `*.prompt.txt` に保存しました。GB01は左右修正前の中間版も `gb01-scene-03-revision-1.png` に残しています。初稿・中間版はゲームに登録していません。原寸を維持し、再標本化や機械的な減色は行っていません。

@@ -31,7 +31,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb01-scene-03.webp",
+            "alt": "右腕を固定したミヨが左手で椅子を寄せ、足首を負傷したカヨが膝に地図を置く",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB02": {
       "image": {
@@ -45,7 +54,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb02-scene-06.webp",
+            "alt": "骨の橋で白い胸札を付けたナギが練習剣を構え、ロウが境界の綱を張る",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB03": {
       "image": {
@@ -59,7 +77,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb03-scene-06.webp",
+            "alt": "ニナが赤い上着の人形を実演し、父ソウが見守る。預かり中の木箱は窓口に残る",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB04": {
       "image": {
@@ -73,7 +100,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb04-scene-03.webp",
+            "alt": "停止した馬車の空席と書簡を二人の監察人が確かめる",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB05": {
       "image": {
@@ -87,7 +123,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb05-scene-03.webp",
+            "alt": "銀線が五本残る荷雲と水で満たした一本の瓶。ミウが瓶の蓋を閉める",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB06": {
       "image": {

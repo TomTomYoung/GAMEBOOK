@@ -1,0 +1,286 @@
+{
+  "started": "2026-10-19T23:23:47.365Z",
+  "finished": "2026-10-19T23:26:33.577Z",
+  "url": "index.html (file://)",
+  "browserVersion": "153.0.8010.0",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 360,
+      "height": 640
+    },
+    {
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "results": [
+    {
+      "name": "installed-images-and-real-audio",
+      "status": "passed",
+      "durationMs": 2149
+    },
+    {
+      "name": "assets-GB02",
+      "status": "passed",
+      "durationMs": 2534
+    },
+    {
+      "name": "assets-GB03",
+      "status": "passed",
+      "durationMs": 2329
+    },
+    {
+      "name": "assets-GB04",
+      "status": "passed",
+      "durationMs": 2979
+    },
+    {
+      "name": "assets-GB05",
+      "status": "passed",
+      "durationMs": 2429
+    },
+    {
+      "name": "assets-GB06",
+      "status": "passed",
+      "durationMs": 2915
+    },
+    {
+      "name": "assets-GB07",
+      "status": "passed",
+      "durationMs": 1897
+    },
+    {
+      "name": "assets-GB08",
+      "status": "passed",
+      "durationMs": 1885
+    },
+    {
+      "name": "assets-GB09",
+      "status": "passed",
+      "durationMs": 2842
+    },
+    {
+      "name": "assets-GB10",
+      "status": "passed",
+      "durationMs": 2380
+    },
+    {
+      "name": "assets-GB11",
+      "status": "passed",
+      "durationMs": 1896
+    },
+    {
+      "name": "assets-GB12",
+      "status": "passed",
+      "durationMs": 1946
+    },
+    {
+      "name": "assets-GB13",
+      "status": "passed",
+      "durationMs": 1864
+    },
+    {
+      "name": "assets-GB14",
+      "status": "passed",
+      "durationMs": 3515
+    },
+    {
+      "name": "assets-GB15",
+      "status": "passed",
+      "durationMs": 2713
+    },
+    {
+      "name": "assets-GB16",
+      "status": "passed",
+      "durationMs": 1741
+    },
+    {
+      "name": "assets-GB17",
+      "status": "passed",
+      "durationMs": 2262
+    },
+    {
+      "name": "assets-GB18",
+      "status": "passed",
+      "durationMs": 2065
+    },
+    {
+      "name": "assets-GB19",
+      "status": "passed",
+      "durationMs": 1861
+    },
+    {
+      "name": "assets-GB20",
+      "status": "passed",
+      "durationMs": 2314
+    },
+    {
+      "name": "scene-GB01-03-all-states",
+      "status": "passed",
+      "durationMs": 9001
+    },
+    {
+      "name": "scene-GB02-06-all-states",
+      "status": "passed",
+      "durationMs": 5530
+    },
+    {
+      "name": "scene-GB03-06-all-states",
+      "status": "passed",
+      "durationMs": 6034
+    },
+    {
+      "name": "scene-GB04-03-all-states",
+      "status": "passed",
+      "durationMs": 2952
+    },
+    {
+      "name": "scene-GB05-03-all-states",
+      "status": "passed",
+      "durationMs": 3000
+    },
+    {
+      "name": "shelf-1280x720",
+      "status": "passed",
+      "durationMs": 489
+    },
+    {
+      "name": "GB09-intro24-1280x720",
+      "status": "passed",
+      "durationMs": 652
+    },
+    {
+      "name": "GB20-long-text-1280x720",
+      "status": "passed",
+      "durationMs": 378
+    },
+    {
+      "name": "GB08-four-choices-1280x720",
+      "status": "passed",
+      "durationMs": 306
+    },
+    {
+      "name": "GB17-four-choices-1280x720",
+      "status": "passed",
+      "durationMs": 328
+    },
+    {
+      "name": "shelf-390x844",
+      "status": "passed",
+      "durationMs": 503
+    },
+    {
+      "name": "GB09-intro24-390x844",
+      "status": "passed",
+      "durationMs": 711
+    },
+    {
+      "name": "GB20-long-text-390x844",
+      "status": "passed",
+      "durationMs": 433
+    },
+    {
+      "name": "GB08-four-choices-390x844",
+      "status": "passed",
+      "durationMs": 426
+    },
+    {
+      "name": "GB17-four-choices-390x844",
+      "status": "passed",
+      "durationMs": 461
+    },
+    {
+      "name": "shelf-360x640",
+      "status": "passed",
+      "durationMs": 471
+    },
+    {
+      "name": "GB09-intro24-360x640",
+      "status": "passed",
+      "durationMs": 899
+    },
+    {
+      "name": "GB20-long-text-360x640",
+      "status": "passed",
+      "durationMs": 516
+    },
+    {
+      "name": "GB08-four-choices-360x640",
+      "status": "passed",
+      "durationMs": 487
+    },
+    {
+      "name": "GB17-four-choices-360x640",
+      "status": "passed",
+      "durationMs": 579
+    },
+    {
+      "name": "shelf-844x390",
+      "status": "passed",
+      "durationMs": 539
+    },
+    {
+      "name": "GB09-intro24-844x390",
+      "status": "passed",
+      "durationMs": 995
+    },
+    {
+      "name": "GB20-long-text-844x390",
+      "status": "passed",
+      "durationMs": 562
+    },
+    {
+      "name": "GB08-four-choices-844x390",
+      "status": "passed",
+      "durationMs": 510
+    },
+    {
+      "name": "GB17-four-choices-844x390",
+      "status": "passed",
+      "durationMs": 513
+    },
+    {
+      "name": "resize-retains-text-and-state",
+      "status": "passed",
+      "durationMs": 2570
+    },
+    {
+      "name": "begin-doubleclick-keeps-first-section",
+      "status": "passed",
+      "durationMs": 908
+    },
+    {
+      "name": "save-import-history-restart-doubleclick",
+      "status": "passed",
+      "durationMs": 5723
+    },
+    {
+      "name": "cross-tab-conflict-protects-both-runs",
+      "status": "passed",
+      "durationMs": 4308
+    },
+    {
+      "name": "all20-ui-playthroughs",
+      "status": "passed",
+      "durationMs": 68683
+    }
+  ],
+  "diagnostics": [],
+  "screenshots": [
+    "batch-06-desktop.png",
+    "batch-06-gb01-mobile.png",
+    "batch-06-gb02-mobile.png",
+    "batch-06-gb03-mobile.png",
+    "batch-06-gb04-mobile.png",
+    "batch-06-gb05-mobile.png"
+  ],
+  "screenshotNote": "保存した6枚は同じ最終ファイルを初期ページ・音楽OFFで開いた確認画像。試験時に生成した全スクリーンショット名は環境依存のため省略。"
+}
