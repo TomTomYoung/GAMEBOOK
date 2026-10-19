@@ -225,28 +225,73 @@
       "scenes": {}
     },
     "GB16": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb16-cover.webp",
+        "alt": "海辺の細い道から見える、鐘が静止した鐘楼",
+        "position": "center 25%"
+      },
+      "music": {
+        "src": "assets/audio/gb16-theme.ogg",
+        "title": "門までの足音",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB17": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb17-cover.webp",
+        "alt": "旧牢獄の手動レバー、金属の輪、壁の呼び管",
+        "position": "center 30%"
+      },
+      "music": {
+        "src": "assets/audio/gb17-theme.ogg",
+        "title": "人が送る一拍",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB18": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb18-cover.webp",
+        "alt": "山岳の作業場で石積みの傍に立つ竜ラハ",
+        "position": "center 25%"
+      },
+      "music": {
+        "src": "assets/audio/gb18-theme.ogg",
+        "title": "石を運ぶ役",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB19": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb19-cover.webp",
+        "alt": "雪山の宿営所の門灯と受付台",
+        "position": "center 35%"
+      },
+      "music": {
+        "src": "assets/audio/gb19-theme.ogg",
+        "title": "重さのある声",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB20": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb20-cover.webp",
+        "alt": "曲がり角にある小さな店の表戸と窓明かり",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb20-theme.ogg",
+        "title": "曲がり角の灯り",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     }
   }

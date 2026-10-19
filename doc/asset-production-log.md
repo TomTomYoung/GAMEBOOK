@@ -1,8 +1,8 @@
 # 素材制作・導入記録
 
-現在：第4回までの32点を導入。全62点中32点（画像16/41点、音楽16/21曲）、残り30点。次はGB16〜GB20の表紙とBGM。
+現在：第5回までの42点を導入。全62点中42点（画像21/41点、音楽21/21曲）、P1完了。残りは場面挿絵20点で、次はGB01〜GB05。
 
-2026-10-19・第1回の記録：4点を導入。この時点では残り58点、次の制作予定はGB02〜GB05でした。以下に第1回の記録を保持し、後半へ第2回の8点、第3回・第4回の各10点を追記しています。
+2026-10-19・第1回の記録：4点を導入。この時点では残り58点、次の制作予定はGB02〜GB05でした。以下に第1回の記録を保持し、後半へ第2回の8点、第3回・第4回・第5回の各10点を追記しています。
 
 ![共通の本棚へ導入した画面](previews/batch-01-library.png)
 
@@ -545,3 +545,165 @@ GB12・GB13で配布Oggの末尾欠落を検出したため、音源を一時デ
 ## 第4回終了時点の次回作業
 
 導入済み32点、未制作30点。P1の残りはGB16〜GB20の表紙5点・BGM5曲、P2は全20作の場面挿絵です。次はGB16〜GB20の10点を制作します。Aの画風とB・Cの比較資料を保持し、本文と作者用根拠を照合してから実物を作り、台帳・表示・再生検査・制作記録へ反映します。
+
+## 素材第5回：GB16〜GB20の表紙・BGM
+
+制作日：2026-10-20（日本時間）。10点を追加し、P1の42点がそろいました。Aの少色ドット絵を維持し、B・Cの比較資料、過去の制作記録、原稿本文と全分岐は保持しています。画像は組込みのimagegenで生成・修正し、PNG原本と指示全文を保存しました。GB16・GB18の未採用初稿も保存し、実行用台帳には登録していません。
+
+音楽は本作向けの音符・和音・編成から既存の合成処理で生成しました。外部録音サンプルや既存曲は使用していません。画像の利用条件とクレジットの扱いは前掲の共通記録に従います。以下の楽器名は合成音色の方向です。聴感による音色・圧縮品質・3周連続の試聴は未実施です。
+
+## IMG-GB16-COVER — 鐘を鳴らさない葬列
+
+港町の細い道と静止した鐘楼を主題にし、棺・同行者・参列人数・鳴鐘結果を表示しません。初稿の細かな石壁と瓦を整理し、Aを画像参照した修正で大きな色面へそろえました。
+
+- 配布用：`assets/images/gb16-cover.webp`
+- PNG原本：`sources/images/gb16-cover-a.png`
+- 指示全文：[gb16-cover.prompt.txt](../sources/images/gb16-cover.prompt.txt)
+- 生成出力：`exec-216927ab-171e-4331-be40-01a4aac61395.png`、imagegen
+- 実寸：1586×992px、WebP、不透明。リサイズ・減色なし。
+- 容量：147,880 bytes
+- 配布用SHA-256：`6fb3c5fa0576ca6fd5524672b7121b794c0d98af4a50f2701e317d7ecdde1fb0`
+- 原本SHA-256：`6ec9830ccaecec6039e4bf23fa4264364c567aea5221ba05c75b5d4207f05985`
+- 配置：作品カードと全節の既定画像
+- 状態：導入済み、画面確認済み
+
+## BGM-GB16 — 門までの足音
+
+低い弦と息の長い木管、少ない低音のフェルトピアノ。鳴鐘・チャイム・打楽器を使わず、参列人数や約束の履行を音で確定しない。 調・構成はD minor / suspended sixths、A8 B8 return6です。
+
+- 配布用：`assets/audio/gb16-theme.ogg`
+- 音符正本：`sources/audio/gb16-theme.score.json`
+- 構成元：`sources/audio/compose-batch-05.py`、合成処理：`scripts/render-music.py`
+- 実時間：94.285714秒、56 BPM、4/4拍子、22小節
+- 形式：Ogg Vorbis品質4、44,100Hz、stereo、実平均約58.4kbps
+- ループ：サンプル0から4,158,000未満まで（全長）
+- 実測：-17.97 LUFS-I、True Peak -10.22 dBTP
+- 容量：688,501 bytes
+- SHA-256：`e43efb801915c231d6b77cfa7db6683cefbb218aa64942606c4163b89112e25c`
+- 状態：導入済み、技術検査済み、試聴確認待ち
+
+## IMG-GB17-COVER — 砂時計のない牢獄
+
+外装で仕組みを隠した手動レバー、金属の輪、呼び管を描きました。時計、砂時計、数字、三位置の色、扉の開閉や接続は表示せず、操作回数や時間経過を表紙で固定しません。
+
+- 配布用：`assets/images/gb17-cover.webp`
+- PNG原本：`sources/images/gb17-cover-a.png`
+- 指示全文：[gb17-cover.prompt.txt](../sources/images/gb17-cover.prompt.txt)
+- 生成出力：`exec-69a72a93-6e4f-4dd2-b95d-d12ad73cbc16.png`、imagegen
+- 実寸：1586×992px、WebP、不透明。リサイズ・減色なし。
+- 容量：127,122 bytes
+- 配布用SHA-256：`d43d2c1c70cc7f9472607d125c1a2e8f005e9eec9905fe806a0bc9d152eb298d`
+- 原本SHA-256：`f7203ded9b2d6ae6def9cd0d53dfb86c94fa80e1a8e2a5726334b9b54f8e2228`
+- 配置：作品カードと全節の既定画像
+- 状態：導入済み、画面確認済み
+
+## BGM-GB17 — 人が送る一拍
+
+短い乾いた弦と柔らかな電子鍵盤、操作の間を思わせる不均等な休符。時計・警報・カウントダウン・レバーの効果音は置かない。 調・構成はE Dorian、A8 B8 A′8 turn2です。
+
+- 配布用：`assets/audio/gb17-theme.ogg`
+- 音符正本：`sources/audio/gb17-theme.score.json`
+- 構成元：`sources/audio/compose-batch-05.py`、合成処理：`scripts/render-music.py`
+- 実時間：91.764717秒、68 BPM、4/4拍子、26小節
+- 形式：Ogg Vorbis品質4、44,100Hz、stereo、実平均約29.8kbps
+- ループ：サンプル0から4,046,824未満まで（全長）
+- 実測：-17.96 LUFS-I、True Peak -7.87 dBTP
+- 容量：341,475 bytes
+- SHA-256：`970f8a8286d905e27f342ddcd6537f86d4eaef10d6d1a2ab3944b7a3a55c4af8`
+- 状態：導入済み、技術検査済み、試聴確認待ち
+
+## IMG-GB18-COVER — 花嫁ではない竜
+
+竜ラハと作業場の石積みを描きました。初稿の流れる水と水車は通水達成を先取りするため不採用とし、Aを画像参照して水路内部・出口・調整板を隠す視点へ修正しました。遠景の水面は自然の湖で、本水路の開通を示しません。温石の個数・据付・衣装・出演・支払いも断定しません。
+
+- 配布用：`assets/images/gb18-cover.webp`
+- PNG原本：`sources/images/gb18-cover-a.png`
+- 指示全文：[gb18-cover.prompt.txt](../sources/images/gb18-cover.prompt.txt)
+- 生成出力：`exec-0cee7468-3102-481e-9a60-9c0457a44d25.png`、imagegen
+- 実寸：1586×992px、WebP、不透明。リサイズ・減色なし。
+- 容量：172,094 bytes
+- 配布用SHA-256：`b034ba624bc84a7b35dc2c30015401d0dd43cf69e5012c94bf13f36bfb17a7f8`
+- 原本SHA-256：`c18b40e07ab0da7c45f34e0cc67b4c5fc9307a4a4d05f9ce89ab2db6205a8016`
+- 配置：作品カードと全節の既定画像
+- 状態：導入済み、画面確認済み
+
+## BGM-GB18 — 石を運ぶ役
+
+温かな撥弦と木管、丸い低音。共同作業の穏やかな歩調を出し、婚礼行進曲・婚礼チャイム・通水や支払完了の効果音を使わない。 調・構成はG major / E minor、A8 B8 A′8 turn6です。
+
+- 配布用：`assets/audio/gb18-theme.ogg`
+- 音符正本：`sources/audio/gb18-theme.score.json`
+- 構成元：`sources/audio/compose-batch-05.py`、合成処理：`scripts/render-music.py`
+- 実時間：87.804875秒、82 BPM、4/4拍子、30小節
+- 形式：Ogg Vorbis品質4、44,100Hz、stereo、実平均約60.0kbps
+- ループ：サンプル0から3,872,195未満まで（全長）
+- 実測：-17.96 LUFS-I、True Peak -7.94 dBTP
+- 容量：658,771 bytes
+- SHA-256：`13f3470789a7c3e83fc73c3fa460e96e57772a8f6f8247f562629cae0ef862c0`
+- 状態：導入済み、技術検査済み、試聴確認待ち
+
+## IMG-GB19-COVER — 十二人目の帰還者
+
+雪山の宿営所の門、灯り、受付台を主題にしました。人影、足跡、投影、担架、救助結果は表示せず、帰還人数を数えられる構図にしません。台の閉じた帳面は受付用で、オルが現地で持つ帳面や貸与中の地図を戻したものではありません。
+
+- 配布用：`assets/images/gb19-cover.webp`
+- PNG原本：`sources/images/gb19-cover-a.png`
+- 指示全文：[gb19-cover.prompt.txt](../sources/images/gb19-cover.prompt.txt)
+- 生成出力：`exec-df9e0ea5-e3e8-4847-ab56-fac2697625d9.png`、imagegen
+- 実寸：1586×992px、WebP、不透明。リサイズ・減色なし。
+- 容量：161,678 bytes
+- 配布用SHA-256：`5959185182adcac39cc48ce0a32ee191ec4c22fd7a7524cdd9de7289e335a4e9`
+- 原本SHA-256：`45e05293504b33541542cb63b60cdc7408b340e13d71ab56bd66dc3d323958cd`
+- 配置：作品カードと全節の既定画像
+- 状態：導入済み、画面確認済み
+
+## BGM-GB19 — 重さのある声
+
+薄い弦と柔らかなピアノ、短く返す木管。帰還を待つ暖かさと照合の静けさを残し、録音の声・幽霊音・人数を数える合図を使わない。 調・構成はB minor / D major、A8 B8 A′8です。
+
+- 配布用：`assets/audio/gb19-theme.ogg`
+- 音符正本：`sources/audio/gb19-theme.score.json`
+- 構成元：`sources/audio/compose-batch-05.py`、合成処理：`scripts/render-music.py`
+- 実時間：87.272721秒、66 BPM、4/4拍子、24小節
+- 形式：Ogg Vorbis品質4、44,100Hz、stereo、実平均約39.4kbps
+- ループ：サンプル0から3,848,727未満まで（全長）
+- 実測：-17.96 LUFS-I、True Peak -6.93 dBTP
+- 容量：429,919 bytes
+- SHA-256：`2365ce56d339bd65b0e129d77c85642148485ccc689a7c0ea49bc931e1328886`
+- 状態：導入済み、技術検査済み、試聴確認待ち
+
+## IMG-GB20-COVER — 世界を閉じる小さな店
+
+曲がり角店の表戸と曇りガラス越しの窓明かりを描きました。糸巻き・茶碗・奥の接続・店内の人物は見せず、返納や継承、閉店済みの状態を先取りしません。
+
+- 配布用：`assets/images/gb20-cover.webp`
+- PNG原本：`sources/images/gb20-cover-a.png`
+- 指示全文：[gb20-cover.prompt.txt](../sources/images/gb20-cover.prompt.txt)
+- 生成出力：`exec-339e5503-1ba1-4b08-b579-db60ae953b0f.png`、imagegen
+- 実寸：1586×992px、WebP、不透明。リサイズ・減色なし。
+- 容量：152,012 bytes
+- 配布用SHA-256：`dd983bc557ae9093b6898a11de73645c8957cb84b3c097e3477e20ba80ff192d`
+- 原本SHA-256：`6213eb1fd4edc7c79a63c73b820f5cf636dfe027f03378446cc69b68364a3328`
+- 配置：作品カードと全節の既定画像
+- 状態：導入済み、画面確認済み
+
+## BGM-GB20 — 曲がり角の灯り
+
+穏やかなピアノと丸い木管、薄い弦。閉店と継承のどちらにも使える未完の巡り。扉の閉鎖・錠・世界の消滅を表す効果音は置かない。 調・構成はF major / added ninths、A8 B8 A′8 turn2です。
+
+- 配布用：`assets/audio/gb20-theme.ogg`
+- 音符正本：`sources/audio/gb20-theme.score.json`
+- 構成元：`sources/audio/compose-batch-05.py`、合成処理：`scripts/render-music.py`
+- 実時間：89.142857秒、70 BPM、4/4拍子、26小節
+- 形式：Ogg Vorbis品質4、44,100Hz、stereo、実平均約46.4kbps
+- ループ：サンプル0から3,931,200未満まで（全長）
+- 実測：-17.96 LUFS-I、True Peak -5.04 dBTP
+- 容量：516,872 bytes
+- SHA-256：`3755c122f21f1bad361b8509f21ddf9b3a846d846e1a42dd82105e2eab4af4df`
+- 状態：導入済み、技術検査済み、試聴確認待ち
+
+## 第5回終了時点の次回作業
+
+導入済み42点、未制作20点。共通画面と全20作の表紙・BGMは完了しました。次はGB01〜GB05の場面挿絵5点です。人物の外見を定める前に各原稿の指定節・全到達状態・本文変種を読み、負傷、保持物、参加者、決闘や返却の結果を先取りしない構図にします。完成後に節単位の切替と表紙への復帰を実ブラウザで検査し、台帳と引き継ぎを更新してください。
+
+第5回の表示確認：[本棚2ページ目](previews/batch-05-library-page2.png)・[本棚3ページ目](previews/batch-05-library-page3.png)・[スマホの読書画面](previews/batch-05-mobile.png)。全45ケースの実行結果は[ブラウザ記録](validation/batch-05-browser.json)に保存しています。

@@ -39,3 +39,12 @@ python scripts/render-music.py --only gb11-theme gb12-theme gb13-theme gb14-them
 ```
 
 第4回から音源は一時ディレクトリで最後まで生成・検証し、書込みと同期が済んだファイルを最後に置換します。ブラウザ検査でもscore.jsonの小節数・BPMから求めた全長と実デコーダのdurationを照合し、途中で切れたファイルを検出します。
+
+第5回の5曲（GB16〜GB20）の構成元は `audio/compose-batch-05.py` です。実行すると対象5曲だけのscore.jsonを上書きします。既存の合成音色を使用し、第1〜4回の音源は変更していません。
+
+```sh
+python sources/audio/compose-batch-05.py
+python scripts/render-music.py --only gb16-theme gb17-theme gb18-theme gb19-theme gb20-theme
+```
+
+第5回のGB16・GB18は初稿も `images/gb16-cover-draft.png`・`images/gb18-cover-draft.png` に保管しました。初稿はゲームへ登録せず、採用版は `*-cover-a.png` です。各prompt.txtに初稿指示と修正指示を記録しています。
