@@ -76,10 +76,10 @@ async function newPage(viewport, seed, inspectAudio = false) {
   if (seed) {
     S.validateShelf(stories, seed);
     await page.addInitScript(({ key, shelf }) => {
-      // Seed once only. A subsequent reload must use the application's autosave.
-      if (!sessionStorage.getItem('gamebook.qa.seeded')) {
+      // Seed an empty record only. A separate sessionStorage marker must not
+      // permit this fixture to overwrite an existing application autosave.
+      if (localStorage.getItem(key) === null) {
         localStorage.setItem(key, JSON.stringify(shelf));
-        sessionStorage.setItem('gamebook.qa.seeded', '1');
       }
     }, { key: STORAGE_KEY, shelf: seed });
   }
