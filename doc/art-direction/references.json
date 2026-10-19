@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "decisionDate": "2026-10-19",
+  "timezone": "Asia/Tokyo",
+  "selected": "A",
+  "set": "色数を減らした後の最終比較3案",
+  "decision": "Aでいこう。docに記述。B、Cもメモっといて",
+  "runtimeInstalled": false,
+  "references": [
+    {
+      "id": "A",
+      "title": "くっきりした色面・少色ドット絵",
+      "status": "selected",
+      "path": "doc/art-direction/a-selected.png",
+      "sourceFile": "exec-60d45e60-bace-4d7b-80fb-c0f23290064e.png",
+      "generationMethod": "imagegen",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1351723,
+      "sha256": "4befe98aab032bcf5db750d1d46d8fc0f6dfd4ab54a9e02ed180c34f31c3d428",
+      "modifiedAfterGeneration": false
+    },
+    {
+      "id": "B",
+      "title": "温かな絵本風",
+      "status": "reference_only",
+      "path": "doc/art-direction/b-reference.png",
+      "sourceFile": "exec-4bbb7f52-f401-4757-97c1-35800028c8a7.png",
+      "generationMethod": "imagegen",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1562881,
+      "sha256": "2a9386d24122403b9478566ce1e0cf742845a1616e568dc11d4a60466b9b6ef9",
+      "modifiedAfterGeneration": false
+    },
+    {
+      "id": "C",
+      "title": "寒色中心の幻想感",
+      "status": "reference_only",
+      "path": "doc/art-direction/c-reference.png",
+      "sourceFile": "exec-12426069-6398-4efc-be31-9a74d8ee06b9.png",
+      "generationMethod": "imagegen",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1465018,
+      "sha256": "68a6e3528b0ee064a74d1e1e9aea141d2fa9ed55af8d358218f95c3fee9f5496",
+      "modifiedAfterGeneration": false
+    }
+  ]
+}

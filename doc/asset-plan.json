@@ -1,14 +1,14 @@
 {
-  "planVersion": 1,
+  "planVersion": 2,
   "updated": "2026-10-19",
-  "status": "planned_only",
-  "scope": "初回実装時は絵と音楽を制作・導入しない。次回以降に順次制作するための引継ぎ。",
+  "status": "art_direction_selected",
+  "scope": "画像の画風はAの少色ドット絵を採用。B・Cは比較資料としてdocに保存。配布用素材は順次制作・導入する。",
   "runtimeManifest": "assets/manifest.json",
   "imageSpecification": {
     "delivery": "WebP, sRGB, 1600×1000px, 8:5, opaque background",
     "editable_master": "2560×1600px以上のPNG等。編集原本の保管先を採用記録へ残す。",
     "size_target": "配布画像1枚500KB以下を目安。文字と細部を潰す圧縮は避ける。",
-    "style": "紙と鉛筆の質感を薄く残した挿絵。抑えた彩度、明暗の大きな形、生活道具の具体性。作品ごとに色調を変える。",
+    "style": "Aの少色ドット絵。大きな色面、少ない陰影段階、くっきりした階段状の輪郭。細かな中間色・材質・滑らかな階調を増やさない。舞台に応じて色相を変え、縦横比を保つ。",
     "safe_area": "中央60%×70%に主役を置く。見出し横176×110pxや作品カードの帯で読める大きな形にし、端に人物の顔・重要物を寄せない。",
     "text_policy": "題名・UI・読ませる文字を絵に焼き込まない。画像なしでも本文だけで判断できること。"
   },
@@ -900,5 +900,18 @@
       "alt": "世界を閉じる小さな店・奥の鍵、表の鍵の挿絵",
       "position": "center"
     }
-  ]
+  ],
+  "artDirection": {
+    "selected": "A",
+    "decisionDate": "2026-10-19",
+    "document": "doc/ART_DIRECTION.md",
+    "referenceManifest": "doc/art-direction/references.json",
+    "selectedReference": "doc/art-direction/a-selected.png",
+    "alternatives": [
+      "doc/art-direction/b-reference.png",
+      "doc/art-direction/c-reference.png"
+    ],
+    "palettePolicy": "少色の見た目を基準とし、厳密な色数・論理解像度は固定しない。",
+    "runtimeInstalled": false
+  }
 }
