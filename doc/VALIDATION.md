@@ -43,7 +43,7 @@ npm test
 
 ## ブラウザ試験：26ケース成功（素材第1回導入後）
 
-環境：Playwright 1.62.1、Chrome for Testing 155.0.8059.84。`index.html`を`file://`で直接開きました。ゲーム用のHTTPサーバーは使用していません。
+素材第1回のローカル検証環境：Playwright 1.62.1、Chromium 153.0.8010.0。`index.html`を`file://`で直接開きました。ゲーム用のHTTPサーバーは使用していません。
 
 自動で確認した画面サイズは次のとおりです。
 
