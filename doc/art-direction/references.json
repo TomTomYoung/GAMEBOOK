@@ -5,7 +5,7 @@
   "selected": "A",
   "set": "色数を減らした後の最終比較3案",
   "decision": "Aでいこう。docに記述。B、Cもメモっといて",
-  "runtimeInstalled": false,
+  "runtimeInstalled": true,
   "references": [
     {
       "id": "A",
@@ -18,7 +18,9 @@
       "height": 992,
       "bytes": 1351723,
       "sha256": "4befe98aab032bcf5db750d1d46d8fc0f6dfd4ab54a9e02ed180c34f31c3d428",
-      "modifiedAfterGeneration": false
+      "modifiedAfterGeneration": false,
+      "runtimePath": "assets/images/gb01-cover.webp",
+      "conversion": "WebP quality 95, original 1586×992 dimensions; no resizing or recoloring"
     },
     {
       "id": "B",

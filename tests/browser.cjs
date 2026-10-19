@@ -15,6 +15,7 @@ const { pathToFileURL } = require('node:url');
 const E = require('../js/engine.js');
 const S = require('../js/storage.js');
 const stories = require('../js/stories.js');
+const assets = require('../js/assets.js');
 
 const ROOT = path.resolve(__dirname, '..');
 const URL = process.env.GAMEBOOK_URL || pathToFileURL(path.join(ROOT, 'index.html')).href;
@@ -50,9 +51,18 @@ async function screenshot(page, name) {
   screenshots.push(filename);
 }
 
-async function newPage(viewport, seed) {
+async function newPage(viewport, seed, inspectAudio = false) {
   const context = await browser.newContext({ viewport, acceptDownloads: true, locale: 'ja-JP' });
   const page = await context.newPage();
+  if (inspectAudio) await page.addInitScript(() => {
+    const NativeAudio = window.Audio;
+    window.__gamebookAudio = [];
+    window.Audio = function (...args) {
+      const media = new NativeAudio(...args);
+      window.__gamebookAudio.push(media);
+      return media;
+    };
+  });
   currentPage = page;
   page.on('pageerror', error => diagnostics.push({ case: currentCase, type: 'pageerror', message: error.message }));
   page.on('console', message => {
@@ -67,10 +77,10 @@ async function newPage(viewport, seed) {
   if (seed) {
     S.validateShelf(stories, seed);
     await page.addInitScript(({ key, shelf }) => {
-      // Seed once only. A subsequent reload must use the application's autosave.
-      if (!sessionStorage.getItem('gamebook.qa.seeded')) {
+      // Seed an empty record only. A separate sessionStorage marker must not
+      // permit this fixture to overwrite an existing application autosave.
+      if (localStorage.getItem(key) === null) {
         localStorage.setItem(key, JSON.stringify(shelf));
-        sessionStorage.setItem('gamebook.qa.seeded', '1');
       }
     }, { key: STORAGE_KEY, shelf: seed });
   }
@@ -495,6 +505,98 @@ async function testSavesAndHistory() {
   });
 }
 
+async function testInstalledAssets() {
+  await runCase('installed-images-and-real-audio', async () => {
+    const page = await newPage(VIEWPORTS[0], undefined, true);
+    await page.waitForFunction(() => Array.from(document.querySelectorAll('img')).every(i => i.complete && i.naturalWidth > 0));
+    assert.equal(await page.locator('#library-art img').count(), 1);
+    assert.equal(await page.locator('[data-story-id="GB01"] img').count(), 1);
+    assert.equal(await page.evaluate(() => window.__gamebookAudio.length), 0, 'initial OFF must not load audio');
+    await page.locator('#music-button').click();
+    await page.waitForFunction(() => window.__gamebookAudio[0]?.currentTime > .1);
+    assert.equal(await page.evaluate(() => window.__gamebookAudio[0].src.endsWith('/assets/audio/library.ogg')), true);
+    await layout(page, 'library with artwork and music button');
+    await screenshot(page, 'assets-library-1280x720');
+    await openFromShelf(page, 'GB01');
+    await page.waitForFunction(() => window.__gamebookAudio[0].src.endsWith('/assets/audio/gb01-theme.ogg') && window.__gamebookAudio[0].currentTime > .1);
+    await page.waitForFunction(() => document.querySelector('#scene-art img')?.naturalWidth > 0);
+    await layout(page, 'GB01 with artwork and music button');
+    await screenshot(page, 'assets-GB01-1280x720');
+    assert.equal(await page.evaluate(() => window.__gamebookAudio.length), 1, 'switching stories must reuse one player');
+    assert.equal(await page.evaluate(() => window.__gamebookAudio[0].loop), true);
+    // Exercise the real decoder at the loop boundary without waiting 85 seconds.
+    await page.evaluate(() => { const a = window.__gamebookAudio[0]; a.currentTime = a.duration - .12; });
+    await page.waitForFunction(() => { const a = window.__gamebookAudio[0]; return !a.paused && a.currentTime > .05 && a.currentTime < 2; });
+    await page.locator('#music-button').click();
+    assert.equal(await page.evaluate(() => window.__gamebookAudio[0].paused), true);
+    await page.locator('#music-button').click();
+    await page.waitForFunction(() => !window.__gamebookAudio[0].paused);
+    // Same-task changes intentionally cancel play promises. No stale rejection
+    // may disable the final source or show a false "cannot play" notification.
+    await page.evaluate(() => {
+      for (let i = 0; i < 4; i++) {
+        document.querySelector('#shelf-button').click();
+        document.querySelector('[data-story-id="GB01"]').click();
+      }
+    });
+    await page.waitForFunction(() => !window.__gamebookAudio[0].paused && window.__gamebookAudio[0].currentTime > .1);
+    assert.equal(await page.locator('#music-button').getAttribute('aria-pressed'), 'true');
+    assert(!((await page.locator('#toast').textContent()).includes('再生できません')));
+    for (const viewport of VIEWPORTS.slice(1)) {
+      await page.setViewportSize(viewport); await settle(page);
+      await layout(page, `GB01 artwork ${viewport.width}x${viewport.height}`);
+      await screenshot(page, `assets-GB01-${viewport.width}x${viewport.height}`);
+    }
+    const silentStory = stories.find(story => !assets.stories[story.id].music);
+    if (silentStory) {
+      await openFromShelf(page, silentStory.id);
+      assert.equal(await page.evaluate(() => window.__gamebookAudio[0].paused), true);
+      assert.equal(await page.locator('#music-button').isVisible(), false);
+    }
+    await page.locator('#shelf-button').click();
+    await page.waitForFunction(() => !window.__gamebookAudio[0].paused && window.__gamebookAudio[0].src.endsWith('/assets/audio/library.ogg'));
+    // Hide/restore without changing the saved ON preference.
+    await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, get: () => true }); document.dispatchEvent(new Event('visibilitychange')); });
+    assert.equal(await page.evaluate(() => window.__gamebookAudio[0].paused), true);
+    await page.evaluate(() => { delete document.hidden; document.dispatchEvent(new Event('visibilitychange')); });
+    await page.waitForFunction(() => !window.__gamebookAudio[0].paused);
+  });
+}
+
+async function testStoryAssets() {
+  for (const story of stories) {
+    const media = assets.stories[story.id];
+    if (story.id === 'GB01' || !media.image || !media.music) continue;
+    await runCase(`assets-${story.id}`, async () => {
+      const page = await newPage(VIEWPORTS[0], undefined, true);
+      await openFromShelf(page, story.id);
+      await page.waitForFunction(src => {
+        const image = document.querySelector('#scene-art img');
+        return image?.complete && image.naturalWidth > 0 && image.src.endsWith('/' + src);
+      }, media.image.src);
+      assert.equal(await page.evaluate(() => window.__gamebookAudio.length), 0);
+      await page.locator('#music-button').click();
+      await page.waitForFunction(src => {
+        const audio = window.__gamebookAudio[0];
+        return audio?.src.endsWith('/' + src) && audio.currentTime > .1;
+      }, media.music.src);
+      assert.equal(await page.evaluate(() => window.__gamebookAudio[0].volume), media.music.volume);
+      assert.equal(await page.evaluate(() => window.__gamebookAudio[0].loop), true);
+      await page.evaluate(() => { const audio = window.__gamebookAudio[0]; audio.currentTime = audio.duration - .12; });
+      await page.waitForFunction(() => { const audio = window.__gamebookAudio[0]; return !audio.paused && audio.currentTime > .05 && audio.currentTime < 2; });
+      for (const viewport of VIEWPORTS) {
+        await page.setViewportSize(viewport); await settle(page);
+        await layout(page, `${story.id} artwork ${viewport.width}x${viewport.height}`);
+        await screenshot(page, `assets-${story.id}-${viewport.width}x${viewport.height}`);
+        await readEveryPage(page, introText(story), `${story.id} with artwork`);
+      }
+      assert.equal(await page.evaluate(() => window.__gamebookAudio.length), 1);
+      await page.locator('#music-button').click();
+      assert.equal(await page.evaluate(() => window.__gamebookAudio[0].paused), true);
+    });
+  }
+}
+
 async function main() {
   fs.mkdirSync(OUTPUT, { recursive: true });
   let playwright;
@@ -506,6 +608,8 @@ async function main() {
   const version = browser.version();
   const started = new Date().toISOString();
   try {
+    await testInstalledAssets();
+    await testStoryAssets();
     await testResponsive();
     await testSavesAndHistory();
     await testAllStories();

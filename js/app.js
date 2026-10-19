@@ -13,7 +13,7 @@
   let choices = [], choicePages = [], choicePage = 0;
   let inTransition = false, framePending = false, toastTimer, saveTimer;
   let rawRecovery = null, storageError = null, storageWarned = false, externalConflict = false;
-  let audio = null, audioSource = '', musicEnabled = false;
+  let music = null;
   let isImportPending = false;
 
   function el(tag, className, text) {
@@ -115,30 +115,16 @@
     container.classList.add('has-image');
     container.append(image);
   }
+  function renderMusicButton() {
+    $('music-button').textContent = music.enabled ? '音楽 ON' : '音楽 OFF';
+    $('music-button').setAttribute('aria-pressed', String(music.enabled));
+  }
   function updateMusic() {
     const track = active ? sceneFor(currentStory(), currentSession().nodeId, bookmark().intro).music : assets.library.music;
     $('music-button').hidden = !track;
-    $('music-button').textContent = musicEnabled ? '音楽 ON' : '音楽 OFF';
-    $('music-button').setAttribute('aria-pressed', String(musicEnabled));
-    if (!track || !musicEnabled) {
-      if (audio) audio.pause();
-      if (!track) audioSource = '';
-      return;
-    }
-    if (!audio) audio = new Audio();
-    if (audioSource !== track.src) {
-      audio.pause();
-      audio.src = track.src;
-      audioSource = track.src;
-    }
-    audio.loop = track.loop;
-    audio.volume = track.volume;
-    audio.play().catch(() => {
-      musicEnabled = false;
-      $('music-button').textContent = '音楽 OFF';
-      $('music-button').setAttribute('aria-pressed', 'false');
-      notify('音楽を再生できませんでした。音楽ボタンからもう一度お試しください。');
-    });
+    $('music-button').title = track ? track.title : '';
+    music.setTrack(track);
+    renderMusicButton();
   }
 
   function capacityForShelf() {
@@ -715,7 +701,12 @@
   }
 
   try {
-    if (!E || !S || !Array.isArray(stories) || stories.length !== 20 || !assets) throw new Error('ゲームのファイルが揃っていません。フォルダ全体を展開し、index.htmlを開いてください。');
+    if (!E || !S || !globalThis.GBMusic || !Array.isArray(stories) || stories.length !== 20 || !assets) throw new Error('ゲームのファイルが揃っていません。フォルダ全体を展開し、index.htmlを開いてください。');
+    music = globalThis.GBMusic.createPlayer({
+      onChange: renderMusicButton,
+      onError: () => notify('音楽を再生できませんでした。音楽ボタンからもう一度お試しください。')
+    });
+    music.setSuspended(document.hidden);
     loadShelf();
     preferences();
     $('brand-button').addEventListener('click', showLibrary);
@@ -740,7 +731,7 @@
       const rect = $('modal').getBoundingClientRect();
       if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeModal();
     });
-    $('music-button').addEventListener('click', () => { musicEnabled = !musicEnabled; updateMusic(); });
+    $('music-button').addEventListener('click', () => music.setEnabled(!music.enabled));
     $('import-input').addEventListener('change', event => importFile(event.target.files[0]));
     document.addEventListener('keydown', event => {
       if (!active || $('modal').open || /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName)) return;
@@ -756,10 +747,11 @@
       observer.observe($('choice-list'));
     }
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden) { rememberPage(); persist(true); if (audio) audio.pause(); }
-      else updateMusic();
+      if (document.hidden) { rememberPage(); persist(true); }
+      music.setSuspended(document.hidden);
     });
-    window.addEventListener('pagehide', () => { rememberPage(); persist(true); });
+    window.addEventListener('pagehide', () => { rememberPage(); persist(true); music.setSuspended(true); });
+    window.addEventListener('pageshow', () => music.setSuspended(document.hidden));
     // Cross-tab writes are explicit: an already open book never silently jumps.
     window.addEventListener('storage', event => {
       if (event.key === STORAGE_KEY && event.newValue !== JSON.stringify(shelf)) {
