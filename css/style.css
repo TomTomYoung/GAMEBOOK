@@ -487,6 +487,7 @@ a {
 }
 .chapter-heading h1 {
   font-family:var(--serif);
+  text-wrap:balance;
   font-size:clamp(25px,2.3vw,35px);
   font-weight:500;
   line-height:1.65;

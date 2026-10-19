@@ -1,0 +1,2429 @@
+{
+  "id": "gb04-theme",
+  "title": "空席の車輪",
+  "bpm": 88,
+  "bars": 32,
+  "meter": "4/4",
+  "key": "E minor / Dorian color",
+  "form": "A8 B8 A′8 B′8",
+  "description": "軽い撥弦の3+3+2の刻み、控えめな低弦と合成ブラシ。足取りを保ちながら、追跡や会談の成否を音で確定しない。",
+  "seed": 2026101904,
+  "events": [
+    {
+      "at": 0,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 0,
+      "note": "E4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 0,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 0,
+      "note": "G3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 1,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 1.5,
+      "note": "B3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 1.5,
+      "note": "G4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 3,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 3,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 3,
+      "note": "B4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 4,
+      "note": "D3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 4,
+      "note": "D3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 4,
+      "note": "F#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 4.5,
+      "note": "A4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 5,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 5.5,
+      "note": "A3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 6,
+      "note": "F#4",
+      "beats": 1.1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 7,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 7,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 8,
+      "note": "A2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 8,
+      "note": "E4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 8,
+      "note": "A2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 8,
+      "note": "C#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 9,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 9.5,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 9.5,
+      "note": "C#4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 11,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 11,
+      "note": "C#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 11,
+      "note": "E4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 12,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 12,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 12,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 12.5,
+      "note": "F#4",
+      "beats": 1.2,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 13,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 13.5,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 14.5,
+      "note": "B3",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 15,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 15,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 16,
+      "note": "C3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 16,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 16,
+      "note": "C3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 16,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 17,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 17.5,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 17.5,
+      "note": "E4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 19,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 19,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 19,
+      "note": "G4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 20,
+      "note": "G2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 20,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 20,
+      "note": "G2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 20.5,
+      "note": "B4",
+      "beats": 0.8,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 21,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 21.5,
+      "note": "D3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 22,
+      "note": "A4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 23,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 23,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 24,
+      "note": "A2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 24,
+      "note": "G4",
+      "beats": 0.7,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 24,
+      "note": "A2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 24,
+      "note": "C3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 25,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 25.5,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 25.5,
+      "note": "E4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 27,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 27,
+      "note": "C3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 27,
+      "note": "C4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 28,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 28,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 28,
+      "note": "D#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 28.5,
+      "note": "F#4",
+      "beats": 1.25,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 29,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 29.5,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 30.5,
+      "note": "D#4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 31,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 31,
+      "note": "D#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 32,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 32,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 32,
+      "note": "G3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 32.5,
+      "note": "B4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 33,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 33.5,
+      "note": "B3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 34,
+      "note": "G4",
+      "beats": 0.8,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 35,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 35,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 36,
+      "note": "D3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 36,
+      "note": "F#4",
+      "beats": 0.7,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 36,
+      "note": "D3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 36,
+      "note": "F#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 37,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 37.5,
+      "note": "A3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 37.5,
+      "note": "A4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 39,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 39,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 39,
+      "note": "D5",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 40,
+      "note": "A2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 40,
+      "note": "A2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 40,
+      "note": "C#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 40.5,
+      "note": "C#5",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 41,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 41.5,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 42,
+      "note": "A4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 43,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 43,
+      "note": "C#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 44,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 44,
+      "note": "F#4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 44,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 44,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 45,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 45.5,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 45.5,
+      "note": "E4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 47,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 47,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 47,
+      "note": "B3",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 48,
+      "note": "C3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 48,
+      "note": "C3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 48,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 48.5,
+      "note": "C5",
+      "beats": 0.8,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 49,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 49.5,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 50,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 51,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 51,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 52,
+      "note": "G2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 52,
+      "note": "B4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 52,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 52,
+      "note": "G2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 53,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 53.5,
+      "note": "D3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 53.5,
+      "note": "D5",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 55,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 55,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 55,
+      "note": "B4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 56,
+      "note": "A2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 56,
+      "note": "A2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 56,
+      "note": "C3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 56.5,
+      "note": "A4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 57,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 57.5,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 58,
+      "note": "E4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 59,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 59,
+      "note": "C3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 60,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 60,
+      "note": "F#4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 60,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 60,
+      "note": "D#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 61,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 61.5,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 61.5,
+      "note": "D#4",
+      "beats": 1.1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 63,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 63,
+      "note": "D#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 64,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 64,
+      "note": "E4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 64,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 64,
+      "note": "G3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 65,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 65.5,
+      "note": "B3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 65.5,
+      "note": "G4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 67,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 67,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 67,
+      "note": "B4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 68,
+      "note": "D3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 68,
+      "note": "D3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 68,
+      "note": "F#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 68.5,
+      "note": "A4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 69,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 69.5,
+      "note": "A3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 70,
+      "note": "F#4",
+      "beats": 1.1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 71,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 71,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 72,
+      "note": "A2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 72,
+      "note": "E4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 72,
+      "note": "A2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 72,
+      "note": "C#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 73,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 73.5,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 73.5,
+      "note": "C#4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 75,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 75,
+      "note": "C#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 75,
+      "note": "E4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 76,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 76,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 76,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 76.5,
+      "note": "F#4",
+      "beats": 1.2,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 77,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 77.5,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 78.5,
+      "note": "B3",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 79,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 79,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 80,
+      "note": "C3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 80,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 80,
+      "note": "C3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 80,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 81,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 81.5,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 81.5,
+      "note": "E4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 83,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 83,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 83,
+      "note": "G4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 84,
+      "note": "G2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 84,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 84,
+      "note": "G2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 84.5,
+      "note": "B4",
+      "beats": 0.8,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 85,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 85.5,
+      "note": "D3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 86,
+      "note": "A4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 87,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 87,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 88,
+      "note": "A2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 88,
+      "note": "G4",
+      "beats": 0.7,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 88,
+      "note": "A2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 88,
+      "note": "C3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 89,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 89.5,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 89.5,
+      "note": "E4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 91,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 91,
+      "note": "C3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 91,
+      "note": "C4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 92,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 92,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 92,
+      "note": "D#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 92.5,
+      "note": "F#4",
+      "beats": 1.25,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 93,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 93.5,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 94.5,
+      "note": "D#4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 95,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 95,
+      "note": "D#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 96,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 96,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 96,
+      "note": "G3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 96.5,
+      "note": "B4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 97,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 97.5,
+      "note": "B3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 98,
+      "note": "G4",
+      "beats": 0.8,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 99,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 99,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 100,
+      "note": "D3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 100,
+      "note": "F#4",
+      "beats": 0.7,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 100,
+      "note": "D3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 100,
+      "note": "F#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 101,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 101.5,
+      "note": "A3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 101.5,
+      "note": "A4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 103,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 103,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 103,
+      "note": "D5",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 104,
+      "note": "A2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 104,
+      "note": "A2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 104,
+      "note": "C#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 104.5,
+      "note": "C#5",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 105,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 105.5,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 106,
+      "note": "A4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 107,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 107,
+      "note": "C#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 108,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 108,
+      "note": "F#4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 108,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 108,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 109,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 109.5,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 109.5,
+      "note": "E4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 111,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 111,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 111,
+      "note": "B3",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 112,
+      "note": "C3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 112,
+      "note": "C3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 112,
+      "note": "E3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 112.5,
+      "note": "C5",
+      "beats": 0.8,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 113,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 113.5,
+      "note": "G3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 114,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 115,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 115,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 116,
+      "note": "G2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 116,
+      "note": "B4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 116,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 116,
+      "note": "G2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 117,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 117.5,
+      "note": "D3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 117.5,
+      "note": "D5",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 119,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 119,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 119,
+      "note": "B4",
+      "beats": 0.65,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 120,
+      "note": "A2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 120,
+      "note": "A2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 120,
+      "note": "C3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 120.5,
+      "note": "A4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 121,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 121.5,
+      "note": "E3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 122,
+      "note": "E4",
+      "beats": 1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 123,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 123,
+      "note": "C3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 124,
+      "note": "B2",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 124,
+      "note": "F#4",
+      "beats": 0.75,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 124,
+      "note": "B2",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 124,
+      "note": "D#3",
+      "beats": 3.9,
+      "instrument": "short-strings",
+      "gain": 0.018,
+      "pan": -0.15
+    },
+    {
+      "at": 125,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 125.5,
+      "note": "F#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    },
+    {
+      "at": 125.5,
+      "note": "D#4",
+      "beats": 1.1,
+      "instrument": "pluck",
+      "gain": 0.13,
+      "pan": 0.18
+    },
+    {
+      "at": 127,
+      "note": "C2",
+      "beats": 0.28,
+      "instrument": "brush",
+      "gain": 0.08,
+      "pan": 0.25
+    },
+    {
+      "at": 127,
+      "note": "D#3",
+      "beats": 0.9,
+      "instrument": "pizzicato",
+      "gain": 0.07,
+      "pan": -0.25
+    }
+  ]
+}

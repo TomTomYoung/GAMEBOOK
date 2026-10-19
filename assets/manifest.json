@@ -29,23 +29,59 @@
       "scenes": {}
     },
     "GB02": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb02-cover.webp",
+        "alt": "白い骨を編んだ大きな橋と、川の向こうの西岸。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb02-theme.ogg",
+        "title": "骨の欄干",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB03": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb03-cover.webp",
+        "alt": "終夜駅の木の窓口と、銅の蝶番が付いた閉じた木箱。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb03-theme.ogg",
+        "title": "終夜窓口",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB04": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb04-cover.webp",
+        "alt": "夕方の運河沿いに止まる儀礼馬車。暗い窓に人影はない。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb04-theme.ogg",
+        "title": "空席の車輪",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB05": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb05-cover.webp",
+        "alt": "乾いた山道の上に浮かび、一本の縄でつながれた小さな荷雲。",
+        "position": "center 30%"
+      },
+      "music": {
+        "src": "assets/audio/gb05-theme.ogg",
+        "title": "縄で運ぶ空",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB06": {

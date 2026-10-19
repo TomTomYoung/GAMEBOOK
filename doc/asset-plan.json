@@ -1,19 +1,19 @@
 {
-  "planVersion": 3,
+  "planVersion": 4,
   "updated": "2026-10-19",
   "status": "in_progress",
-  "scope": "Aの少色ドット絵で制作中。共通画面とGB01の画像2点・音楽2曲を導入済み。B・Cは比較資料として保持。",
+  "scope": "Aの少色ドット絵で制作中。共通画面とGB01〜GB05の画像6点・音楽6曲を導入。B・Cは比較資料として保持。",
   "runtimeManifest": "assets/manifest.json",
   "imageSpecification": {
     "delivery": "WebP, sRGB, 8:5前後, opaque background。標準目安1600×1000px。生成原本の縦横比と実寸を優先し、寸法合わせの引き伸ばしは行わない。",
-    "editable_master": "PNG生成原本を保存。初回計画は2560×1600px以上を目安としていたが、採用Aと最初の2点は1586×992pxの原本をそのまま使用。人工的な拡大はしない。",
+    "editable_master": "PNG生成原本を保存。採用Aと第1回は1586×992px、第2回は1584×993pxまたは1586×992px。人工的な拡大は行わず、原寸・縦横比を保持。",
     "size_target": "配布画像1枚500KB以下を目安。文字と細部を潰す圧縮は避ける。",
     "style": "Aの少色ドット絵。大きな色面、少ない陰影段階、くっきりした階段状の輪郭。細かな中間色・材質・滑らかな階調を増やさない。舞台に応じて色相を変え、縦横比を保つ。",
     "safe_area": "中央60%×70%に主役を置く。見出し横176×110pxや作品カードの帯で読める大きな形にし、端に人物の顔・重要物を寄せない。",
     "text_policy": "題名・UI・読ませる文字を絵に焼き込まない。画像なしでも本文だけで判断できること。"
   },
   "musicSpecification": {
-    "delivery": "Ogg Vorbis, stereo, 44.1kHzまたは48kHz。初回2曲はVorbis品質4、実平均約42/64kbps。128〜160kbpsは当初の目安。圧縮音質の試聴は未完了。",
+    "delivery": "Ogg Vorbis, stereo, 44.1kHz。導入済み6曲はVorbis品質4。実ビットレート・音量・時間は各制作記録を参照。128〜160kbpsは当初の目安。聴感による確認は未完了。",
     "master": "音符・編成のscore.jsonと合成スクリプトを保管。24bit WAVを一時生成してOggへ変換。WAV自体は常設せず、同じ制作環境で再生成する。",
     "duration_seconds": 90,
     "loop": true,
@@ -30,14 +30,16 @@
     "sceneP2": 20
   },
   "nextBatch": [
-    "IMG-GB02-COVER",
-    "BGM-GB02",
-    "IMG-GB03-COVER",
-    "BGM-GB03",
-    "IMG-GB04-COVER",
-    "BGM-GB04",
-    "IMG-GB05-COVER",
-    "BGM-GB05"
+    "IMG-GB06-COVER",
+    "BGM-GB06",
+    "IMG-GB07-COVER",
+    "BGM-GB07",
+    "IMG-GB08-COVER",
+    "BGM-GB08",
+    "IMG-GB09-COVER",
+    "BGM-GB09",
+    "IMG-GB10-COVER",
+    "BGM-GB10"
   ],
   "assets": [
     {
@@ -124,12 +126,16 @@
       "role": "story",
       "storyId": "GB02",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb02-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "白い骨を編んだ橋と遠い西岸。番人の巨大さは橋の寸法で伝え、決闘の勝敗や父の剣の返還を先に描かない。",
       "alt": "骨の橋で待つものの作品イメージ",
-      "position": "center"
+      "position": "center",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 2,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB02",
@@ -137,12 +143,16 @@
       "role": "story",
       "storyId": "GB02",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb02-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "骨の欄干",
       "brief": "乾いた木管、低い弦の刻み、控えめな撥弦。大きさと駆け引きの緊張を出し、英雄的な勝利曲に固定しない。",
-      "bpm": 84
+      "bpm": 84,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 2,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB02-SCENE-06",
@@ -166,12 +176,16 @@
       "role": "story",
       "storyId": "GB03",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb03-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "夜行駅の木のカウンターと銅の蝶番がある箱。奥の灯りと窓の反射で夜の生活感を出し、箱の引渡し先は構図に入れない。",
       "alt": "眠らない駅の忘れ物の作品イメージ",
-      "position": "center"
+      "position": "center",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 2,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB03",
@@ -179,12 +193,16 @@
       "role": "story",
       "storyId": "GB03",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb03-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "終夜窓口",
       "brief": "小さなピアノ、柔らかなクラリネット、薄い弦。舞台の伴奏ほど前に出ず、短い問いと余白のある返事を往復させる。",
-      "bpm": 72
+      "bpm": 72,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 2,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB03-SCENE-06",
@@ -208,12 +226,16 @@
       "role": "story",
       "storyId": "GB04",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb04-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "運河沿いの儀礼馬車を低い角度で描く。窓は暗く、車内へ人影を入れない。陽動と街の暮らしを同居させる。",
       "alt": "王女を運ばない馬車の作品イメージ",
-      "position": "center"
+      "position": "center",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 2,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB04",
@@ -221,12 +243,16 @@
       "role": "story",
       "storyId": "GB04",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb04-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "空席の車輪",
       "brief": "軽い撥弦、控えめな中低域の弦、細い打楽器。追跡の足取りと役目を引き受ける静けさを両立させる。",
-      "bpm": 88
+      "bpm": 88,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 2,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB04-SCENE-03",
@@ -250,12 +276,16 @@
       "role": "story",
       "storyId": "GB05",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb05-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "乾いた山道と小さな荷雲をつなぐ縄。雲の底の計量線は見えない角度にし、瓶の量も描き分けない。移動する天気の不思議さを主題にする。",
       "alt": "雨を買った村の作品イメージ",
-      "position": "center"
+      "position": "center 30%",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 2,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB05",
@@ -263,12 +293,16 @@
       "role": "story",
       "storyId": "GB05",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb05-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "縄で運ぶ空",
       "brief": "アコースティックの撥弦、淡い木管、柔らかな低音。乾いた山道から地面へ水が届く感触。鐘を鳴らす効果音は入れない。",
-      "bpm": 78
+      "bpm": 78,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 2,
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB05-SCENE-03",
@@ -931,13 +965,13 @@
     "runtimeInstalled": true
   },
   "progress": {
-    "installedImages": 2,
-    "installedMusic": 2,
-    "installedTotal": 4,
-    "remainingImages": 39,
-    "remainingMusic": 19,
-    "remainingTotal": 58,
-    "remainingCoreP1": 38,
+    "installedImages": 6,
+    "installedMusic": 6,
+    "installedTotal": 12,
+    "remainingImages": 35,
+    "remainingMusic": 15,
+    "remainingTotal": 50,
+    "remainingCoreP1": 30,
     "remainingSceneP2": 20
   }
 }

@@ -3,7 +3,7 @@
 
 Build-time dependencies: Python 3, numpy, scipy, ffmpeg. The game only needs
 the resulting Ogg files. Notes, arrangement and timbres are retained in source.
-Usage: python scripts/render-music.py [--only library|gb01-theme]
+Usage: python scripts/render-music.py [--only gb02-theme gb03-theme ...]
 """
 from pathlib import Path
 import argparse
@@ -42,22 +42,36 @@ def voice(note, duration, instrument, rng):
             signal += level * np.sin(2 * np.pi * partial * t) * decay
             signal += .12 * level * np.sin(2 * np.pi * partial * 1.0008 * t) * decay
         envelope = (1 - np.exp(-t / .009)) * np.minimum(1, (duration - t) / .18)
-    elif instrument == 'woodwind':
+    elif instrument in ('pluck', 'pizzicato'):
+        signal = np.zeros(len(t))
+        damping = 2.3 if instrument == 'pluck' else 4.0
+        for h, level in enumerate([1, .46, .21, .10, .05, .025], 1):
+            signal += level * np.sin(2 * np.pi * freq * h * t) * np.exp(-t * (damping + h * .8))
+        envelope = (1 - np.exp(-t / .004)) * np.minimum(1, (duration - t) / .12)
+    elif instrument == 'brush':
+        noise = rng.standard_normal(len(t))
+        signal = lfilter([.08], [1, -.92], noise)
+        envelope = (1 - np.exp(-t / .018)) * np.exp(-t * 18) * np.minimum(1, (duration - t) / .08)
+    elif instrument in ('woodwind', 'clarinet'):
         phase = 2 * np.pi * freq * t + .025 * np.sin(2 * np.pi * 4.6 * t)
         signal = np.sin(phase) + .065 * np.sin(2 * phase) + .14 * np.sin(3 * phase) + .025 * np.sin(5 * phase)
+        if instrument == 'clarinet':
+            signal += .12 * np.sin(3 * phase) + .04 * np.sin(5 * phase)
         breath = lfilter([.1], [1, -.9], rng.standard_normal(len(t)))
         signal += .01 * breath
         envelope = np.minimum(1, t / .16) * np.minimum(1, (duration - t) / .3)
         envelope *= .93 + .07 * np.sin(np.pi * t / duration)
     else:
         signal = np.zeros(len(t))
-        harmonics = [1, .20, .10, .045, .02] if instrument == 'strings' else [1, .07, .025]
+        harmonics = [1, .20, .10, .045, .02] if instrument in ('strings', 'short-strings') else [1, .07, .025]
         for detune in [-.0015, .0015]:
             phase = 2 * np.pi * freq * (1 + detune) * t + .018 * np.sin(2 * np.pi * 4.1 * t)
             for h, level in enumerate(harmonics, 1):
                 signal += .5 * level * np.sin(h * phase + .15 * h)
         attack = .65 if instrument == 'strings' else .9
         release = .9 if instrument == 'strings' else 1.2
+        if instrument == 'short-strings':
+            attack, release = .08, .22
         envelope = np.minimum(1, t / attack) * np.minimum(1, (duration - t) / release)
         envelope = np.sin(np.maximum(0, envelope) * np.pi / 2) ** 2
     return signal * np.maximum(0, envelope)
@@ -98,16 +112,17 @@ def loudness(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--only', choices=['library', 'gb01-theme'])
+    score_paths = sorted((ROOT / 'sources/audio').glob('*.score.json'))
+    parser.add_argument('--only', nargs='+', choices=[p.name.removesuffix('.score.json') for p in score_paths])
     args = parser.parse_args()
     out = ROOT / 'assets/audio'
     out.mkdir(parents=True, exist_ok=True)
     report_path = ROOT / 'sources/audio/render-report.json'
     report = json.loads(report_path.read_text()) if report_path.exists() else {}
-    for score_path in sorted((ROOT / 'sources/audio').glob('*.score.json')):
+    for score_path in score_paths:
         score = json.loads(score_path.read_text())
         name = score['id']
-        if args.only and name != args.only:
+        if args.only and name not in args.only:
             continue
         samples = render(score)
         with tempfile.TemporaryDirectory(prefix='gamebook-music-') as temp:
