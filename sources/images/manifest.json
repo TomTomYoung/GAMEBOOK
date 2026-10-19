@@ -1,0 +1,28 @@
+[
+  {
+    "id": "IMG-GB01-COVER",
+    "path": "assets/images/gb01-cover.webp",
+    "width": 1586,
+    "height": 992,
+    "bytes": 113262,
+    "sha256": "5950572a751d778a139387f127dcd5f5966e44f44e1ee3800188eba4c4aca985",
+    "source": "doc/art-direction/a-selected.png",
+    "sourceSHA256": "4befe98aab032bcf5db750d1d46d8fc0f6dfd4ab54a9e02ed180c34f31c3d428",
+    "conversion": "ffmpeg libwebp quality 95; no resize, crop or palette conversion",
+    "generationMethod": "imagegen",
+    "styleReference": "doc/art-direction/a-selected.png"
+  },
+  {
+    "id": "IMG-LIBRARY",
+    "path": "assets/images/library.webp",
+    "width": 1586,
+    "height": 992,
+    "bytes": 165246,
+    "sha256": "21912d5467cedcd4392df2a1b3d717d8dc5e891147fb782ebd24155b00979a3c",
+    "source": "sources/images/library-a.png",
+    "sourceSHA256": "a524f6b07b678a7439f1a16ec168d00d0bc71a9a10c8d1ef95f062304ac76cf3",
+    "conversion": "ffmpeg libwebp quality 95; no resize, crop or palette conversion",
+    "generationMethod": "imagegen",
+    "styleReference": "doc/art-direction/a-selected.png"
+  }
+]

@@ -1,20 +1,20 @@
 {
-  "planVersion": 2,
+  "planVersion": 3,
   "updated": "2026-10-19",
-  "status": "art_direction_selected",
-  "scope": "画像の画風はAの少色ドット絵を採用。B・Cは比較資料としてdocに保存。配布用素材は順次制作・導入する。",
+  "status": "in_progress",
+  "scope": "Aの少色ドット絵で制作中。共通画面とGB01の画像2点・音楽2曲を導入済み。B・Cは比較資料として保持。",
   "runtimeManifest": "assets/manifest.json",
   "imageSpecification": {
-    "delivery": "WebP, sRGB, 1600×1000px, 8:5, opaque background",
-    "editable_master": "2560×1600px以上のPNG等。編集原本の保管先を採用記録へ残す。",
+    "delivery": "WebP, sRGB, 8:5前後, opaque background。標準目安1600×1000px。生成原本の縦横比と実寸を優先し、寸法合わせの引き伸ばしは行わない。",
+    "editable_master": "PNG生成原本を保存。初回計画は2560×1600px以上を目安としていたが、採用Aと最初の2点は1586×992pxの原本をそのまま使用。人工的な拡大はしない。",
     "size_target": "配布画像1枚500KB以下を目安。文字と細部を潰す圧縮は避ける。",
     "style": "Aの少色ドット絵。大きな色面、少ない陰影段階、くっきりした階段状の輪郭。細かな中間色・材質・滑らかな階調を増やさない。舞台に応じて色相を変え、縦横比を保つ。",
     "safe_area": "中央60%×70%に主役を置く。見出し横176×110pxや作品カードの帯で読める大きな形にし、端に人物の顔・重要物を寄せない。",
     "text_policy": "題名・UI・読ませる文字を絵に焼き込まない。画像なしでも本文だけで判断できること。"
   },
   "musicSpecification": {
-    "delivery": "Ogg Vorbis, stereo, 44.1kHzまたは48kHz, 128〜160kbpsを目安",
-    "master": "WAV 24bit。採用したループ開始・終了位置と編集原本の保管先を記録。",
+    "delivery": "Ogg Vorbis, stereo, 44.1kHzまたは48kHz。初回2曲はVorbis品質4、実平均約42/64kbps。128〜160kbpsは当初の目安。圧縮音質の試聴は未完了。",
+    "master": "音符・編成のscore.jsonと合成スクリプトを保管。24bit WAVを一時生成してOggへ変換。WAV自体は常設せず、同じ制作環境で再生成する。",
     "duration_seconds": 90,
     "loop": true,
     "loudness_target": "約−18 LUFS-I、最大True Peak −1 dBTP以下を制作目安にする。実ファイルで確認。",
@@ -30,10 +30,14 @@
     "sceneP2": 20
   },
   "nextBatch": [
-    "IMG-GB01-COVER",
-    "BGM-GB01",
-    "IMG-LIBRARY",
-    "BGM-LIBRARY"
+    "IMG-GB02-COVER",
+    "BGM-GB02",
+    "IMG-GB03-COVER",
+    "BGM-GB03",
+    "IMG-GB04-COVER",
+    "BGM-GB04",
+    "IMG-GB05-COVER",
+    "BGM-GB05"
   ],
   "assets": [
     {
@@ -41,24 +45,30 @@
       "kind": "image",
       "role": "library",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/library.webp",
       "placement": "作品一覧のイメージ領域",
       "brief": "夕方の小さな読書室。数冊の閉じた本と、空いている一脚の椅子。20作の特定の結末や人物を混在させず、選ぶ前の静かな場所を描く。",
       "alt": "夕方の読書室と閉じた本",
-      "position": "center"
+      "position": "center",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-LIBRARY",
       "kind": "music",
       "role": "library",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/library.ogg",
       "placement": "作品一覧。ユーザーが音楽をオンにした後のみ再生。",
       "title": "まだ開かない頁",
       "brief": "少ないピアノと柔らかな木管。作品を探している間に静かに巡る90秒ループ。特定の物語や勝敗を予告しない。",
-      "bpm": 64
+      "bpm": 64,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB01-COVER",
@@ -66,12 +76,15 @@
       "role": "story",
       "storyId": "GB01",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb01-cover.webp",
       "placement": "作品カードと、その作品の既定の読書イメージ。",
       "brief": "青灰色の潮と木の郵便局、欠けた白い塩柱、暖かな窓の明かり。郵便物や人員の現在の回収状況が分からない外観を主題にする。",
       "alt": "潮の下の郵便局の作品イメージ",
-      "position": "center"
+      "position": "center",
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "BGM-GB01",
@@ -79,12 +92,15 @@
       "role": "story",
       "storyId": "GB01",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/audio/gb01-theme.ogg",
       "placement": "作品の導入から全節・全結末。場面ごとの音楽変更は初期計画に含めない。",
       "title": "潮を待つ軒下",
       "brief": "柔らかなピアノ、低い弦、息の長いパッド。潮の揺れを短い音型にし、喪失だけへ寄せず仕事を続ける温かさを残す。",
-      "bpm": 68
+      "bpm": 68,
+      "installedDate": "2026-10-19",
+      "productionRecord": "doc/asset-production-log.md",
+      "reviewStatus": "technical_checks_passed_listening_pending"
     },
     {
       "id": "IMG-GB01-SCENE-03",
@@ -912,6 +928,16 @@
       "doc/art-direction/c-reference.png"
     ],
     "palettePolicy": "少色の見た目を基準とし、厳密な色数・論理解像度は固定しない。",
-    "runtimeInstalled": false
+    "runtimeInstalled": true
+  },
+  "progress": {
+    "installedImages": 2,
+    "installedMusic": 2,
+    "installedTotal": 4,
+    "remainingImages": 39,
+    "remainingMusic": 19,
+    "remainingTotal": 58,
+    "remainingCoreP1": 38,
+    "remainingSceneP2": 20
   }
 }

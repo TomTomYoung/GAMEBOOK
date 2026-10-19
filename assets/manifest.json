@@ -1,13 +1,31 @@
 {
   "schemaVersion": 1,
   "library": {
-    "image": null,
-    "music": null
+    "image": {
+      "src": "assets/images/library.webp",
+      "alt": "少色ドット絵の読書室。閉じた本と空いた椅子、暖かなランプ。",
+      "position": "center"
+    },
+    "music": {
+      "src": "assets/audio/library.ogg",
+      "title": "まだ開かない頁",
+      "loop": true,
+      "volume": 0.35
+    }
   },
   "stories": {
     "GB01": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb01-cover.webp",
+        "alt": "潮に囲まれた木の郵便局と欠けた白い塩柱、暖かな窓の明かり。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb01-theme.ogg",
+        "title": "潮を待つ軒下",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB02": {
