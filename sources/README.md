@@ -23,3 +23,10 @@ python scripts/render-music.py --only gb02-theme gb03-theme
 python sources/audio/compose-batch-02.py
 python scripts/render-music.py --only gb02-theme gb03-theme gb04-theme gb05-theme
 ```
+
+第3回の5曲（GB06〜GB10）の構成元は `audio/compose-batch-03.py` です。実行すると対象5曲だけのscore.jsonを上書きします。フェルトピアノ風、電気鍵盤風、マリンバ風、倍音風、丸い低音の加算合成音色を追加しました。第1・2回の配布音源は変更していません。
+
+```sh
+python sources/audio/compose-batch-03.py
+python scripts/render-music.py --only gb06-theme gb07-theme gb08-theme gb09-theme gb10-theme
+```

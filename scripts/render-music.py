@@ -34,7 +34,22 @@ def midi(note):
 def voice(note, duration, instrument, rng):
     t = np.arange(round(duration * RATE), dtype=np.float64) / RATE
     freq = 440 * 2 ** ((midi(note) - 69) / 12)
-    if instrument == 'piano':
+    if instrument in ('felt-piano', 'electric-keys', 'marimba', 'harmonics', 'round-bass'):
+        # Build-time additive voices; no recorded samples. Short upper partials
+        # keep these colors soft enough to sit beneath the reading voice.
+        profiles = {
+            'felt-piano': ([1, 2.001, 3.005, 4.012], [1, .19, .065, .018], 1.5, .018),
+            'electric-keys': ([1, 2, 3.003, 5.01], [1, .13, .035, .012], 1.05, .025),
+            'marimba': ([1, 3.98, 9.95], [1, .16, .025], 3.8, .006),
+            'harmonics': ([1, 2, 3], [1, .045, .012], .55, .18),
+            'round-bass': ([1, 2, 3], [1, .12, .035], .65, .045),
+        }
+        ratios, levels, damping, attack = profiles[instrument]
+        signal = np.zeros(len(t))
+        for k, (ratio, level) in enumerate(zip(ratios, levels)):
+            signal += level * np.sin(2 * np.pi * freq * ratio * t) * np.exp(-t * damping * (1 + k * .7))
+        envelope = (1 - np.exp(-t / attack)) * np.minimum(1, (duration - t) / .22)
+    elif instrument == 'piano':
         signal = np.zeros(len(t))
         for h, level in enumerate([1, .35, .17, .075, .035, .018], 1):
             partial = freq * h * math.sqrt(1 + .00012 * h * h)

@@ -85,28 +85,73 @@
       "scenes": {}
     },
     "GB06": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb06-cover.webp",
+        "alt": "夜の小劇場の入口。真鍮の把手と赤い幕、空いた敷居へ落ちる灯り。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb06-theme.ogg",
+        "title": "暗転前の入口",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB07": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb07-cover.webp",
+        "alt": "宇宙船の机に並ぶ二つの記憶槽と、中央の空いた一基の接続座。",
+        "position": "center 65%"
+      },
+      "music": {
+        "src": "assets/audio/gb07-theme.ogg",
+        "title": "二つの間",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB08": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb08-cover.webp",
+        "alt": "川町の橋と北塔。塔には面談を求める白い布が掛かっている。",
+        "position": "center 35%"
+      },
+      "music": {
+        "src": "assets/audio/gb08-theme.ogg",
+        "title": "机の両側",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB09": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb09-cover.webp",
+        "alt": "小人の高さから見た朝の台所。大きなパン箱と、高い乾いた足場のカップ。",
+        "position": "center 35%"
+      },
+      "music": {
+        "src": "assets/audio/gb09-theme.ogg",
+        "title": "パン箱の遠景",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB10": {
-      "image": null,
-      "music": null,
+      "image": {
+        "src": "assets/images/gb10-cover.webp",
+        "alt": "高い書架に囲まれた読書机と、星が見える遠い窓。",
+        "position": "center 70%"
+      },
+      "music": {
+        "src": "assets/audio/gb10-theme.ogg",
+        "title": "頁の外の星",
+        "loop": true,
+        "volume": 0.35
+      },
       "scenes": {}
     },
     "GB11": {
