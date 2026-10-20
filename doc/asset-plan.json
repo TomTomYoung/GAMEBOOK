@@ -1,8 +1,8 @@
 {
-  "planVersion": 12,
+  "planVersion": 13,
   "updated": "2026-10-20",
   "status": "installed",
-  "scope": "Aの少色ドット絵で共通画面・全20作の表紙・全20場面の画像41点と音楽21曲を導入。予定62/62点を配置済み。B・Cは比較資料として保持。LinuxのChromium/Firefox/WebKitは各65ケース検証済み。BGMの聴感・3周試聴およびSafari実機・実機OS別の確認は未完了。",
+  "scope": "Aの少色ドット絵で共通画面・全20作の表紙・全20場面の画像41点と音楽21曲を導入。予定62/62点を配置済み。B・Cは比較資料として保持。LinuxのChromium/Firefox/WebKitは各65ケース検証済み。BGMの聴感・3周試聴およびSafari実機・実機OS別の確認は未完了。 最終試聴用のdoc/audio-review.htmlと手順書を追加済み。試聴者の確認記録を待つ。",
   "runtimeManifest": "assets/manifest.json",
   "imageSpecification": {
     "delivery": "WebP, sRGB, 8:5前後, opaque background。標準目安1600×1000px。生成原本の縦横比と実寸を優先し、寸法合わせの引き伸ばしは行わない。",

@@ -97,6 +97,18 @@ test('committed generated files match the source data and manifest', () => {
   assert.deepEqual(result.changed, []);
 });
 
+test('listening notebook identifies every installed track by its actual audio bytes', () => {
+  const tracks = require('../doc/audio-review-data.js');
+  assert.equal(tracks.length, 21);
+  uniqueIds(tracks, 'review track IDs');
+  for (const track of tracks) {
+    const music = track.id === 'library' ? manifest.library.music : manifest.stories[track.id].music;
+    assert.equal(track.src, music.src);
+    assert.equal(track.volume, music.volume);
+    assert.equal(track.sha256, crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, music.src))).digest('hex'));
+  }
+});
+
 test('check mode reports stale or absent bundles without writing them', t => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'gamebook-build-test-'));
   t.after(() => fs.rmSync(temp, { recursive: true, force: true }));

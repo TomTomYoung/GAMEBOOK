@@ -15,12 +15,13 @@
 - [asset-plan.json](asset-plan.json)：同じ素材計画を、作品ID・素材ID・予定ファイル名・制作状態から取り出せる形式で収録しています。画風はAに決定済み。予定62点すべてが `installed`、`nextBatch` は空です。音楽の聴感確認などは引き続き未完了です。
 - [../assets/manifest.json](../assets/manifest.json)：**実際に導入した素材だけ**を登録する実行用台帳です。共通画面と全20作の表紙・音楽42点、全20作の場面挿絵20点を登録済みです。P1・P2の素材導入が完了しました。
 - [asset-production-log.md](asset-production-log.md)：導入済み素材の原本、制作方法、実測値、確認した範囲と残る確認事項。
+- [audio-review.html](audio-review.html)：全21曲を直接開いて試聴する確認画面。3周再生、継ぎ目確認、曲別メモ、JSON保存・読込に対応します。[使い方と確認範囲](AUDIO_REVIEW.md)も参照してください。
 
 ## 原稿と生成物の扱い
 
 20作の正本は [../data/stories/](../data/stories/) の `gb01.json`〜`gb20.json` です。本文、選択肢、状態、結末、作者用の根拠が一つの作品データに入っています。取得元とバイト単位の識別情報は [../data/source-manifest.json](../data/source-manifest.json) にあります。
 
-ブラウザ用の `js/stories.js` と `js/assets.js` は、正本から `node scripts/build-data.cjs` で生成します。生成物だけを直接編集すると、次の生成で変更が消えます。作品の条件・効果・本文を変えた場合は、作品の内容版と保存互換を見直してください。
+ブラウザ用の `js/stories.js` と `js/assets.js`、試聴用の `doc/audio-review-data.js` は、正本から `node scripts/build-data.cjs` で生成します。試聴用データには音源のSHA-256も記録し、音源の更新を確認結果へ反映します。生成物だけを直接編集すると、次の生成で変更が消えます。作品の条件・効果・本文を変えた場合は、作品の内容版と保存互換を見直してください。
 
 ゲームを遊ぶために、この生成コマンドやサーバーの起動は必要ありません。
 

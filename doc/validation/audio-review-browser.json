@@ -1,0 +1,15 @@
+{
+  "browser": "chromium",
+  "browserVersion": "151.0.7922.34",
+  "platform": "linux",
+  "listeningReview": "not_performed",
+  "cases": [
+    "21 sources load; real playback, pause, seam and accelerated three-wrap stop; no automatic listening marks",
+    "per-track notes, explicit verdict, autosave reload and JSON export",
+    "invalid import preserves notes; old audio kept in archive; matching audio imports; game save unchanged",
+    "desktop and narrow mobile layouts have no horizontal overflow"
+  ],
+  "diagnostics": [],
+  "status": "passed",
+  "finished": "2026-10-20T06:13:29.280Z"
+}
