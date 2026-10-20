@@ -6,6 +6,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
 
 const ROOT = path.resolve(__dirname, '..');
 const STORY_IDS = Array.from({ length: 20 }, (_, i) => `GB${String(i + 1).padStart(2, '0')}`);
@@ -104,9 +105,17 @@ function classicBundle(globalName, sourceLabel, data) {
 function build({ root = ROOT, check = false } = {}) {
   const stories = readStories(root);
   const manifest = validateAssets(JSON.parse(fs.readFileSync(path.join(root, 'assets', 'manifest.json'), 'utf8')), stories, root);
+  const reviewTracks = [
+    { id: 'library', storyTitle: '本棚', ...manifest.library },
+    ...stories.map(story => ({ id: story.id, storyTitle: story.title, ...manifest.stories[story.id] }))
+  ].filter(entry => entry.music).map(entry => ({
+    id: entry.id, storyTitle: entry.storyTitle, ...entry.music,
+    sha256: crypto.createHash('sha256').update(fs.readFileSync(path.join(root, entry.music.src))).digest('hex')
+  }));
   const outputs = [
     ['js/stories.js', classicBundle('GB_STORIES', 'data/stories/*.json', stories)],
-    ['js/assets.js', classicBundle('GB_ASSETS', 'assets/manifest.json', manifest)]
+    ['js/assets.js', classicBundle('GB_ASSETS', 'assets/manifest.json', manifest)],
+    ['doc/audio-review-data.js', classicBundle('GB_AUDIO_REVIEW_TRACKS', 'data/stories/*.json and assets/manifest.json with audio SHA-256', reviewTracks)]
   ];
   const changed = outputs.filter(([filename, text]) => {
     const target = path.join(root, filename);
@@ -117,6 +126,7 @@ function build({ root = ROOT, check = false } = {}) {
   }
   if (!check) {
     fs.mkdirSync(path.join(root, 'js'), { recursive: true });
+    fs.mkdirSync(path.join(root, 'doc'), { recursive: true });
     for (const [filename, text] of changed) fs.writeFileSync(path.join(root, filename), text, 'utf8');
   }
   return { storyCount: stories.length, files: outputs.map(([name]) => name), changed: changed.map(([name]) => name), check };

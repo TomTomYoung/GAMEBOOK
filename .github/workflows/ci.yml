@@ -31,6 +31,11 @@ jobs:
         run: npm ci
       - name: Install ${{ matrix.browser }}
         run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Verify the listening notebook in ${{ matrix.browser }}
+        env:
+          BROWSER: ${{ matrix.browser }}
+          QA_OUTPUT_DIR: test-results/${{ matrix.browser }}/audio-review
+        run: node tests/audio-review.browser.cjs
       - name: Verify the direct-file game in ${{ matrix.browser }}
         env:
           BROWSER: ${{ matrix.browser }}

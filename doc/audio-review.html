@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BGM試聴 — GAMEBOOK</title>
+  <link rel="stylesheet" href="audio-review.css">
+  <script defer src="audio-review-data.js"></script>
+  <script defer src="audio-review.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">GAMEBOOK / SOUND CHECK</p><h1>BGM試聴</h1></div><a href="../index.html">ゲームを開く</a></header>
+    <p class="intro">音色、音量、ループのつながりを確認します。気になった箇所は、再生位置を付けて記録できます。</p>
+    <section class="player" aria-label="試聴する曲">
+      <label for="track">曲を選ぶ <span id="review-count"></span></label>
+      <div class="track-row"><button id="previous" aria-label="前の曲">←</button><select id="track"></select><button id="next" aria-label="次の曲">→</button></div>
+      <h2 id="track-title"></h2><p id="story-title"></p>
+      <audio id="audio" preload="metadata" loop></audio>
+      <progress id="progress" max="1" value="0" aria-label="再生位置"></progress>
+      <div class="time-row"><span id="time">0:00 / —</span><span id="rounds">連続再生</span></div>
+      <div class="buttons"><button id="play" class="primary">再生</button><button id="three">3周再生</button><button id="seam" disabled>末尾5秒から聴く</button></div>
+      <div class="volume-row"><label for="volume">音量 <output id="volume-value">35%</output></label><input id="volume" type="range" min="0" max="100" value="35"><button id="default-volume">ゲームの音量に戻す</button></div>
+      <p class="hint">「3周再生」は最初から3周して停止します。継ぎ目の確認は、その後も繰り返し再生します。</p>
+      <p id="play-message" role="status" aria-live="polite"></p>
+    </section>
+    <section class="review" aria-label="確認の記録">
+      <h2>聴いて確認した項目</h2>
+      <div class="checks">
+        <label><input type="checkbox" data-check="tone">音色・作品の雰囲気</label>
+        <label><input type="checkbox" data-check="level">音量・圧縮による音の変化</label>
+        <label><input type="checkbox" data-check="seam">継ぎ目のクリック音・無音</label>
+        <label><input type="checkbox" data-check="threeLoops">3周を通して聴いた</label>
+      </div>
+      <label for="verdict">判定</label><select id="verdict"><option value="pending">未確認・確認中</option><option value="ok">問題なし</option><option value="fix">要修正</option></select>
+      <div class="note-label"><label for="notes">気になった箇所・メモ</label><button id="timestamp">再生位置を記入</button></div>
+      <textarea id="notes" rows="3" maxlength="10000" placeholder="例：1:24 → 0:00 の継ぎ目で音が途切れる"></textarea>
+      <label for="environment">試聴環境</label><input id="environment" maxlength="500" placeholder="例：Windows 11 / Edge / ヘッドホン">
+      <p class="hint">再生回数と聴いた判断は別に記録します。確認欄は自動では付きません。音源が更新された曲は、以前の確認を引き継ぎません。</p>
+    </section>
+    <footer><div class="buttons"><button id="export">記録をJSONで保存</button><label class="file-button" for="import">記録を読み込む<input id="import" type="file" accept="application/json,.json"></label></div><p id="save-message" role="status" aria-live="polite"></p></footer>
+  </main>
+</body>
+</html>
