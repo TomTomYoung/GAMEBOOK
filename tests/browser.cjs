@@ -635,6 +635,82 @@ async function testStoryAssets() {
   }
 }
 
+// One representative trail for each distinct reachable state at the scene.
+// Exploring engine state also covers branches that reach the same section with
+// different inventory, without hard-coding a preferred story route.
+function sceneArrivals(story, nodeId) {
+  const queue = [E.createSession(story)], seen = new Set(), arrivals = [];
+  for (let cursor = 0; cursor < queue.length; cursor++) {
+    assert(cursor < 20000, `${story.id}: scene exploration exceeded its bound`);
+    const session = queue[cursor];
+    const key = JSON.stringify([session.nodeId, session.state]);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    if (session.nodeId === nodeId) arrivals.push(session);
+    if (!E.getNode(story, session).ending) {
+      for (const choice of E.availableChoices(story, session)) queue.push(E.choose(story, session, choice.id));
+    }
+  }
+  return arrivals;
+}
+
+async function assertSceneImage(page, image) {
+  await page.waitForFunction(src => {
+    const img = document.querySelector('#scene-art img');
+    return img?.complete && img.naturalWidth > 0 && img.src.endsWith('/' + src);
+  }, image.src);
+  assert.equal(await page.locator('#scene-art img').getAttribute('alt'), image.alt);
+}
+
+async function testSceneAssets() {
+  for (const story of stories) {
+    const media = assets.stories[story.id];
+    for (const [nodeId, scene] of Object.entries(media.scenes || {})) {
+      if (!scene.image) continue;
+      await runCase(`scene-${story.id}-${nodeId}-all-states`, async () => {
+        const arrivals = sceneArrivals(story, nodeId);
+        assert(arrivals.length > 0, `${story.id}/${nodeId}: unreachable illustration`);
+        for (const [index, arrival] of arrivals.entries()) {
+          const page = await newPage(VIEWPORTS[0], undefined, true);
+          const before = await playTrail(page, story, arrival.trail.slice(0, -1));
+          await assertSceneImage(page, media.scenes?.[before.nodeId]?.image || media.image);
+          await page.locator('#music-button').click();
+          await page.waitForFunction(() => window.__gamebookAudio[0]?.currentTime > .1);
+          await page.evaluate(() => { window.__gamebookAudio[0].currentTime = 20; });
+          const session = await choose(page, story, before, arrival.trail.at(-1));
+          assert.deepEqual(session, arrival);
+          await assertSceneImage(page, scene.image);
+          const audio = await page.evaluate(() => ({ count: window.__gamebookAudio.length, time: window.__gamebookAudio[0].currentTime, src: window.__gamebookAudio[0].src }));
+          assert.equal(audio.count, 1);
+          assert(audio.src.endsWith('/' + (scene.music || media.music).src));
+          if (!scene.music) assert(audio.time >= 20, 'scene image must not restart the same music');
+          await readEveryPage(page, E.getText(story, session), `${story.id}/${nodeId} arrival ${index + 1}`);
+          if (!index) {
+            for (const viewport of VIEWPORTS) {
+              await page.setViewportSize(viewport); await settle(page);
+              await readEveryPage(page, E.getText(story, session), `${story.id}/${nodeId} ${viewport.width}x${viewport.height}`);
+              await allChoices(page, story, session, `${story.id}/${nodeId}`);
+              await screenshot(page, `scene-${story.id}-${nodeId}-${viewport.width}x${viewport.height}`);
+            }
+            const saved = await storedShelf(page);
+            await page.reload();
+            await page.waitForSelector('html[data-gamebook-ready="true"]');
+            await assertSceneImage(page, scene.image);
+            assert.deepEqual((await storedShelf(page)).sessions, saved.sessions, 'scene reload must retain real UI progress');
+          }
+          const choice = E.availableChoices(story, session)[0];
+          if (choice) {
+            const next = await choose(page, story, session, choice.id);
+            await assertSceneImage(page, media.scenes?.[next.nodeId]?.image || media.image);
+          }
+          await page.context().close();
+        }
+        process.stdout.write(`  ${story.id}/${nodeId}: ${arrivals.length} reachable states\n`);
+      });
+    }
+  }
+}
+
 async function main() {
   fs.mkdirSync(OUTPUT, { recursive: true });
   let playwright;
@@ -648,6 +724,7 @@ async function main() {
   try {
     await testInstalledAssets();
     await testStoryAssets();
+    await testSceneAssets();
     await testResponsive();
     await testSavesAndHistory();
     await testAllStories();

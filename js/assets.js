@@ -31,7 +31,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb01-scene-03.webp",
+            "alt": "右腕を固定したミヨが左手で椅子を寄せ、足首を負傷したカヨが膝に地図を置く",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB02": {
       "image": {
@@ -45,7 +54,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb02-scene-06.webp",
+            "alt": "骨の橋で白い胸札を付けたナギが練習剣を構え、ロウが境界の綱を張る",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB03": {
       "image": {
@@ -59,7 +77,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb03-scene-06.webp",
+            "alt": "ニナが赤い上着の人形を実演し、父ソウが見守る。預かり中の木箱は窓口に残る",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB04": {
       "image": {
@@ -73,7 +100,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb04-scene-03.webp",
+            "alt": "停止した馬車の空席と書簡を二人の監察人が確かめる",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB05": {
       "image": {
@@ -87,7 +123,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb05-scene-03.webp",
+            "alt": "銀線が五本残る荷雲と水で満たした一本の瓶。ミウが瓶の蓋を閉める",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB06": {
       "image": {
@@ -101,7 +146,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb06-scene-05.webp",
+            "alt": "トワが両手で持つ閉じた傘。木の取っ手には赤い糸が巻かれている",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB07": {
       "image": {
@@ -115,7 +169,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb07-scene-05.webp",
+            "alt": "会話の接続を交代する間の、一基の接続座と独立した二つの記憶槽",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB08": {
       "image": {
@@ -129,7 +192,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "04": {
+          "image": {
+            "src": "assets/images/gb08-scene-04.webp",
+            "alt": "集会所の同じ机を挟んで話すタルとミラ。未署名の書類と空いた椅子",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB09": {
       "image": {
@@ -143,7 +215,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb09-scene-06.webp",
+            "alt": "伏せた茶こしの網の内側、縁の近くに残る小さな鍵",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB10": {
       "image": {
@@ -157,7 +238,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb10-scene-03.webp",
+            "alt": "司書カヤが空白の用紙を差し出し、修理職人の手が受け取る前に止まっている",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB11": {
       "image": {

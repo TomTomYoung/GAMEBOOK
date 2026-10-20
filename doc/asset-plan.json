@@ -1,12 +1,12 @@
 {
-  "planVersion": 7,
+  "planVersion": 9,
   "updated": "2026-10-20",
   "status": "in_progress",
-  "scope": "Aの少色ドット絵で制作中。共通画面と全20作の画像21点・音楽21曲を導入し、P1全42点が完了。残りは場面挿絵20点。B・Cは比較資料として保持。",
+  "scope": "Aの少色ドット絵で制作中。共通画面と全20作の表紙・音楽、GB01〜GB10の場面挿絵10点を導入。52/62点、残りは場面挿絵10点。B・Cは比較資料として保持。",
   "runtimeManifest": "assets/manifest.json",
   "imageSpecification": {
     "delivery": "WebP, sRGB, 8:5前後, opaque background。標準目安1600×1000px。生成原本の縦横比と実寸を優先し、寸法合わせの引き伸ばしは行わない。",
-    "editable_master": "PNG生成原本を保存。採用Aと第1回は1586×992px、第2・3回は1584×993pxまたは1586×992px、第4・5回は1586×992px。人工的な拡大は行わず、原寸・縦横比を保持。",
+    "editable_master": "PNG生成原本を保存。採用Aと第1回は1586×992px、第2・3回は1584×993pxまたは1586×992px、第4・5回は1586×992px。人工的な拡大は行わず、原寸・縦横比を保持。 第6回は1584×993px・1585×992px・1586×992px。 第7回も生成原寸を維持。各寸法はsources/images/manifest.jsonを参照。",
     "size_target": "配布画像1枚500KB以下を目安。文字と細部を潰す圧縮は避ける。",
     "style": "Aの少色ドット絵。大きな色面、少ない陰影段階、くっきりした階段状の輪郭。細かな中間色・材質・滑らかな階調を増やさない。舞台に応じて色相を変え、縦横比を保つ。",
     "safe_area": "中央60%×70%に主役を置く。見出し横176×110pxや作品カードの帯で読める大きな形にし、端に人物の顔・重要物を寄せない。",
@@ -30,11 +30,11 @@
     "sceneP2": 20
   },
   "nextBatch": [
-    "IMG-GB01-SCENE-03",
-    "IMG-GB02-SCENE-06",
-    "IMG-GB03-SCENE-06",
-    "IMG-GB04-SCENE-03",
-    "IMG-GB05-SCENE-03"
+    "IMG-GB11-SCENE-05",
+    "IMG-GB12-SCENE-07",
+    "IMG-GB13-SCENE-06",
+    "IMG-GB14-SCENE-05",
+    "IMG-GB15-SCENE-08"
   ],
   "assets": [
     {
@@ -107,13 +107,17 @@
       "nodeId": "03",
       "nodeTitle": "軽くない返事",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb01-scene-03.webp",
       "placement": "GB01の節03「軽くない返事」だけ。",
       "brief": "舟着場の椅子へ腰を下ろしたカヨと、椅子を寄せるミヨ。カヨの足首は負傷したまま、ミヨの右腕は固定したまま。地図と乾いた板の質感を中心にする。",
       "constraints": "未回収の袋や箱を舟着場へ描き足さない。足の回復、郵便局の復旧、救助舟の到着を示さない。",
-      "alt": "潮の下の郵便局・軽くない返事の挿絵",
-      "position": "center"
+      "alt": "右腕を固定したミヨが左手で椅子を寄せ、足首を負傷したカヨが膝に地図を置く",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 6,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB02-COVER",
@@ -157,13 +161,17 @@
       "nodeId": "06",
       "nodeTitle": "一手目",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb02-scene-06.webp",
       "placement": "GB02の節06「一手目」だけ。",
       "brief": "一手目の開始直後。胸の白い札を持つ巨人ナギが剣を右から払う。外側に一人分の足場、試合境界の綱を張るロウ。身体へ剣を当てた絵にしない。",
       "constraints": "試合は胸札への剣先の接触で決まる。流血、致死戦、父の剣の没収、主人公の勝利を既成事実にしない。",
-      "alt": "骨の橋で待つもの・一手目の挿絵",
-      "position": "center"
+      "alt": "骨の橋で白い胸札を付けたナギが練習剣を構え、ロウが境界の綱を張る",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 6,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB03-COVER",
@@ -207,13 +215,17 @@
       "nodeId": "06",
       "nodeTitle": "一人分の幕",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb03-scene-06.webp",
       "placement": "GB03の節06「一人分の幕」だけ。",
       "brief": "ニナが台の上の赤い上着の人形を動かす小さな実演。ソウは横で口を開きかけて止まり、木箱は駅側の預かり位置に残る。",
       "constraints": "人形の実演貸与と箱の正式返還を混ぜない。靴は一足分、人物は成人した娘と父で、幼い娘として描かない。",
-      "alt": "眠らない駅の忘れ物・一人分の幕の挿絵",
-      "position": "center"
+      "alt": "ニナが赤い上着の人形を実演し、父ソウが見守る。預かり中の木箱は窓口に残る",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 6,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB04-COVER",
@@ -257,13 +269,17 @@
       "nodeId": "03",
       "nodeTitle": "空席の前",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb04-scene-03.webp",
       "placement": "GB04の節03「空席の前」だけ。",
       "brief": "道の端に停止した馬車の開いた扉と空席。監察人二名が空席と書簡を確かめる。通りの人々は道を空け、車輪は動いていない。",
       "constraints": "王女を車内に描かない。群衆の中を走り抜ける描写、和平調印済みの印、緑旗での開始確認をこの節へ先取りしない。",
-      "alt": "王女を運ばない馬車・空席の前の挿絵",
-      "position": "center"
+      "alt": "停止した馬車の空席と書簡を二人の監察人が確かめる",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 6,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB05-COVER",
@@ -307,13 +323,17 @@
       "nodeId": "03",
       "nodeTitle": "瓶の中の雨",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb05-scene-03.webp",
       "placement": "GB05の節03「瓶の中の雨」だけ。",
       "brief": "雲の底から広口瓶へ一升が移った直後。雲の銀線は五本、瓶は一升分。ミウが蓋を閉め、雲が軽く浮き直す。五と一の見え方は採用前に人が数える。",
       "constraints": "水を移しただけで総量が減った絵にしない。瓶を二本にしない。村への配達や苗木への贈与をこの時点で終えない。",
-      "alt": "雨を買った村・瓶の中の雨の挿絵",
-      "position": "center"
+      "alt": "銀線が五本残る荷雲と水で満たした一本の瓶。ミウが瓶の蓋を閉める",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 6,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB06-COVER",
@@ -357,13 +377,17 @@
       "nodeId": "05",
       "nodeTitle": "取っ手の糸",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb06-scene-05.webp",
       "placement": "GB06の節05「取っ手の糸」だけ。",
       "brief": "トワの手元にある傘の取っ手へ赤い糸が巻かれている。ロビーの光の中で、借り物を持ち続けた年月を手と素材で伝える。",
       "constraints": "トワの劇団復帰、ナオとの和解、招待券の譲渡を済んだことにしない。傘の赤い糸を別色へ変えない。",
-      "alt": "最後の一席・取っ手の糸の挿絵",
-      "position": "center"
+      "alt": "トワが両手で持つ閉じた傘。木の取っ手には赤い糸が巻かれている",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 7,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB07-COVER",
@@ -407,13 +431,17 @@
       "nodeId": "05",
       "nodeTitle": "同じ声の違う間",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb07-scene-05.webp",
       "placement": "GB07の節05「同じ声の違う間」だけ。",
       "brief": "一基の接続座、その傍らの独立した記憶槽二つ。交換して会話する間を、配線と暗いガラス面の間隔で表す。発光や表示で現在の候補を決めない。",
       "constraints": "二人の複製を同時に一基へ接続しない。二つの身体を持つ人間や自動的な船長就任を描かない。ノルとセイの知識を共有表示にしない。",
-      "alt": "複製された遺言・同じ声の違う間の挿絵",
-      "position": "center"
+      "alt": "会話の接続を交代する間の、一基の接続座と独立した二つの記憶槽",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 7,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB08-COVER",
@@ -457,13 +485,17 @@
       "nodeId": "04",
       "nodeTitle": "同じ机の両側",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb08-scene-04.webp",
       "placement": "GB08の節04「同じ机の両側」だけ。",
       "brief": "集会所の同じ机を挟むタルとミラ、署名のない書類と空いた椅子。主人公は連絡役として机の側面から見る構図。まだ住民全員を移送済みにしない。",
       "constraints": "白布は面談要請。武装解除済み、正式留置解除済み、八人が帰還済みと読み取れる絵をこの節に置かない。",
-      "alt": "北塔の降伏旗・同じ机の両側の挿絵",
-      "position": "center"
+      "alt": "集会所の同じ机を挟んで話すタルとミラ。未署名の書類と空いた椅子",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 7,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB09-COVER",
@@ -507,13 +539,17 @@
       "nodeId": "06",
       "nodeTitle": "銀色の丸屋根",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb09-scene-06.webp",
       "placement": "GB09の節06「銀色の丸屋根」だけ。",
       "brief": "丸屋根のように見える茶こしと、その縁の内側にある小さな鍵。まだ道具で持ち上げる前の静かな対象を近景にする。",
       "constraints": "匙と糸は到達経路で変わるため人物の手に描き足さない。鍵を取得済みにせず、茶こしの機構の理解に必要な情報は本文にも残す。",
-      "alt": "台所に住む小さな王・銀色の丸屋根の挿絵",
-      "position": "center"
+      "alt": "伏せた茶こしの網の内側、縁の近くに残る小さな鍵",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 7,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB10-COVER",
@@ -557,13 +593,17 @@
       "nodeId": "03",
       "nodeTitle": "残るものの説明",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb10-scene-03.webp",
       "placement": "GB10の節03「残るものの説明」だけ。",
       "brief": "カヤが差し出した空白の用紙と、それを受ける前の修理職人の手。紙の手触りと机の光に集中し、失う体験を幻影として描かない。",
       "constraints": "父を故人にしない。顔や修理技能が消える図像、取引前から記憶が失われている絵、書き取れば体験が戻る演出を置かない。",
-      "alt": "返却期限のない図書館・残るものの説明の挿絵",
-      "position": "center"
+      "alt": "司書カヤが空白の用紙を差し出し、修理職人の手が受け取る前に止まっている",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 7,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB11-COVER",
@@ -1080,13 +1120,13 @@
     "runtimeInstalled": true
   },
   "progress": {
-    "installedImages": 21,
+    "installedImages": 31,
     "installedMusic": 21,
-    "installedTotal": 42,
-    "remainingImages": 20,
+    "installedTotal": 52,
+    "remainingImages": 10,
     "remainingMusic": 0,
-    "remainingTotal": 20,
+    "remainingTotal": 10,
     "remainingCoreP1": 0,
-    "remainingSceneP2": 20
+    "remainingSceneP2": 10
   }
 }

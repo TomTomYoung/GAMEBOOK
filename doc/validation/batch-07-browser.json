@@ -1,0 +1,311 @@
+{
+  "started": "2026-10-19T23:54:45.551Z",
+  "finished": "2026-10-19T23:57:59.083Z",
+  "url": "index.html (file://)",
+  "browserVersion": "153.0.8010.0",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 360,
+      "height": 640
+    },
+    {
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "results": [
+    {
+      "name": "installed-images-and-real-audio",
+      "status": "passed",
+      "durationMs": 2197
+    },
+    {
+      "name": "assets-GB02",
+      "status": "passed",
+      "durationMs": 2591
+    },
+    {
+      "name": "assets-GB03",
+      "status": "passed",
+      "durationMs": 2514
+    },
+    {
+      "name": "assets-GB04",
+      "status": "passed",
+      "durationMs": 3143
+    },
+    {
+      "name": "assets-GB05",
+      "status": "passed",
+      "durationMs": 2482
+    },
+    {
+      "name": "assets-GB06",
+      "status": "passed",
+      "durationMs": 2861
+    },
+    {
+      "name": "assets-GB07",
+      "status": "passed",
+      "durationMs": 1944
+    },
+    {
+      "name": "assets-GB08",
+      "status": "passed",
+      "durationMs": 1880
+    },
+    {
+      "name": "assets-GB09",
+      "status": "passed",
+      "durationMs": 2847
+    },
+    {
+      "name": "assets-GB10",
+      "status": "passed",
+      "durationMs": 2643
+    },
+    {
+      "name": "assets-GB11",
+      "status": "passed",
+      "durationMs": 2008
+    },
+    {
+      "name": "assets-GB12",
+      "status": "passed",
+      "durationMs": 2158
+    },
+    {
+      "name": "assets-GB13",
+      "status": "passed",
+      "durationMs": 1986
+    },
+    {
+      "name": "assets-GB14",
+      "status": "passed",
+      "durationMs": 3544
+    },
+    {
+      "name": "assets-GB15",
+      "status": "passed",
+      "durationMs": 2948
+    },
+    {
+      "name": "assets-GB16",
+      "status": "passed",
+      "durationMs": 1876
+    },
+    {
+      "name": "assets-GB17",
+      "status": "passed",
+      "durationMs": 2281
+    },
+    {
+      "name": "assets-GB18",
+      "status": "passed",
+      "durationMs": 2013
+    },
+    {
+      "name": "assets-GB19",
+      "status": "passed",
+      "durationMs": 1912
+    },
+    {
+      "name": "assets-GB20",
+      "status": "passed",
+      "durationMs": 2293
+    },
+    {
+      "name": "scene-GB01-03-all-states",
+      "status": "passed",
+      "durationMs": 9039
+    },
+    {
+      "name": "scene-GB02-06-all-states",
+      "status": "passed",
+      "durationMs": 5559
+    },
+    {
+      "name": "scene-GB03-06-all-states",
+      "status": "passed",
+      "durationMs": 5870
+    },
+    {
+      "name": "scene-GB04-03-all-states",
+      "status": "passed",
+      "durationMs": 2713
+    },
+    {
+      "name": "scene-GB05-03-all-states",
+      "status": "passed",
+      "durationMs": 2951
+    },
+    {
+      "name": "scene-GB06-05-all-states",
+      "status": "passed",
+      "durationMs": 5915
+    },
+    {
+      "name": "scene-GB07-05-all-states",
+      "status": "passed",
+      "durationMs": 6002
+    },
+    {
+      "name": "scene-GB08-04-all-states",
+      "status": "passed",
+      "durationMs": 3248
+    },
+    {
+      "name": "scene-GB09-06-all-states",
+      "status": "passed",
+      "durationMs": 8632
+    },
+    {
+      "name": "scene-GB10-03-all-states",
+      "status": "passed",
+      "durationMs": 2916
+    },
+    {
+      "name": "shelf-1280x720",
+      "status": "passed",
+      "durationMs": 444
+    },
+    {
+      "name": "GB09-intro24-1280x720",
+      "status": "passed",
+      "durationMs": 598
+    },
+    {
+      "name": "GB20-long-text-1280x720",
+      "status": "passed",
+      "durationMs": 331
+    },
+    {
+      "name": "GB08-four-choices-1280x720",
+      "status": "passed",
+      "durationMs": 310
+    },
+    {
+      "name": "GB17-four-choices-1280x720",
+      "status": "passed",
+      "durationMs": 457
+    },
+    {
+      "name": "shelf-390x844",
+      "status": "passed",
+      "durationMs": 609
+    },
+    {
+      "name": "GB09-intro24-390x844",
+      "status": "passed",
+      "durationMs": 786
+    },
+    {
+      "name": "GB20-long-text-390x844",
+      "status": "passed",
+      "durationMs": 393
+    },
+    {
+      "name": "GB08-four-choices-390x844",
+      "status": "passed",
+      "durationMs": 397
+    },
+    {
+      "name": "GB17-four-choices-390x844",
+      "status": "passed",
+      "durationMs": 430
+    },
+    {
+      "name": "shelf-360x640",
+      "status": "passed",
+      "durationMs": 456
+    },
+    {
+      "name": "GB09-intro24-360x640",
+      "status": "passed",
+      "durationMs": 838
+    },
+    {
+      "name": "GB20-long-text-360x640",
+      "status": "passed",
+      "durationMs": 481
+    },
+    {
+      "name": "GB08-four-choices-360x640",
+      "status": "passed",
+      "durationMs": 467
+    },
+    {
+      "name": "GB17-four-choices-360x640",
+      "status": "passed",
+      "durationMs": 480
+    },
+    {
+      "name": "shelf-844x390",
+      "status": "passed",
+      "durationMs": 459
+    },
+    {
+      "name": "GB09-intro24-844x390",
+      "status": "passed",
+      "durationMs": 812
+    },
+    {
+      "name": "GB20-long-text-844x390",
+      "status": "passed",
+      "durationMs": 422
+    },
+    {
+      "name": "GB08-four-choices-844x390",
+      "status": "passed",
+      "durationMs": 378
+    },
+    {
+      "name": "GB17-four-choices-844x390",
+      "status": "passed",
+      "durationMs": 450
+    },
+    {
+      "name": "resize-retains-text-and-state",
+      "status": "passed",
+      "durationMs": 2411
+    },
+    {
+      "name": "begin-doubleclick-keeps-first-section",
+      "status": "passed",
+      "durationMs": 905
+    },
+    {
+      "name": "save-import-history-restart-doubleclick",
+      "status": "passed",
+      "durationMs": 5839
+    },
+    {
+      "name": "cross-tab-conflict-protects-both-runs",
+      "status": "passed",
+      "durationMs": 4229
+    },
+    {
+      "name": "all20-ui-playthroughs",
+      "status": "passed",
+      "durationMs": 68962
+    }
+  ],
+  "diagnostics": [],
+  "screenshots": [
+    "batch-07-desktop.png",
+    "batch-07-gb06-mobile.png",
+    "batch-07-gb07-mobile.png",
+    "batch-07-gb08-mobile.png",
+    "batch-07-gb09-mobile.png",
+    "batch-07-gb10-mobile.png"
+  ],
+  "screenshotNote": "保存した6枚は同じ最終ファイルを初期ページ・音楽OFFで開いた確認画像。試験時に生成した全スクリーンショット名は環境依存のため省略。"
+}
