@@ -52,3 +52,5 @@ python scripts/render-music.py --only gb16-theme gb17-theme gb18-theme gb19-them
 第6回はGB01〜GB05の場面挿絵です。採用版は `images/gbNN-scene-XX-a.png`、初稿は `*-draft.png`、指示は `*.prompt.txt` に保存しました。GB01は左右修正前の中間版も `gb01-scene-03-revision-1.png` に残しています。初稿・中間版はゲームに登録していません。原寸を維持し、再標本化や機械的な減色は行っていません。
 
 第7回はGB06〜GB10の場面挿絵です。採用版 `images/gbNN-scene-XX-a.png` と指示全文 `*.prompt.txt` を保存しています。GB06・GB08・GB09・GB10は未採用初稿も `*-draft.png` に残しました。GB09は網の内側の鍵が分かるよう前後関係を修正しました。GB07は最初の生成画像を採用しています。
+
+第8回はGB11〜GB15の場面挿絵です。採用版 `images/gbNN-scene-XX-a.png` と指示全文 `*.prompt.txt` を保存しました。GB12・GB13・GB15は未採用初稿も `*-draft.png` に残しています。GB12は水上に見えた初稿を空中市場へ修正し、GB13・GB15は細かな質感を整理しました。GB11・GB14は最初の生成画像を採用しています。

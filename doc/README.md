@@ -12,8 +12,8 @@
 
 - [ART_DIRECTION.md](ART_DIRECTION.md)：採用したAの少色ドット絵と制作基準。B・Cも比較画像と特徴を保存しています。
 - [ASSET_HANDOFF.md](ASSET_HANDOFF.md)：絵と音楽の全一覧、作品別の制作指示、配置先の節番号、仕様、優先順、導入と確認の手順です。
-- [asset-plan.json](asset-plan.json)：同じ素材計画を、作品ID・素材ID・予定ファイル名・制作状態から取り出せる形式で収録しています。画風はAに決定済み。52点が `installed`、残り10点が `planned` です。
-- [../assets/manifest.json](../assets/manifest.json)：**実際に導入した素材だけ**を登録する実行用台帳です。共通画面と全20作の表紙・音楽42点、GB01〜GB10の場面挿絵10点を登録済みです。P1は完了、次はGB11〜GB15の場面挿絵です。
+- [asset-plan.json](asset-plan.json)：同じ素材計画を、作品ID・素材ID・予定ファイル名・制作状態から取り出せる形式で収録しています。画風はAに決定済み。57点が `installed`、残り5点が `planned` です。
+- [../assets/manifest.json](../assets/manifest.json)：**実際に導入した素材だけ**を登録する実行用台帳です。共通画面と全20作の表紙・音楽42点、GB01〜GB15の場面挿絵15点を登録済みです。P1は完了、次はGB16〜GB20の場面挿絵です。
 - [asset-production-log.md](asset-production-log.md)：導入済み素材の原本、制作方法、実測値、確認した範囲と残る確認事項。
 
 ## 原稿と生成物の扱い

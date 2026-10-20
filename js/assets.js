@@ -261,7 +261,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb11-scene-05.webp",
+            "alt": "開いた案内帳を持つ手と、青く灯る低塔・赤く灯る高塔",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB12": {
       "image": {
@@ -275,7 +284,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "07": {
+          "image": {
+            "src": "assets/images/gb12-scene-07.webp",
+            "alt": "空中の保守歩廊に沿い、衣装箱を自分の桟橋に残して羽床を戻すロロ",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB13": {
       "image": {
@@ -289,7 +307,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb13-scene-06.webp",
+            "alt": "暖炉のある小屋で膝に指を置く、短い髪の千砂",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB14": {
       "image": {
@@ -303,7 +330,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb14-scene-05.webp",
+            "alt": "白線を挟んで間隔を空けた、コルの足と床に触れる夜番の手",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB15": {
       "image": {
@@ -317,7 +353,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "08": {
+          "image": {
+            "src": "assets/images/gb15-scene-08.webp",
+            "alt": "欠けた煉瓦の奥の置き場へ戻された一本の鍵",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB16": {
       "image": {
