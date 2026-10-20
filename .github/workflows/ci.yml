@@ -43,3 +43,22 @@ jobs:
           name: browser-${{ matrix.browser }}
           path: test-results/${{ matrix.browser }}/
           if-no-files-found: warn
+  storage-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/file-storage-probe.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: file-storage-probe
+          path: test-results/file-storage-probe.json

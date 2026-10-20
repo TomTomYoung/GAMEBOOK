@@ -618,7 +618,9 @@ async function testStoryAssets() {
         return audio?.src.endsWith('/' + src) && audio.currentTime > .1;
       }, media.music.src);
       await assertAudioDuration(page, media.music.src);
-      assert.equal(await page.evaluate(() => window.__gamebookAudio[0].volume), media.music.volume);
+      const volume = await page.evaluate(() => window.__gamebookAudio[0].volume);
+      assert(Math.abs(volume - media.music.volume) < 1e-7,
+        `audio volume ${volume} must match ${media.music.volume} within float32 rounding`);
       assert.equal(await page.evaluate(() => window.__gamebookAudio[0].loop), true);
       await page.evaluate(() => { const audio = window.__gamebookAudio[0]; audio.currentTime = audio.duration - .12; });
       await page.waitForFunction(() => { const audio = window.__gamebookAudio[0]; return !audio.paused && audio.currentTime > .05 && audio.currentTime < 2; });
