@@ -1,0 +1,827 @@
+{
+  "date": "2026-10-20",
+  "browser": "Chromium",
+  "browserVersion": "151.0.7922.34",
+  "playwrightVersion": "1.62.1",
+  "platform": "linux",
+  "scenario": "120 fresh contexts loading actual index.html; alternate no init, empty init, early localStorage read; no app changes",
+  "summary": [
+    {
+      "mode": "none",
+      "total": 40,
+      "failed": 0
+    },
+    {
+      "mode": "empty-init",
+      "total": 40,
+      "failed": 0
+    },
+    {
+      "mode": "read-init",
+      "total": 40,
+      "failed": 3
+    }
+  ],
+  "results": [
+    {
+      "round": 0,
+      "mode": "none",
+      "saved": "0",
+      "passed": true
+    },
+    {
+      "round": 1,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "1",
+      "passed": true
+    },
+    {
+      "round": 2,
+      "mode": "read-init",
+      "early": "2",
+      "saved": "2",
+      "passed": true
+    },
+    {
+      "round": 3,
+      "mode": "none",
+      "saved": "3",
+      "passed": true
+    },
+    {
+      "round": 4,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "4",
+      "passed": true
+    },
+    {
+      "round": 5,
+      "mode": "read-init",
+      "early": "5",
+      "saved": "5",
+      "passed": true
+    },
+    {
+      "round": 6,
+      "mode": "none",
+      "saved": "6",
+      "passed": true
+    },
+    {
+      "round": 7,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "7",
+      "passed": true
+    },
+    {
+      "round": 8,
+      "mode": "read-init",
+      "early": "8",
+      "saved": "8",
+      "passed": true
+    },
+    {
+      "round": 9,
+      "mode": "none",
+      "saved": "9",
+      "passed": true
+    },
+    {
+      "round": 10,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "10",
+      "passed": true
+    },
+    {
+      "round": 11,
+      "mode": "read-init",
+      "early": "11",
+      "saved": "11",
+      "passed": true
+    },
+    {
+      "round": 12,
+      "mode": "none",
+      "saved": "12",
+      "passed": true
+    },
+    {
+      "round": 13,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "13",
+      "passed": true
+    },
+    {
+      "round": 14,
+      "mode": "read-init",
+      "early": "14",
+      "saved": "14",
+      "passed": true
+    },
+    {
+      "round": 15,
+      "mode": "none",
+      "saved": "15",
+      "passed": true
+    },
+    {
+      "round": 16,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "16",
+      "passed": true
+    },
+    {
+      "round": 17,
+      "mode": "read-init",
+      "early": "17",
+      "saved": "17",
+      "passed": true
+    },
+    {
+      "round": 18,
+      "mode": "none",
+      "saved": "18",
+      "passed": true
+    },
+    {
+      "round": 19,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "19",
+      "passed": true
+    },
+    {
+      "round": 20,
+      "mode": "read-init",
+      "early": "20",
+      "saved": "20",
+      "passed": true
+    },
+    {
+      "round": 21,
+      "mode": "none",
+      "saved": "21",
+      "passed": true
+    },
+    {
+      "round": 22,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "22",
+      "passed": true
+    },
+    {
+      "round": 23,
+      "mode": "read-init",
+      "early": "23",
+      "saved": "23",
+      "passed": true
+    },
+    {
+      "round": 24,
+      "mode": "none",
+      "saved": "24",
+      "passed": true
+    },
+    {
+      "round": 25,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "25",
+      "passed": true
+    },
+    {
+      "round": 26,
+      "mode": "read-init",
+      "early": "26",
+      "saved": "26",
+      "passed": true
+    },
+    {
+      "round": 27,
+      "mode": "none",
+      "saved": "27",
+      "passed": true
+    },
+    {
+      "round": 28,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "28",
+      "passed": true
+    },
+    {
+      "round": 29,
+      "mode": "read-init",
+      "early": "29",
+      "saved": "29",
+      "passed": true
+    },
+    {
+      "round": 30,
+      "mode": "none",
+      "saved": "30",
+      "passed": true
+    },
+    {
+      "round": 31,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "31",
+      "passed": true
+    },
+    {
+      "round": 32,
+      "mode": "read-init",
+      "early": "32",
+      "saved": "32",
+      "passed": true
+    },
+    {
+      "round": 33,
+      "mode": "none",
+      "saved": "33",
+      "passed": true
+    },
+    {
+      "round": 34,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "34",
+      "passed": true
+    },
+    {
+      "round": 35,
+      "mode": "read-init",
+      "early": "35",
+      "saved": "35",
+      "passed": true
+    },
+    {
+      "round": 36,
+      "mode": "none",
+      "saved": "36",
+      "passed": true
+    },
+    {
+      "round": 37,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "37",
+      "passed": true
+    },
+    {
+      "round": 38,
+      "mode": "read-init",
+      "early": "38",
+      "saved": "38",
+      "passed": true
+    },
+    {
+      "round": 39,
+      "mode": "none",
+      "saved": "39",
+      "passed": true
+    },
+    {
+      "round": 40,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "40",
+      "passed": true
+    },
+    {
+      "round": 41,
+      "mode": "read-init",
+      "early": "41",
+      "saved": "41",
+      "passed": true
+    },
+    {
+      "round": 42,
+      "mode": "none",
+      "saved": "42",
+      "passed": true
+    },
+    {
+      "round": 43,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "43",
+      "passed": true
+    },
+    {
+      "round": 44,
+      "mode": "read-init",
+      "early": "44",
+      "saved": "44",
+      "passed": true
+    },
+    {
+      "round": 45,
+      "mode": "none",
+      "saved": "45",
+      "passed": true
+    },
+    {
+      "round": 46,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "46",
+      "passed": true
+    },
+    {
+      "round": 47,
+      "mode": "read-init",
+      "early": "47",
+      "saved": "47",
+      "passed": true
+    },
+    {
+      "round": 48,
+      "mode": "none",
+      "saved": "48",
+      "passed": true
+    },
+    {
+      "round": 49,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "49",
+      "passed": true
+    },
+    {
+      "round": 50,
+      "mode": "read-init",
+      "early": "50",
+      "saved": "50",
+      "passed": true
+    },
+    {
+      "round": 51,
+      "mode": "none",
+      "saved": "51",
+      "passed": true
+    },
+    {
+      "round": 52,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "52",
+      "passed": true
+    },
+    {
+      "round": 53,
+      "mode": "read-init",
+      "early": "53",
+      "saved": "53",
+      "passed": true
+    },
+    {
+      "round": 54,
+      "mode": "none",
+      "saved": "54",
+      "passed": true
+    },
+    {
+      "round": 55,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "55",
+      "passed": true
+    },
+    {
+      "round": 56,
+      "mode": "read-init",
+      "early": "56",
+      "saved": "56",
+      "passed": true
+    },
+    {
+      "round": 57,
+      "mode": "none",
+      "saved": "57",
+      "passed": true
+    },
+    {
+      "round": 58,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "58",
+      "passed": true
+    },
+    {
+      "round": 59,
+      "mode": "read-init",
+      "early": "59",
+      "saved": "59",
+      "passed": true
+    },
+    {
+      "round": 60,
+      "mode": "none",
+      "saved": "60",
+      "passed": true
+    },
+    {
+      "round": 61,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "61",
+      "passed": true
+    },
+    {
+      "round": 62,
+      "mode": "read-init",
+      "early": "62",
+      "saved": "62",
+      "passed": true
+    },
+    {
+      "round": 63,
+      "mode": "none",
+      "saved": "63",
+      "passed": true
+    },
+    {
+      "round": 64,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "64",
+      "passed": true
+    },
+    {
+      "round": 65,
+      "mode": "read-init",
+      "early": "65",
+      "saved": "65",
+      "passed": true
+    },
+    {
+      "round": 66,
+      "mode": "none",
+      "saved": "66",
+      "passed": true
+    },
+    {
+      "round": 67,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "67",
+      "passed": true
+    },
+    {
+      "round": 68,
+      "mode": "read-init",
+      "early": "68",
+      "saved": "68",
+      "passed": true
+    },
+    {
+      "round": 69,
+      "mode": "none",
+      "saved": "69",
+      "passed": true
+    },
+    {
+      "round": 70,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "70",
+      "passed": true
+    },
+    {
+      "round": 71,
+      "mode": "read-init",
+      "early": "71",
+      "saved": "71",
+      "passed": true
+    },
+    {
+      "round": 72,
+      "mode": "none",
+      "saved": "72",
+      "passed": true
+    },
+    {
+      "round": 73,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "73",
+      "passed": true
+    },
+    {
+      "round": 74,
+      "mode": "read-init",
+      "early": "74",
+      "saved": "74",
+      "passed": true
+    },
+    {
+      "round": 75,
+      "mode": "none",
+      "saved": "75",
+      "passed": true
+    },
+    {
+      "round": 76,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "76",
+      "passed": true
+    },
+    {
+      "round": 77,
+      "mode": "read-init",
+      "early": "77",
+      "saved": "77",
+      "passed": true
+    },
+    {
+      "round": 78,
+      "mode": "none",
+      "saved": "78",
+      "passed": true
+    },
+    {
+      "round": 79,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "79",
+      "passed": true
+    },
+    {
+      "round": 80,
+      "mode": "read-init",
+      "early": "80",
+      "saved": "80",
+      "passed": true
+    },
+    {
+      "round": 81,
+      "mode": "none",
+      "saved": "81",
+      "passed": true
+    },
+    {
+      "round": 82,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "82",
+      "passed": true
+    },
+    {
+      "round": 83,
+      "mode": "read-init",
+      "early": "83",
+      "saved": "83",
+      "passed": true
+    },
+    {
+      "round": 84,
+      "mode": "none",
+      "saved": "84",
+      "passed": true
+    },
+    {
+      "round": 85,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "85",
+      "passed": true
+    },
+    {
+      "round": 86,
+      "mode": "read-init",
+      "early": "86",
+      "saved": "86",
+      "passed": true
+    },
+    {
+      "round": 87,
+      "mode": "none",
+      "saved": "87",
+      "passed": true
+    },
+    {
+      "round": 88,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "88",
+      "passed": true
+    },
+    {
+      "round": 89,
+      "mode": "read-init",
+      "early": "89",
+      "saved": "89",
+      "passed": true
+    },
+    {
+      "round": 90,
+      "mode": "none",
+      "saved": "90",
+      "passed": true
+    },
+    {
+      "round": 91,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "91",
+      "passed": true
+    },
+    {
+      "round": 92,
+      "mode": "read-init",
+      "early": "92",
+      "saved": "92",
+      "passed": true
+    },
+    {
+      "round": 93,
+      "mode": "none",
+      "saved": "93",
+      "passed": true
+    },
+    {
+      "round": 94,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "94",
+      "passed": true
+    },
+    {
+      "round": 95,
+      "mode": "read-init",
+      "early": "95",
+      "saved": "95",
+      "passed": true
+    },
+    {
+      "round": 96,
+      "mode": "none",
+      "saved": "96",
+      "passed": true
+    },
+    {
+      "round": 97,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "97",
+      "passed": true
+    },
+    {
+      "round": 98,
+      "mode": "read-init",
+      "early": "98",
+      "saved": "98",
+      "passed": true
+    },
+    {
+      "round": 99,
+      "mode": "none",
+      "saved": "99",
+      "passed": true
+    },
+    {
+      "round": 100,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "100",
+      "passed": true
+    },
+    {
+      "round": 101,
+      "mode": "read-init",
+      "early": null,
+      "saved": null,
+      "passed": false
+    },
+    {
+      "round": 102,
+      "mode": "none",
+      "saved": "102",
+      "passed": true
+    },
+    {
+      "round": 103,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "103",
+      "passed": true
+    },
+    {
+      "round": 104,
+      "mode": "read-init",
+      "early": null,
+      "saved": null,
+      "passed": false
+    },
+    {
+      "round": 105,
+      "mode": "none",
+      "saved": "105",
+      "passed": true
+    },
+    {
+      "round": 106,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "106",
+      "passed": true
+    },
+    {
+      "round": 107,
+      "mode": "read-init",
+      "early": null,
+      "saved": null,
+      "passed": false
+    },
+    {
+      "round": 108,
+      "mode": "none",
+      "saved": "108",
+      "passed": true
+    },
+    {
+      "round": 109,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "109",
+      "passed": true
+    },
+    {
+      "round": 110,
+      "mode": "read-init",
+      "early": "110",
+      "saved": "110",
+      "passed": true
+    },
+    {
+      "round": 111,
+      "mode": "none",
+      "saved": "111",
+      "passed": true
+    },
+    {
+      "round": 112,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "112",
+      "passed": true
+    },
+    {
+      "round": 113,
+      "mode": "read-init",
+      "early": "113",
+      "saved": "113",
+      "passed": true
+    },
+    {
+      "round": 114,
+      "mode": "none",
+      "saved": "114",
+      "passed": true
+    },
+    {
+      "round": 115,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "115",
+      "passed": true
+    },
+    {
+      "round": 116,
+      "mode": "read-init",
+      "early": "116",
+      "saved": "116",
+      "passed": true
+    },
+    {
+      "round": 117,
+      "mode": "none",
+      "saved": "117",
+      "passed": true
+    },
+    {
+      "round": 118,
+      "mode": "empty-init",
+      "early": "no-storage-access",
+      "saved": "118",
+      "passed": true
+    },
+    {
+      "round": 119,
+      "mode": "read-init",
+      "early": "119",
+      "saved": "119",
+      "passed": true
+    }
+  ]
+}

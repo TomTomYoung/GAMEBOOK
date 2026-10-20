@@ -1,0 +1,542 @@
+{
+  "started": "2026-10-20T02:13:46.644Z",
+  "finished": "2026-10-20T02:21:00.708Z",
+  "url": "file:///home/runner/work/GAMEBOOK/GAMEBOOK/index.html",
+  "browser": "webkit",
+  "platform": "linux",
+  "browserVersion": "26.5",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 360,
+      "height": 640
+    },
+    {
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "results": [
+    {
+      "name": "installed-images-and-real-audio",
+      "status": "passed",
+      "durationMs": 22092
+    },
+    {
+      "name": "assets-GB02",
+      "status": "passed",
+      "durationMs": 3097
+    },
+    {
+      "name": "assets-GB03",
+      "status": "passed",
+      "durationMs": 3070
+    },
+    {
+      "name": "assets-GB04",
+      "status": "passed",
+      "durationMs": 2819
+    },
+    {
+      "name": "assets-GB05",
+      "status": "passed",
+      "durationMs": 3276
+    },
+    {
+      "name": "assets-GB06",
+      "status": "passed",
+      "durationMs": 2456
+    },
+    {
+      "name": "assets-GB07",
+      "status": "passed",
+      "durationMs": 2597
+    },
+    {
+      "name": "assets-GB08",
+      "status": "passed",
+      "durationMs": 2563
+    },
+    {
+      "name": "assets-GB09",
+      "status": "passed",
+      "durationMs": 3595
+    },
+    {
+      "name": "assets-GB10",
+      "status": "passed",
+      "durationMs": 3141
+    },
+    {
+      "name": "assets-GB11",
+      "status": "passed",
+      "durationMs": 2586
+    },
+    {
+      "name": "assets-GB12",
+      "status": "passed",
+      "durationMs": 2643
+    },
+    {
+      "name": "assets-GB13",
+      "status": "passed",
+      "durationMs": 2570
+    },
+    {
+      "name": "assets-GB14",
+      "status": "passed",
+      "durationMs": 3308
+    },
+    {
+      "name": "assets-GB15",
+      "status": "passed",
+      "durationMs": 3508
+    },
+    {
+      "name": "assets-GB16",
+      "status": "passed",
+      "durationMs": 2574
+    },
+    {
+      "name": "assets-GB17",
+      "status": "passed",
+      "durationMs": 2991
+    },
+    {
+      "name": "assets-GB18",
+      "status": "passed",
+      "durationMs": 2656
+    },
+    {
+      "name": "assets-GB19",
+      "status": "passed",
+      "durationMs": 2428
+    },
+    {
+      "name": "assets-GB20",
+      "status": "passed",
+      "durationMs": 2993
+    },
+    {
+      "name": "scene-GB01-03-all-states",
+      "status": "passed",
+      "durationMs": 11627
+    },
+    {
+      "name": "scene-GB02-06-all-states",
+      "status": "passed",
+      "durationMs": 7278
+    },
+    {
+      "name": "scene-GB03-06-all-states",
+      "status": "passed",
+      "durationMs": 7638
+    },
+    {
+      "name": "scene-GB04-03-all-states",
+      "status": "passed",
+      "durationMs": 3860
+    },
+    {
+      "name": "scene-GB05-03-all-states",
+      "status": "passed",
+      "durationMs": 3982
+    },
+    {
+      "name": "scene-GB06-05-all-states",
+      "status": "passed",
+      "durationMs": 7636
+    },
+    {
+      "name": "scene-GB07-05-all-states",
+      "status": "passed",
+      "durationMs": 7696
+    },
+    {
+      "name": "scene-GB08-04-all-states",
+      "status": "passed",
+      "durationMs": 4325
+    },
+    {
+      "name": "scene-GB09-06-all-states",
+      "status": "passed",
+      "durationMs": 11334
+    },
+    {
+      "name": "scene-GB10-03-all-states",
+      "status": "passed",
+      "durationMs": 4080
+    },
+    {
+      "name": "scene-GB11-05-all-states",
+      "status": "passed",
+      "durationMs": 3979
+    },
+    {
+      "name": "scene-GB12-07-all-states",
+      "status": "passed",
+      "durationMs": 8897
+    },
+    {
+      "name": "scene-GB13-06-all-states",
+      "status": "passed",
+      "durationMs": 12015
+    },
+    {
+      "name": "scene-GB14-05-all-states",
+      "status": "passed",
+      "durationMs": 32850
+    },
+    {
+      "name": "scene-GB15-08-all-states",
+      "status": "passed",
+      "durationMs": 17648
+    },
+    {
+      "name": "scene-GB16-10-all-states",
+      "status": "passed",
+      "durationMs": 4771
+    },
+    {
+      "name": "scene-GB17-02-all-states",
+      "status": "passed",
+      "durationMs": 3630
+    },
+    {
+      "name": "scene-GB18-07-all-states",
+      "status": "passed",
+      "durationMs": 4405
+    },
+    {
+      "name": "scene-GB19-13-all-states",
+      "status": "passed",
+      "durationMs": 5126
+    },
+    {
+      "name": "scene-GB20-11-all-states",
+      "status": "passed",
+      "durationMs": 72506
+    },
+    {
+      "name": "shelf-1280x720",
+      "status": "passed",
+      "durationMs": 994
+    },
+    {
+      "name": "GB09-intro24-1280x720",
+      "status": "passed",
+      "durationMs": 3577
+    },
+    {
+      "name": "GB20-long-text-1280x720",
+      "status": "passed",
+      "durationMs": 1632
+    },
+    {
+      "name": "GB08-four-choices-1280x720",
+      "status": "passed",
+      "durationMs": 1275
+    },
+    {
+      "name": "GB17-four-choices-1280x720",
+      "status": "passed",
+      "durationMs": 1339
+    },
+    {
+      "name": "shelf-390x844",
+      "status": "passed",
+      "durationMs": 983
+    },
+    {
+      "name": "GB09-intro24-390x844",
+      "status": "passed",
+      "durationMs": 2263
+    },
+    {
+      "name": "GB20-long-text-390x844",
+      "status": "passed",
+      "durationMs": 1105
+    },
+    {
+      "name": "GB08-four-choices-390x844",
+      "status": "passed",
+      "durationMs": 1122
+    },
+    {
+      "name": "GB17-four-choices-390x844",
+      "status": "passed",
+      "durationMs": 1192
+    },
+    {
+      "name": "shelf-360x640",
+      "status": "passed",
+      "durationMs": 855
+    },
+    {
+      "name": "GB09-intro24-360x640",
+      "status": "passed",
+      "durationMs": 2038
+    },
+    {
+      "name": "GB20-long-text-360x640",
+      "status": "passed",
+      "durationMs": 1181
+    },
+    {
+      "name": "GB08-four-choices-360x640",
+      "status": "passed",
+      "durationMs": 1130
+    },
+    {
+      "name": "GB17-four-choices-360x640",
+      "status": "passed",
+      "durationMs": 1201
+    },
+    {
+      "name": "shelf-844x390",
+      "status": "passed",
+      "durationMs": 874
+    },
+    {
+      "name": "GB09-intro24-844x390",
+      "status": "passed",
+      "durationMs": 1671
+    },
+    {
+      "name": "GB20-long-text-844x390",
+      "status": "passed",
+      "durationMs": 1137
+    },
+    {
+      "name": "GB08-four-choices-844x390",
+      "status": "passed",
+      "durationMs": 1102
+    },
+    {
+      "name": "GB17-four-choices-844x390",
+      "status": "passed",
+      "durationMs": 1201
+    },
+    {
+      "name": "resize-retains-text-and-state",
+      "status": "passed",
+      "durationMs": 3812
+    },
+    {
+      "name": "begin-doubleclick-keeps-first-section",
+      "status": "passed",
+      "durationMs": 1987
+    },
+    {
+      "name": "save-import-history-restart-doubleclick",
+      "status": "passed",
+      "durationMs": 7250
+    },
+    {
+      "name": "cross-tab-conflict-protects-both-runs",
+      "status": "passed",
+      "durationMs": 5793
+    },
+    {
+      "name": "all20-ui-playthroughs",
+      "status": "passed",
+      "durationMs": 74947
+    }
+  ],
+  "diagnostics": [],
+  "screenshots": [
+    "assets-library-1280x720.png",
+    "assets-GB01-1280x720.png",
+    "assets-GB01-390x844.png",
+    "assets-GB01-360x640.png",
+    "assets-GB01-844x390.png",
+    "assets-GB02-1280x720.png",
+    "assets-GB02-390x844.png",
+    "assets-GB02-360x640.png",
+    "assets-GB02-844x390.png",
+    "assets-GB03-1280x720.png",
+    "assets-GB03-390x844.png",
+    "assets-GB03-360x640.png",
+    "assets-GB03-844x390.png",
+    "assets-GB04-1280x720.png",
+    "assets-GB04-390x844.png",
+    "assets-GB04-360x640.png",
+    "assets-GB04-844x390.png",
+    "assets-GB05-1280x720.png",
+    "assets-GB05-390x844.png",
+    "assets-GB05-360x640.png",
+    "assets-GB05-844x390.png",
+    "assets-GB06-1280x720.png",
+    "assets-GB06-390x844.png",
+    "assets-GB06-360x640.png",
+    "assets-GB06-844x390.png",
+    "assets-GB07-1280x720.png",
+    "assets-GB07-390x844.png",
+    "assets-GB07-360x640.png",
+    "assets-GB07-844x390.png",
+    "assets-GB08-1280x720.png",
+    "assets-GB08-390x844.png",
+    "assets-GB08-360x640.png",
+    "assets-GB08-844x390.png",
+    "assets-GB09-1280x720.png",
+    "assets-GB09-390x844.png",
+    "assets-GB09-360x640.png",
+    "assets-GB09-844x390.png",
+    "assets-GB10-1280x720.png",
+    "assets-GB10-390x844.png",
+    "assets-GB10-360x640.png",
+    "assets-GB10-844x390.png",
+    "assets-GB11-1280x720.png",
+    "assets-GB11-390x844.png",
+    "assets-GB11-360x640.png",
+    "assets-GB11-844x390.png",
+    "assets-GB12-1280x720.png",
+    "assets-GB12-390x844.png",
+    "assets-GB12-360x640.png",
+    "assets-GB12-844x390.png",
+    "assets-GB13-1280x720.png",
+    "assets-GB13-390x844.png",
+    "assets-GB13-360x640.png",
+    "assets-GB13-844x390.png",
+    "assets-GB14-1280x720.png",
+    "assets-GB14-390x844.png",
+    "assets-GB14-360x640.png",
+    "assets-GB14-844x390.png",
+    "assets-GB15-1280x720.png",
+    "assets-GB15-390x844.png",
+    "assets-GB15-360x640.png",
+    "assets-GB15-844x390.png",
+    "assets-GB16-1280x720.png",
+    "assets-GB16-390x844.png",
+    "assets-GB16-360x640.png",
+    "assets-GB16-844x390.png",
+    "assets-GB17-1280x720.png",
+    "assets-GB17-390x844.png",
+    "assets-GB17-360x640.png",
+    "assets-GB17-844x390.png",
+    "assets-GB18-1280x720.png",
+    "assets-GB18-390x844.png",
+    "assets-GB18-360x640.png",
+    "assets-GB18-844x390.png",
+    "assets-GB19-1280x720.png",
+    "assets-GB19-390x844.png",
+    "assets-GB19-360x640.png",
+    "assets-GB19-844x390.png",
+    "assets-GB20-1280x720.png",
+    "assets-GB20-390x844.png",
+    "assets-GB20-360x640.png",
+    "assets-GB20-844x390.png",
+    "scene-GB01-03-1280x720.png",
+    "scene-GB01-03-390x844.png",
+    "scene-GB01-03-360x640.png",
+    "scene-GB01-03-844x390.png",
+    "scene-GB02-06-1280x720.png",
+    "scene-GB02-06-390x844.png",
+    "scene-GB02-06-360x640.png",
+    "scene-GB02-06-844x390.png",
+    "scene-GB03-06-1280x720.png",
+    "scene-GB03-06-390x844.png",
+    "scene-GB03-06-360x640.png",
+    "scene-GB03-06-844x390.png",
+    "scene-GB04-03-1280x720.png",
+    "scene-GB04-03-390x844.png",
+    "scene-GB04-03-360x640.png",
+    "scene-GB04-03-844x390.png",
+    "scene-GB05-03-1280x720.png",
+    "scene-GB05-03-390x844.png",
+    "scene-GB05-03-360x640.png",
+    "scene-GB05-03-844x390.png",
+    "scene-GB06-05-1280x720.png",
+    "scene-GB06-05-390x844.png",
+    "scene-GB06-05-360x640.png",
+    "scene-GB06-05-844x390.png",
+    "scene-GB07-05-1280x720.png",
+    "scene-GB07-05-390x844.png",
+    "scene-GB07-05-360x640.png",
+    "scene-GB07-05-844x390.png",
+    "scene-GB08-04-1280x720.png",
+    "scene-GB08-04-390x844.png",
+    "scene-GB08-04-360x640.png",
+    "scene-GB08-04-844x390.png",
+    "scene-GB09-06-1280x720.png",
+    "scene-GB09-06-390x844.png",
+    "scene-GB09-06-360x640.png",
+    "scene-GB09-06-844x390.png",
+    "scene-GB10-03-1280x720.png",
+    "scene-GB10-03-390x844.png",
+    "scene-GB10-03-360x640.png",
+    "scene-GB10-03-844x390.png",
+    "scene-GB11-05-1280x720.png",
+    "scene-GB11-05-390x844.png",
+    "scene-GB11-05-360x640.png",
+    "scene-GB11-05-844x390.png",
+    "scene-GB12-07-1280x720.png",
+    "scene-GB12-07-390x844.png",
+    "scene-GB12-07-360x640.png",
+    "scene-GB12-07-844x390.png",
+    "scene-GB13-06-1280x720.png",
+    "scene-GB13-06-390x844.png",
+    "scene-GB13-06-360x640.png",
+    "scene-GB13-06-844x390.png",
+    "scene-GB14-05-1280x720.png",
+    "scene-GB14-05-390x844.png",
+    "scene-GB14-05-360x640.png",
+    "scene-GB14-05-844x390.png",
+    "scene-GB15-08-1280x720.png",
+    "scene-GB15-08-390x844.png",
+    "scene-GB15-08-360x640.png",
+    "scene-GB15-08-844x390.png",
+    "scene-GB16-10-1280x720.png",
+    "scene-GB16-10-390x844.png",
+    "scene-GB16-10-360x640.png",
+    "scene-GB16-10-844x390.png",
+    "scene-GB17-02-1280x720.png",
+    "scene-GB17-02-390x844.png",
+    "scene-GB17-02-360x640.png",
+    "scene-GB17-02-844x390.png",
+    "scene-GB18-07-1280x720.png",
+    "scene-GB18-07-390x844.png",
+    "scene-GB18-07-360x640.png",
+    "scene-GB18-07-844x390.png",
+    "scene-GB19-13-1280x720.png",
+    "scene-GB19-13-390x844.png",
+    "scene-GB19-13-360x640.png",
+    "scene-GB19-13-844x390.png",
+    "scene-GB20-11-1280x720.png",
+    "scene-GB20-11-390x844.png",
+    "scene-GB20-11-360x640.png",
+    "scene-GB20-11-844x390.png",
+    "library-1280x720.png",
+    "GB09-intro24-1280x720.png",
+    "GB20-long-text-1280x720.png",
+    "GB08-four-choices-1280x720.png",
+    "GB17-four-choices-1280x720.png",
+    "library-390x844.png",
+    "GB09-intro24-390x844.png",
+    "GB20-long-text-390x844.png",
+    "GB08-four-choices-390x844.png",
+    "GB17-four-choices-390x844.png",
+    "library-360x640.png",
+    "GB09-intro24-360x640.png",
+    "GB20-long-text-360x640.png",
+    "GB08-four-choices-360x640.png",
+    "GB17-four-choices-360x640.png",
+    "library-844x390.png",
+    "GB09-intro24-844x390.png",
+    "GB20-long-text-844x390.png",
+    "GB08-four-choices-844x390.png",
+    "GB17-four-choices-844x390.png",
+    "night-844x390.png",
+    "invalid-import-390x844.png",
+    "cross-tab-restored-1280x720.png",
+    "library-1280x720.png",
+    "GB01-ending-1280x720.png"
+  ]
+}
