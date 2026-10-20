@@ -261,7 +261,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb11-scene-05.webp",
+            "alt": "開いた案内帳を持つ手と、青く灯る低塔・赤く灯る高塔",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB12": {
       "image": {
@@ -275,7 +284,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "07": {
+          "image": {
+            "src": "assets/images/gb12-scene-07.webp",
+            "alt": "空中の保守歩廊に沿い、衣装箱を自分の桟橋に残して羽床を戻すロロ",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB13": {
       "image": {
@@ -289,7 +307,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb13-scene-06.webp",
+            "alt": "暖炉のある小屋で膝に指を置く、短い髪の千砂",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB14": {
       "image": {
@@ -303,7 +330,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb14-scene-05.webp",
+            "alt": "白線を挟んで間隔を空けた、コルの足と床に触れる夜番の手",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB15": {
       "image": {
@@ -317,7 +353,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "08": {
+          "image": {
+            "src": "assets/images/gb15-scene-08.webp",
+            "alt": "欠けた煉瓦の奥の置き場へ戻された一本の鍵",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB16": {
       "image": {
@@ -331,7 +376,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "10": {
+          "image": {
+            "src": "assets/images/gb16-scene-10.webp",
+            "alt": "墓地の門の手前で棺を支える四人とナギ、チセ、扉を押す門番",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB17": {
       "image": {
@@ -345,7 +399,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "02": {
+          "image": {
+            "src": "assets/images/gb17-scene-02.webp",
+            "alt": "乾いた図面を支える二人の手と、まだ触れていないレバーと呼び管",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB18": {
       "image": {
@@ -359,7 +422,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "07": {
+          "image": {
+            "src": "assets/images/gb18-scene-07.webp",
+            "alt": "採石棚で布包みの温石一つを荷重枠に載せる竜ラハ",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB19": {
       "image": {
@@ -373,7 +445,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "13": {
+          "image": {
+            "src": "assets/images/gb19-scene-13.webp",
+            "alt": "自分の足で立つオルと帳面を持つ主人公、二人の救助係",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB20": {
       "image": {
@@ -387,7 +468,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "11": {
+          "image": {
+            "src": "assets/images/gb20-scene-11.webp",
+            "alt": "木のカウンターに並べた形の違う二本の鍵",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     }
   }
 });

@@ -57,12 +57,12 @@
 
 - [使用モデル全文](doc/SCENARIO_MODEL_V1_2.md)：『ゲームシナリオモデル v1.2』の0〜25章を収録。リンク先の参照だけに依存せず、本文・契約・雛形・検査指示をリポジトリ内に保持しています。
 - [モデルと実装の対応](doc/MODEL_IMPLEMENTATION.md)：五層、九つの契約、原稿データ、実行処理、保存形式の関係。
-- [絵・音楽のハンドオフ](doc/ASSET_HANDOFF.md)：**画像41点・音楽21曲**の予定ファイル名、制作指示、配置、優先順、導入手順。
+- [絵・音楽のハンドオフ](doc/ASSET_HANDOFF.md)：**画像41点・音楽21曲**のファイル名、制作指示、配置、優先順、導入手順。
 - [画像の採用方針と比較案](doc/ART_DIRECTION.md)：**Aの少色ドット絵を採用**。B・Cも画像付きで保存しています。
 - [検証記録](doc/VALIDATION.md)：実行グラフとブラウザで確認した範囲。
 - [資料の案内](doc/README.md)：原稿レビュー、機械処理できる素材台帳など。
 
-共通の本棚と全20作に、Aの少色ドット絵と専用BGMを導入しました。GB01〜GB10には場面挿絵もあり、指定の節で表紙から切り替わります（全62点中52点、P1完了）。音楽は初期OFFで、画面上の音楽ボタンから再生できます。残りはGB11〜GB20の場面挿絵10点です。[制作記録](doc/asset-production-log.md)に原本・実測値・確認範囲を残しています。
+共通の本棚と全20作に、Aの少色ドット絵と専用BGMを導入しました。全20作に場面挿絵もあり、指定の節で表紙から切り替わります（画像41点・音楽21曲、予定62点をすべて導入済み）。音楽は初期OFFで、画面上の音楽ボタンから再生できます。Linux上のChromium・Firefox・WebKitで各65ケースを確認しました。Safari実機・実機OS別とBGMの聴感・3周試聴は未完了です。[制作記録](doc/asset-production-log.md)に原本・実測値・確認範囲を残しています。
 
 ## 開発・検証
 
@@ -85,10 +85,12 @@ node scripts/build-data.cjs
 
 ```sh
 npm ci
-npx playwright install chromium
+npx playwright install chromium firefox webkit
 npm run test:browser
+BROWSER=firefox npm run test:browser
+BROWSER=webkit npm run test:browser
 ```
 
-既存のChromiumを使う場合は`CHROMIUM_PATH`で実行ファイルを指定できます。ブラウザ試験も`file://`で開き、サーバー不要の配布を確認します。
+既定はChromiumです。`BROWSER`環境変数でFirefox・WebKitへ切り替えます。上の変数指定はbash用で、PowerShellでは先に `$env:BROWSER='firefox'` のように設定します。既存のChromiumを使う場合は`CHROMIUM_PATH`で実行ファイルを指定できます。ブラウザ試験も`file://`で開き、サーバー不要の配布を確認します。WebKitの試験はSafari実機の確認とは区別します。
 
-GitHub ActionsのCIは生成物の一致と自動テストを確認します。Web公開を設定する場合は、[GitHub Pagesの手順](doc/HOSTING.md)を参照してください。
+GitHub ActionsのCIは生成物の一致、単体試験、3ブラウザの試験を実行し、ブラウザ別のJSON結果と画面画像を保存します。Web公開を設定する場合は、[GitHub Pagesの手順](doc/HOSTING.md)を参照してください。
