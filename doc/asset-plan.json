@@ -1,12 +1,12 @@
 {
-  "planVersion": 10,
+  "planVersion": 11,
   "updated": "2026-10-20",
-  "status": "in_progress",
-  "scope": "Aの少色ドット絵で制作中。共通画面と全20作の表紙・音楽、GB01〜GB15の場面挿絵15点を導入。57/62点、残りは場面挿絵5点。B・Cは比較資料として保持。",
+  "status": "installed",
+  "scope": "Aの少色ドット絵で共通画面・全20作の表紙・全20場面の画像41点と音楽21曲を導入。予定62/62点を配置済み。B・Cは比較資料として保持。BGMの聴感・3周試聴およびFirefox/Safari・実機OS別の確認は未完了。",
   "runtimeManifest": "assets/manifest.json",
   "imageSpecification": {
     "delivery": "WebP, sRGB, 8:5前後, opaque background。標準目安1600×1000px。生成原本の縦横比と実寸を優先し、寸法合わせの引き伸ばしは行わない。",
-    "editable_master": "PNG生成原本を保存。採用Aと第1回は1586×992px、第2・3回は1584×993pxまたは1586×992px、第4・5回は1586×992px。人工的な拡大は行わず、原寸・縦横比を保持。 第6回は1584×993px・1585×992px・1586×992px。 第7回も生成原寸を維持。各寸法はsources/images/manifest.jsonを参照。 第8回も生成原寸を維持。",
+    "editable_master": "PNG生成原本を保存。採用Aと第1回は1586×992px、第2・3回は1584×993pxまたは1586×992px、第4・5回は1586×992px。人工的な拡大は行わず、原寸・縦横比を保持。 第6回は1584×993px・1585×992px・1586×992px。 第7回も生成原寸を維持。各寸法はsources/images/manifest.jsonを参照。 第8回も生成原寸を維持。 第9回も生成原寸を維持。",
     "size_target": "配布画像1枚500KB以下を目安。文字と細部を潰す圧縮は避ける。",
     "style": "Aの少色ドット絵。大きな色面、少ない陰影段階、くっきりした階段状の輪郭。細かな中間色・材質・滑らかな階調を増やさない。舞台に応じて色相を変え、縦横比を保つ。",
     "safe_area": "中央60%×70%に主役を置く。見出し横176×110pxや作品カードの帯で読める大きな形にし、端に人物の顔・重要物を寄せない。",
@@ -29,13 +29,7 @@
     "coreP1": 42,
     "sceneP2": 20
   },
-  "nextBatch": [
-    "IMG-GB16-SCENE-10",
-    "IMG-GB17-SCENE-02",
-    "IMG-GB18-SCENE-07",
-    "IMG-GB19-SCENE-13",
-    "IMG-GB20-SCENE-11"
-  ],
+  "nextBatch": [],
   "assets": [
     {
       "id": "IMG-LIBRARY",
@@ -912,13 +906,17 @@
       "nodeId": "10",
       "nodeTitle": "小さな門",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb16-scene-10.webp",
       "placement": "GB16の節10「小さな門」だけ。",
       "brief": "墓地の小さな門の手前で待つ棺、扉を片側ずつ押す門番。ナギは封書を懐へしまう。棺はまだ門をくぐっておらず、鐘楼番チセが現れた段階。",
-      "constraints": "ここまでに追加の参列者はいない。手紙を開封済みと断定しない。門の通過、埋葬、鐘の一打を先取りしない。",
-      "alt": "鐘を鳴らさない葬列・小さな門の挿絵",
-      "position": "center"
+      "constraints": "到達可能な公開状態はcompany=false、letter=trueの一種類。ナギは節05で手紙を読んでいる。封書の見える角に文字や封蝋を描かず、開封状態を絵の判断材料にしない。追加の参列者を置かず、門の通過・埋葬・鐘の一打を先取りしない。",
+      "alt": "墓地の門の手前で棺を支える四人とナギ、チセ、扉を押す門番",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 9,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB17-COVER",
@@ -962,13 +960,17 @@
       "nodeId": "02",
       "nodeTitle": "人が送る一拍",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb17-scene-02.webp",
       "placement": "GB17の節02「人が送る一拍」だけ。",
       "brief": "イリと主人公が断面図を読む手元。レバーと呼び管のある第一室で、まだ操作はしていない。正確な赤・白・黒の順や通路図は生成絵に描き込まない。",
       "constraints": "図を読むだけでは蓄圧や位置は変わらない。砂時計、秒針、刻々動く時計、空気不足を示す苦痛、架空の第三の脱出口を足さない。",
-      "alt": "砂時計のない牢獄・人が送る一拍の挿絵",
-      "position": "center"
+      "alt": "乾いた図面を支える二人の手と、まだ触れていないレバーと呼び管",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 9,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB18-COVER",
@@ -1012,13 +1014,17 @@
       "nodeId": "07",
       "nodeTitle": "採石棚の荷",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb18-scene-07.webp",
       "placement": "GB18の節07「採石棚の荷」だけ。",
       "brief": "採石棚で、布に包んだ温石を荷重枠へ載せるラハ。温石は三つの仕事だが、この瞬間は一つを量る。尾根と谷のどちらの運搬にも着手していない。",
       "constraints": "花嫁衣装を着せない。一度で三つを抱えて飛ばせない。先に働いたから出演に同意したことにせず、作業代の支払完了を先取りしない。",
-      "alt": "花嫁ではない竜・採石棚の荷の挿絵",
-      "position": "center"
+      "alt": "採石棚で布包みの温石一つを荷重枠に載せる竜ラハ",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 9,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB19-COVER",
@@ -1062,13 +1068,17 @@
       "nodeId": "13",
       "nodeTitle": "重さのある返事",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb19-scene-13.webp",
       "placement": "GB19の節13「重さのある返事」だけ。",
-      "brief": "段から降りたオルが自分の足で立ち、主人公が帳面を引き受ける。救助係二人が歩行を確かめる。ここは帰路へ出る前で、宿営所の帰還受付ではない。",
+      "brief": "低い広い段から救助籠で上げられたオルが固い道に自分の足で立ち、主人公が帳面を引き受ける。救助係二人が歩行を確かめる。帰路へ出る前で、宿営所の帰還受付ではない。",
       "constraints": "オルを二人に分裂させない。録画投影に肉体を与えない。同行者は主人公、オル、救助係二人。受入完了は次の節なので先取りしない。",
-      "alt": "十二人目の帰還者・重さのある返事の挿絵",
-      "position": "center"
+      "alt": "自分の足で立つオルと帳面を持つ主人公、二人の救助係",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 9,
+      "reviewStatus": "visual_reviewed"
     },
     {
       "id": "IMG-GB20-COVER",
@@ -1112,13 +1122,17 @@
       "nodeId": "11",
       "nodeTitle": "奥の鍵、表の鍵",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "path": "assets/images/gb20-scene-11.webp",
       "placement": "GB20の節11「奥の鍵、表の鍵」だけ。",
       "brief": "カウンターへ並べた二本の鍵だけを近景にする。木肌と店内の明かりを残し、返納済みかもしれない糸巻き・茶碗、相談前後のナオ、奥の戸口は画角に入れない。",
       "constraints": "同じ節でも錨の保持と継承への返答は変わる。両方の錨や開いた二つの世界を固定表示しない。閉店を世界そのものの消滅として描かない。",
-      "alt": "世界を閉じる小さな店・奥の鍵、表の鍵の挿絵",
-      "position": "center"
+      "alt": "木のカウンターに並べた形の違う二本の鍵",
+      "position": "center",
+      "installedDate": "2026-10-20",
+      "productionRecord": "doc/asset-production-log.md",
+      "productionBatch": 9,
+      "reviewStatus": "visual_reviewed"
     }
   ],
   "artDirection": {
@@ -1135,13 +1149,13 @@
     "runtimeInstalled": true
   },
   "progress": {
-    "installedImages": 36,
+    "installedImages": 41,
     "installedMusic": 21,
-    "installedTotal": 57,
-    "remainingImages": 5,
+    "installedTotal": 62,
+    "remainingImages": 0,
     "remainingMusic": 0,
-    "remainingTotal": 5,
+    "remainingTotal": 0,
     "remainingCoreP1": 0,
-    "remainingSceneP2": 5
+    "remainingSceneP2": 0
   }
 }

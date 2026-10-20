@@ -997,3 +997,91 @@ GB12・GB13で配布Oggの末尾欠落を検出したため、音源を一時デ
 単体54件、生成物一致確認、ブラウザ60ケースがすべて成功しました。全15場面の34到達状態で切替・既定画像への復帰・BGM継続を確認しています。今回の16状態を含む実プレイ、4画面サイズ、保存後の再読み込みも通過しました。既存52素材・20原稿のバイトは不変です。詳細は[検証記録](VALIDATION.md)と[ブラウザ実行結果](validation/batch-08-browser.json)に記載しています。
 
 [PCのGB11](previews/batch-08-desktop.png)。スマホの初期ページ：[GB11](previews/batch-08-gb11-mobile.png)・[GB12](previews/batch-08-gb12-mobile.png)・[GB13](previews/batch-08-gb13-mobile.png)・[GB14](previews/batch-08-gb14-mobile.png)・[GB15](previews/batch-08-gb15-mobile.png)。
+
+
+## 素材第9回：GB16〜GB20の場面挿絵・予定素材の導入完了
+
+制作日：2026-10-20（日本時間）。最後の場面挿絵5点を追加し、予定62/62点（画像41点・音楽21曲）を導入しました。built-in imagegenで初稿を生成し、全5点とも初稿と採用Aを画像参照にして修正しています。PNG採用原本、未採用初稿、生成・修正指示全文を保持。配布WebPはffmpeg libwebp品質95で原寸変換し、再標本化・切抜き・機械的な減色は行っていません。
+
+今回の指定節はGB16/10、GB17/02、GB18/07、GB19/13、GB20/11。到達する公開状態の種類は順に1・1・1・1・12、計16状態です。[状態・代表経路・本文](validation/batch-09-scene-states.json)を保存しました。状態に残らない直前の行為・人物の所在も作者用根拠と照合しています。全20場面では50到達状態です。
+
+### IMG-GB16-SCENE-10
+
+墓地の門の手前で棺を止めた時点。見える人物は担ぎ手4人、ナギ、チセ、門番の7人で、案内役の主人公は画面外です。門番は片方の扉を押し、棺は門の外にあります。追加の参列者、埋葬、鐘の一打は描きません。対象はcompany=false、letter=trueの1状態。ナギは節05で手紙を読んでおり、旧ハンドオフの「開封済みと断定しない」は到達条件に合わせて訂正しました。封書は懐の角だけが見え、文字や封蝋はありません。初稿の石壁と服の細部を整理しました。空の暖色は時間制限や経過の表示ではありません。
+
+- 配布用：`assets/images/gb16-scene-10.webp`
+- 採用PNG：`sources/images/gb16-scene-10-a.png`
+- 未採用初稿：`sources/images/gb16-scene-10-draft.png`
+- 生成・修正指示全文：[gb16-scene-10.prompt.txt](../sources/images/gb16-scene-10.prompt.txt)
+- 生成出力：`exec-357a5cd6-9830-40ce-bbd0-03bff9e3dd09.png`、built-in imagegen
+- 寸法：1586×992px（PNGとWebPで一致、不透明背景）
+- 配布容量：153,966 bytes
+- 配布SHA-256：`e7d35067ffde86c72ea974284759b5167104dec97bd01e20d140a945d8a48a5d`
+- 原本SHA-256：`29ec81ccd1f5d709faed7ff6b8175f44f2e503270f90c67b823ad1919f84bd45`
+
+### IMG-GB17-SCENE-02
+
+主人公と成人の見習いイリが、乾いた既存の断面図を読む手元。手前2本の手は同じ青緑の袖、左奥の1本は茶色の袖で、二人に属する3本の手です。初稿の袖色を修正しました。図面の裏側を見せ、赤・白・黒の順や扉条件、通路の正確な図を生成画像に依存させません。これらの判断材料は原稿本文に残ります。レバーと呼び管はまだ触れておらず、reserve=5のまま。時計、砂時計、空気不足、架空の脱出口はありません。
+
+- 配布用：`assets/images/gb17-scene-02.webp`
+- 採用PNG：`sources/images/gb17-scene-02-a.png`
+- 未採用初稿：`sources/images/gb17-scene-02-draft.png`
+- 生成・修正指示全文：[gb17-scene-02.prompt.txt](../sources/images/gb17-scene-02.prompt.txt)
+- 生成出力：`exec-6a7312b0-5952-40bd-a5a5-983a0c0ac15c.png`、built-in imagegen
+- 寸法：1584×993px（PNGとWebPで一致、不透明背景）
+- 配布容量：92,412 bytes
+- 配布SHA-256：`b9511147e44cc1d307e6b11f04616f9bc52cd8804d9a6a801b1b145276c40704`
+- 原本SHA-256：`bd66fd0aa17c74199decdb227f5dca184ce221aecaa0165d145764fff836a7da`
+
+### IMG-GB18-SCENE-07
+
+緑の竜ラハが、布に包んだ温石1個を木の荷重枠へ載せた時点。淡い角と背の棘は既存表紙の姿に合わせ、翼は折り畳み、飛んでいません。三つ運ぶ仕事のうち一つを量る近景で、残る二つと同行者は画角外です。節04で石工としての役は合意済みですが、出演への同意や支払済みを示しません。到達状態はroute=未定で、尾根・谷の運搬、通水、三個同時運搬を先取りしません。採石場の細かな岩肌を整理し、枠を正確な機構図の代わりにはしていません。
+
+- 配布用：`assets/images/gb18-scene-07.webp`
+- 採用PNG：`sources/images/gb18-scene-07-a.png`
+- 未採用初稿：`sources/images/gb18-scene-07-draft.png`
+- 生成・修正指示全文：[gb18-scene-07.prompt.txt](../sources/images/gb18-scene-07.prompt.txt)
+- 生成出力：`exec-8fad1b42-2a76-48fb-a3ef-5584666e42ac.png`、built-in imagegen
+- 寸法：1586×992px（PNGとWebPで一致、不透明背景）
+- 配布容量：160,668 bytes
+- 配布SHA-256：`e5a60831a36b8630029fde11e36aaafd8c1c56f6f0c6d66959b391d6214c4f21`
+- 原本SHA-256：`d777d31765008893bf1b53599946ce58cf23874b002f8d3de68f615eb85c0c59`
+
+### IMG-GB19-SCENE-13
+
+低い広い段から救助籠で上げられ、固い道に立ったオルと主人公、救助係2人の計4人。旧ハンドオフの「段から降りた」を、本文の移動方向に合わせて訂正しました。オルは自分の両足で立ち、両手は空。主人公は閉じた帳面1冊を一時的に預かります。空の救助籠とたるんだ縄を足元に置き、救助係は歩行と縄を確かめています。帰路・受付・帳面返却の完了、負傷、投影の実体化、人数の重複は描きません。公開状態は空の1種類ですが、直前の複数経路も照合しました。
+
+- 配布用：`assets/images/gb19-scene-13.webp`
+- 採用PNG：`sources/images/gb19-scene-13-a.png`
+- 未採用初稿：`sources/images/gb19-scene-13-draft.png`
+- 生成・修正指示全文：[gb19-scene-13.prompt.txt](../sources/images/gb19-scene-13.prompt.txt)
+- 生成出力：`exec-d8f111aa-d7ef-4dbf-a172-156a358e2b09.png`、built-in imagegen
+- 寸法：1584×993px（PNGとWebPで一致、不透明背景）
+- 配布容量：222,054 bytes
+- 配布SHA-256：`d88230d5648952cb4ba38cf62d02fd3374ed1b0cd12fcd7bd425d04128c3078d`
+- 原本SHA-256：`61433ea97e13deef77abea6bff5be5ed67650e7da9dd989e8b8e663adf441212`
+
+### IMG-GB20-SCENE-11
+
+木のカウンターに長い楕円の持ち手と短い角形の持ち手の鍵を1本ずつ、計2本並べた近景。主人公が代理で預かっている段階で、ナオへ渡した手は描きません。cloud・gardenの各「返納／店内」とnaoの「未相談／受諾／出発」を掛け合わせた全12状態で共有できます。人物、錨の糸巻き・茶碗、奥の戸口は画角外。返納済みの接続の復活、ナオの在店、閉店や継続の決定を画像から固定しません。初稿の木目を減らして二本の形を主題にしました。
+
+- 配布用：`assets/images/gb20-scene-11.webp`
+- 採用PNG：`sources/images/gb20-scene-11-a.png`
+- 未採用初稿：`sources/images/gb20-scene-11-draft.png`
+- 生成・修正指示全文：[gb20-scene-11.prompt.txt](../sources/images/gb20-scene-11.prompt.txt)
+- 生成出力：`exec-afb65283-a764-44c5-952e-eb17bbbc78ae.png`、built-in imagegen
+- 寸法：1584×993px（PNGとWebPで一致、不透明背景）
+- 配布容量：94,378 bytes
+- 配布SHA-256：`dff21d810fc4d496d4a2391e624b228ce27e2d4e893ca6e1bafcb6fc065b12e2`
+- 原本SHA-256：`9fa42bec5dba51d8e269b41fd482a9256ba0d0c5e7a58cc01ba64fb8ea434770`
+
+### 第9回の出所と残る確認
+
+外部の素材配布サイトは使用していません。組込みimagegenによる生成画像として記録し、未確認の権利調査・保証を取得済みとは扱いません。B・Cと過去の制作履歴は保持しています。素材計画の全62項目はinstalled、nextBatchは空です。BGMの聴感・圧縮品質・3周連続試聴、Firefox・Safari・実機OS別の確認は未実施で、素材導入の完了と分けて引き継ぎます。
+
+
+### 第9回の実画面と検証結果
+
+単体54件、生成物一致確認、ブラウザ65ケースがすべて成功しました。全20場面・50到達状態で画像の切替、次節の既定画像への復帰、BGMの継続を確認しています。4画面サイズと保存・再読み込み、全20作の通しプレイも通過しました。診断エラー0件。第8回の71931c6に対して既存57素材・原稿20作のバイトは不変です。詳細は[検証記録](VALIDATION.md)と[実行結果](validation/batch-09-browser.json)を参照してください。
+
+[PCのGB16](previews/batch-09-desktop.png)。スマホの初期ページ：[GB16](previews/batch-09-gb16-mobile.png)・[GB17](previews/batch-09-gb17-mobile.png)・[GB18](previews/batch-09-gb18-mobile.png)・[GB19](previews/batch-09-gb19-mobile.png)・[GB20](previews/batch-09-gb20-mobile.png)。

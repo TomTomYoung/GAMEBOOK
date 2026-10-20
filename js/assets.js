@@ -376,7 +376,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "10": {
+          "image": {
+            "src": "assets/images/gb16-scene-10.webp",
+            "alt": "墓地の門の手前で棺を支える四人とナギ、チセ、扉を押す門番",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB17": {
       "image": {
@@ -390,7 +399,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "02": {
+          "image": {
+            "src": "assets/images/gb17-scene-02.webp",
+            "alt": "乾いた図面を支える二人の手と、まだ触れていないレバーと呼び管",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB18": {
       "image": {
@@ -404,7 +422,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "07": {
+          "image": {
+            "src": "assets/images/gb18-scene-07.webp",
+            "alt": "採石棚で布包みの温石一つを荷重枠に載せる竜ラハ",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB19": {
       "image": {
@@ -418,7 +445,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "13": {
+          "image": {
+            "src": "assets/images/gb19-scene-13.webp",
+            "alt": "自分の足で立つオルと帳面を持つ主人公、二人の救助係",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB20": {
       "image": {
@@ -432,7 +468,16 @@
         "loop": true,
         "volume": 0.35
       },
-      "scenes": {}
+      "scenes": {
+        "11": {
+          "image": {
+            "src": "assets/images/gb20-scene-11.webp",
+            "alt": "木のカウンターに並べた形の違う二本の鍵",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     }
   }
 });
