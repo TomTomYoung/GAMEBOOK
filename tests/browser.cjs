@@ -7,6 +7,7 @@
 // CHROMIUM_PATH may be omitted when Playwright's browser is already installed.
 // Screenshots and the JSON report go to QA_OUTPUT_DIR or a temporary directory.
 // BROWSER_CASE may contain a regular expression for a focused rerun.
+// BROWSER selects chromium (default), firefox, or webkit.
 const fs = require('node:fs');
 const path = require('node:path');
 const os = require('node:os');
@@ -22,6 +23,7 @@ const URL = process.env.GAMEBOOK_URL || pathToFileURL(path.join(ROOT, 'index.htm
 const OUTPUT = path.resolve(process.env.QA_OUTPUT_DIR || path.join(os.tmpdir(), 'gamebook-qa'));
 const STORAGE_KEY = 'gamebook.shelf.v1';
 const CASE_FILTER = process.env.BROWSER_CASE ? new RegExp(process.env.BROWSER_CASE) : null;
+const BROWSER = process.env.BROWSER || 'chromium';
 const VIEWPORTS = [
   { width: 1280, height: 720 },
   { width: 390, height: 844 },
@@ -83,24 +85,22 @@ async function newPage(viewport, seed, inspectAudio = false) {
       diagnostics.push({ case: currentCase, type: 'unexpected-network', url: request.url() });
     }
   });
-  let seedSession, seedScript;
-  if (seed) {
-    S.validateShelf(stories, seed);
-    // This suite runs Chromium. Install the fixture for the first document
-    // only, then remove it: reloads must exercise the real saved record, even
-    // when that record is unexpectedly absent. An enduring addInitScript can
-    // otherwise repopulate a lost record and obscure the actual failure.
-    seedSession = await context.newCDPSession(page);
-    await seedSession.send('Page.enable');
-    seedScript = await seedSession.send('Page.addScriptToEvaluateOnNewDocument', {
-      source: `localStorage.setItem(${JSON.stringify(STORAGE_KEY)}, ${JSON.stringify(JSON.stringify(seed))});`
-    });
-  }
   await page.goto(URL);
   await page.waitForSelector('html[data-gamebook-ready="true"]');
-  if (seedSession) {
-    await seedSession.send('Page.removeScriptToEvaluateOnNewDocument', { identifier: seedScript.identifier });
-    await seedSession.detach();
+  await page.evaluate(() => document.fonts.ready);
+  await settle(page);
+  if (seed) {
+    S.validateShelf(stories, seed);
+    // Use the actual import UI once. This works without Chromium's protocol,
+    // and leaves no initialization hook that could repopulate a lost save.
+    await page.locator('#save-button').click();
+    await page.locator('#import-input').setInputFiles({
+      name: 'display-fixture.json', mimeType: 'application/json',
+      buffer: Buffer.from(JSON.stringify(seed))
+    });
+    await page.getByRole('heading', { name: 'この栞を読み込みますか。', exact: true }).waitFor();
+    await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
+    assert.deepEqual(await storedShelf(page), seed, 'display fixture must be imported exactly once');
   }
   await page.evaluate(() => document.fonts.ready);
   await settle(page);
@@ -716,9 +716,13 @@ async function main() {
   let playwright;
   try { playwright = require(process.env.PLAYWRIGHT_MODULE || 'playwright'); }
   catch (_) { throw new Error('Playwrightを別途インストールするか、PLAYWRIGHT_MODULEにそのモジュールの場所を指定してください。'); }
-  const options = { headless: true, args: ['--no-sandbox'] };
-  if (process.env.CHROMIUM_PATH) options.executablePath = process.env.CHROMIUM_PATH;
-  browser = await playwright.chromium.launch(options);
+  assert(['chromium', 'firefox', 'webkit'].includes(BROWSER), `Unsupported BROWSER: ${BROWSER}`);
+  const options = { headless: true };
+  if (BROWSER === 'chromium') {
+    options.args = ['--no-sandbox'];
+    if (process.env.CHROMIUM_PATH) options.executablePath = process.env.CHROMIUM_PATH;
+  }
+  browser = await playwright[BROWSER].launch(options);
   const version = browser.version();
   const started = new Date().toISOString();
   try {
@@ -730,7 +734,7 @@ async function main() {
     await testAllStories();
   } finally {
     await browser.close();
-    const report = { started, finished: new Date().toISOString(), url: URL, browserVersion: version, viewports: VIEWPORTS, results, diagnostics, screenshots };
+    const report = { started, finished: new Date().toISOString(), url: URL, browser: BROWSER, platform: process.platform, browserVersion: version, viewports: VIEWPORTS, results, diagnostics, screenshots };
     fs.writeFileSync(path.join(OUTPUT, 'report.json'), JSON.stringify(report, null, 2) + '\n');
   }
   const failed = results.filter(result => result.status !== 'passed');

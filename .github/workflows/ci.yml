@@ -11,6 +11,10 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
     steps:
       - uses: actions/checkout@v7
         with:
@@ -25,7 +29,17 @@ jobs:
         run: npm test
       - name: Install browser test dependency
         run: npm ci
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-      - name: Verify the direct-file game in Chromium
+      - name: Install ${{ matrix.browser }}
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Verify the direct-file game in ${{ matrix.browser }}
+        env:
+          BROWSER: ${{ matrix.browser }}
+          QA_OUTPUT_DIR: test-results/${{ matrix.browser }}
         run: npm run test:browser
+      - name: Save browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-${{ matrix.browser }}
+          path: test-results/${{ matrix.browser }}/
+          if-no-files-found: warn
