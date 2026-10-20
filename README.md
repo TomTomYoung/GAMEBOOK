@@ -32,26 +32,28 @@
 
 ## 収録作品
 
-1. 潮の下の郵便局
-2. 骨の橋で待つもの
-3. 眠らない駅の忘れ物
-4. 王女を運ばない馬車
-5. 雨を買った村
-6. 最後の一席
-7. 複製された遺言
-8. 北塔の降伏旗
-9. 台所に住む小さな王
-10. 返却期限のない図書館
-11. 暗礁の二重灯台
-12. 空中市場の盗まれた床
-13. 雪に埋めた名前
-14. 朝焼けまでの怪物番
-15. 一度だけ戻れる敗戦
-16. 鐘を鳴らさない葬列
-17. 砂時計のない牢獄
-18. 花嫁ではない竜
-19. 十二人目の帰還者
-20. 世界を閉じる小さな店
+各作品名から、GitHub上で読めるシナリオ全文のMarkdownを開けます。本文・条件付き本文・選択肢と分岐先・条件と記録の変化・すべての結末・作者資料を収録しています。[全20作の目次](doc/scenarios/README.md)からも選べます。
+
+1. [潮の下の郵便局](doc/scenarios/gb01.md)
+2. [骨の橋で待つもの](doc/scenarios/gb02.md)
+3. [眠らない駅の忘れ物](doc/scenarios/gb03.md)
+4. [王女を運ばない馬車](doc/scenarios/gb04.md)
+5. [雨を買った村](doc/scenarios/gb05.md)
+6. [最後の一席](doc/scenarios/gb06.md)
+7. [複製された遺言](doc/scenarios/gb07.md)
+8. [北塔の降伏旗](doc/scenarios/gb08.md)
+9. [台所に住む小さな王](doc/scenarios/gb09.md)
+10. [返却期限のない図書館](doc/scenarios/gb10.md)
+11. [暗礁の二重灯台](doc/scenarios/gb11.md)
+12. [空中市場の盗まれた床](doc/scenarios/gb12.md)
+13. [雪に埋めた名前](doc/scenarios/gb13.md)
+14. [朝焼けまでの怪物番](doc/scenarios/gb14.md)
+15. [一度だけ戻れる敗戦](doc/scenarios/gb15.md)
+16. [鐘を鳴らさない葬列](doc/scenarios/gb16.md)
+17. [砂時計のない牢獄](doc/scenarios/gb17.md)
+18. [花嫁ではない竜](doc/scenarios/gb18.md)
+19. [十二人目の帰還者](doc/scenarios/gb19.md)
+20. [世界を閉じる小さな店](doc/scenarios/gb20.md)
 
 ## 使用モデル・素材制作の引継ぎ
 
@@ -77,11 +79,13 @@ node scripts/build-data.cjs --check
 node --test --test-isolation=none tests/*.test.cjs
 ```
 
-原稿は`data/stories/gb01.json`〜`gb20.json`が正本です。全文と作者用の人物・因果・根拠も保持しています。編集後は次を実行し、ブラウザ用のclassic scriptを再生成してください。
+原稿は`data/stories/gb01.json`〜`gb20.json`が正本です。全文と作者用の人物・因果・根拠も保持しています。編集後は次を実行し、ブラウザ用のclassic scriptと`doc/scenarios/`のMarkdownを再生成してください。
 
 ```sh
 node scripts/build-data.cjs
 ```
+
+シナリオMarkdownも `node scripts/build-data.cjs --check` による生成物の一致検査の対象です。本文や分岐を変更する際は正本のJSONを編集してください。
 
 ブラウザ試験には開発用のPlaywrightを使います。
 

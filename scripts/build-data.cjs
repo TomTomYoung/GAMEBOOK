@@ -7,6 +7,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
+const { scenarioMarkdown } = require('./scenario-markdown.cjs');
 
 const ROOT = path.resolve(__dirname, '..');
 const STORY_IDS = Array.from({ length: 20 }, (_, i) => `GB${String(i + 1).padStart(2, '0')}`);
@@ -115,7 +116,8 @@ function build({ root = ROOT, check = false } = {}) {
   const outputs = [
     ['js/stories.js', classicBundle('GB_STORIES', 'data/stories/*.json', stories)],
     ['js/assets.js', classicBundle('GB_ASSETS', 'assets/manifest.json', manifest)],
-    ['doc/audio-review-data.js', classicBundle('GB_AUDIO_REVIEW_TRACKS', 'data/stories/*.json and assets/manifest.json with audio SHA-256', reviewTracks)]
+    ['doc/audio-review-data.js', classicBundle('GB_AUDIO_REVIEW_TRACKS', 'data/stories/*.json and assets/manifest.json with audio SHA-256', reviewTracks)],
+    ...scenarioMarkdown(stories)
   ];
   const changed = outputs.filter(([filename, text]) => {
     const target = path.join(root, filename);
@@ -125,9 +127,11 @@ function build({ root = ROOT, check = false } = {}) {
     throw new Error(`生成物が原稿と一致しません: ${changed.map(([name]) => name).join(', ')}。node scripts/build-data.cjs を実行してください。`);
   }
   if (!check) {
-    fs.mkdirSync(path.join(root, 'js'), { recursive: true });
-    fs.mkdirSync(path.join(root, 'doc'), { recursive: true });
-    for (const [filename, text] of changed) fs.writeFileSync(path.join(root, filename), text, 'utf8');
+    for (const [filename, text] of changed) {
+      const target = path.join(root, filename);
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.writeFileSync(target, text, 'utf8');
+    }
   }
   return { storyCount: stories.length, files: outputs.map(([name]) => name), changed: changed.map(([name]) => name), check };
 }
