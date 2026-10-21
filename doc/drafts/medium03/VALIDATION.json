@@ -1,0 +1,297 @@
+{
+  "version": "M03 draft 1",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "第一章　知らない名を呼ぶ家",
+      "sections": 19,
+      "visible_chars": 9521
+    },
+    {
+      "chapter": 2,
+      "title": "第二章　風の町の十八年",
+      "sections": 19,
+      "visible_chars": 8729
+    },
+    {
+      "chapter": 3,
+      "title": "第三章　はじめての竜便",
+      "sections": 19,
+      "visible_chars": 8486
+    },
+    {
+      "chapter": 4,
+      "title": "第四章　旧名で届く封筒",
+      "sections": 18,
+      "visible_chars": 8289
+    },
+    {
+      "chapter": 5,
+      "title": "第五章　星の下の停泊地",
+      "sections": 18,
+      "visible_chars": 8047
+    },
+    {
+      "chapter": 6,
+      "title": "第六章　雨裏の地図",
+      "sections": 18,
+      "visible_chars": 8427
+    },
+    {
+      "chapter": 7,
+      "title": "第七章　空賊の食卓",
+      "sections": 17,
+      "visible_chars": 7803
+    },
+    {
+      "chapter": 8,
+      "title": "第八章　届ける家と帰る家",
+      "sections": 19,
+      "visible_chars": 7968
+    },
+    {
+      "chapter": 9,
+      "title": "第九章　もう一人の転生者",
+      "sections": 18,
+      "visible_chars": 8629
+    },
+    {
+      "chapter": 10,
+      "title": "第十章　誰のための空路",
+      "sections": 17,
+      "visible_chars": 7813
+    },
+    {
+      "chapter": 11,
+      "title": "第十一章　二つの生涯を話す夜",
+      "sections": 20,
+      "visible_chars": 8620
+    },
+    {
+      "chapter": 12,
+      "title": "第十二章　竜たちの渡り",
+      "sections": 21,
+      "visible_chars": 8939
+    },
+    {
+      "chapter": 13,
+      "title": "第十三章　雷の鐘塔",
+      "sections": 19,
+      "visible_chars": 8055
+    },
+    {
+      "chapter": 14,
+      "title": "第十四章　名のない空を開く",
+      "sections": 20,
+      "visible_chars": 8330
+    },
+    {
+      "chapter": 15,
+      "title": "第十五章　配達の終わり",
+      "sections": 21,
+      "visible_chars": 9057
+    },
+    {
+      "chapter": 16,
+      "title": "第十六章　二度目の宛先",
+      "sections": 21,
+      "visible_chars": 9195
+    }
+  ],
+  "sections": 304,
+  "transitions": 340,
+  "conditional_blocks": 102,
+  "update_sections": 19,
+  "node_state_pairs": 19193,
+  "state_transitions": 20353,
+  "endings": {
+    "E1": {
+      "reachable_end_states": 128,
+      "complete_paths": "141557760",
+      "min_visible_chars": 108776,
+      "max_visible_chars": 109968
+    },
+    "E3": {
+      "reachable_end_states": 128,
+      "complete_paths": "70778880",
+      "min_visible_chars": 108742,
+      "max_visible_chars": 109927
+    },
+    "E2": {
+      "reachable_end_states": 128,
+      "complete_paths": "70778880",
+      "min_visible_chars": 109112,
+      "max_visible_chars": 110295
+    }
+  },
+  "visible_chars": 135908,
+  "baseline_visible_chars": 123905,
+  "ratio_to_baseline": 1.0968726040111376,
+  "representative_routes": [
+    {
+      "name": "A_island_early",
+      "nodes": 253,
+      "ending": [
+        "E1",
+        "帰る港から"
+      ],
+      "visible_chars": 108872,
+      "final_state": {
+        "仕事": "段取り",
+        "響力": 0,
+        "告白": "話した",
+        "竜約": "任せる",
+        "航路図": "写し",
+        "荷箱": "無事",
+        "進路": "島便"
+      },
+      "choices": [
+        "ch01:04→ch01:05",
+        "ch01:10→ch01:11",
+        "ch01:16→ch01:17",
+        "ch02:06→ch02:07",
+        "ch02:13→ch02:14",
+        "ch03:04→ch03:05",
+        "ch03:07→ch03:08",
+        "ch03:13→ch03:14",
+        "ch04:04→ch04:05",
+        "ch04:11→ch04:12",
+        "ch05:05→ch05:06",
+        "ch05:10→ch05:11",
+        "ch06:07→ch06:08",
+        "ch07:02→ch07:03",
+        "ch07:09→ch07:10",
+        "ch09:08→ch09:09",
+        "ch10:05→ch10:06",
+        "ch10:12→ch10:13",
+        "ch11:14→ch11:15",
+        "ch12:10→ch12:11",
+        "ch12:18→ch12:19",
+        "ch13:07→ch13:08",
+        "ch13:16→ch13:17",
+        "ch14:13→ch14:14",
+        "ch15:17→ch15:18",
+        "ch16:03→ch16:04"
+      ]
+    },
+    {
+      "name": "B_far_secret_wet",
+      "nodes": 255,
+      "ending": [
+        "E2",
+        "まだ知らない港へ"
+      ],
+      "visible_chars": 110075,
+      "final_state": {
+        "仕事": "聞き取り",
+        "響力": 3,
+        "告白": "まだ",
+        "竜約": "合図",
+        "航路図": "なし",
+        "荷箱": "乾かした",
+        "進路": "遠便"
+      },
+      "choices": [
+        "ch01:04→ch01:06",
+        "ch01:10→ch01:12",
+        "ch01:16→ch01:18",
+        "ch02:06→ch02:08",
+        "ch02:13→ch02:15",
+        "ch03:04→ch03:06",
+        "ch03:07→ch03:10",
+        "ch03:13→ch03:15",
+        "ch04:04→ch04:06",
+        "ch04:11→ch04:13",
+        "ch05:05→ch05:07",
+        "ch05:10→ch05:12",
+        "ch06:07→ch06:09",
+        "ch07:02→ch07:04",
+        "ch07:09→ch07:11",
+        "ch09:08→ch09:10",
+        "ch10:05→ch10:07",
+        "ch10:12→ch10:14",
+        "ch11:05→ch11:07",
+        "ch11:14→ch11:16",
+        "ch12:10→ch12:12",
+        "ch12:18→ch12:20",
+        "ch13:07→ch13:09",
+        "ch13:16→ch13:18",
+        "ch14:09→ch14:11",
+        "ch14:13→ch14:15",
+        "ch15:17→ch15:19"
+      ]
+    },
+    {
+      "name": "C_study_late_zero",
+      "nodes": 254,
+      "ending": [
+        "E3",
+        "まだ聞いていない声"
+      ],
+      "visible_chars": 109426,
+      "final_state": {
+        "仕事": "聞き取り",
+        "響力": 0,
+        "告白": "話した",
+        "竜約": "合図",
+        "航路図": "なし",
+        "荷箱": "乾かした",
+        "進路": "学舎"
+      },
+      "choices": [
+        "ch01:04→ch01:05",
+        "ch01:10→ch01:11",
+        "ch01:16→ch01:17",
+        "ch02:06→ch02:08",
+        "ch02:13→ch02:14",
+        "ch03:04→ch03:06",
+        "ch03:07→ch03:10",
+        "ch03:13→ch03:14",
+        "ch04:04→ch04:06",
+        "ch04:11→ch04:12",
+        "ch05:05→ch05:06",
+        "ch05:10→ch05:11",
+        "ch06:07→ch06:09",
+        "ch07:02→ch07:03",
+        "ch07:09→ch07:10",
+        "ch09:08→ch09:09",
+        "ch10:05→ch10:06",
+        "ch10:12→ch10:13",
+        "ch11:05→ch11:06",
+        "ch11:14→ch11:15",
+        "ch12:10→ch12:11",
+        "ch12:18→ch12:19",
+        "ch13:07→ch13:08",
+        "ch13:16→ch13:17",
+        "ch14:13→ch14:14",
+        "ch15:17→ch15:20"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "ch01.md": "c997cb76539d57d9903f1618a56e4f3e46c57007df7271d8f429e42541ac64de",
+    "ch02.md": "3ae5661bdc5d2fcf7f9e30a207bf26358311cf406eab311ee48f179c4cb47035",
+    "ch03.md": "612029c625c180723baeb694e874b3e40677a58709992fb4ea72613858cefdd6",
+    "ch04.md": "4b67b0c1f1f95ce5413e8b9f2b005d025700835adf01d004852e1e33601a0704",
+    "ch05.md": "9a0b8e0c94756fe80451c0924229597798db7ff9a56bf4169f00af545f04216b",
+    "ch06.md": "c5ff1c7bdbafd1627a47ecf9386fddc4f1ab9e45c1d28d43151276a4f01b6953",
+    "ch07.md": "b785bb3b31e25e344dfeed7e9aac3778095ae307ed07729271a17bc1fd7effc7",
+    "ch08.md": "5a4f4e88167ff755f0cdccfc674629359062fbbcad49915374a91736367a2eca",
+    "ch09.md": "b2ac24a9fb39bf58be41d4503ba6597ef5762bb3407c7f330d6d8a5459e3c4a9",
+    "ch10.md": "a58396f2e725de155bacb5f279e4a25530e70e3afd4831bb1a08c64e75d68789",
+    "ch11.md": "65f6e020827373a89bc32603893cd3e61e42fa1e97d34f7f80d52087467f5445",
+    "ch12.md": "b69e71329c6f0214f1e6128c1454d297e4b54b9d5e5535ede00a17e919b631c2",
+    "ch13.md": "c566aa8d9b1788fd437904941250a7f8a0e60b45e119aa93d95784b76d086eed",
+    "ch14.md": "34f09dd6d8bab47ac9e4c206bc2039b98b4a14509ecf154f4a6798da39fcd414",
+    "ch15.md": "e3d7c3732c10aa83a14a6c4038ea5dd039620bd6417455ef2cd9b926e4846d5b",
+    "ch16.md": "b84e08e0a02af2e8d26f5158707e3f9028eca27a07077561fe2c6e1e45e1f6b7"
+  },
+  "errors": [],
+  "scope": "Exact finite-state graph over seven public records; not proof of natural-language narrative quality or real-reader testing.",
+  "document_link_check": {
+    "files": 21,
+    "relative_links": 411,
+    "errors": [],
+    "base_commit": "2f6368ee82b012beeaa19c57de37ef486d39b47f"
+  }
+}
