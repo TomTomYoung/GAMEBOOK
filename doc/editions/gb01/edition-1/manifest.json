@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "storyId": "GB01",
+  "title": "潮の下の郵便局",
+  "editorialEdition": 1,
+  "contentRevision": 2,
+  "modelVersion": "1.2",
+  "frozenOn": "2026-10-22",
+  "timezone": "Asia/Tokyo",
+  "repository": "TomTomYoung/GAMEBOOK",
+  "baseCommit": "8d5a2308ff05d0605d837e00fed2a1028e44b242",
+  "meaning": "準備開始時の公開済みGB01を初版として固定。revision 2は編集上の第2版ではない。",
+  "originalFiles": [
+    {
+      "path": "data/stories/gb01.json",
+      "bytes": 30427,
+      "sha256": "10484bd3ff415d0a8c16f5aaa2f4c529b9bbbd59465fb896196abdf351d40f51"
+    },
+    {
+      "path": "doc/scenarios/gb01.md",
+      "bytes": 29723,
+      "sha256": "d93742c2717b649610f8ebc441658cde9156ab220e0942603188facbf826accc"
+    },
+    {
+      "path": "doc/SCENARIO_MODEL_V1_2.md",
+      "bytes": 80608,
+      "sha256": "5d469bbc4c82e08d4ba5a83f727ba6abf7c350c8668da63d9b215c696ad4abfa"
+    },
+    {
+      "path": "doc/SCENARIO_MODEL_V1_2B.md",
+      "bytes": 114399,
+      "sha256": "390ead24c3ec22f1bc92ec4d19e64dc9e65f534e4843c57d2be378d711e8ec91"
+    },
+    {
+      "path": "js/engine.js",
+      "bytes": 18926,
+      "sha256": "5febe1d6f16e358ab72d8bee7c992877dd56a3eb4bccaa88a01b1495bcafc1c8"
+    },
+    {
+      "path": "assets/manifest.json",
+      "bytes": 14030,
+      "sha256": "8925388d0e804ca17fc7889300015ff01204147a73040bf03d30bec36c46fc42"
+    }
+  ],
+  "frozenFiles": [
+    {
+      "path": "doc/editions/gb01/edition-1/gb01.json",
+      "bytes": 30427,
+      "sha256": "10484bd3ff415d0a8c16f5aaa2f4c529b9bbbd59465fb896196abdf351d40f51"
+    },
+    {
+      "path": "doc/editions/gb01/edition-1/gb01.md",
+      "bytes": 29958,
+      "sha256": "85eb559d41b87ab4dcd07f88253fc892364da86bd44c22f44bc3a4e221ce41e6"
+    }
+  ],
+  "markdownChanges": "保存版の説明・見出し・案内リンクのみ変更。内容版の行以降は末尾の目次リンク以外をそのまま保持。",
+  "assetEntry": {
+    "image": {
+      "src": "assets/images/gb01-cover.webp",
+      "alt": "潮に囲まれた木の郵便局と欠けた白い塩柱、暖かな窓の明かり。",
+      "position": "center"
+    },
+    "music": {
+      "src": "assets/audio/gb01-theme.ogg",
+      "title": "潮を待つ軒下",
+      "loop": true,
+      "volume": 0.35
+    },
+    "scenes": {
+      "03": {
+        "image": {
+          "src": "assets/images/gb01-scene-03.webp",
+          "alt": "右腕を固定したミヨが左手で椅子を寄せ、足首を負傷したカヨが膝に地図を置く",
+          "position": "center"
+        },
+        "music": null
+      }
+    }
+  },
+  "assetFiles": [
+    {
+      "path": "assets/images/gb01-cover.webp",
+      "bytes": 113262,
+      "sha256": "5950572a751d778a139387f127dcd5f5966e44f44e1ee3800188eba4c4aca985"
+    },
+    {
+      "path": "assets/audio/gb01-theme.ogg",
+      "bytes": 442610,
+      "sha256": "26679314f1c1a5d60151e836e6aace92c52ffc63a1f604b9e8e083205dde01e4"
+    },
+    {
+      "path": "assets/images/gb01-scene-03.webp",
+      "bytes": 196484,
+      "sha256": "55e21d52c9869966294ee69e11a9db76d0cbd518cde729c94fa5d3e87d192057"
+    }
+  ],
+  "baseline": {
+    "method": "既存js/engine.jsで初期状態から利用可能な選択肢を再帰列挙。state数はnodeIdと公開記録の組、transitionsは各状態からの辺数。終端経路は選択履歴を区別する。",
+    "nodeCount": 12,
+    "choiceCount": 14,
+    "endingCount": 4,
+    "variantCount": 3,
+    "reachableStateCount": 38,
+    "transitionCount": 40,
+    "terminalPathCount": 10,
+    "terminalStateCount": 7,
+    "terminalPaths": [
+      {
+        "ending": "E1",
+        "state": {
+          "tide": 1,
+          "kayo": true,
+          "newmail": true,
+          "oldmail": false
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "03a",
+          "06a",
+          "02b",
+          "04a",
+          "02d",
+          "07a"
+        ]
+      },
+      {
+        "ending": "E2",
+        "state": {
+          "tide": 0,
+          "kayo": true,
+          "newmail": false,
+          "oldmail": true
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "03a",
+          "06a",
+          "02c",
+          "05a",
+          "02d",
+          "07b"
+        ]
+      },
+      {
+        "ending": "E3",
+        "state": {
+          "tide": 2,
+          "kayo": true,
+          "newmail": false,
+          "oldmail": false
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "03a",
+          "06a",
+          "02d",
+          "07c"
+        ]
+      },
+      {
+        "ending": "E1",
+        "state": {
+          "tide": 1,
+          "kayo": true,
+          "newmail": true,
+          "oldmail": false
+        },
+        "trail": [
+          "01a",
+          "02b",
+          "04a",
+          "02a",
+          "03a",
+          "06a",
+          "02d",
+          "07a"
+        ]
+      },
+      {
+        "ending": "E4",
+        "state": {
+          "tide": 1,
+          "kayo": false,
+          "newmail": true,
+          "oldmail": true
+        },
+        "trail": [
+          "01a",
+          "02b",
+          "04a",
+          "02c",
+          "05a",
+          "02d",
+          "07d",
+          "11a"
+        ]
+      },
+      {
+        "ending": "E4",
+        "state": {
+          "tide": 3,
+          "kayo": false,
+          "newmail": true,
+          "oldmail": false
+        },
+        "trail": [
+          "01a",
+          "02b",
+          "04a",
+          "02d",
+          "07d",
+          "11a"
+        ]
+      },
+      {
+        "ending": "E2",
+        "state": {
+          "tide": 0,
+          "kayo": true,
+          "newmail": false,
+          "oldmail": true
+        },
+        "trail": [
+          "01a",
+          "02c",
+          "05a",
+          "02a",
+          "03a",
+          "06a",
+          "02d",
+          "07b"
+        ]
+      },
+      {
+        "ending": "E4",
+        "state": {
+          "tide": 1,
+          "kayo": false,
+          "newmail": true,
+          "oldmail": true
+        },
+        "trail": [
+          "01a",
+          "02c",
+          "05a",
+          "02b",
+          "04a",
+          "02d",
+          "07d",
+          "11a"
+        ]
+      },
+      {
+        "ending": "E4",
+        "state": {
+          "tide": 2,
+          "kayo": false,
+          "newmail": false,
+          "oldmail": true
+        },
+        "trail": [
+          "01a",
+          "02c",
+          "05a",
+          "02d",
+          "07d",
+          "11a"
+        ]
+      },
+      {
+        "ending": "E4",
+        "state": {
+          "tide": 4,
+          "kayo": false,
+          "newmail": false,
+          "oldmail": false
+        },
+        "trail": [
+          "01a",
+          "02d",
+          "07d",
+          "11a"
+        ]
+      }
+    ]
+  }
+}
