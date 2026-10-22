@@ -48,6 +48,8 @@
 
 ## 原稿と生成物の扱い
 
+GB01の第2版は[../data/editions/gb01-v2.json](../data/editions/gb01-v2.json)に初版をそのままコピーしてあります。[第2版の閲覧用Markdown](scenarios/gb01-v2.md)も自動生成します。改稿は第2版JSONで行い、既存の`data/stories/gb01.json`を初版として保持します。ゲーム画面上部から両版を切り替え、進行と結末を別々に保存できます。
+
 実装済みGB01〜GB20の正本は [../data/stories/](../data/stories/) の `gb01.json`〜`gb20.json` です。本文、選択肢、状態、結末、作者用の根拠が一つの作品データに入っています。取得元とバイト単位の識別情報は [../data/source-manifest.json](../data/source-manifest.json) にあります。
 
 ブラウザ用の `js/stories.js` と `js/assets.js`、試聴用の `doc/audio-review-data.js`、シナリオ閲覧用の `doc/scenarios/README.md` と `doc/scenarios/gb01.md`〜`gb20.md` は、正本から `node scripts/build-data.cjs` で生成します。試聴用データには音源のSHA-256も記録し、音源の更新を確認結果へ反映します。生成物だけを直接編集すると、次の生成で変更が消えます。作品の条件・効果・本文を変えた場合は、作品の内容版と保存互換を見直してください。

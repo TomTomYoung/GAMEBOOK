@@ -401,6 +401,64 @@ async function testResponsive() {
 }
 
 async function testSavesAndHistory() {
+  await runCase('gb01-edition-switch-and-separate-saves', async () => {
+    const first = storyById('GB01');
+    const second = require('../js/editions.js').find(entry => entry.baseId === 'GB01' && entry.edition === 2).story;
+    const registry = [...stories, second];
+    // A pre-edition save must still open unchanged as the first edition.
+    const oldSave = seededShelf('GB01', ['01a', '02a']);
+    const page = await newPage(VIEWPORTS[0], oldSave);
+    assert.equal(await page.locator('#edition-select').inputValue(), first.id);
+    const original = (await storedShelf(page)).sessions.GB01;
+    await page.locator('#edition-select').selectOption(second.id);
+    assert.deepEqual((await storedShelf(page)).sessions[second.id], E.createSession(second));
+    await readEveryPage(page, introText(second), 'second edition introduction');
+    await page.locator('[data-action="begin"]').click();
+    await page.waitForTimeout(340);
+    let session = E.createSession(second);
+    for (const id of ['01a', '02b', '04a', '02d', '07d', '11a']) session = await choose(page, second, session, id);
+    let saved = await storedShelf(page);
+    assert.deepEqual(saved.sessions.GB01, original);
+    assert.equal(saved.endingTrails.GB01?.E4, undefined, 'second-edition endings must not mark the first edition');
+    assert.deepEqual(saved.endingTrails[second.id].E4, session.trail);
+    await page.locator('#edition-select').selectOption(first.id);
+    assert.deepEqual((await storedShelf(page)).sessions.GB01, original);
+    await page.locator('#edition-select').selectOption(second.id);
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    assert.equal(await page.locator('#edition-select').inputValue(), second.id);
+    assert.deepEqual((await storedShelf(page)).sessions[second.id], session);
+    for (const viewport of VIEWPORTS) {
+      await page.setViewportSize(viewport);
+      await settle(page);
+      await layout(page, `edition switch ${viewport.width}x${viewport.height}`);
+      const selector = await page.locator('#edition-select').boundingBox();
+      const tools = await page.locator('.reader-tools').boundingBox();
+      assert(selector.width >= 50 && selector.x >= 0 && selector.x + selector.width <= tools.x + 1, 'edition control must fit without overlapping the reader tools');
+      await screenshot(page, `editions-${viewport.width}x${viewport.height}`);
+    }
+    await page.locator('#save-button').click();
+    const downloadPromise = page.waitForEvent('download');
+    await page.getByRole('button', { name: 'ファイルに保存', exact: true }).click();
+    const download = await downloadPromise;
+    const exported = fs.readFileSync(await download.path(), 'utf8');
+    saved = await storedShelf(page);
+    assert.deepEqual(S.validateShelf(registry, JSON.parse(exported)), saved);
+    // Import both editions into a fresh browser context through the real UI.
+    const imported = await newPage(VIEWPORTS[1]);
+    await imported.locator('#save-button').click();
+    await imported.locator('#import-input').setInputFiles({ name: 'editions.json', mimeType: 'application/json', buffer: Buffer.from(exported) });
+    await imported.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
+    assert.deepEqual(await storedShelf(imported), saved);
+    await imported.locator('#edition-select').selectOption(first.id);
+    assert.deepEqual((await storedShelf(imported)).sessions.GB01, original);
+    await imported.locator('#edition-select').selectOption(second.id);
+    assert.deepEqual((await storedShelf(imported)).sessions[second.id], session);
+    await openFromShelf(imported, 'GB02');
+    assert.equal(await imported.locator('#edition-select').isVisible(), false, 'unchanged works need no edition control');
+    await page.context().close();
+    await imported.context().close();
+  });
   await runCase('begin-doubleclick-keeps-first-section', async () => {
     const story = storyById('GB01');
     const page = await newPage(VIEWPORTS[0], seededShelf('GB01', [], true));

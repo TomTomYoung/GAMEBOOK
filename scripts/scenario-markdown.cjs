@@ -84,14 +84,15 @@ function authorMaterial(author) {
   return parts.join('\n\n');
 }
 
-function renderStory(story) {
+function renderStory(story, edition) {
   const filename = story.id.toLowerCase();
+  const source = edition ? `data/editions/${filename}.json` : `data/stories/${filename}.json`;
   const definitions = new Map(story.state.map(definition => [definition.id, definition]));
   const nodes = new Map(story.nodes.map(node => [node.id, node]));
   const parts = [
-    `<!-- Generated from data/stories/${filename}.json by scripts/build-data.cjs. Do not edit. -->`,
-    `# ${markdown(story.id)} ${markdown(story.title)}`,
-    `[全作品の目次](README.md) · [原稿JSON](../../data/stories/${filename}.json) · [開始節へ](#node-01)`,
+    `<!-- Generated from ${source} by scripts/build-data.cjs. Do not edit. -->`,
+    `# ${markdown(edition ? edition.baseId : story.id)} ${markdown(story.title)}${edition ? ` — 第${edition.edition}版` : ''}`,
+    `[全作品の目次](README.md) · [原稿JSON](../../${source}) · [開始節へ](#node-01)`,
     `**作品番号**：${story.number}　**内容版**：${story.revision}　**ジャンル**：${markdown(story.genre)}`,
     prose(story.hook),
     '## 読み方',
@@ -146,7 +147,7 @@ function renderStory(story) {
   return parts.join('\n\n') + '\n';
 }
 
-function renderIndex(stories) {
+function renderIndex(stories, editions = []) {
   const counts = stories.reduce((total, story) => {
     total.nodes += story.nodes.length;
     for (const node of story.nodes) {
@@ -168,7 +169,9 @@ function renderIndex(stories) {
   parts.push(stories.map(story => {
     const marker = `${story.number}. `;
     const indent = ' '.repeat(marker.length);
-    return `${marker}[${markdown(story.id)} ${markdown(story.title)}](${story.id.toLowerCase()}.md) — ${markdown(story.genre)}\n\n`
+    const versions = editions.filter(edition => edition.baseId === story.id);
+    const links = versions.length ? `（初版） / ${versions.map(edition => `[第${edition.edition}版](${edition.story.id.toLowerCase()}.md)`).join(' / ')}` : '';
+    return `${marker}[${markdown(story.id)} ${markdown(story.title)}](${story.id.toLowerCase()}.md)${links} — ${markdown(story.genre)}\n\n`
       + indent + prose(story.hook).replace(/\n/g, `\n${indent}`);
   }).join('\n\n'));
   parts.push('## 原稿を更新した場合',
@@ -180,10 +183,11 @@ function renderIndex(stories) {
   return parts.join('\n\n') + '\n';
 }
 
-function scenarioMarkdown(stories) {
+function scenarioMarkdown(stories, editions = []) {
   return [
-    ['doc/scenarios/README.md', renderIndex(stories)],
-    ...stories.map(story => [`doc/scenarios/${story.id.toLowerCase()}.md`, renderStory(story)])
+    ['doc/scenarios/README.md', renderIndex(stories, editions)],
+    ...stories.map(story => [`doc/scenarios/${story.id.toLowerCase()}.md`, renderStory(story)]),
+    ...editions.map(edition => [`doc/scenarios/${edition.story.id.toLowerCase()}.md`, renderStory(edition.story, edition)])
   ];
 }
 
