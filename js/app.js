@@ -5,7 +5,13 @@
   const stories = globalThis.GB_STORIES;
   const editions = globalThis.GB_EDITIONS || [];
   const allStories = [...(stories || []), ...editions.map(edition => edition.story)];
-  const selectedEditions = {};
+  // New shelf selections start with the highest numeric edition. Opening an
+  // explicit edition (including a saved active book) still resumes that edition.
+  const selectedEditions = Object.fromEntries((stories || []).map(story => {
+    const latest = editions.filter(edition => edition.baseId === story.id)
+      .sort((a, b) => b.edition - a.edition)[0];
+    return [story.id, latest?.story.id || story.id];
+  }));
   const assets = globalThis.GB_ASSETS;
   const $ = id => document.getElementById(id);
   const STORAGE_KEY = 'gamebook.shelf.v1';
@@ -257,7 +263,8 @@
     const baseId = baseIdFor(story.id);
     $('book-number').textContent = baseId;
     $('book-title').textContent = story.title;
-    const versions = editions.filter(edition => edition.baseId === baseId);
+    const versions = editions.filter(edition => edition.baseId === baseId)
+      .sort((a, b) => a.edition - b.edition);
     const selector = $('edition-select');
     selector.hidden = versions.length === 0;
     selector.replaceChildren();

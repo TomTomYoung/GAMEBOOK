@@ -158,7 +158,7 @@ function renderIndex(stories, editions = []) {
     return total;
   }, { nodes: 0, choices: 0, variants: 0, endings: 0 });
   const parts = [
-    '<!-- Generated from data/stories/*.json by scripts/build-data.cjs. Do not edit. -->',
+    '<!-- Generated from data/stories/*.json and data/editions/*.json by scripts/build-data.cjs. Do not edit. -->',
     '# シナリオ全文',
     `[資料の案内](../README.md) · [リポジトリの案内](../../README.md)`,
     `全${stories.length}作、${counts.nodes}節・${counts.choices}選択肢・${counts.endings}結末を、作品ごとのMarkdownで読めます。${counts.variants}件の条件付き本文も収録しています。`,
@@ -175,7 +175,7 @@ function renderIndex(stories, editions = []) {
       + indent + prose(story.hook).replace(/\n/g, `\n${indent}`);
   }).join('\n\n'));
   parts.push('## 原稿を更新した場合',
-    '正本は [data/stories/](../../data/stories/) のJSONです。このフォルダは自動生成されます。原稿を編集したら、リポジトリ直下で次を実行するとMarkdownとブラウザ用データを再生成できます。',
+    '初版の正本は [data/stories/](../../data/stories/)、第2版以降の正本は [data/editions/](../../data/editions/) のJSONです。このフォルダは自動生成されます。原稿を編集したら、リポジトリ直下で次を実行するとMarkdownとブラウザ用データを再生成できます。',
     '```sh\nnode scripts/build-data.cjs\n```',
     '原稿との一致を確認する場合は、次を実行します。`npm run build` / `npm run check` でも同じ処理を行います。',
     '```sh\nnode scripts/build-data.cjs --check\n```',
