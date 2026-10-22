@@ -47,6 +47,21 @@
     $('save-status').classList.toggle('warning', warning);
     $('save-button').title = `セーブの管理 — ${text}`;
   }
+  function readShelf(input) {
+    const id = 'GB01-V2';
+    const revised = allStories.find(story => story.id === id);
+    if (revised?.revision !== 3 || input?.sessions?.[id]?.contentRevision !== 2) {
+      return S.validateShelf(allStories, input);
+    }
+    // Revision 2 of this edition was an exact copy of the preserved first
+    // edition. Validate against that original before replaying the same choices.
+    const legacy = { ...stories.find(story => story.id === 'GB01'), id };
+    const checked = S.validateShelf(allStories.map(story => story.id === id ? legacy : story), input);
+    checked.sessions[id] = E.replay(revised, checked.sessions[id].trail);
+    // The prose and its pagination changed; resume at the section's beginning.
+    if (checked.bookmarks[id]) checked.bookmarks[id].page = 0;
+    return S.validateShelf(allStories, checked);
+  }
   function loadShelf() {
     shelf = S.createShelf();
     try {
@@ -54,7 +69,7 @@
       if (raw !== null) {
         try {
           if (raw.length > MAX_IMPORT_BYTES) throw new Error('保存データが大きすぎます。');
-          shelf = S.validateShelf(allStories, JSON.parse(raw));
+          shelf = readShelf(JSON.parse(raw));
         } catch (error) {
           rawRecovery = raw;
           storageError = error.message;
@@ -694,7 +709,7 @@
     isImportPending = true;
     try {
       if (file.size > MAX_IMPORT_BYTES) throw new Error('セーブファイルは2 MB以下を指定してください。');
-      const next = S.validateShelf(allStories, JSON.parse(await file.text()));
+      const next = readShelf(JSON.parse(await file.text()));
       const count = Object.keys(next.sessions).length;
       const endings = Object.values(next.endingTrails).reduce((sum, item) => sum + Object.keys(item).length, 0);
       const content = modal('この栞を読み込みますか。', 'RESTORE SAVE');
