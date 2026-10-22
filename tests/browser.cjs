@@ -117,6 +117,24 @@ function seededShelf(storyId, trail = [], intro = false, fontSize = 20) {
   return shelf;
 }
 
+async function useLegacyEdition(page, legacy) {
+  // Firefox does not intercept file:// script loads through page.route().
+  // Substitute the old data as the classic bundle assigns it, then let the
+  // next reload use the real bundle once the test enables the current edition.
+  await page.addInitScript(legacy => {
+    if (sessionStorage.getItem('gamebook.test.current-edition') === 'yes') return;
+    Object.defineProperty(globalThis, 'GB_EDITIONS', {
+      configurable: true,
+      set(value) {
+        Object.defineProperty(globalThis, 'GB_EDITIONS', {
+          configurable: true, writable: true,
+          value: value.map(entry => entry.story.id === legacy.id ? { ...entry, story: legacy } : entry)
+        });
+      }
+    });
+  }, legacy);
+}
+
 async function layout(page, label) {
   const issues = await page.evaluate(() => {
     const failures = [];
@@ -455,17 +473,14 @@ async function testSavesAndHistory() {
     // Create the old save through the old edition's UI, then load the revised
     // bundle. Direct protocol writes to file:// storage are unreliable in some
     // Chromium builds (see file-storage-probe.cjs).
-    await page.route('**/js/editions.js', route => route.fulfill({
-      contentType: 'application/javascript',
-      body: `globalThis.GB_EDITIONS = ${JSON.stringify([{ baseId: 'GB01', edition: 2, story: legacy }])};`
-    }));
+    await useLegacyEdition(page, legacy);
     await page.reload();
     await page.waitForSelector('html[data-gamebook-ready="true"]');
     await page.locator('#save-button').click();
     await page.locator('#import-input').setInputFiles({ name: 'before-rewrite.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
     await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
     assert.equal((await storedShelf(page)).sessions[second.id].contentRevision, 2);
-    await page.unroute('**/js/editions.js');
+    await page.evaluate(() => sessionStorage.setItem('gamebook.test.current-edition', 'yes'));
     await page.reload();
     await page.waitForSelector('html[data-gamebook-ready="true"]');
     await settle(page);
@@ -484,6 +499,54 @@ async function testSavesAndHistory() {
     await page.locator('#import-input').setInputFiles({ name: 'corrupt-edition.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
     await page.getByRole('heading', { name: 'このファイルは読み込めません。', exact: true }).waitFor();
     assert.deepEqual(await storedShelf(page), saved);
+    await page.context().close();
+  });
+  await runCase('gb01-second-edition-revision3-load-import-and-corruption', async () => {
+    const second = require('../js/editions.js').find(entry => entry.baseId === 'GB01' && entry.edition === 2).story;
+    const legacy = { ...second, revision: 3 };
+    const seed = seededShelf('GB01', ['01a', '02b']);
+    seed.sessions[second.id] = E.createSession(legacy);
+    seed.bookmarks[second.id] = { intro: false, page: 1, nodeId: '01', trailLength: 0 };
+    seed.endingTrails[second.id] = { E4: ['01a', '02d', '07d', '11a'] };
+    seed.activeStoryId = second.id;
+    const page = await newPage(VIEWPORTS[2]);
+    await useLegacyEdition(page, legacy);
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    await page.locator('#save-button').click();
+    await page.locator('#import-input').setInputFiles({ name: 'revision3.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
+    await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
+    assert.deepEqual(await storedShelf(page), seed);
+    await page.evaluate(() => sessionStorage.setItem('gamebook.test.current-edition', 'yes'));
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    await settle(page);
+    let saved = await storedShelf(page);
+    assert.deepEqual(saved.sessions[second.id], E.createSession(second));
+    assert.equal(saved.bookmarks[second.id].page, 0, 'revised section 01 restarts at its beginning');
+    assert.deepEqual(saved.sessions.GB01, seed.sessions.GB01);
+    assert.deepEqual(saved.bookmarks.GB01, seed.bookmarks.GB01);
+    assert.deepEqual(saved.endingTrails, seed.endingTrails);
+    await readEveryPage(page, E.getText(second, saved.sessions[second.id]), 'revision 3 to 4 section 01');
+    const trail = ['01a', '02c', '05a', '02a'];
+    seed.sessions[second.id] = E.replay(legacy, trail);
+    seed.bookmarks[second.id] = { intro: false, page: 1, nodeId: '03', trailLength: trail.length };
+    await page.locator('#save-button').click();
+    await page.locator('#import-input').setInputFiles({ name: 'revision3-progress.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
+    await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
+    saved = await storedShelf(page);
+    assert.deepEqual(saved.sessions[second.id], E.replay(second, trail));
+    assert.deepEqual(saved.bookmarks, seed.bookmarks, 'unchanged sections retain their page positions');
+    assert.deepEqual(saved.sessions.GB01, seed.sessions.GB01);
+    assert.deepEqual(saved.endingTrails, seed.endingTrails);
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    assert.deepEqual(await storedShelf(page), saved, 'upgraded saves load without another migration');
+    seed.sessions[second.id].state.kayo = false;
+    await page.locator('#save-button').click();
+    await page.locator('#import-input').setInputFiles({ name: 'corrupt-revision3.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
+    await page.getByRole('heading', { name: 'このファイルは読み込めません。', exact: true }).waitFor();
+    assert.deepEqual(await storedShelf(page), saved, 'migration must reject a fabricated old state');
     await page.context().close();
   });
   await runCase('gb01-edition-switch-and-separate-saves', async () => {

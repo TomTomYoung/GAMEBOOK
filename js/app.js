@@ -50,16 +50,23 @@
   function readShelf(input) {
     const id = 'GB01-V2';
     const revised = allStories.find(story => story.id === id);
-    if (revised?.revision !== 3 || input?.sessions?.[id]?.contentRevision !== 2) {
+    const previousRevision = input?.sessions?.[id]?.contentRevision;
+    if (revised?.revision !== 4 || ![2, 3].includes(previousRevision)) {
       return S.validateShelf(allStories, input);
     }
     // Revision 2 of this edition was an exact copy of the preserved first
-    // edition. Validate against that original before replaying the same choices.
-    const legacy = { ...stories.find(story => story.id === 'GB01'), id };
+    // edition. Revision 4 changes only section 01's prose from revision 3;
+    // its choices, conditions, effects, and endings remain identical.
+    // Validate the saved state and ending trails before replaying any choices.
+    const legacy = previousRevision === 2
+      ? { ...stories.find(story => story.id === 'GB01'), id }
+      : { ...revised, revision: 3 };
     const checked = S.validateShelf(allStories.map(story => story.id === id ? legacy : story), input);
     checked.sessions[id] = E.replay(revised, checked.sessions[id].trail);
-    // The prose and its pagination changed; resume at the section's beginning.
-    if (checked.bookmarks[id]) checked.bookmarks[id].page = 0;
+    // Reset pagination only where prose changed, preserving the other edition.
+    if (checked.bookmarks[id] && (previousRevision === 2 || checked.sessions[id].nodeId === '01')) {
+      checked.bookmarks[id].page = 0;
+    }
     return S.validateShelf(allStories, checked);
   }
   function loadShelf() {
