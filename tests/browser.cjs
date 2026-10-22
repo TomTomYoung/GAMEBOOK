@@ -16,6 +16,10 @@ const { pathToFileURL } = require('node:url');
 const E = require('../js/engine.js');
 const S = require('../js/storage.js');
 const stories = require('../js/stories.js');
+const editions = require('../js/editions.js');
+const allStories = [...stories, ...editions.map(edition => edition.story)];
+const latestStories = stories.map(story => editions.filter(edition => edition.baseId === story.id)
+  .sort((a, b) => b.edition - a.edition)[0]?.story || story);
 const assets = require('../js/assets.js');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -36,7 +40,7 @@ const screenshots = [];
 let browser, currentPage, currentCase = '';
 
 const compact = value => value.replace(/\n+/g, '');
-const storyById = id => stories.find(story => story.id === id);
+const storyById = id => allStories.find(story => story.id === id);
 const introText = story => `あなたの役目\n${story.setup}\nこの物語のルール\n${story.rules.map((rule, i) => `${i + 1}. ${rule}`).join('\n')}`;
 
 async function settle(page) {
@@ -90,7 +94,7 @@ async function newPage(viewport, seed, inspectAudio = false) {
   await page.evaluate(() => document.fonts.ready);
   await settle(page);
   if (seed) {
-    S.validateShelf(stories, seed);
+    S.validateShelf(allStories, seed);
     // Use the actual import UI once. This works without Chromium's protocol,
     // and leaves no initialization hook that could repopulate a lost save.
     await page.locator('#save-button').click();
@@ -294,7 +298,10 @@ async function openFromShelf(page, id) {
 }
 
 async function playTrail(page, story, trail) {
-  await openFromShelf(page, story.id);
+  await openFromShelf(page, story.id.split('-V')[0]);
+  if (await page.locator('#edition-select').inputValue() !== story.id) {
+    await page.locator('#edition-select').selectOption(story.id);
+  }
   await readEveryPage(page, introText(story), `${story.id} save setup`);
   await page.locator('[data-action="begin"]').click();
   await page.waitForTimeout(340);
@@ -328,8 +335,9 @@ async function testAllStories() {
     const page = await newPage(VIEWPORTS[0]);
     await layout(page, 'desktop shelf');
     await screenshot(page, 'library-1280x720');
-    for (const story of stories) {
-      await openFromShelf(page, story.id);
+    for (const story of latestStories) {
+      await openFromShelf(page, story.id.split('-V')[0]);
+      assert.equal(await page.locator('#edition-select').inputValue(), story.id, 'new books default to the latest edition');
       await readEveryPage(page, introText(story), `${story.id} introduction`);
       await page.locator('[data-action="begin"]').click();
       await page.waitForTimeout(340);
@@ -419,6 +427,35 @@ async function testResponsive() {
 }
 
 async function testSavesAndHistory() {
+  await runCase('latest-edition-numeric-order-and-original-fallback', async () => {
+    const page = await newPage(VIEWPORTS[1]);
+    await page.addInitScript(() => {
+      Object.defineProperty(globalThis, 'GB_EDITIONS', {
+        configurable: true,
+        set(entries) {
+          const second = entries.find(entry => entry.baseId === 'GB02');
+          // Intentionally put V3 after V10: source order and lexical order
+          // must not determine the latest edition. Also exercise no editions.
+          const value = [...entries.filter(entry => entry.baseId !== 'GB03'),
+            ...[10, 3].map(edition => ({ ...second, edition,
+              story: { ...second.story, id: `GB02-V${edition}` } }))];
+          Object.defineProperty(globalThis, 'GB_EDITIONS', { configurable: true, writable: true, value });
+        }
+      });
+    });
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    await openFromShelf(page, 'GB02');
+    assert.equal(await page.locator('#edition-select').inputValue(), 'GB02-V10');
+    assert.deepEqual(await page.locator('#edition-select option').allTextContents(), ['初版', '第2版', '第3版', '第10版']);
+    await page.locator('#edition-select').selectOption('GB02');
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    assert.equal(await page.locator('#edition-select').inputValue(), 'GB02', 'explicit saved edition resumes unchanged');
+    await openFromShelf(page, 'GB03');
+    assert.equal(await page.locator('#edition-select').isVisible(), false);
+    assert.equal((await storedShelf(page)).activeStoryId, 'GB03');
+  });
   await runCase('gb01-second-edition-all-passages-and-legacy-import', async () => {
     const second = require('../js/editions.js').find(entry => entry.baseId === 'GB01' && entry.edition === 2).story;
     const legacy = { ...storyById('GB01'), id: second.id };
@@ -603,7 +640,8 @@ async function testSavesAndHistory() {
     await imported.locator('#edition-select').selectOption(second.id);
     assert.deepEqual((await storedShelf(imported)).sessions[second.id], session);
     await openFromShelf(imported, 'GB02');
-    assert.equal(await imported.locator('#edition-select').isVisible(), false, 'unchanged works need no edition control');
+    assert.equal(await imported.locator('#edition-select').inputValue(), 'GB02-V2');
+    assert.deepEqual(await imported.locator('#edition-select option').allTextContents(), ['初版', '第2版']);
     await page.context().close();
     await imported.context().close();
   });
@@ -634,7 +672,7 @@ async function testSavesAndHistory() {
     const exported = JSON.parse(exportedText);
     assert.equal(exported.format, 'gamebook-shelf');
     assert.equal(exported.version, 1);
-    assert.deepEqual(S.validateShelf(stories, exported), await storedShelf(page));
+    assert.deepEqual(S.validateShelf(allStories, exported), await storedShelf(page));
     fs.writeFileSync(path.join(OUTPUT, 'exported-save.json'), exportedText);
     await page.locator('#modal-close').click();
 
@@ -746,6 +784,52 @@ async function testSavesAndHistory() {
   });
 }
 
+async function testNewEditionPassages() {
+  for (const { baseId, story } of editions.filter(edition => edition.baseId !== 'GB01')) {
+    await runCase(`${story.id}-all-passages-and-independent-saves`, async () => {
+      const page = await newPage(VIEWPORTS[2]);
+      const queue = [E.createSession(story)], states = new Set(), texts = new Set();
+      let lastSession;
+      for (let cursor = 0; cursor < queue.length; cursor++) {
+        const session = queue[cursor];
+        const stateKey = JSON.stringify([session.nodeId, session.state]);
+        if (states.has(stateKey)) continue;
+        states.add(stateKey);
+        for (const choice of E.availableChoices(story, session)) queue.push(E.choose(story, session, choice.id));
+        const text = E.getText(story, session);
+        const textKey = JSON.stringify([session.nodeId, text]);
+        if (texts.has(textKey)) continue;
+        texts.add(textKey);
+        const seed = seededShelf(baseId);
+        seed.preferences.fontSize = 24;
+        seed.sessions[story.id] = session;
+        seed.bookmarks[story.id] = { intro: false, page: 0, nodeId: session.nodeId, trailLength: session.trail.length };
+        seed.activeStoryId = story.id;
+        const node = E.getNode(story, session);
+        if (node.ending) seed.endingTrails[story.id] = { [node.ending.id]: session.trail };
+        await page.setViewportSize(VIEWPORTS[(texts.size - 1) % VIEWPORTS.length]);
+        await page.locator('#save-button').click();
+        await page.locator('#import-input').setInputFiles({ name: 'edition-progress.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
+        await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
+        assert.deepEqual(await storedShelf(page), seed);
+        assert.equal(await page.locator('#edition-select').inputValue(), story.id);
+        await readEveryPage(page, text, `${story.id}/${session.nodeId}`);
+        await allChoices(page, story, session, `${story.id}/${session.nodeId}`);
+        if (session.nodeId === '01' || node.ending) await screenshot(page, `${story.id}-${session.nodeId}-${texts.size}`);
+        lastSession = session;
+      }
+      await page.locator('#edition-select').selectOption(baseId);
+      await page.reload();
+      await page.waitForSelector('html[data-gamebook-ready="true"]');
+      assert.equal(await page.locator('#edition-select').inputValue(), baseId);
+      assert.deepEqual((await storedShelf(page)).sessions[baseId], E.createSession(storyById(baseId)));
+      await page.locator('#edition-select').selectOption(story.id);
+      assert.deepEqual((await storedShelf(page)).sessions[story.id], lastSession);
+      process.stdout.write(`  ${story.id}: ${states.size} states, ${texts.size} distinct passages\n`);
+    });
+  }
+}
+
 async function testInstalledAssets() {
   await runCase('installed-images-and-real-audio', async () => {
     const page = await newPage(VIEWPORTS[0], undefined, true);
@@ -807,12 +891,13 @@ async function testInstalledAssets() {
 }
 
 async function testStoryAssets() {
-  for (const story of stories) {
-    const media = assets.stories[story.id];
-    if (story.id === 'GB01' || !media.image || !media.music) continue;
+  for (const story of latestStories) {
+    const baseId = story.id.split('-V')[0];
+    const media = assets.stories[baseId];
+    if (baseId === 'GB01' || !media.image || !media.music) continue;
     await runCase(`assets-${story.id}`, async () => {
       const page = await newPage(VIEWPORTS[0], undefined, true);
-      await openFromShelf(page, story.id);
+      await openFromShelf(page, baseId);
       await page.waitForFunction(src => {
         const image = document.querySelector('#scene-art img');
         return image?.complete && image.naturalWidth > 0 && image.src.endsWith('/' + src);
@@ -940,6 +1025,7 @@ async function main() {
     await testResponsive();
     await testSavesAndHistory();
     await testAllStories();
+    await testNewEditionPassages();
   } finally {
     await browser.close();
     const report = { started, finished: new Date().toISOString(), url: URL, browser: BROWSER, platform: process.platform, browserVersion: version, viewports: VIEWPORTS, results, diagnostics, screenshots };
