@@ -117,6 +117,24 @@ function seededShelf(storyId, trail = [], intro = false, fontSize = 20) {
   return shelf;
 }
 
+async function useLegacyEdition(page, legacy) {
+  // Firefox does not intercept file:// script loads through page.route().
+  // Substitute the old data as the classic bundle assigns it, then let the
+  // next reload use the real bundle once the test enables the current edition.
+  await page.addInitScript(legacy => {
+    if (sessionStorage.getItem('gamebook.test.current-edition') === 'yes') return;
+    Object.defineProperty(globalThis, 'GB_EDITIONS', {
+      configurable: true,
+      set(value) {
+        Object.defineProperty(globalThis, 'GB_EDITIONS', {
+          configurable: true, writable: true,
+          value: value.map(entry => entry.story.id === legacy.id ? { ...entry, story: legacy } : entry)
+        });
+      }
+    });
+  }, legacy);
+}
+
 async function layout(page, label) {
   const issues = await page.evaluate(() => {
     const failures = [];
@@ -455,17 +473,14 @@ async function testSavesAndHistory() {
     // Create the old save through the old edition's UI, then load the revised
     // bundle. Direct protocol writes to file:// storage are unreliable in some
     // Chromium builds (see file-storage-probe.cjs).
-    await page.route('**/js/editions.js', route => route.fulfill({
-      contentType: 'application/javascript',
-      body: `globalThis.GB_EDITIONS = ${JSON.stringify([{ baseId: 'GB01', edition: 2, story: legacy }])};`
-    }));
+    await useLegacyEdition(page, legacy);
     await page.reload();
     await page.waitForSelector('html[data-gamebook-ready="true"]');
     await page.locator('#save-button').click();
     await page.locator('#import-input').setInputFiles({ name: 'before-rewrite.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
     await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
     assert.equal((await storedShelf(page)).sessions[second.id].contentRevision, 2);
-    await page.unroute('**/js/editions.js');
+    await page.evaluate(() => sessionStorage.setItem('gamebook.test.current-edition', 'yes'));
     await page.reload();
     await page.waitForSelector('html[data-gamebook-ready="true"]');
     await settle(page);
@@ -495,17 +510,14 @@ async function testSavesAndHistory() {
     seed.endingTrails[second.id] = { E4: ['01a', '02d', '07d', '11a'] };
     seed.activeStoryId = second.id;
     const page = await newPage(VIEWPORTS[2]);
-    await page.route('**/js/editions.js', route => route.fulfill({
-      contentType: 'application/javascript',
-      body: `globalThis.GB_EDITIONS = ${JSON.stringify([{ baseId: 'GB01', edition: 2, story: legacy }])};`
-    }));
+    await useLegacyEdition(page, legacy);
     await page.reload();
     await page.waitForSelector('html[data-gamebook-ready="true"]');
     await page.locator('#save-button').click();
     await page.locator('#import-input').setInputFiles({ name: 'revision3.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
     await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
     assert.deepEqual(await storedShelf(page), seed);
-    await page.unroute('**/js/editions.js');
+    await page.evaluate(() => sessionStorage.setItem('gamebook.test.current-edition', 'yes'));
     await page.reload();
     await page.waitForSelector('html[data-gamebook-ready="true"]');
     await settle(page);
