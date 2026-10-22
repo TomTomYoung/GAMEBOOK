@@ -84,10 +84,10 @@
     const now = audio.currentTime;
     if (Number.isFinite(audio.duration) && lastTime > audio.duration - 1 && now < 1 && now + 1 < lastTime) {
       completed++;
-      if (mode === 'three' && completed >= 3) {
-        audio.pause(); mode = 'finished';
-        message('play-message', '3周の再生が終了しました。聴いた結果を下に記録してください。');
-      }
+      // Keep the first two native loop transitions seamless. Let the third
+      // pass end normally instead of racing pause() against an automatic seek
+      // back to the start (which can restart playback in WebKit).
+      if (mode === 'three' && completed === 2) audio.loop = false;
     }
     lastTime = now;
     $('progress').max = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 1;
@@ -107,6 +107,7 @@
 
   function resetPlayback(nextMode, position = 0) {
     mode = nextMode; completed = 0; lastTime = position;
+    audio.loop = true;
     audio.currentTime = position;
     tick();
   }
@@ -114,6 +115,7 @@
   function selectTrack(nextIndex) {
     ++playRequest; audio.pause(); index = nextIndex;
     mode = 'continuous'; completed = 0; lastTime = 0;
+    audio.loop = true;
     $('track').value = String(index);
     $('track-title').textContent = track().title;
     $('story-title').textContent = track().storyTitle;
@@ -149,6 +151,14 @@
   $('volume').addEventListener('input', () => { audio.volume = Number($('volume').value) / 100; $('volume-value').textContent = $('volume').value + '%'; });
   $('default-volume').addEventListener('click', () => { audio.volume = track().volume; $('volume').value = String(Math.round(audio.volume * 100)); $('volume-value').textContent = $('volume').value + '%'; });
   audio.addEventListener('loadedmetadata', () => { $('seam').disabled = !Number.isFinite(audio.duration); tick(); });
+  audio.addEventListener('ended', () => {
+    if (mode !== 'three' || completed !== 2) return;
+    ++playRequest;
+    completed = 3; mode = 'finished';
+    audio.pause();
+    tick();
+    message('play-message', '3周の再生が終了しました。聴いた結果を下に記録してください。');
+  });
   for (const event of ['timeupdate', 'seeked', 'play', 'pause']) audio.addEventListener(event, tick);
   audio.addEventListener('error', () => message('play-message', '音源を読み込めません。フォルダ全体を展開し直すか、別のブラウザで開いてください。', true));
   document.querySelectorAll('[data-check]').forEach(input => input.addEventListener('change', updateRecord));

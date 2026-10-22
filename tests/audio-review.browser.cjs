@@ -51,15 +51,40 @@ async function main() {
     await page.waitForFunction(() => { const a = document.querySelector('audio'); return a.currentTime > a.duration - 5.1 && !a.paused; });
     await page.waitForFunction(() => { const a = document.querySelector('audio'); return a.currentTime < 1 && !a.paused; }, null, { timeout: 8000 });
     await page.locator('#three').click();
+    await page.waitForFunction(() => { const a = document.querySelector('audio'); return a.currentTime > 0 && a.currentTime < 1 && !a.seeking && !a.paused; });
     for (let round = 1; round <= 3; round++) {
       // Seek in the test only; exercise real decoder wraps without pretending
       // to have listened through the full songs.
       await page.evaluate(() => { const a = document.querySelector('audio'); a.currentTime = a.duration - .3; });
       await page.waitForFunction(r => document.querySelector('#rounds').textContent.startsWith(`${r} / 3周`), round);
+      if (round < 3) assert(await page.evaluate(() => !document.querySelector('audio').paused), 'the next pass must keep playing');
+      if (round === 2) {
+        // Pausing and resuming the last pass must retain its remaining count.
+        await page.locator('#play').click();
+        assert(await page.evaluate(() => document.querySelector('audio').paused));
+        assert((await page.locator('#rounds').textContent()).startsWith('2 / 3周'));
+        await page.locator('#play').click();
+        await page.waitForFunction(() => !document.querySelector('audio').paused);
+      }
     }
-    assert(await page.evaluate(() => document.querySelector('audio').paused));
+    assert(await page.evaluate(() => { const a = document.querySelector('audio'); return a.paused && a.ended && Math.abs(a.currentTime - a.duration) < .05; }), 'the third pass must finish at the end of the file');
+    const stoppedAt = await page.evaluate(() => document.querySelector('audio').currentTime);
+    // Observe later media tasks as well: a transient pause must not be accepted
+    // if the browser's automatic loop subsequently starts a fourth pass.
+    await page.waitForTimeout(750);
+    assert(await page.evaluate(at => { const a = document.querySelector('audio'); return a.paused && Math.abs(a.currentTime - at) < .05; }, stoppedAt), 'playback must remain stopped after three passes');
     assert.equal(await page.locator('[data-check]:checked').count(), 0);
-    report.cases.push('21 sources load; real playback, pause, seam and accelerated three-wrap stop; no automatic listening marks');
+    await page.locator('#play').click();
+    await page.waitForFunction(() => { const a = document.querySelector('audio'); return !a.paused && a.currentTime > 0 && a.currentTime < 1; });
+    await page.locator('#seam').click();
+    await page.waitForFunction(() => { const a = document.querySelector('audio'); return a.currentTime > a.duration - 5.1 && !a.paused; });
+    await page.waitForFunction(() => { const a = document.querySelector('audio'); return a.currentTime < 1 && !a.paused; }, null, { timeout: 8000 });
+    await page.locator('#play').click();
+    assert(await page.evaluate(() => document.querySelector('audio').paused));
+    await page.locator('#track').selectOption('1');
+    assert(await page.evaluate(() => document.querySelector('audio').paused));
+    await page.locator('#track').selectOption('0');
+    report.cases.push('21 sources load; playback, pause, seam, three-pass natural end and stable stop; final-pass pause/resume and replay; no automatic listening marks');
 
     await page.locator('#verdict').selectOption('ok');
     assert.equal(await page.locator('#verdict').inputValue(), 'pending');
@@ -109,7 +134,14 @@ async function main() {
     report.cases.push('desktop and narrow mobile layouts have no horizontal overflow');
     assert.deepEqual(report.diagnostics, []);
     report.status = 'passed';
-  } catch (error) { report.status = 'failed'; report.error = String(error.stack); throw error; }
+  } catch (error) {
+    report.status = 'failed'; report.error = String(error.stack);
+    report.playback = await page.evaluate(() => {
+      const a = document.querySelector('audio');
+      return a ? { time: a.currentTime, duration: a.duration, paused: a.paused, ended: a.ended, seeking: a.seeking, loop: a.loop, rounds: document.querySelector('#rounds').textContent } : null;
+    }).catch(() => null);
+    throw error;
+  }
   finally {
     await browser.close();
     report.finished = new Date().toISOString();
