@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/stories.js" defer></script>
+  <script src="js/editions.js" defer></script>
   <script src="js/assets.js" defer></script>
   <script src="js/engine.js" defer></script>
   <script src="js/storage.js" defer></script>
@@ -41,7 +42,7 @@
     </main>
 
     <main id="reader-view" class="reader-view" hidden>
-      <div class="reader-toolbar"><button id="shelf-button" class="text-button">← <span>本棚</span></button><div class="current-book"><span id="book-number"></span><span id="book-title"></span></div><div class="reader-tools"><button id="rules-button" class="text-button">前提・ルール</button><button id="history-button" class="text-button">足あと</button></div></div>
+      <div class="reader-toolbar"><button id="shelf-button" class="text-button">← <span>本棚</span></button><div class="current-book"><span id="book-number"></span><span id="book-title"></span><select id="edition-select" aria-label="シナリオの版" hidden></select></div><div class="reader-tools"><button id="rules-button" class="text-button">前提・ルール</button><button id="history-button" class="text-button">足あと</button></div></div>
       <div class="reading-layout">
         <article id="paper" class="paper" aria-labelledby="chapter-title">
           <header class="paper-header"><div class="chapter-heading"><p id="chapter-kicker" class="eyebrow"></p><h1 id="chapter-title" tabindex="-1"></h1><p id="chapter-subtitle" class="chapter-subtitle"></p></div><div id="scene-art" class="scene-art" aria-hidden="true"><span id="scene-number" class="scene-number"></span><span class="scene-lines"></span></div></header>

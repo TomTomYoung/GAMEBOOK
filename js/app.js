@@ -3,6 +3,9 @@
   const E = globalThis.GBEngine;
   const S = globalThis.GBStorage;
   const stories = globalThis.GB_STORIES;
+  const editions = globalThis.GB_EDITIONS || [];
+  const allStories = [...(stories || []), ...editions.map(edition => edition.story)];
+  const selectedEditions = {};
   const assets = globalThis.GB_ASSETS;
   const $ = id => document.getElementById(id);
   const STORAGE_KEY = 'gamebook.shelf.v1';
@@ -51,7 +54,7 @@
       if (raw !== null) {
         try {
           if (raw.length > MAX_IMPORT_BYTES) throw new Error('保存データが大きすぎます。');
-          shelf = S.validateShelf(stories, JSON.parse(raw));
+          shelf = S.validateShelf(allStories, JSON.parse(raw));
         } catch (error) {
           rawRecovery = raw;
           storageError = error.message;
@@ -89,7 +92,8 @@
     document.documentElement.style.setProperty('--reader-font', `${shelf.preferences.fontSize}px`);
     document.querySelector('meta[name="theme-color"]').content = shelf.preferences.theme === 'night' ? '#112123' : '#172d30';
   }
-  function currentStory() { return stories.find(story => story.id === active); }
+  function currentStory() { return allStories.find(story => story.id === active); }
+  function baseIdFor(id) { return editions.find(edition => edition.story.id === id)?.baseId || id; }
   function currentSession() { return shelf.sessions[active]; }
   function bookmark() { return shelf.bookmarks[active]; }
   function endingCount(story) { return Object.keys(shelf.endingTrails[story.id] || {}).length; }
@@ -97,9 +101,9 @@
   function rememberPage() {
     if (active && bookmark()) bookmark().page = textPage;
   }
-  function coverFor(story) { return assets.stories[story.id]?.image || null; }
+  function coverFor(story) { return assets.stories[baseIdFor(story.id)]?.image || null; }
   function sceneFor(story, nodeId, intro) {
-    const entry = assets.stories[story.id] || {};
+    const entry = assets.stories[baseIdFor(story.id)] || {};
     const scene = intro ? null : entry.scenes?.[nodeId];
     return { image: scene?.image || entry.image || null, music: scene?.music || entry.music || null };
   }
@@ -146,11 +150,12 @@
     libraryArt.hidden = !assets.library.image;
     if (assets.library.image && !libraryArt.firstChild) addImage(libraryArt, assets.library.image);
     grid.replaceChildren();
-    for (const story of filtered.slice(shelfPage * shelfCapacity, (shelfPage + 1) * shelfCapacity)) {
+    for (const baseStory of filtered.slice(shelfPage * shelfCapacity, (shelfPage + 1) * shelfCapacity)) {
+      const story = allStories.find(item => item.id === selectedEditions[baseStory.id]) || baseStory;
       const saved = shelf.sessions[story.id];
       const ended = saved && E.getNode(story, saved).ending;
       const card = button('', 'book-card', () => openStory(story.id));
-      card.dataset.storyId = story.id;
+      card.dataset.storyId = baseStory.id;
       card.style.setProperty('--book-tone', tones[story.number - 1]);
       const art = el('div', 'book-art');
       art.setAttribute('aria-hidden', 'true');
@@ -192,10 +197,11 @@
     if (!shelf.endingTrails[story.id][ending.id]) shelf.endingTrails[story.id][ending.id] = [...session.trail];
   }
   function openStory(id, fresh = false) {
-    const story = stories.find(item => item.id === id);
+    const story = allStories.find(item => item.id === id);
     if (!story) return;
     rememberPage();
     active = id;
+    selectedEditions[baseIdFor(id)] = id;
     shelf.activeStoryId = id;
     if (fresh || !shelf.sessions[id]) {
       shelf.sessions[id] = E.createSession(story);
@@ -226,8 +232,24 @@
     if (!active) return;
     const story = currentStory(), session = currentSession(), node = E.getNode(story, session);
     const intro = bookmark().intro;
-    $('book-number').textContent = story.id;
+    const baseId = baseIdFor(story.id);
+    $('book-number').textContent = baseId;
     $('book-title').textContent = story.title;
+    const versions = editions.filter(edition => edition.baseId === baseId);
+    const selector = $('edition-select');
+    selector.hidden = versions.length === 0;
+    selector.replaceChildren();
+    if (versions.length) {
+      const first = el('option', '', '初版');
+      first.value = baseId;
+      selector.append(first);
+      versions.forEach(edition => {
+        const option = el('option', '', `第${edition.edition}版`);
+        option.value = edition.story.id;
+        selector.append(option);
+      });
+      selector.value = story.id;
+    }
     $('paper').style.setProperty('--book-tone', tones[story.number - 1]);
     $('chapter-kicker').textContent = intro ? 'PROLOGUE / 物語の前に' : node.ending ? `ENDING ${node.ending.id.slice(1)} / 結末` : `SECTION ${node.id} / 第${Number(node.id)}節`;
     $('chapter-title').textContent = intro ? story.title : node.title;
@@ -631,7 +653,7 @@
   }
   function exportSave() {
     rememberPage();
-    const valid = S.validateShelf(stories, shelf);
+    const valid = S.validateShelf(allStories, shelf);
     const stamp = new Date().toISOString().replace(/[:.]/g, '-');
     downloadText(JSON.stringify(valid, null, 2), `gamebook-save-${stamp}.json`);
     notify('栞のファイルを書き出しました。');
@@ -640,7 +662,7 @@
     const content = modal('栞を残す、持ち歩く。', 'SAVE & RESTORE');
     const count = Object.keys(shelf.sessions).length;
     const endings = Object.values(shelf.endingTrails).reduce((sum, item) => sum + Object.keys(item).length, 0);
-    content.append(el('p', 'callout', `現在の本棚：${count}作の栞 / ${endings}の結末`), el('p', '', '作品ごとの進行、集めた結末、表示設定を一つのファイルに保存します。別の端末で続きを開くときにも使えます。'));
+    content.append(el('p', 'callout', `現在の本棚：${count}件の栞 / ${endings}の結末`), el('p', '', '作品ごとの進行、集めた結末、表示設定を一つのファイルに保存します。別の端末で続きを開くときにも使えます。'));
     const actions = el('div', 'button-row');
     actions.append(button('ファイルに保存', 'action-button', () => { try { exportSave(); } catch (error) { reportError(error); } }), button('ファイルを読み込む', 'action-button secondary', () => { $('import-input').value = ''; $('import-input').click(); }));
     content.append(actions, el('p', 'note', '読み込みは、現在の本棚全体を置き換えます。内容を確認する画面で確定するまでは、進行を変更しません。'));
@@ -672,11 +694,11 @@
     isImportPending = true;
     try {
       if (file.size > MAX_IMPORT_BYTES) throw new Error('セーブファイルは2 MB以下を指定してください。');
-      const next = S.validateShelf(stories, JSON.parse(await file.text()));
+      const next = S.validateShelf(allStories, JSON.parse(await file.text()));
       const count = Object.keys(next.sessions).length;
       const endings = Object.values(next.endingTrails).reduce((sum, item) => sum + Object.keys(item).length, 0);
       const content = modal('この栞を読み込みますか。', 'RESTORE SAVE');
-      content.append(el('p', 'callout', `${count}作の栞 / ${endings}の結末`), el('p', '', '現在の本棚を、このファイルの内容で置き換えます。現在の進行を残す場合は、先にファイルへ保存してください。'));
+      content.append(el('p', 'callout', `${count}件の栞 / ${endings}の結末`), el('p', '', '現在の本棚を、このファイルの内容で置き換えます。現在の進行を残す場合は、先にファイルへ保存してください。'));
       const exportRow = el('div', 'button-row');
       exportRow.append(button('現在の栞を先に保存', 'action-button secondary', exportSave));
       content.append(exportRow);
@@ -701,7 +723,7 @@
   }
 
   try {
-    if (!E || !S || !globalThis.GBMusic || !Array.isArray(stories) || stories.length !== 20 || !assets) throw new Error('ゲームのファイルが揃っていません。フォルダ全体を展開し、index.htmlを開いてください。');
+    if (!E || !S || !globalThis.GBMusic || !Array.isArray(stories) || stories.length !== 20 || !Array.isArray(globalThis.GB_EDITIONS) || !assets) throw new Error('ゲームのファイルが揃っていません。フォルダ全体を展開し、index.htmlを開いてください。');
     music = globalThis.GBMusic.createPlayer({
       onChange: renderMusicButton,
       onError: () => notify('音楽を再生できませんでした。音楽ボタンからもう一度お試しください。')
@@ -711,6 +733,10 @@
     preferences();
     $('brand-button').addEventListener('click', showLibrary);
     $('shelf-button').addEventListener('click', showLibrary);
+    $('edition-select').addEventListener('change', event => {
+      openStory(event.target.value);
+      $('edition-select').focus();
+    });
     $('search-input').addEventListener('input', () => { shelfPage = 0; renderLibrary(); });
     $('shelf-prev').addEventListener('click', () => { shelfPage--; renderLibrary(); });
     $('shelf-next').addEventListener('click', () => { shelfPage++; renderLibrary(); });

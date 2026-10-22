@@ -440,6 +440,18 @@ a {
   display:flex;
   gap:23px
 }
+#edition-select {
+  flex:none;
+  max-width:100px;
+  min-height:30px;
+  border:1px solid var(--line);
+  border-radius:5px;
+  padding:3px 4px;
+  background:var(--paper);
+  color:inherit;
+  font:inherit;
+  cursor:pointer
+}
 .reader-tools .text-button {
   font-size:11px
 }

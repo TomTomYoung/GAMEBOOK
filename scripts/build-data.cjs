@@ -90,6 +90,27 @@ function readStories(root = ROOT) {
   });
 }
 
+function readEditions(stories, root = ROOT) {
+  const directory = path.join(root, 'data', 'editions');
+  if (!fs.existsSync(directory)) return [];
+  return fs.readdirSync(directory).filter(name => name.endsWith('.json')).sort().map(name => {
+    const match = /^(gb\d{2})-v([2-9]|[1-9]\d+)\.json$/.exec(name);
+    assert(match, `${name}: 版の原稿名は gb01-v2.json の形式で指定してください。`);
+    const baseId = match[1].toUpperCase();
+    const base = stories.find(story => story.id === baseId);
+    assert(base, `${name}: 元の作品がありません。`);
+    const story = JSON.parse(fs.readFileSync(path.join(directory, name), 'utf8'));
+    assert.equal(story.id, baseId, `${name}: 原稿の作品IDが一致しません。`);
+    assert.equal(story.number, base.number, `${name}: 作品番号が一致しません。`);
+    const edition = Number(match[2]);
+    assert(Number.isSafeInteger(edition), `${name}: 版番号が不正です。`);
+    // Keep the independent source copy intact; use a separate runtime/save ID.
+    const runtimeStory = { ...story, id: `${baseId}-V${edition}` };
+    require('../js/engine.js').createSession(runtimeStory);
+    return { baseId, edition, story: runtimeStory };
+  });
+}
+
 function classicBundle(globalName, sourceLabel, data) {
   // Escape JavaScript line separators for older classic-script parsers. No
   // omission/minification of author facts, contracts, or source field values.
@@ -105,6 +126,7 @@ function classicBundle(globalName, sourceLabel, data) {
 
 function build({ root = ROOT, check = false } = {}) {
   const stories = readStories(root);
+  const editions = readEditions(stories, root);
   const manifest = validateAssets(JSON.parse(fs.readFileSync(path.join(root, 'assets', 'manifest.json'), 'utf8')), stories, root);
   const reviewTracks = [
     { id: 'library', storyTitle: '本棚', ...manifest.library },
@@ -115,9 +137,10 @@ function build({ root = ROOT, check = false } = {}) {
   }));
   const outputs = [
     ['js/stories.js', classicBundle('GB_STORIES', 'data/stories/*.json', stories)],
+    ['js/editions.js', classicBundle('GB_EDITIONS', 'data/editions/*.json', editions)],
     ['js/assets.js', classicBundle('GB_ASSETS', 'assets/manifest.json', manifest)],
     ['doc/audio-review-data.js', classicBundle('GB_AUDIO_REVIEW_TRACKS', 'data/stories/*.json and assets/manifest.json with audio SHA-256', reviewTracks)],
-    ...scenarioMarkdown(stories)
+    ...scenarioMarkdown(stories, editions)
   ];
   const changed = outputs.filter(([filename, text]) => {
     const target = path.join(root, filename);
@@ -150,4 +173,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { build, readStories, validateAssets, classicBundle };
+module.exports = { build, readStories, readEditions, validateAssets, classicBundle };
