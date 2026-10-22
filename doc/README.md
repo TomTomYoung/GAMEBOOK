@@ -48,7 +48,7 @@
 
 ## 原稿と生成物の扱い
 
-GB01の第2版は[../data/editions/gb01-v2.json](../data/editions/gb01-v2.json)に初版をそのままコピーしてあります。[第2版の閲覧用Markdown](scenarios/gb01-v2.md)も自動生成します。改稿は第2版JSONで行い、既存の`data/stories/gb01.json`を初版として保持します。ゲーム画面上部から両版を切り替え、進行と結末を別々に保存できます。
+GB01の第2版は[../data/editions/gb01-v2.json](../data/editions/gb01-v2.json)で改稿しました。[第2版の閲覧用Markdown](scenarios/gb01-v2.md)も自動生成します。人物と手紙を選択前に描き、運搬の過程、順序による反応、帰着後の場面を加えています。既存の`data/stories/gb01.json`は初版として保持し、ゲーム画面上部から両版を切り替え、進行と結末を別々に保存できます。第2版の内容版は`revision: 3`。コピー時の内容版2の保存は旧原稿で検証してから選択履歴を再生し、同じ節の先頭へ移します。費用・条件・選択ID・分岐先は維持しています。
 
 実装済みGB01〜GB20の正本は [../data/stories/](../data/stories/) の `gb01.json`〜`gb20.json` です。本文、選択肢、状態、結末、作者用の根拠が一つの作品データに入っています。取得元とバイト単位の識別情報は [../data/source-manifest.json](../data/source-manifest.json) にあります。
 

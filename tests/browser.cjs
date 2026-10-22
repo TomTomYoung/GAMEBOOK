@@ -401,6 +401,91 @@ async function testResponsive() {
 }
 
 async function testSavesAndHistory() {
+  await runCase('gb01-second-edition-all-passages-and-legacy-import', async () => {
+    const second = require('../js/editions.js').find(entry => entry.baseId === 'GB01' && entry.edition === 2).story;
+    const legacy = { ...storyById('GB01'), id: second.id };
+    const page = await newPage(VIEWPORTS[2]);
+    const queue = [E.createSession(second)], seen = new Set(), endings = new Set();
+    for (let cursor = 0; cursor < queue.length; cursor++) {
+      const session = queue[cursor];
+      const key = JSON.stringify([session.nodeId, session.state]);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const oldSession = E.replay(legacy, session.trail);
+      assert.equal(oldSession.nodeId, session.nodeId);
+      assert.deepEqual(oldSession.state, session.state, 'old choices must retain their outcomes');
+      const seed = seededShelf('GB01', ['01a', '02a']);
+      seed.sessions[second.id] = oldSession;
+      seed.bookmarks[second.id] = { intro: false, page: 1, nodeId: session.nodeId, trailLength: session.trail.length };
+      seed.activeStoryId = second.id;
+      const node = E.getNode(second, session);
+      if (node.ending) {
+        seed.endingTrails[second.id] = { [node.ending.id]: session.trail };
+        endings.add(node.ending.id);
+      }
+      await page.setViewportSize(VIEWPORTS[(seen.size - 1) % VIEWPORTS.length]);
+      await page.locator('#save-button').click();
+      await page.locator('#import-input').setInputFiles({ name: 'legacy-edition.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
+      await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
+      const saved = await storedShelf(page);
+      assert.deepEqual(saved.sessions[second.id], session);
+      assert.deepEqual(saved.sessions.GB01, seed.sessions.GB01);
+      assert.deepEqual(saved.bookmarks.GB01, seed.bookmarks.GB01);
+      assert.deepEqual(saved.endingTrails, seed.endingTrails);
+      assert.equal(saved.bookmarks[second.id].page, 0, 'changed prose starts at the section beginning');
+      await readEveryPage(page, E.getText(second, session), `second edition ${key}`);
+      await allChoices(page, second, session, `second edition ${key}`);
+      if (node.ending) await screenshot(page, `second-edition-${node.ending.id}-${seen.size}`);
+      for (const next of E.availableChoices(second, session)) queue.push(E.choose(second, session, next.id));
+    }
+    assert.equal(seen.size, 38);
+    assert.deepEqual([...endings].sort(), ['E1', 'E2', 'E3', 'E4']);
+    await page.context().close();
+  });
+  await runCase('gb01-second-edition-legacy-load-and-corruption', async () => {
+    const second = require('../js/editions.js').find(entry => entry.baseId === 'GB01' && entry.edition === 2).story;
+    const legacy = { ...storyById('GB01'), id: second.id };
+    const seed = seededShelf('GB01', ['01a', '02b']);
+    const trail = ['01a', '02c', '05a', '02a'];
+    seed.sessions[second.id] = E.replay(legacy, trail);
+    seed.bookmarks[second.id] = { intro: false, page: 1, nodeId: '03', trailLength: trail.length };
+    seed.endingTrails[second.id] = { E4: ['01a', '02d', '07d', '11a'] };
+    seed.activeStoryId = second.id;
+    const page = await newPage(VIEWPORTS[1]);
+    // Create the old save through the old edition's UI, then load the revised
+    // bundle. Direct protocol writes to file:// storage are unreliable in some
+    // Chromium builds (see file-storage-probe.cjs).
+    await page.route('**/js/editions.js', route => route.fulfill({
+      contentType: 'application/javascript',
+      body: `globalThis.GB_EDITIONS = ${JSON.stringify([{ baseId: 'GB01', edition: 2, story: legacy }])};`
+    }));
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    await page.locator('#save-button').click();
+    await page.locator('#import-input').setInputFiles({ name: 'before-rewrite.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
+    await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
+    assert.equal((await storedShelf(page)).sessions[second.id].contentRevision, 2);
+    await page.unroute('**/js/editions.js');
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    await settle(page);
+    const saved = await storedShelf(page);
+    assert.deepEqual(saved.sessions[second.id], E.replay(second, trail));
+    assert.deepEqual(saved.sessions.GB01, seed.sessions.GB01);
+    assert.deepEqual(saved.bookmarks.GB01, seed.bookmarks.GB01);
+    assert.deepEqual(saved.endingTrails, seed.endingTrails);
+    assert.equal(saved.bookmarks[second.id].page, 0);
+    await page.reload();
+    await page.waitForSelector('html[data-gamebook-ready="true"]');
+    assert.deepEqual(await storedShelf(page), saved, 'migration persists and does not run again');
+    // Migration must not turn a fabricated old state into a valid new save.
+    seed.sessions[second.id].state.kayo = false;
+    await page.locator('#save-button').click();
+    await page.locator('#import-input').setInputFiles({ name: 'corrupt-edition.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
+    await page.getByRole('heading', { name: 'このファイルは読み込めません。', exact: true }).waitFor();
+    assert.deepEqual(await storedShelf(page), saved);
+    await page.context().close();
+  });
   await runCase('gb01-edition-switch-and-separate-saves', async () => {
     const first = storyById('GB01');
     const second = require('../js/editions.js').find(entry => entry.baseId === 'GB01' && entry.edition === 2).story;
