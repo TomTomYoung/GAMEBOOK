@@ -244,6 +244,17 @@ a {
 .search-box input::placeholder {
   color:var(--muted)
 }
+.search-box select {
+  flex-shrink:0;
+  max-width:80px;
+  border:0;
+  border-left:1px solid #aab2a5;
+  padding:4px;
+  color:var(--ink);
+  background:var(--paper);
+  font:inherit;
+  font-size:12px
+}
 .book-grid {
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));

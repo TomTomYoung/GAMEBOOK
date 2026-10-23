@@ -15,6 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         browser: [chromium, firefox, webkit]
+        suite: [short, medium]
     steps:
       - uses: actions/checkout@v7
         with:
@@ -34,17 +35,18 @@ jobs:
       - name: Verify the listening notebook in ${{ matrix.browser }}
         env:
           BROWSER: ${{ matrix.browser }}
-          QA_OUTPUT_DIR: test-results/${{ matrix.browser }}/audio-review
+          QA_OUTPUT_DIR: test-results/${{ matrix.browser }}-${{ matrix.suite }}/audio-review
         run: node tests/audio-review.browser.cjs
       - name: Verify the direct-file game in ${{ matrix.browser }}
         env:
           BROWSER: ${{ matrix.browser }}
-          QA_OUTPUT_DIR: test-results/${{ matrix.browser }}
+          BROWSER_SUITE: ${{ matrix.suite }}
+          QA_OUTPUT_DIR: test-results/${{ matrix.browser }}-${{ matrix.suite }}
         run: npm run test:browser
       - name: Save browser evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: browser-${{ matrix.browser }}
-          path: test-results/${{ matrix.browser }}/
+          name: browser-${{ matrix.browser }}-${{ matrix.suite }}
+          path: test-results/${{ matrix.browser }}-${{ matrix.suite }}/
           if-no-files-found: warn

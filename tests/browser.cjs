@@ -17,7 +17,9 @@ const E = require('../js/engine.js');
 const S = require('../js/storage.js');
 const stories = require('../js/stories.js');
 const editions = require('../js/editions.js');
-const allStories = [...stories, ...editions.map(edition => edition.story)];
+const medium = require('../js/medium.js');
+const { explore, trailFor } = require('./medium-helpers.cjs');
+const allStories = [...stories, ...editions.map(edition => edition.story), ...medium];
 const latestStories = stories.map(story => editions.filter(edition => edition.baseId === story.id)
   .sort((a, b) => b.edition - a.edition)[0]?.story || story);
 const assets = require('../js/assets.js');
@@ -1004,6 +1006,98 @@ async function testSceneAssets() {
   }
 }
 
+async function testMediumStories() {
+  await runCase('medium-shelf-filter', async () => {
+    const page = await newPage(VIEWPORTS[0]);
+    assert.equal(await page.locator('#shelf-summary').textContent(),'全23作 · 89の結末');
+    await page.locator('#length-filter').selectOption('medium');
+    assert.deepEqual(await page.locator('.book-card').evaluateAll(cards=>cards.map(c=>c.dataset.storyId)),['M01','M02','M03']);
+    for (const size of VIEWPORTS) {
+      await page.setViewportSize(size); await settle(page);
+      await layout(page,`medium shelf ${size.width}`);
+      await screenshot(page,`medium-shelf-${size.width}x${size.height}`);
+    }
+    await page.locator('#length-filter').selectOption('short');
+    assert.equal(await page.locator('#shelf-summary').textContent(),'20作が見つかりました');
+    await page.locator('#search-input').fill('M03');
+    assert.equal(await page.locator('.book-card').count(),0);
+    await page.locator('#length-filter').selectOption('all');
+    assert.equal(await page.locator('.book-card').count(),1);
+  });
+  for (const story of medium) {
+    const graph = explore(story);
+    await runCase(`medium-${story.id}-full-journey`, async () => {
+      const seed = seededShelf('GB01',['01a']);
+      seed.activeStoryId = null;
+      const page = await newPage(VIEWPORTS[0],seed);
+      await page.locator('#length-filter').selectOption('medium');
+      await openFromShelf(page,story.id);
+      assert(await page.locator('#edition-select').isHidden());
+      assert(await page.locator('#music-button').isHidden());
+      await readEveryPage(page,introText(story),`${story.id} introduction`);
+      await page.locator('[data-action="begin"]').click();
+      await page.waitForTimeout(340);
+      let session = E.createSession(story), chapter = 0;
+      const route = trailFor(graph.endings.values().next().value);
+      for (const id of route) {
+        const meta = story.author.chapterNodes[session.nodeId];
+        assert.equal(await page.locator('#reader-text').getAttribute('data-full-text'),E.getText(story,session));
+        if (meta.chapter !== chapter) {
+          chapter = meta.chapter;
+          assert.equal(await page.locator('#chapter-kicker').textContent(),`第${chapter}章 / 第${Number(meta.section)}節`);
+          await readEveryPage(page,E.getText(story,session),`${story.id} chapter ${chapter}`);
+          await allChoices(page,story,session,`${story.id} chapter ${chapter}`);
+          const saved = await storedShelf(page);
+          await page.reload();
+          await page.waitForSelector('html[data-gamebook-ready="true"]');
+          await settle(page);
+          assert.deepEqual(await storedShelf(page),saved,`${story.id}: chapter bookmark reload`);
+        }
+        session = await choose(page,story,session,id);
+      }
+      const ending = E.getNode(story,session).ending;
+      assert(ending);
+      assert.deepEqual((await storedShelf(page)).endingTrails[story.id][ending.id],session.trail);
+      assert.deepEqual((await storedShelf(page)).sessions.GB01,seed.sessions.GB01,'preserve the old first edition');
+      for (const size of VIEWPORTS) {
+        await page.setViewportSize(size); await settle(page);
+        await readEveryPage(page,E.getText(story,session),`${story.id} ending ${size.width}`);
+        await screenshot(page,`medium-${story.id}-ending-${size.width}x${size.height}`);
+      }
+    });
+    await runCase(`medium-${story.id}-all-endings-and-long-text`, async () => {
+      for (const [endingId,item] of graph.endings) {
+        const trail = trailFor(item), prior = trail.slice(0,-1);
+        const page = await newPage(VIEWPORTS[0],seededShelf(story.id,prior));
+        const session = await choose(page,story,E.replay(story,prior),trail.at(-1));
+        await readEveryPage(page,E.getText(story,session),`${story.id}/${endingId}`);
+        assert.deepEqual((await storedShelf(page)).endingTrails[story.id][endingId],trail);
+        await page.context().close();
+      }
+      // Largest actual passage with all seven records, in the smallest layouts.
+      let longest;
+      for (const item of graph.nodeSamples.values()) {
+        const session = E.replay(story,trailFor(item));
+        const text = E.getText(story,session);
+        if (!longest || text.length > longest.text.length) longest = {session,text};
+      }
+      const page = await newPage(VIEWPORTS[0],seededShelf(story.id,longest.session.trail,false,24));
+      for (const size of VIEWPORTS) {
+        await page.setViewportSize(size); await settle(page);
+        await readEveryPage(page,longest.text,`${story.id} longest ${size.width}`);
+        await allChoices(page,story,longest.session,`${story.id} longest ${size.width}`);
+        await screenshot(page,`medium-${story.id}-longest-${size.width}x${size.height}`);
+      }
+      const before = await storedShelf(page);
+      await page.locator('#history-button').click();
+      await page.locator('.history-item button').first().click();
+      assert(await page.locator('.history-detail').isVisible());
+      await page.locator('#modal-close').click();
+      assert.deepEqual((await storedShelf(page)).sessions,before.sessions,'history does not consume resources');
+    });
+  }
+}
+
 async function main() {
   fs.mkdirSync(OUTPUT, { recursive: true });
   let playwright;
@@ -1019,6 +1113,7 @@ async function main() {
   const version = browser.version();
   const started = new Date().toISOString();
   try {
+    if (process.env.BROWSER_SUITE !== 'medium') {
     await testInstalledAssets();
     await testStoryAssets();
     await testSceneAssets();
@@ -1026,6 +1121,8 @@ async function main() {
     await testSavesAndHistory();
     await testAllStories();
     await testNewEditionPassages();
+    }
+    if (process.env.BROWSER_SUITE !== 'short') await testMediumStories();
   } finally {
     await browser.close();
     const report = { started, finished: new Date().toISOString(), url: URL, browser: BROWSER, platform: process.platform, browserVersion: version, viewports: VIEWPORTS, results, diagnostics, screenshots };
