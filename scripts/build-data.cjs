@@ -8,6 +8,7 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const { scenarioMarkdown } = require('./scenario-markdown.cjs');
+const { readMediumStories } = require('./medium-stories.cjs');
 
 const ROOT = path.resolve(__dirname, '..');
 const STORY_IDS = Array.from({ length: 20 }, (_, i) => `GB${String(i + 1).padStart(2, '0')}`);
@@ -126,6 +127,8 @@ function classicBundle(globalName, sourceLabel, data) {
 
 function build({ root = ROOT, check = false } = {}) {
   const stories = readStories(root);
+  const medium = readMediumStories(root);
+  for (const story of medium) require('../js/engine.js').createSession(story);
   const editions = readEditions(stories, root);
   const manifest = validateAssets(JSON.parse(fs.readFileSync(path.join(root, 'assets', 'manifest.json'), 'utf8')), stories, root);
   const reviewTracks = [
@@ -137,6 +140,8 @@ function build({ root = ROOT, check = false } = {}) {
   }));
   const outputs = [
     ['js/stories.js', classicBundle('GB_STORIES', 'data/stories/*.json', stories)],
+    ['js/medium.js', classicBundle('GB_MEDIUM_STORIES', 'the chapter Markdown in doc/drafts/medium01 through medium03', medium)],
+    ...medium.map(story => [`data/medium/${story.id.toLowerCase()}.json`, JSON.stringify(story, null, 2) + '\n']),
     ['js/editions.js', classicBundle('GB_EDITIONS', 'data/editions/*.json', editions)],
     ['js/assets.js', classicBundle('GB_ASSETS', 'assets/manifest.json', manifest)],
     ['doc/audio-review-data.js', classicBundle('GB_AUDIO_REVIEW_TRACKS', 'data/stories/*.json and assets/manifest.json with audio SHA-256', reviewTracks)],
@@ -156,7 +161,7 @@ function build({ root = ROOT, check = false } = {}) {
       fs.writeFileSync(target, text, 'utf8');
     }
   }
-  return { storyCount: stories.length, files: outputs.map(([name]) => name), changed: changed.map(([name]) => name), check };
+  return { storyCount: stories.length, mediumCount: medium.length, files: outputs.map(([name]) => name), changed: changed.map(([name]) => name), check };
 }
 
 if (require.main === module) {
@@ -165,8 +170,8 @@ if (require.main === module) {
     assert(args.every(arg => arg === '--check') && args.length <= 1, '使用法: node scripts/build-data.cjs [--check]');
     const result = build({ check: args.includes('--check') });
     process.stdout.write(result.check
-      ? `20作と素材マニフェストの生成物は一致しています。\n`
-      : `20作を生成しました。更新: ${result.changed.length ? result.changed.join(', ') : 'なし'}\n`);
+      ? `短編${result.storyCount}作・中編${result.mediumCount}作と素材マニフェストの生成物は一致しています。\n`
+      : `短編${result.storyCount}作・中編${result.mediumCount}作を生成しました。更新: ${result.changed.length ? result.changed.join(', ') : 'なし'}\n`);
   } catch (error) {
     process.stderr.write(`${error.message}\n`);
     process.exitCode = 1;

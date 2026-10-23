@@ -2,7 +2,7 @@
   'use strict';
   const E = globalThis.GBEngine;
   const S = globalThis.GBStorage;
-  const stories = globalThis.GB_STORIES;
+  const stories = [...(globalThis.GB_STORIES || []), ...(globalThis.GB_MEDIUM_STORIES || [])];
   const editions = globalThis.GB_EDITIONS || [];
   const allStories = [...(stories || []), ...editions.map(edition => edition.story)];
   // New shelf selections start with the highest numeric edition. Opening an
@@ -166,7 +166,9 @@
   }
   function filteredStories() {
     const query = $('search-input').value.trim().toLocaleLowerCase('ja');
-    return stories.filter(story => `${story.id} ${story.title} ${story.genre} ${story.hook}`.toLocaleLowerCase('ja').includes(query));
+    const length = $('length-filter').value;
+    return stories.filter(story => (length === 'all' || (length === 'medium') === Boolean(story.author.chapterNodes))
+      && `${story.id} ${story.title} ${story.genre} ${story.hook}`.toLocaleLowerCase('ja').includes(query));
   }
   function renderLibrary() {
     shelfCapacity = capacityForShelf();
@@ -184,10 +186,10 @@
       const ended = saved && E.getNode(story, saved).ending;
       const card = button('', 'book-card', () => openStory(story.id));
       card.dataset.storyId = baseStory.id;
-      card.style.setProperty('--book-tone', tones[story.number - 1]);
+      card.style.setProperty('--book-tone', tones[(story.number - 1) % tones.length]);
       const art = el('div', 'book-art');
       art.setAttribute('aria-hidden', 'true');
-      art.append(el('span', 'book-no', String(story.number).padStart(2, '0')));
+      art.append(el('span', 'book-no', story.author.chapterNodes ? story.id : String(story.number).padStart(2, '0')));
       if (coverFor(story)) addImage(art, coverFor(story));
       card.append(art, el('p', 'book-genre', story.genre), el('h2', 'book-title', story.title), el('p', 'book-description', story.hook));
       const bottom = el('div', 'book-card-bottom');
@@ -204,7 +206,8 @@
     $('shelf-page').textContent = `${shelfPage + 1} / ${pageCount}`;
     $('shelf-prev').disabled = shelfPage === 0;
     $('shelf-next').disabled = shelfPage === pageCount - 1;
-    $('shelf-summary').textContent = filtered.length === stories.length ? '全20作 · 76の結末' : `${filtered.length}作が見つかりました`;
+    $('shelf-summary').textContent = filtered.length === stories.length
+      ? `全${stories.length}作 · ${stories.reduce((sum,story) => sum + endingsTotal(story),0)}の結末` : `${filtered.length}作が見つかりました`;
   }
   function showLibrary() {
     rememberPage();
@@ -279,13 +282,14 @@
       });
       selector.value = story.id;
     }
-    $('paper').style.setProperty('--book-tone', tones[story.number - 1]);
-    $('chapter-kicker').textContent = intro ? 'PROLOGUE / 物語の前に' : node.ending ? `ENDING ${node.ending.id.slice(1)} / 結末` : `SECTION ${node.id} / 第${Number(node.id)}節`;
+    const chapter = story.author.chapterNodes?.[node.id];
+    $('paper').style.setProperty('--book-tone', tones[(story.number - 1) % tones.length]);
+    $('chapter-kicker').textContent = intro ? 'PROLOGUE / 物語の前に' : node.ending ? `ENDING ${node.ending.id.slice(1)} / 結末` : chapter ? `第${chapter.chapter}章 / 第${Number(chapter.section)}節` : `SECTION ${node.id} / 第${Number(node.id)}節`;
     $('chapter-title').textContent = intro ? story.title : node.title;
-    $('chapter-subtitle').textContent = intro ? story.genre : node.ending ? node.ending.name : '';
+    $('chapter-subtitle').textContent = intro ? story.genre : node.ending ? node.ending.name : chapter?.chapterTitle || '';
     const art = $('scene-art');
     art.className = 'scene-art';
-    art.replaceChildren(el('span', 'scene-number', intro ? String(story.number).padStart(2, '0') : node.id), el('span', 'scene-lines'));
+    art.replaceChildren(el('span', `scene-number${chapter ? ' chapter-number' : ''}`, intro ? (chapter ? story.id : String(story.number).padStart(2, '0')) : chapter ? `${chapter.chapter}·${chapter.section}` : node.id), el('span', 'scene-lines'));
     const imageEntry = sceneFor(story, node.id, intro).image;
     if (imageEntry) addImage(art, imageEntry);
     const fullText = intro ? `あなたの役目\n${story.setup}\nこの物語のルール\n${story.rules.map((rule, index) => `${index + 1}. ${rule}`).join('\n')}` : E.getText(story, session);
@@ -585,7 +589,9 @@
   function showRecords() {
     if (!active) return;
     const story = currentStory(), session = currentSession();
-    const content = modal('手元の記録', `${story.id} / 現在の節 ${session.nodeId}`);
+    const chapter = story.author.chapterNodes?.[session.nodeId];
+    const position = chapter ? `第${chapter.chapter}章・第${Number(chapter.section)}節` : `現在の節 ${session.nodeId}`;
+    const content = modal('手元の記録', `${story.id} / ${position}`);
     if (!story.state.length) content.append(el('p', '', 'この物語には別に管理する数値や品物の記録はありません。現在の節と通った経路に、進行に必要な情報が含まれます。'));
     for (const field of story.state) {
       const row = el('div', 'record-detail');
@@ -610,7 +616,9 @@
         else { item.append(el('div', 'history-detail', E.getText(story, past))); heading.setAttribute('aria-expanded', 'true'); }
       });
       heading.setAttribute('aria-expanded', 'false');
-      const text = el('span', '', `${String(index + 1).padStart(2, '0')}　${node.title}`);
+      const chapter = story.author.chapterNodes?.[node.id];
+      const position = chapter ? `第${chapter.chapter}章・${chapter.section}` : String(index + 1).padStart(2, '0');
+      const text = el('span', '', `${position}　${node.title}`);
       text.append(el('small', '', action ? `選択：${action.label}` : bookmark().intro ? '物語はまだ始まっていません' : 'いま読んでいる節'));
       heading.append(text, el('span', '', '＋'));
       item.append(heading);
@@ -752,7 +760,7 @@
   }
 
   try {
-    if (!E || !S || !globalThis.GBMusic || !Array.isArray(stories) || stories.length !== 20 || !Array.isArray(globalThis.GB_EDITIONS) || !assets) throw new Error('ゲームのファイルが揃っていません。フォルダ全体を展開し、index.htmlを開いてください。');
+    if (!E || !S || !globalThis.GBMusic || globalThis.GB_STORIES?.length !== 20 || globalThis.GB_MEDIUM_STORIES?.length !== 3 || !Array.isArray(globalThis.GB_EDITIONS) || !assets) throw new Error('ゲームのファイルが揃っていません。フォルダ全体を展開し、index.htmlを開いてください。');
     music = globalThis.GBMusic.createPlayer({
       onChange: renderMusicButton,
       onError: () => notify('音楽を再生できませんでした。音楽ボタンからもう一度お試しください。')
@@ -767,6 +775,7 @@
       $('edition-select').focus();
     });
     $('search-input').addEventListener('input', () => { shelfPage = 0; renderLibrary(); });
+    $('length-filter').addEventListener('change', () => { shelfPage = 0; renderLibrary(); });
     $('shelf-prev').addEventListener('click', () => { shelfPage--; renderLibrary(); });
     $('shelf-next').addEventListener('click', () => { shelfPage++; renderLibrary(); });
     $('text-prev').addEventListener('click', () => turnText(-1));

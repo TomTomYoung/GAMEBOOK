@@ -180,13 +180,15 @@
       identifier(node.id, '段落');
       if (own(nodes, node.id)) fail('段落「' + node.id + '」が重複しています。');
       text(node.title, '段落名');
-      text(node.body, '段落本文');
+      if (typeof node.body !== 'string') fail('段落本文は文字列で指定してください。');
+      if (!node.body.trim() && !(Array.isArray(node.variants) && node.variants.length)) fail('段落本文は空でない文字列にしてください。');
       array(node.choices, '選択肢');
       if (own(node, 'variants')) {
         array(node.variants, '条件付き本文').forEach(function (variant) {
-          fields(variant, ['when', 'text'], [], '条件付き本文');
+          fields(variant, ['when', 'text'], ['whenBefore'], '条件付き本文');
           text(variant.text, '条件付き本文');
           predicates(variant.when, definitions, '本文の条件');
+          if (own(variant, 'whenBefore')) predicates(variant.whenBefore, definitions, '到着前の本文条件');
         });
       }
       if (own(node, 'ending')) {
@@ -244,9 +246,16 @@
     });
   }
 
-  function checkArrival(compiled, session) {
+  function variantMatches(variant, state, before) {
+    return testConditions(state, variant.when) && testConditions(before || state, variant.whenBefore || []);
+  }
+
+  function checkArrival(compiled, session, before) {
     var node = compiled.nodes[session.nodeId];
     if (!node) fail('現在の段落が作品にありません。');
+    if (!node.body.trim() && !(node.variants || []).some(function (variant) { return variantMatches(variant, session.state, before); })) {
+      fail('段落「' + node.id + '」に表示できる本文がありません。');
+    }
     if (node.ending) {
       if (!testConditions(session.state, node.ending.requires)) fail('結末「' + node.ending.id + '」の到達条件が成立していません。');
     } else if (!node.choices.some(function (choice) { return testConditions(session.state, choice.when); })) {
@@ -285,7 +294,7 @@
       contentRevision: session.contentRevision, nodeId: choice.to,
       state: nextState, trail: session.trail.concat(choiceId)
     };
-    checkArrival(compiled, next);
+    checkArrival(compiled, next, session.state);
     return next;
   }
 
@@ -340,8 +349,10 @@
     var normalized = validateCompiled(compiled, session);
     var node = compiled.nodes[normalized.nodeId];
     var parts = [node.body];
+    var before = (node.variants || []).some(function (variant) { return own(variant, 'whenBefore'); }) && normalized.trail.length
+      ? replayCompiled(compiled, normalized.trail.slice(0, -1)).state : normalized.state;
     (node.variants || []).forEach(function (variant) {
-      if (testConditions(normalized.state, variant.when)) parts.push(variant.text);
+      if (variantMatches(variant, normalized.state, before)) parts.push(variant.text);
     });
     return parts.join('\n');
   }

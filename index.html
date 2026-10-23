@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#172d30">
-  <meta name="description" content="二十の物語、あなたの選択。日本語の短編ゲームブックをブラウザで。">
+  <meta name="description" content="短編20作と中編3作。日本語のゲームブックをブラウザで。">
   <title>二十の分岐 — GAMEBOOK</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/stories.js" defer></script>
   <script src="js/editions.js" defer></script>
+  <script src="js/medium.js" defer></script>
   <script src="js/assets.js" defer></script>
   <script src="js/engine.js" defer></script>
   <script src="js/storage.js" defer></script>
@@ -33,9 +34,9 @@
 
     <main id="library-view" class="library-view">
       <section class="shelf-heading" aria-labelledby="shelf-title">
-        <div><p class="eyebrow">TWENTY STORIES. YOUR CHOICES.</p><h1 id="shelf-title">物語の、その先を選ぶ。</h1><p class="shelf-intro">一冊を開く。言葉をたどる。結末は、あなたの選択の先に。</p></div>
+        <div><p class="eyebrow">YOUR STORIES. YOUR CHOICES.</p><h1 id="shelf-title">物語の、その先を選ぶ。</h1><p class="shelf-intro">短編20作と中編3作。結末は、あなたの選択の先に。</p></div>
         <div id="library-art" class="library-art" hidden></div>
-        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="search-input" type="search" placeholder="物語を探す" aria-label="題名やジャンルから物語を探す" autocomplete="off"></label>
+        <div class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="search-input" type="search" placeholder="物語を探す" aria-label="題名やジャンルから物語を探す" autocomplete="off"><select id="length-filter" aria-label="作品の長さ"><option value="all">すべて</option><option value="short">短編</option><option value="medium">中編</option></select></div>
       </section>
       <section id="book-grid" class="book-grid" aria-label="作品一覧"></section>
       <footer class="shelf-footer"><span id="shelf-summary"></span><nav class="pager" aria-label="本棚のページ"><button id="shelf-prev" class="round-button" aria-label="前の本棚">←</button><span id="shelf-page"></span><button id="shelf-next" class="round-button" aria-label="次の本棚">→</button></nav><button id="guide-button" class="text-button">遊び方 <span aria-hidden="true">↗</span></button></footer>
