@@ -9,6 +9,7 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const { scenarioMarkdown } = require('./scenario-markdown.cjs');
 const { readMediumStories } = require('./medium-stories.cjs');
+const { readNewShortStories } = require('./short-stories.cjs');
 
 const ROOT = path.resolve(__dirname, '..');
 const STORY_IDS = Array.from({ length: 20 }, (_, i) => `GB${String(i + 1).padStart(2, '0')}`);
@@ -127,10 +128,11 @@ function classicBundle(globalName, sourceLabel, data) {
 
 function build({ root = ROOT, check = false } = {}) {
   const stories = readStories(root);
+  const newShorts = readNewShortStories(root);
   const medium = readMediumStories(root);
-  for (const story of medium) require('../js/engine.js').createSession(story);
+  for (const story of [...newShorts,...medium]) require('../js/engine.js').createSession(story);
   const editions = readEditions(stories, root);
-  const assetStories = [...stories, ...medium];
+  const assetStories = [...stories, ...newShorts, ...medium];
   const manifest = validateAssets(JSON.parse(fs.readFileSync(path.join(root, 'assets', 'manifest.json'), 'utf8')), assetStories, root);
   const reviewTracks = [
     { id: 'library', storyTitle: '本棚', ...manifest.library },
@@ -141,6 +143,8 @@ function build({ root = ROOT, check = false } = {}) {
   }));
   const outputs = [
     ['js/stories.js', classicBundle('GB_STORIES', 'data/stories/*.json', stories)],
+    ['js/shorts.js', classicBundle('GB_NEW_SHORT_STORIES', 'doc/drafts/gb21-40/*.md and data/short-adapters/*.json', newShorts)],
+    ...newShorts.map(story => [`data/shorts/${story.id.toLowerCase()}.json`, JSON.stringify(story, null, 2) + '\n']),
     ['js/medium.js', classicBundle('GB_MEDIUM_STORIES', 'the chapter Markdown in doc/drafts/medium01 through medium03', medium)],
     ...medium.map(story => [`data/medium/${story.id.toLowerCase()}.json`, JSON.stringify(story, null, 2) + '\n']),
     ['js/editions.js', classicBundle('GB_EDITIONS', 'data/editions/*.json', editions)],
@@ -162,7 +166,7 @@ function build({ root = ROOT, check = false } = {}) {
       fs.writeFileSync(target, text, 'utf8');
     }
   }
-  return { storyCount: stories.length, mediumCount: medium.length, files: outputs.map(([name]) => name), changed: changed.map(([name]) => name), check };
+  return { storyCount: stories.length+newShorts.length, mediumCount: medium.length, files: outputs.map(([name]) => name), changed: changed.map(([name]) => name), check };
 }
 
 if (require.main === module) {

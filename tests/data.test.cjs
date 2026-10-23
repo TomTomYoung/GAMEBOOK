@@ -11,7 +11,7 @@ const { build, readStories, validateAssets } = require('../scripts/build-data.cj
 
 const ROOT = path.resolve(__dirname, '..');
 const stories = readStories(ROOT);
-const assetStories = [...stories, ...require('../js/medium.js')];
+const assetStories = [...stories, ...require('../js/shorts.js'), ...require('../js/medium.js')];
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/manifest.json'), 'utf8'));
 const sourceManifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/source-manifest.json'), 'utf8'));
 
@@ -94,7 +94,7 @@ test('generated data runs as a browser classic script without fetch or a module 
 
 test('committed generated files match the source data and manifest', () => {
   const result = build({ check: true });
-  assert.equal(result.storyCount, 20);
+  assert.equal(result.storyCount, 40);
   assert.deepEqual(result.changed, []);
 });
 

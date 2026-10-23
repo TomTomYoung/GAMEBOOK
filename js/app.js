@@ -2,7 +2,7 @@
   'use strict';
   const E = globalThis.GBEngine;
   const S = globalThis.GBStorage;
-  const stories = [...(globalThis.GB_STORIES || []), ...(globalThis.GB_MEDIUM_STORIES || [])];
+  const stories = [...(globalThis.GB_STORIES || []), ...(globalThis.GB_NEW_SHORT_STORIES || []), ...(globalThis.GB_MEDIUM_STORIES || [])];
   const editions = globalThis.GB_EDITIONS || [];
   const allStories = [...(stories || []), ...editions.map(edition => edition.story)];
   // New shelf selections start with the highest numeric edition. Opening an
@@ -760,7 +760,7 @@
   }
 
   try {
-    if (!E || !S || !globalThis.GBMusic || globalThis.GB_STORIES?.length !== 20 || globalThis.GB_MEDIUM_STORIES?.length !== 3 || !Array.isArray(globalThis.GB_EDITIONS) || !assets) throw new Error('ゲームのファイルが揃っていません。フォルダ全体を展開し、index.htmlを開いてください。');
+    if (!E || !S || !globalThis.GBMusic || globalThis.GB_STORIES?.length !== 20 || globalThis.GB_NEW_SHORT_STORIES?.length !== 20 || globalThis.GB_MEDIUM_STORIES?.length !== 3 || !Array.isArray(globalThis.GB_EDITIONS) || !assets) throw new Error('ゲームのファイルが揃っていません。フォルダ全体を展開し、index.htmlを開いてください。');
     music = globalThis.GBMusic.createPlayer({
       onChange: renderMusicButton,
       onError: () => notify('音楽を再生できませんでした。音楽ボタンからもう一度お試しください。')

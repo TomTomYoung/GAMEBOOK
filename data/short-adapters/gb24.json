@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "f41ac2df06e7c7cc6a7569c06129746e7b7a0d2dfa814194d18d73b4d88ef22f",
+  "state": [
+    {
+      "id": "pearl",
+      "label": "珠",
+      "initial": false,
+      "meaning": "原稿の「珠」の記録。選択を確定すると自動で更新します。",
+      "type": "bool"
+    },
+    {
+      "id": "yoru",
+      "label": "ヨル",
+      "initial": false,
+      "meaning": "原稿の「ヨル」の記録。選択を確定すると自動で更新します。",
+      "type": "bool"
+    }
+  ],
+  "choices": {
+    "06a": {
+      "when": [],
+      "effects": [
+        {
+          "var": "pearl",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 傘で珠の影を覆い、球と格子が止まってから手を入れる。「珠」に印を付ける。[08へ](#s08)"
+    },
+    "11a": {
+      "when": [],
+      "effects": [
+        {
+          "var": "pearl",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 珠を上着に包み、屋上へ走る。「珠」に印を付ける。[13へ](#s13)"
+    },
+    "07a": {
+      "when": [],
+      "effects": [
+        {
+          "var": "yoru",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 鳥を傘に止まらせて回廊へ出る。「ヨル」に印を付ける。[10へ](#s10)"
+    },
+    "10a": {
+      "when": [
+        {
+          "var": "pearl",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "source": "- 珠に印があるなら、二人と一羽で屋上へ向かう。[13へ](#s13)"
+    },
+    "10b": {
+      "when": [
+        {
+          "var": "pearl",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "source": "- 珠に印がないなら、リツとヨルの力も借りて月の珠を取りに行く。[11へ](#s11)"
+    },
+    "10c": {
+      "when": [
+        {
+          "var": "pearl",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "source": "- 珠に印がないなら、今夜はこの鳥を連れて外へ出る。[15へ](#s15)"
+    }
+  },
+  "paragraphs": [
+    {
+      "node": "10",
+      "source": "珠に印があるなら、上着の内側から青い光が一筋漏れています。ヨルがその光へ嘴を寄せ、澄んだ音を一つ鳴らしました。印がなければ、月の珠はまだ右の回廊に浮いています。",
+      "parts": [
+        {
+          "when": [
+            {
+              "var": "pearl",
+              "op": "eq",
+              "value": true
+            }
+          ],
+          "text": "上着の内側から青い光が一筋漏れています。ヨルがその光へ嘴を寄せ、澄んだ音を一つ鳴らしました。"
+        },
+        {
+          "when": [
+            {
+              "var": "pearl",
+              "op": "eq",
+              "value": false
+            }
+          ],
+          "text": "月の珠はまだ右の回廊に浮いています。"
+        }
+      ]
+    }
+  ],
+  "entryEffects": {},
+  "skip": []
+}

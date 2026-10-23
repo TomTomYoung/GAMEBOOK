@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "97b5cd635384a67b075388e9d78e9fe963063215e7a8f51516ba08e521ad7884",
+  "state": [
+    {
+      "id": "rhythm",
+      "label": "拍子",
+      "initial": false,
+      "meaning": "原稿の「拍子」の記録。選択を確定すると自動で更新します。",
+      "type": "bool"
+    }
+  ],
+  "choices": {
+    "02a": {
+      "when": [],
+      "effects": [
+        {
+          "var": "rhythm",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 二歩と休みを踵で試し、「拍子」に印を付けて卓の外へ出る。[07へ](#s07)"
+    },
+    "02b": {
+      "when": [],
+      "effects": [
+        {
+          "var": "rhythm",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 「拍子」に印を付け、今度はタムに、この椅子で料理を食べる方法を尋ねる。[04へ](#s04)"
+    },
+    "10a": {
+      "when": [],
+      "effects": [
+        {
+          "var": "rhythm",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 習った動きを踵でも試して「拍子」に印を付け、ベラの隣へ椅子を寄せる。[09へ](#s09)"
+    },
+    "07a": {
+      "when": [
+        {
+          "var": "rhythm",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "source": "- 「拍子」の印がある場合、二歩と休みを踵で打ち、椅子を曲へ合わせる。[09へ](#s09)"
+    }
+  },
+  "paragraphs": [],
+  "entryEffects": {},
+  "skip": []
+}

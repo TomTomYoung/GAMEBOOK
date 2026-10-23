@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "0bbd621aefc6668f2f061307f1a856194494d42e10382dceffaa64af7c958b57",
+  "state": [
+    {
+      "id": "energy",
+      "label": "余力",
+      "initial": 2,
+      "meaning": "原稿の「余力」の記録。選択を確定すると自動で更新します。",
+      "type": "int",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "id": "lead",
+      "label": "先行",
+      "initial": false,
+      "meaning": "原稿の「先行」の記録。選択を確定すると自動で更新します。",
+      "type": "bool"
+    }
+  ],
+  "choices": {
+    "01a": {
+      "when": [],
+      "effects": [
+        {
+          "var": "energy",
+          "op": "add",
+          "value": -1
+        },
+        {
+          "var": "lead",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 強く蹴り、先頭へ出る。余力を1減らし、先行に印を付ける。[02へ](#s02)"
+    },
+    "04a": {
+      "when": [
+        {
+          "var": "energy",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "var": "energy",
+          "op": "add",
+          "value": -1
+        },
+        {
+          "var": "lead",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 余力が1以上なら、内側の段を跳び越える。余力を1減らし、先行に印を付ける。[05へ](#s05)"
+    },
+    "08a": {
+      "when": [
+        {
+          "var": "energy",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "var": "energy",
+          "op": "add",
+          "value": -1
+        },
+        {
+          "var": "lead",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 余力が1以上なら、影のうちに踏み込んで先頭へ出る。余力を1減らし、先行に印を付ける。[11へ](#s11)"
+    },
+    "05a": {
+      "when": [
+        {
+          "var": "energy",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "var": "energy",
+          "op": "add",
+          "value": -1
+        }
+      ],
+      "source": "- 余力が1以上なら切れ目を跳ぶ。余力を1減らし、先行を付けたまま進む。[07へ](#s07)"
+    },
+    "11b": {
+      "when": [
+        {
+          "var": "energy",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "var": "energy",
+          "op": "add",
+          "value": -1
+        }
+      ],
+      "source": "- 余力が1以上なら、最後の一踏みで押し切る。余力を1減らす。[13へ](#s13)"
+    },
+    "12a": {
+      "when": [
+        {
+          "var": "energy",
+          "op": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "var": "energy",
+          "op": "add",
+          "value": -1
+        }
+      ],
+      "source": "- 余力が1以上なら、帆の陰から踏み出して並び、そのまま小さい橇を先に入れる。余力を1減らす。[13へ](#s13)"
+    },
+    "06a": {
+      "when": [],
+      "effects": [
+        {
+          "var": "energy",
+          "op": "add",
+          "value": -1
+        },
+        {
+          "var": "lead",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "source": "- 切れ目を跳び、前へ出る。余力を1減らし、先行に印を付ける。[07へ](#s07)"
+    },
+    "04b": {
+      "when": [],
+      "effects": [
+        {
+          "var": "lead",
+          "op": "set",
+          "value": false
+        }
+      ],
+      "source": "- 外側の氷を滑り、脚を残す。先行の印を消す。[06へ](#s06)"
+    },
+    "08b": {
+      "when": [],
+      "effects": [
+        {
+          "var": "lead",
+          "op": "set",
+          "value": false
+        }
+      ],
+      "source": "- 脚を使わず、エンの帆が開くまで追う。先行の印を消す。[12へ](#s12)"
+    }
+  },
+  "paragraphs": [
+    {
+      "node": "08",
+      "source": "先行の印があるなら、あなたが斜面へ先に入り、エンが一台ぶん後ろから降りてきます。",
+      "parts": [
+        {
+          "when": [
+            {
+              "var": "lead",
+              "op": "eq",
+              "value": true
+            }
+          ],
+          "text": "あなたが斜面へ先に入り、エンが一台ぶん後ろから降りてきます。"
+        }
+      ]
+    },
+    {
+      "node": "08",
+      "source": "先行の印がなければ、エンの帆を前に見て、あなたが一台ぶん後ろから斜面へ入ります。",
+      "parts": [
+        {
+          "when": [
+            {
+              "var": "lead",
+              "op": "eq",
+              "value": false
+            }
+          ],
+          "text": "エンの帆を前に見て、あなたが一台ぶん後ろから斜面へ入ります。"
+        }
+      ]
+    }
+  ],
+  "entryEffects": {},
+  "skip": []
+}

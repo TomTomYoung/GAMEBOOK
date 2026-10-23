@@ -2,7 +2,7 @@
   "name": "twenty-gamebooks",
   "version": "1.0.0",
   "private": true,
-  "description": "20 Japanese gamebooks. Open index.html directly to play.",
+  "description": "40 short and 3 medium Japanese gamebooks. Open index.html directly to play.",
   "scripts": {
     "build": "node scripts/build-data.cjs",
     "check": "node scripts/build-data.cjs --check",
