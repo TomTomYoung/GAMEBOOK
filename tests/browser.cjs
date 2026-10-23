@@ -1035,19 +1035,20 @@ async function testMediumStories() {
   });
   for (const story of medium) {
     const graph = explore(story);
-    await runCase(`medium-${story.id}-scene-and-continuous-music`, async () => {
-      const media = assets.stories[story.id];
-      for (const [nodeId, scene] of Object.entries(media.scenes)) {
+    const media = assets.stories[story.id];
+    for (const [nodeId, scene] of Object.entries(media.scenes)) {
+      await runCase(`medium-${story.id}-scene-${nodeId}-continuous-music`, async () => {
         const item = graph.nodeSamples.get(nodeId);
         assert(item, `${story.id}/${nodeId}: unreachable illustration`);
         const trail = trailFor(item), prior = trail.slice(0, -1);
         const page = await newPage(VIEWPORTS[0], seededShelf(story.id, prior), true);
-        await assertSceneImage(page, media.image);
+        const before = E.replay(story, prior);
+        await assertSceneImage(page, media.scenes[before.nodeId]?.image || media.image);
         assert.equal(await page.evaluate(() => window.__gamebookAudio.length), 0);
         await page.locator('#music-button').click();
         await page.waitForFunction(() => window.__gamebookAudio[0]?.currentTime > .1);
         await page.evaluate(() => { window.__gamebookAudio[0].currentTime = 20; });
-        const session = await choose(page, story, E.replay(story, prior), trail.at(-1));
+        const session = await choose(page, story, before, trail.at(-1));
         await assertSceneImage(page, scene.image);
         const audio = await page.evaluate(() => ({ count: window.__gamebookAudio.length, time: window.__gamebookAudio[0].currentTime, src: window.__gamebookAudio[0].src }));
         assert.equal(audio.count, 1);
@@ -1058,7 +1059,7 @@ async function testMediumStories() {
           await layout(page, `${story.id} scene ${size.width}`);
           await readEveryPage(page, E.getText(story, session), `${story.id}/${nodeId} ${size.width}`);
           await allChoices(page, story, session, `${story.id}/${nodeId}`);
-          await screenshot(page, `medium-scene-${story.id}-${size.width}x${size.height}`);
+          await screenshot(page, `medium-scene-${story.id}-${nodeId}-${size.width}x${size.height}`);
         }
         const saved = await storedShelf(page);
         await page.reload();
@@ -1066,11 +1067,11 @@ async function testMediumStories() {
         await assertSceneImage(page, scene.image);
         assert.deepEqual((await storedShelf(page)).sessions, saved.sessions);
         const next = E.availableChoices(story, session)[0];
-        await choose(page, story, session, next.id);
-        await assertSceneImage(page, media.image);
+        const after = await choose(page, story, session, next.id);
+        await assertSceneImage(page, media.scenes[after.nodeId]?.image || media.image);
         await page.context().close();
-      }
-    });
+      });
+    }
     await runCase(`medium-${story.id}-full-journey`, async () => {
       const seed = seededShelf('GB01',['01a']);
       seed.activeStoryId = null;
