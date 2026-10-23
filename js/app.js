@@ -289,7 +289,7 @@
     $('chapter-subtitle').textContent = intro ? story.genre : node.ending ? node.ending.name : chapter?.chapterTitle || '';
     const art = $('scene-art');
     art.className = 'scene-art';
-    art.replaceChildren(el('span', `scene-number${chapter && !intro ? ' chapter-number' : ''}`, intro ? (chapter ? story.id : String(story.number).padStart(2, '0')) : chapter ? `${chapter.chapter}·${chapter.section}` : node.id), el('span', 'scene-lines'));
+    art.replaceChildren(el('span', `scene-number${chapter ? ' chapter-number' : ''}`, intro ? (chapter ? story.id : String(story.number).padStart(2, '0')) : chapter ? `${chapter.chapter}·${chapter.section}` : node.id), el('span', 'scene-lines'));
     const imageEntry = sceneFor(story, node.id, intro).image;
     if (imageEntry) addImage(art, imageEntry);
     const fullText = intro ? `あなたの役目\n${story.setup}\nこの物語のルール\n${story.rules.map((rule, index) => `${index + 1}. ${rule}`).join('\n')}` : E.getText(story, session);
