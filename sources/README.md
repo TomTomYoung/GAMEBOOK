@@ -60,3 +60,5 @@ python scripts/render-music.py --only gb16-theme gb17-theme gb18-theme gb19-them
 ## 中編3作の素材（2026-10-23）
 
 `images/m01-*`〜`m03-*`に採用PNGと英語プロンプトを、`audio/m01-theme.score.json`〜`m03-theme.score.json`に音符を保存しています。`python sources/audio/compose-medium.py`でスコア、`python scripts/render-music.py --only m01-theme m02-theme m03-theme`で配布音源を再生成できます。画風・配置・照合の詳細は[中編素材記録](../doc/MEDIUM_ASSETS.md)を参照してください。
+
+第11回では中編の挿絵6点を追加しました。各作の挿絵は3点になり、同じ命名規則でPNG・英語プロンプトを保存しています。正確な章節・原寸・SHA-256は画像台帳と[中編素材記録](../doc/MEDIUM_ASSETS.md)を参照してください。

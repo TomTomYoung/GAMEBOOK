@@ -499,6 +499,22 @@
             "position": "center"
           },
           "music": null
+        },
+        "c08-s07": {
+          "image": {
+            "src": "assets/images/m01-scene-c08-s07.webp",
+            "alt": "船内の机で、取り外した舞台扉の横木の縁と握りを確かめる二人の手。鉋と木屑、短い紐が並ぶ。",
+            "position": "center"
+          },
+          "music": null
+        },
+        "c10-s01": {
+          "image": {
+            "src": "assets/images/m01-scene-c10-s01.webp",
+            "alt": "劇場船の朝の卓に置かれた湯呑みと封書。穏やかな水面の向こうに空の客席が並ぶ。",
+            "position": "center"
+          },
+          "music": null
         }
       }
     },
@@ -522,6 +538,22 @@
             "position": "center"
           },
           "music": null
+        },
+        "c07-s01": {
+          "image": {
+            "src": "assets/images/m02-scene-c07-s01.webp",
+            "alt": "深い地下の裂け目を横切る竜骨橋。白い肋骨の上に鉄の桁と石板が渡され、対岸に巨大な頭蓋が残る。",
+            "position": "center"
+          },
+          "music": null
+        },
+        "c10-s01": {
+          "image": {
+            "src": "assets/images/m02-scene-c10-s01.webp",
+            "alt": "炉前の床から現れる石の肋と黒い金属の帯を持つ守護竜。背の弁から熱い粉が出て、胸の奥が赤く光る。",
+            "position": "center"
+          },
+          "music": null
         }
       }
     },
@@ -542,6 +574,22 @@
           "image": {
             "src": "assets/images/m03-scene-c03-s03.webp",
             "alt": "朝の雲海を水平に飛ぶ青灰色の竜サザ。地図を見るナギと島を指すリタが荷物とともに鞍に乗る。",
+            "position": "center"
+          },
+          "music": null
+        },
+        "c08-s01": {
+          "image": {
+            "src": "assets/images/m03-scene-c08-s01.webp",
+            "alt": "雲の切れ間から見下ろす青い海。黒い背と左右に広がる薄い膜を持つ海渡りの群れが、水面のすぐ上を進む。",
+            "position": "center"
+          },
+          "music": null
+        },
+        "c13-s04": {
+          "image": {
+            "src": "assets/images/m03-scene-c13-s04.webp",
+            "alt": "雲海へ張り出す石の鐘塔の作業足場と金属の手すり。その先に風を受ける大きな輪と管が見える。",
             "position": "center"
           },
           "music": null
