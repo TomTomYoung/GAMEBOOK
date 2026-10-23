@@ -548,6 +548,10 @@ a {
   font-weight:400;
   opacity:.9
 }
+.scene-number.chapter-number {
+  font-size:32px;
+  white-space:nowrap
+}
 .scene-lines {
   position:absolute;
   inset:0;

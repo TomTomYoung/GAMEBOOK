@@ -187,6 +187,15 @@ async function layout(page, label) {
       }
     }
     if (reader) {
+      const sceneNumber = document.querySelector('.scene-number');
+      const sceneArt = document.querySelector('#scene-art');
+      if (visible(sceneNumber) && visible(sceneArt)) {
+        const range = document.createRange();
+        range.selectNodeContents(sceneNumber);
+        if (!inside(range.getBoundingClientRect(), sceneArt.getBoundingClientRect())) {
+          failures.push({ kind: 'scene-number-clipped', label: sceneNumber.textContent, ...summary(sceneArt) });
+        }
+      }
       const frame = document.querySelector('#reader-text-frame');
       const text = document.querySelector('#reader-text');
       const bounds = frame.getBoundingClientRect();
