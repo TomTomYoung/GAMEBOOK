@@ -387,7 +387,7 @@ async function testResponsive() {
         if (!(await page.locator('#shelf-next').isEnabled())) break;
         await page.locator('#shelf-next').click();
       }
-      assert.deepEqual(seen, stories.map(story => story.id));
+      assert.deepEqual(seen, [...stories, ...medium].map(story => story.id));
     });
     const cases = [
       { id: 'GB09', trail: [], intro: true, font: 24, name: 'intro24' },
