@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         browser: [chromium, firefox, webkit]
-        suite: [short, medium]
+        suite: [short, medium, new-short]
     steps:
       - uses: actions/checkout@v7
         with:

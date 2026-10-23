@@ -18,8 +18,11 @@ const S = require('../js/storage.js');
 const stories = require('../js/stories.js');
 const editions = require('../js/editions.js');
 const medium = require('../js/medium.js');
+const newShorts = require('../js/shorts.js');
+const { explore: exploreShort } = require('./short-helpers.cjs');
 const { explore, trailFor } = require('./medium-helpers.cjs');
-const allStories = [...stories, ...editions.map(edition => edition.story), ...medium];
+const allStories = [...stories, ...editions.map(edition => edition.story), ...newShorts, ...medium];
+const shelfStories = [...stories, ...newShorts, ...medium];
 const latestStories = stories.map(story => editions.filter(edition => edition.baseId === story.id)
   .sort((a, b) => b.edition - a.edition)[0]?.story || story);
 const assets = require('../js/assets.js');
@@ -380,14 +383,14 @@ async function testResponsive() {
     await runCase(`shelf-${suffix}`, async () => {
       const page = await newPage(viewport);
       const seen = [];
-      for (let count = 0; count < 10; count++) {
+      for (let count = 0; count < shelfStories.length; count++) {
         await layout(page, `shelf ${suffix}`);
         seen.push(...await page.locator('[data-story-id]').evaluateAll(cards => cards.map(card => card.dataset.storyId)));
         if (!count) await screenshot(page, `library-${suffix}`);
         if (!(await page.locator('#shelf-next').isEnabled())) break;
         await page.locator('#shelf-next').click();
       }
-      assert.deepEqual(seen, [...stories, ...medium].map(story => story.id));
+      assert.deepEqual(seen, shelfStories.map(story => story.id));
     });
     const cases = [
       { id: 'GB09', trail: [], intro: true, font: 24, name: 'intro24' },
@@ -1018,7 +1021,7 @@ async function testSceneAssets() {
 async function testMediumStories() {
   await runCase('medium-shelf-filter', async () => {
     const page = await newPage(VIEWPORTS[0]);
-    assert.equal(await page.locator('#shelf-summary').textContent(),'全23作 · 89の結末');
+    assert.equal(await page.locator('#shelf-summary').textContent(),'全43作 · 170の結末');
     await page.locator('#length-filter').selectOption('medium');
     assert.deepEqual(await page.locator('.book-card').evaluateAll(cards=>cards.map(c=>c.dataset.storyId)),['M01','M02','M03']);
     for (const size of VIEWPORTS) {
@@ -1027,7 +1030,7 @@ async function testMediumStories() {
       await screenshot(page,`medium-shelf-${size.width}x${size.height}`);
     }
     await page.locator('#length-filter').selectOption('short');
-    assert.equal(await page.locator('#shelf-summary').textContent(),'20作が見つかりました');
+    assert.equal(await page.locator('#shelf-summary').textContent(),'40作が見つかりました');
     await page.locator('#search-input').fill('M03');
     assert.equal(await page.locator('.book-card').count(),0);
     await page.locator('#length-filter').selectOption('all');
@@ -1144,6 +1147,89 @@ async function testMediumStories() {
   }
 }
 
+async function testNewShortStories() {
+  await runCase('new-shorts-shelf-and-pagination',async()=>{
+    const page=await newPage(VIEWPORTS[0]);
+    assert.equal(await page.locator('#shelf-summary').textContent(),'全43作 · 170の結末');
+    await page.locator('#length-filter').selectOption('short');
+    assert.equal(await page.locator('#shelf-summary').textContent(),'40作が見つかりました');
+    for (const story of newShorts) {
+      await page.locator('#search-input').fill(story.id);
+      assert.equal(await page.locator('.book-card').count(),1);
+      assert.equal(await page.locator('.book-card').getAttribute('data-story-id'),story.id);
+      assert.equal(await page.locator('.book-card img').count(),0);
+    }
+    await page.locator('#search-input').fill('');
+    await page.locator('#length-filter').selectOption('all');
+    const ids=[];
+    for (let i=0;i<6;i++) {
+      ids.push(...await page.locator('.book-card').evaluateAll(cards=>cards.map(c=>c.dataset.storyId)));
+      if(i<5) await page.locator('#shelf-next').click();
+    }
+    assert.deepEqual(ids,shelfStories.map(s=>s.id));
+    await screenshot(page,'new-shorts-last-shelf-page');
+  });
+  for (const story of newShorts) {
+    const graph=exploreShort(story);
+    await runCase(`new-short-${story.id}-playthrough`,async()=>{
+      const seed=seededShelf('GB01',['01a']);
+      const page=await newPage(VIEWPORTS[0],seed,true);
+      await openFromShelf(page,story.id);
+      assert(await page.locator('#edition-select').isHidden());
+      assert(await page.locator('#music-button').isHidden());
+      assert.equal(await page.locator('#scene-art img').count(),0);
+      assert.equal(await page.locator('#scene-art .scene-number').textContent(),String(story.number));
+      await readEveryPage(page,introText(story),`${story.id} intro`);
+      await page.locator('[data-action="begin"]').click();await page.waitForTimeout(340);
+      let session=E.createSession(story);
+      for (const id of trailFor(graph.endings.values().next().value)) {
+        await readEveryPage(page,E.getText(story,session),`${story.id}/${session.nodeId}`);
+        await allChoices(page,story,session,`${story.id}/${session.nodeId}`);
+        session=await choose(page,story,session,id);
+      }
+      const ending=E.getNode(story,session).ending;
+      assert(ending);await readEveryPage(page,E.getText(story,session),`${story.id}/${ending.id}`);
+      const saved=await storedShelf(page);
+      assert.deepEqual(saved.endingTrails[story.id][ending.id],session.trail);
+      assert.deepEqual(saved.sessions.GB01,seed.sessions.GB01);
+      await page.reload();await page.waitForSelector('html[data-gamebook-ready="true"]');
+      assert.deepEqual(await storedShelf(page),saved);
+      await screenshot(page,`new-short-${story.id}-ending`);
+    });
+    await runCase(`new-short-${story.id}-all-endings`,async()=>{
+      for(const [id,item] of graph.endings) {
+        const trail=trailFor(item),prior=trail.slice(0,-1);
+        const page=await newPage(VIEWPORTS[0],seededShelf(story.id,prior));
+        const session=await choose(page,story,E.replay(story,prior),trail.at(-1));
+        await readEveryPage(page,E.getText(story,session),`${story.id}/${id}`);
+        assert.deepEqual((await storedShelf(page)).endingTrails[story.id][id],trail);
+        await page.context().close();
+      }
+    });
+    await runCase(`new-short-${story.id}-responsive-and-resume`,async()=>{
+      const longest=[...graph.samples].sort((a,b)=>b.text.length-a.text.length)[0];
+      const session=E.replay(story,trailFor(longest));
+      const seed=seededShelf(story.id,session.trail,false,24);
+      const ending=E.getNode(story,session).ending;
+      // A real save at an ending already contains its collected trail.
+      if (ending) seed.endingTrails[story.id]={[ending.id]:session.trail};
+      const page=await newPage(VIEWPORTS[0],seed);
+      for(const size of VIEWPORTS) {
+        await page.setViewportSize(size);await settle(page);
+        await readEveryPage(page,E.getText(story,session),`${story.id} longest ${size.width}`);
+        await allChoices(page,story,session,`${story.id} longest ${size.width}`);
+        await screenshot(page,`new-short-${story.id}-longest-${size.width}x${size.height}`);
+      }
+      const saved=await storedShelf(page);
+      await page.locator('#history-button').click();await page.locator('.history-item button').first().click();
+      assert(await page.locator('.history-detail').isVisible());await page.locator('#modal-close').click();
+      assert.deepEqual((await storedShelf(page)).sessions,saved.sessions);
+      await page.reload();await page.waitForSelector('html[data-gamebook-ready="true"]');
+      assert.deepEqual(await storedShelf(page),saved);
+    });
+  }
+}
+
 async function main() {
   fs.mkdirSync(OUTPUT, { recursive: true });
   let playwright;
@@ -1159,7 +1245,9 @@ async function main() {
   const version = browser.version();
   const started = new Date().toISOString();
   try {
-    if (process.env.BROWSER_SUITE !== 'medium') {
+    const suite=process.env.BROWSER_SUITE||'all';
+    assert(['all','short','medium','new-short'].includes(suite));
+    if (suite === 'all' || suite === 'short') {
     await testInstalledAssets();
     await testStoryAssets();
     await testSceneAssets();
@@ -1168,10 +1256,11 @@ async function main() {
     await testAllStories();
     await testNewEditionPassages();
     }
-    if (process.env.BROWSER_SUITE !== 'short') {
+    if (suite === 'all' || suite === 'medium') {
       await testStoryAssets(medium);
       await testMediumStories();
     }
+    if (suite === 'all' || suite === 'new-short') await testNewShortStories();
   } finally {
     await browser.close();
     const report = { started, finished: new Date().toISOString(), url: URL, browser: BROWSER, platform: process.platform, browserVersion: version, viewports: VIEWPORTS, results, diagnostics, screenshots };
