@@ -22,6 +22,7 @@ const newShorts = require('../js/shorts.js');
 const { explore: exploreShort } = require('./short-helpers.cjs');
 const { explore, trailFor } = require('./medium-helpers.cjs');
 const allStories = [...stories, ...editions.map(edition => edition.story), ...newShorts, ...medium];
+const shelfStories = [...stories, ...newShorts, ...medium];
 const latestStories = stories.map(story => editions.filter(edition => edition.baseId === story.id)
   .sort((a, b) => b.edition - a.edition)[0]?.story || story);
 const assets = require('../js/assets.js');
@@ -382,14 +383,14 @@ async function testResponsive() {
     await runCase(`shelf-${suffix}`, async () => {
       const page = await newPage(viewport);
       const seen = [];
-      for (let count = 0; count < 10; count++) {
+      for (let count = 0; count < shelfStories.length; count++) {
         await layout(page, `shelf ${suffix}`);
         seen.push(...await page.locator('[data-story-id]').evaluateAll(cards => cards.map(card => card.dataset.storyId)));
         if (!count) await screenshot(page, `library-${suffix}`);
         if (!(await page.locator('#shelf-next').isEnabled())) break;
         await page.locator('#shelf-next').click();
       }
-      assert.deepEqual(seen, [...stories, ...medium].map(story => story.id));
+      assert.deepEqual(seen, shelfStories.map(story => story.id));
     });
     const cases = [
       { id: 'GB09', trail: [], intro: true, font: 24, name: 'intro24' },
@@ -1165,7 +1166,7 @@ async function testNewShortStories() {
       ids.push(...await page.locator('.book-card').evaluateAll(cards=>cards.map(c=>c.dataset.storyId)));
       if(i<5) await page.locator('#shelf-next').click();
     }
-    assert.deepEqual(ids,[...stories,...newShorts,...medium].map(s=>s.id));
+    assert.deepEqual(ids,shelfStories.map(s=>s.id));
     await screenshot(page,'new-shorts-last-shelf-page');
   });
   for (const story of newShorts) {
