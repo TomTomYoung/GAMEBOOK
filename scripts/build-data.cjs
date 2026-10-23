@@ -62,7 +62,7 @@ function validateAssets(manifest, stories, root = ROOT) {
   assert.equal(manifest.schemaVersion, 1, '未対応の素材マニフェスト版です。');
   assetPair(manifest.library, 'library', root);
   object(manifest.stories, 'stories');
-  keys(manifest.stories, STORY_IDS, 'stories');
+  keys(manifest.stories, stories.map(story => story.id), 'stories');
   for (const story of stories) {
     const entry = manifest.stories[story.id];
     object(entry, story.id);
@@ -130,10 +130,11 @@ function build({ root = ROOT, check = false } = {}) {
   const medium = readMediumStories(root);
   for (const story of medium) require('../js/engine.js').createSession(story);
   const editions = readEditions(stories, root);
-  const manifest = validateAssets(JSON.parse(fs.readFileSync(path.join(root, 'assets', 'manifest.json'), 'utf8')), stories, root);
+  const assetStories = [...stories, ...medium];
+  const manifest = validateAssets(JSON.parse(fs.readFileSync(path.join(root, 'assets', 'manifest.json'), 'utf8')), assetStories, root);
   const reviewTracks = [
     { id: 'library', storyTitle: '本棚', ...manifest.library },
-    ...stories.map(story => ({ id: story.id, storyTitle: story.title, ...manifest.stories[story.id] }))
+    ...assetStories.map(story => ({ id: story.id, storyTitle: story.title, ...manifest.stories[story.id] }))
   ].filter(entry => entry.music).map(entry => ({
     id: entry.id, storyTitle: entry.storyTitle, ...entry.music,
     sha256: crypto.createHash('sha256').update(fs.readFileSync(path.join(root, entry.music.src))).digest('hex')
@@ -144,7 +145,7 @@ function build({ root = ROOT, check = false } = {}) {
     ...medium.map(story => [`data/medium/${story.id.toLowerCase()}.json`, JSON.stringify(story, null, 2) + '\n']),
     ['js/editions.js', classicBundle('GB_EDITIONS', 'data/editions/*.json', editions)],
     ['js/assets.js', classicBundle('GB_ASSETS', 'assets/manifest.json', manifest)],
-    ['doc/audio-review-data.js', classicBundle('GB_AUDIO_REVIEW_TRACKS', 'data/stories/*.json and assets/manifest.json with audio SHA-256', reviewTracks)],
+    ['doc/audio-review-data.js', classicBundle('GB_AUDIO_REVIEW_TRACKS', 'short and medium stories and assets/manifest.json with audio SHA-256', reviewTracks)],
     ...scenarioMarkdown(stories, editions)
   ];
   const changed = outputs.filter(([filename, text]) => {

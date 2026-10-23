@@ -901,8 +901,8 @@ async function testInstalledAssets() {
   });
 }
 
-async function testStoryAssets() {
-  for (const story of latestStories) {
+async function testStoryAssets(collection = latestStories) {
+  for (const story of collection) {
     const baseId = story.id.split('-V')[0];
     const media = assets.stories[baseId];
     if (baseId === 'GB01' || !media.image || !media.music) continue;
@@ -1035,6 +1035,42 @@ async function testMediumStories() {
   });
   for (const story of medium) {
     const graph = explore(story);
+    await runCase(`medium-${story.id}-scene-and-continuous-music`, async () => {
+      const media = assets.stories[story.id];
+      for (const [nodeId, scene] of Object.entries(media.scenes)) {
+        const item = graph.nodeSamples.get(nodeId);
+        assert(item, `${story.id}/${nodeId}: unreachable illustration`);
+        const trail = trailFor(item), prior = trail.slice(0, -1);
+        const page = await newPage(VIEWPORTS[0], seededShelf(story.id, prior), true);
+        await assertSceneImage(page, media.image);
+        assert.equal(await page.evaluate(() => window.__gamebookAudio.length), 0);
+        await page.locator('#music-button').click();
+        await page.waitForFunction(() => window.__gamebookAudio[0]?.currentTime > .1);
+        await page.evaluate(() => { window.__gamebookAudio[0].currentTime = 20; });
+        const session = await choose(page, story, E.replay(story, prior), trail.at(-1));
+        await assertSceneImage(page, scene.image);
+        const audio = await page.evaluate(() => ({ count: window.__gamebookAudio.length, time: window.__gamebookAudio[0].currentTime, src: window.__gamebookAudio[0].src }));
+        assert.equal(audio.count, 1);
+        assert(audio.src.endsWith('/' + media.music.src));
+        assert(audio.time >= 20, 'scene switch must preserve the playing track');
+        for (const size of VIEWPORTS) {
+          await page.setViewportSize(size); await settle(page);
+          await layout(page, `${story.id} scene ${size.width}`);
+          await readEveryPage(page, E.getText(story, session), `${story.id}/${nodeId} ${size.width}`);
+          await allChoices(page, story, session, `${story.id}/${nodeId}`);
+          await screenshot(page, `medium-scene-${story.id}-${size.width}x${size.height}`);
+        }
+        const saved = await storedShelf(page);
+        await page.reload();
+        await page.waitForSelector('html[data-gamebook-ready="true"]');
+        await assertSceneImage(page, scene.image);
+        assert.deepEqual((await storedShelf(page)).sessions, saved.sessions);
+        const next = E.availableChoices(story, session)[0];
+        await choose(page, story, session, next.id);
+        await assertSceneImage(page, media.image);
+        await page.context().close();
+      }
+    });
     await runCase(`medium-${story.id}-full-journey`, async () => {
       const seed = seededShelf('GB01',['01a']);
       seed.activeStoryId = null;
@@ -1042,7 +1078,7 @@ async function testMediumStories() {
       await page.locator('#length-filter').selectOption('medium');
       await openFromShelf(page,story.id);
       assert(await page.locator('#edition-select').isHidden());
-      assert(await page.locator('#music-button').isHidden());
+      assert(await page.locator('#music-button').isVisible());
       await readEveryPage(page,introText(story),`${story.id} introduction`);
       await page.locator('[data-action="begin"]').click();
       await page.waitForTimeout(340);
@@ -1131,7 +1167,10 @@ async function main() {
     await testAllStories();
     await testNewEditionPassages();
     }
-    if (process.env.BROWSER_SUITE !== 'short') await testMediumStories();
+    if (process.env.BROWSER_SUITE !== 'short') {
+      await testStoryAssets(medium);
+      await testMediumStories();
+    }
   } finally {
     await browser.close();
     const report = { started, finished: new Date().toISOString(), url: URL, browser: BROWSER, platform: process.platform, browserVersion: version, viewports: VIEWPORTS, results, diagnostics, screenshots };
