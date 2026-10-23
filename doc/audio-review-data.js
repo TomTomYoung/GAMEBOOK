@@ -1,4 +1,4 @@
-/* Generated from data/stories/*.json and assets/manifest.json with audio SHA-256 by scripts/build-data.cjs. Do not edit. */
+/* Generated from short and medium stories and assets/manifest.json with audio SHA-256 by scripts/build-data.cjs. Do not edit. */
 (function (root, value) {
   'use strict';
   if (typeof module === 'object' && module.exports) module.exports = value;
@@ -192,5 +192,32 @@
     "loop": true,
     "volume": 0.35,
     "sha256": "3755c122f21f1bad361b8509f21ddf9b3a846d846e1a42dd82105e2eab4af4df"
+  },
+  {
+    "id": "M01",
+    "storyTitle": "潮待ちの劇場",
+    "src": "assets/audio/m01-theme.ogg",
+    "title": "舞台を運ぶ潮",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "a7d7694012d351c7406088a75198e919ff2e89a265c8bfa370815097de542015"
+  },
+  {
+    "id": "M02",
+    "storyTitle": "灰冠迷宮と星火の剣",
+    "src": "assets/audio/m02-theme.ogg",
+    "title": "灰の門の向こう",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "64382a7001dd13fa51b133194db1b42c4205749e3c44a4cc5f01af6f39286bdb"
+  },
+  {
+    "id": "M03",
+    "storyTitle": "空渡り便の二度目の人生",
+    "src": "assets/audio/m03-theme.ogg",
+    "title": "雲のあいだの往復便",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "6d35fe97d6c7609e916c32aa19e5efff1d1c66bd8a8245add4513296c20907fc"
   }
 ]);

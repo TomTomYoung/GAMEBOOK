@@ -11,6 +11,7 @@ const { build, readStories, validateAssets } = require('../scripts/build-data.cj
 
 const ROOT = path.resolve(__dirname, '..');
 const stories = readStories(ROOT);
+const assetStories = [...stories, ...require('../js/medium.js')];
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/manifest.json'), 'utf8'));
 const sourceManifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/source-manifest.json'), 'utf8'));
 
@@ -99,7 +100,7 @@ test('committed generated files match the source data and manifest', () => {
 
 test('listening notebook identifies every installed track by its actual audio bytes', () => {
   const tracks = require('../doc/audio-review-data.js');
-  assert.equal(tracks.length, 21);
+  assert.equal(tracks.length, 24);
   uniqueIds(tracks, 'review track IDs');
   for (const track of tracks) {
     const music = track.id === 'library' ? manifest.library.music : manifest.stories[track.id].music;
@@ -134,15 +135,18 @@ test('check mode reports stale or absent bundles without writing them', t => {
 });
 
 test('asset manifest rejects unavailable files, external paths, and unknown scene nodes', () => {
-  assert.doesNotThrow(() => validateAssets(manifest, stories, ROOT));
+  assert.doesNotThrow(() => validateAssets(manifest, assetStories, ROOT));
   const altered = () => JSON.parse(JSON.stringify(manifest));
   let bad = altered();
   bad.stories.GB01.image = { src: 'assets/images/missing-test.webp', alt: 'テスト', position: 'center' };
-  assert.throws(() => validateAssets(bad, stories, ROOT), /素材ファイルがありません/);
+  assert.throws(() => validateAssets(bad, assetStories, ROOT), /素材ファイルがありません/);
   bad = altered();
   bad.library.image = { src: 'https://example.com/cover.webp', alt: 'テスト', position: 'center' };
-  assert.throws(() => validateAssets(bad, stories, ROOT), /相対パス/);
+  assert.throws(() => validateAssets(bad, assetStories, ROOT), /相対パス/);
   bad = altered();
   bad.stories.GB01.scenes['nonexistent'] = { image: null, music: null };
-  assert.throws(() => validateAssets(bad, stories, ROOT), /存在しない節/);
+  assert.throws(() => validateAssets(bad, assetStories, ROOT), /存在しない節/);
+  bad = altered();
+  bad.stories.M01.scenes['nonexistent'] = { image: null, music: null };
+  assert.throws(() => validateAssets(bad, assetStories, ROOT), /存在しない節/);
 });

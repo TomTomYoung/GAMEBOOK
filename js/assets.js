@@ -478,6 +478,75 @@
           "music": null
         }
       }
+    },
+    "M01": {
+      "image": {
+        "src": "assets/images/m01-cover.webp",
+        "alt": "静かな港の桟橋に係留された、屋根と開いた作業舞台のある木の劇場船。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/m01-theme.ogg",
+        "title": "舞台を運ぶ潮",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "c05-s01": {
+          "image": {
+            "src": "assets/images/m01-scene-c05-s01.webp",
+            "alt": "灰色の岸壁に積まれた削りたての白い板と、水際の茶色い石、青緑の海。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
+    },
+    "M02": {
+      "image": {
+        "src": "assets/images/m02-cover.webp",
+        "alt": "山腹の灰色の石門と顔のない石像、谷に小さく見える町の灯り。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/m02-theme.ogg",
+        "title": "灰の門の向こう",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "c05-s02": {
+          "image": {
+            "src": "assets/images/m02-scene-c05-s02.webp",
+            "alt": "薄い白い膜に封じられた静かな泉と、壁で途切れた乾いた石の水路。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
+    },
+    "M03": {
+      "image": {
+        "src": "assets/images/m03-cover.webp",
+        "alt": "雲海に浮かぶ島の郵便拠点。木の建物と着陸台、島の下に垂れる岩と根。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/m03-theme.ogg",
+        "title": "雲のあいだの往復便",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "c03-s03": {
+          "image": {
+            "src": "assets/images/m03-scene-c03-s03.webp",
+            "alt": "朝の雲海を水平に飛ぶ青灰色の竜サザ。地図を見るナギと島を指すリタが荷物とともに鞍に乗る。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     }
   }
 });
