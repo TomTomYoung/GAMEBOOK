@@ -18,7 +18,7 @@
 - **M02 灰冠迷宮と星火の剣**：全12章・339節・4結末。[原稿](doc/drafts/medium02/README.md)
 - **M03 空渡り便の二度目の人生**：全16章・304節・3結末。[原稿](doc/drafts/medium03/README.md)
 
-各作の七つの記録、章と節、本文ページ、集めた結末を保存します。条件付きの本文と選択肢は記録に合わせて表示されます。専用の挿絵・BGMは未追加で、既存の文字表紙で遊べます。[実装と検証の記録](doc/MEDIUM_IMPLEMENTATION.md)
+各作の七つの記録、章と節、本文ページ、集めた結末を保存します。条件付きの本文と選択肢は記録に合わせて表示されます。各作に表紙1点・場面挿絵3点・専用BGM1曲を導入済みです。音楽は初期OFFで、音楽ボタンから再生できます。[実装と検証の記録](doc/MEDIUM_IMPLEMENTATION.md)
 
 ## 画面と操作
 
@@ -44,9 +44,9 @@
 
 ブラウザの保存領域を利用できない場合は、閉じる前にファイルへ保存してください。フォルダの移動やブラウザ変更で保存領域が変わる場合も、セーブファイルで引き継げます。読めない既存データは自動上書きせず、原本を取り出せるようにしています。
 
-## 収録作品
+## 短編20作の原稿
 
-各作品名から、GitHub上で読めるシナリオ全文のMarkdownを開けます。本文・条件付き本文・選択肢と分岐先・条件と記録の変化・すべての結末・作者資料を収録しています。[全20作の目次](doc/scenarios/README.md)からも選べます。
+中編3作の原稿は上の「中編を遊ぶ」から開けます。以下の短編の各作品名から、GitHub上で読めるシナリオ全文のMarkdownを開けます。本文・条件付き本文・選択肢と分岐先・条件と記録の変化・すべての結末・作者資料を収録しています。[全20作の目次](doc/scenarios/README.md)からも選べます。
 
 1. [潮の下の郵便局](doc/scenarios/gb01.md)
 2. [骨の橋で待つもの](doc/scenarios/gb02.md)
@@ -93,13 +93,13 @@ node scripts/build-data.cjs --check
 node --test --test-isolation=none tests/*.test.cjs
 ```
 
-原稿は`data/stories/gb01.json`〜`gb20.json`が正本です。全文と作者用の人物・因果・根拠も保持しています。編集後は次を実行し、ブラウザ用のclassic scriptと`doc/scenarios/`のMarkdownを再生成してください。
+短編初版の正本は `data/stories/gb01.json`〜`gb20.json`、第2版は `data/editions/gb01-v2.json`〜`gb20-v2.json`、中編は `doc/drafts/medium01/`〜`medium03/`の章別Markdownです。編集する場所の詳しい案内は[doc/README.md](doc/README.md)にあります。編集後は次を実行し、ブラウザ用データと閲覧用Markdownを再生成してください。
 
 ```sh
 node scripts/build-data.cjs
 ```
 
-シナリオMarkdownも `node scripts/build-data.cjs --check` による生成物の一致検査の対象です。本文や分岐を変更する際は正本のJSONを編集してください。
+シナリオMarkdownも `node scripts/build-data.cjs --check` による生成物の一致検査の対象です。本文や分岐を変更する際は、上記の作品に対応する正本を編集してください。
 
 ブラウザ試験には開発用のPlaywrightを使います。
 
