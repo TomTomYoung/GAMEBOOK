@@ -114,6 +114,15 @@ test('GB29 capture text distinguishes deliberate defeat from the hat diversion',
   assert(!E.getText(byId(29),deliberate).includes('アサはその帽子を見ず'));
   assert(E.getText(byId(29),hat).includes('アサはその帽子を見ず'));
 });
+test('GB31: the unused sheet exists only when the reply is still unwritten',()=>{
+  for (const [reply,route] of [['声','08a 09a'],['手紙','08b 10a'],['まだ','08c']]) {
+    const session=walk(31,`01a 02b 05a 06a ${route} 11c 14a`);
+    const text=E.getText(byId(31),session);
+    assert.equal(session.state.reply,reply);
+    assert.equal(text.includes('便箋を一枚だけ机に置く。'),reply==='まだ');
+    assert.equal(text.includes('その一枚を母のために取り置く必要はない。'),reply==='まだ');
+  }
+});
 test('changing source or an annotation fails compilation instead of dropping prose',t=>{
   const temp=fs.mkdtempSync(path.join(require('node:os').tmpdir(),'short-compiler-'));t.after(()=>fs.rmSync(temp,{recursive:true,force:true}));
   fs.cpSync(path.join(ROOT,'doc/drafts/gb21-40'),path.join(temp,'doc/drafts/gb21-40'),{recursive:true});
