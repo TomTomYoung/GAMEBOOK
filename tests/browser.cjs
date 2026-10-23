@@ -1176,7 +1176,8 @@ async function testNewShortStories() {
       await openFromShelf(page,story.id);
       assert(await page.locator('#edition-select').isHidden());
       assert(await page.locator('#music-button').isHidden());
-      assert(await page.locator('#scene-art').isHidden());
+      assert.equal(await page.locator('#scene-art img').count(),0);
+      assert.equal(await page.locator('#scene-art .scene-number').textContent(),String(story.number));
       await readEveryPage(page,introText(story),`${story.id} intro`);
       await page.locator('[data-action="begin"]').click();await page.waitForTimeout(340);
       let session=E.createSession(story);
@@ -1207,7 +1208,11 @@ async function testNewShortStories() {
     await runCase(`new-short-${story.id}-responsive-and-resume`,async()=>{
       const longest=[...graph.samples].sort((a,b)=>b.text.length-a.text.length)[0];
       const session=E.replay(story,trailFor(longest));
-      const page=await newPage(VIEWPORTS[0],seededShelf(story.id,session.trail,false,24));
+      const seed=seededShelf(story.id,session.trail,false,24);
+      const ending=E.getNode(story,session).ending;
+      // A real save at an ending already contains its collected trail.
+      if (ending) seed.endingTrails[story.id]={[ending.id]:session.trail};
+      const page=await newPage(VIEWPORTS[0],seed);
       for(const size of VIEWPORTS) {
         await page.setViewportSize(size);await settle(page);
         await readEveryPage(page,E.getText(story,session),`${story.id} longest ${size.width}`);
