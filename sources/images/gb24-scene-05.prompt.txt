@@ -1,0 +1,9 @@
+Use case: illustration-story.
+Asset type: landscape 8:5 gamebook scene illustration, opaque.
+Style: extremely simple chunky pixel art with the visual scale of a 200 by 125 pixel scene enlarged into a landscape image. Large solid color planes, flat graphic shapes, broad pixel clusters, eight coordinated colors, a base and a shadow per object, crisp stepped edges. Sparse large details. The single central subject remains readable at 176 by 110 pixels. Pure pictorial illustration, plain unmarked surfaces.
+Scene: a fantastical indoor aviary formed by a leafless silver tree. In the lowest hanging cage, centered prominently, sits a small black migratory bird with a distinctly white tail tip. The cage door is closed. Its simple latch assembly carries exactly three separate smooth silver sound pipes standing side by side, each clearly countable and drawn as a broad simple vertical shape. The bird watches toward the room. Higher branches and a few distant closed cages are only quiet silhouettes. Focus on this one bird and the three-pipe latch. Midnight blue, slate, muted silver, cream, grey teal, amber and soft gold.
+
+Revision with the draft and approved A as image references:
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved style reference.
+Simplify image 1 to match the broad flat pixel-art planes and sparse stepped shading of image 2. Keep the original scene, original time of day, composition, objects and landscape aspect ratio of image 1. Use large solid color regions, coarse pixel clusters and a base plus shadow per surface. Group tiny stippled textures into flat shapes. The image remains an atmospheric pictorial illustration readable at 176 by 110 pixels. Preserve the closed cage, black bird with a white tail tip, leafless silver tree and exactly three clearly separated silver sound pipes attached to the latch. Keep the large central cage lower than all background cages.

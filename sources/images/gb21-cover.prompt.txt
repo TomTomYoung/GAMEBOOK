@@ -1,0 +1,10 @@
+Use case: illustration-story
+Asset type: horizontal gamebook cover illustration, landscape 8:5, opaque.
+Primary request: an eccentric old manor dining room prepared for supper. In the center stands a walnut dining chair with a curved carved wooden back, a carved snout-like ornament and dozens of very thin little wooden legs arranged in dense centipede-like rows underneath the seat. The chair remains recognizable as furniture. A cream tablecloth, silver plates and a warm amber window frame the chair. A small round bread roll rests on the floor nearby.
+Style: atmospheric limited-palette pixel art with bold grouped color shapes, broad flat surfaces, two tones per surface, crisp large stepped contours, sparse rectangular highlights. About eight coordinated colors: midnight blue, muted slate, dark walnut, warm brown, dusty rose, cream, amber and soft gold. The rendering resembles enlarged game pixels.
+Composition: the entire distinctive chair occupies the central sixty percent and remains readable at 176 by 110 pixels. The room is quiet and the chair is empty. Pure pictorial scenery with unmarked decorative surfaces.
+
+Revision with the draft and approved A as image references:
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 while preserving its scene, main object, layout and landscape aspect ratio. Match image 2 in simplicity: large quiet flat color planes, broad chunky pixel clusters, crisp stepped silhouettes, sparse highlights, about eight coordinated colors and just a base tone plus shadow for each surface. The main subject stays clear at 176 by 110 pixels. Group tiny texture into broad solid shapes, and reduce ornamental details to simple silhouettes. Keep the full scene and its composition. Pure pictorial illustration with plain unmarked surfaces. Preserve the chair with dense rows of many thin wooden legs.

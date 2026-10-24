@@ -1,0 +1,10 @@
+Use case: illustration-story
+Asset type: horizontal gamebook cover illustration, landscape 8:5, opaque.
+Primary request: a fantastical riverside pleasure tower at night, with round windows, curved roofs and a neighboring narrow bell tower. Rain streams visibly rise from the courtyard fountain toward the tower eaves and upward into the night sky. In the central foreground a bright red umbrella rests open and tilted against the stone courtyard balustrade, with its curved wooden handle clearly visible. A dark river and a few warm distant windows give the scene depth.
+Style: atmospheric limited-palette pixel art, enlarged coarse game pixels, bold large color planes, crisp stair-stepped contours, two tones per surface, simple architectural masses. Around eight coordinated colors: midnight blue, slate, muted teal, river grey, warm cream, amber, brick red and coral.
+Composition: the red umbrella is the large central focal shape, the tower rises behind it, readable at 176 by 110 pixels. Pure pictorial scenery with unmarked architectural surfaces.
+
+Revision with the draft and approved A as image references:
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 while preserving its scene, main object, layout and landscape aspect ratio. Match image 2 in simplicity: large quiet flat color planes, broad chunky pixel clusters, crisp stepped silhouettes, sparse highlights, about eight coordinated colors and just a base tone plus shadow for each surface. The main subject stays clear at 176 by 110 pixels. Group tiny texture into broad solid shapes, and reduce ornamental details to simple silhouettes. Keep the full scene and its composition. Pure pictorial illustration with plain unmarked surfaces. Preserve the red umbrella, river tower and upward water streams.

@@ -1,0 +1,10 @@
+Use case: illustration-story
+Asset type: horizontal gamebook cover illustration, landscape 8:5, opaque.
+Primary request: the quiet starting area of a fantastical wind-sled race on a frozen inlet. A compact narrow wooden sled with metal runners, a resilient footboard and a blue triangular sail stands in the central foreground. A neatly coiled rescue rope lies secured at its rear. A sweeping snow track runs toward a white-birch bend and low ridges. A red starting flag at the side adds a single warm accent. The sled is parked and empty; the broad inlet supplies open breathing room.
+Style: atmospheric limited-palette pixel art, enlarged coarse game pixels, bold grouped color planes, crisp stair-stepped contours, two tones per surface, broad geometric snow and ice shapes. Around eight coordinated colors: midnight blue, steel blue, pale cyan, cream snow, walnut, slate, muted red and soft grey.
+Composition: the blue sail and sled form one strong central silhouette readable at 176 by 110 pixels. Pure pictorial scenery with plain unmarked surfaces.
+
+Revision with the draft and approved A as image references:
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 while preserving its scene, main object, layout and landscape aspect ratio. Match image 2 in simplicity: large quiet flat color planes, broad chunky pixel clusters, crisp stepped silhouettes, sparse highlights, about eight coordinated colors and just a base tone plus shadow for each surface. The main subject stays clear at 176 by 110 pixels. Group tiny texture into broad solid shapes, and reduce ornamental details to simple silhouettes. Keep the full scene and its composition. Pure pictorial illustration with plain unmarked surfaces. Preserve the narrow sled, blue sail, rescue rope and snowy birch bend.

@@ -62,3 +62,17 @@ python scripts/render-music.py --only gb16-theme gb17-theme gb18-theme gb19-them
 `images/m01-*`〜`m03-*`に採用PNGと英語プロンプトを、`audio/m01-theme.score.json`〜`m03-theme.score.json`に音符を保存しています。`python sources/audio/compose-medium.py`でスコア、`python scripts/render-music.py --only m01-theme m02-theme m03-theme`で配布音源を再生成できます。画風・配置・照合の詳細は[中編素材記録](../doc/MEDIUM_ASSETS.md)を参照してください。
 
 第11回では中編の挿絵6点を追加しました。各作の挿絵は3点になり、同じ命名規則でPNG・英語プロンプトを保存しています。正確な章節・原寸・SHA-256は画像台帳と[中編素材記録](../doc/MEDIUM_ASSETS.md)を参照してください。
+
+
+## 第12回：GB21〜GB24（2026-10-24）
+
+4作の表紙・挿絵各1点、専用BGM各1曲です。`images/gb21-*`〜`gb24-*`に採用PNG、未採用初稿、英語の生成・修正プロンプト全文を保存しています。全8点を組込みimagegenで生成し、初稿と採用Aを参照して色面を整理しました。原寸・縦横比を保ってWebPへ変換し、寸法・SHA-256は画像台帳に記録しています。
+
+音符の構成元は `audio/compose-batch-12.py`、通常の再生成元は `audio/gb21-theme.score.json`〜`gb24-theme.score.json`です。
+
+```sh
+python sources/audio/compose-batch-12.py
+python scripts/render-music.py --only gb21-theme gb22-theme gb23-theme gb24-theme
+```
+
+本文との照合と配置は[新短編の素材記録](../doc/SHORTS_21_40_ASSETS.md)にあります。既存77素材と既存24曲の音符・配布物は保持しています。耳による確認は未実施です。

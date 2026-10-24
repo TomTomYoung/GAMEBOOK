@@ -1,0 +1,10 @@
+Use case: illustration-story
+Asset type: horizontal gamebook cover illustration, landscape 8:5, opaque.
+Primary request: a small lived-in contemporary Japanese house on a quiet wet evening. An illuminated entrance door and one warm kitchen window occupy the central frame. Through the kitchen window the viewer sees a plain saucepan with rising steam, a counter and a pale grey shirt hanging by the room. Outside, an umbrella stand, damp paving and the square of the porch light establish the feeling of arriving home after a long absence. The emotional tone is familiar domestic warmth with a faint unresolved uneasiness.
+Style: atmospheric limited-palette pixel art, enlarged coarse game pixels, large grouped color shapes, crisp stair-stepped contours, two tones per surface, sparse broad highlights. Around eight coordinated colors: midnight blue, slate, desaturated teal, wet-stone grey, muted brown, warm cream, amber and pale gold.
+Composition: the entrance and kitchen window are close together in the central sixty percent, with simple large silhouettes readable at 176 by 110 pixels. Architecture and household objects are the entire subject. Pure pictorial scenery with plain unmarked surfaces.
+
+Revision with the draft and approved A as image references:
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 while preserving its scene, main object, layout and landscape aspect ratio. Match image 2 in simplicity: large quiet flat color planes, broad chunky pixel clusters, crisp stepped silhouettes, sparse highlights, about eight coordinated colors and just a base tone plus shadow for each surface. The main subject stays clear at 176 by 110 pixels. Group tiny texture into broad solid shapes, and reduce ornamental details to simple silhouettes. Keep the full scene and its composition. Pure pictorial illustration with plain unmarked surfaces. In the kitchen, the right-side hanging grey shirt becomes a plain closed wooden cabinet door. The exterior architecture, empty doorway, warm kitchen window and steaming pot remain in place.

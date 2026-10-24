@@ -1,0 +1,1501 @@
+{
+  "id": "gb24-theme",
+  "title": "同じ左を向く",
+  "bpm": 88,
+  "bars": 32,
+  "meter": "4/4",
+  "key": "G major / suspended ninths",
+  "form": "A8 B8 A′8 turn8",
+  "description": "ずらした撥弦へ木管が短く答える、二人の呼吸の曲。上向きの雨を軽い上行形で表し、鳥の声や合図と混同する音は使わない。",
+  "seed": 2026102424,
+  "events": [
+    {
+      "at": 0,
+      "note": "G2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 0.5,
+      "note": "D4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 0.75,
+      "note": "D3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 1.75,
+      "note": "G4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 2.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 3,
+      "note": "A4",
+      "beats": 0.7,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 3.25,
+      "note": "D3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 4,
+      "note": "A2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 4.75,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 5,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 6.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 7.25,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 8,
+      "note": "C3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 8.75,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 8.75,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 10.25,
+      "note": "D4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 10.5,
+      "note": "B4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 11.25,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 12,
+      "note": "D3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 12.75,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 13,
+      "note": "A4",
+      "beats": 1.7,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 14.25,
+      "note": "F#4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 15.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 16,
+      "note": "E3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 16.5,
+      "note": "B4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 16.75,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 18.25,
+      "note": "G4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 18.25,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 19.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 20,
+      "note": "C3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 20.75,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 21,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 22.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 23.25,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 24,
+      "note": "A2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 24.75,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 24.75,
+      "note": "D4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 26,
+      "note": "E4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 26.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 27.25,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 28,
+      "note": "D3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 28.75,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 29,
+      "note": "F#4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 30.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 30.75,
+      "note": "D4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 31.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 32,
+      "note": "G2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 32.75,
+      "note": "D3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 33,
+      "note": "B4",
+      "beats": 1.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 34.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 35.25,
+      "note": "D3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 36,
+      "note": "A2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 36.5,
+      "note": "A4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 36.75,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 38.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 38.25,
+      "note": "C5",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 39.25,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 40,
+      "note": "C3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 40.75,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 41,
+      "note": "G4",
+      "beats": 1.7,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 42.25,
+      "note": "D4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 43.25,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 44,
+      "note": "D3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 44.5,
+      "note": "F#4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 44.75,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 45.75,
+      "note": "A4",
+      "beats": 1.4,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 46.25,
+      "note": "F#4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 47.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 48,
+      "note": "E3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 48.75,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 49,
+      "note": "E5",
+      "beats": 1.6,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 50.25,
+      "note": "G4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 51.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 52,
+      "note": "C3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 52.5,
+      "note": "D5",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 52.75,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 54.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 54.25,
+      "note": "B4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 55.25,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 56,
+      "note": "A2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 56.75,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 57,
+      "note": "A4",
+      "beats": 1.6,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 58.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 59.25,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 60,
+      "note": "D3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 60.75,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 60.75,
+      "note": "G4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 62.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 62.25,
+      "note": "F#4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 63.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 64,
+      "note": "G2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 64.5,
+      "note": "D4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 64.75,
+      "note": "D3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 65.75,
+      "note": "G4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 66.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 67,
+      "note": "A4",
+      "beats": 0.7,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 67.25,
+      "note": "D3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 68,
+      "note": "A2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 68.75,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 69,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 70.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 71.25,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 71.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "woodwind",
+      "gain": 0.026,
+      "pan": -0.22
+    },
+    {
+      "at": 72,
+      "note": "C3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 72.75,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 72.75,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 74.25,
+      "note": "D4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 74.5,
+      "note": "B4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 75.25,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 76,
+      "note": "D3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 76.75,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 77,
+      "note": "A4",
+      "beats": 1.7,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 78.25,
+      "note": "F#4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 79.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 79.25,
+      "note": "F#4",
+      "beats": 1.5,
+      "instrument": "woodwind",
+      "gain": 0.026,
+      "pan": -0.22
+    },
+    {
+      "at": 80,
+      "note": "E3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 80.5,
+      "note": "B4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 80.75,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 82.25,
+      "note": "G4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 82.25,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 83.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 84,
+      "note": "C3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 84.75,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 85,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 86.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 87.25,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 87.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "woodwind",
+      "gain": 0.026,
+      "pan": -0.22
+    },
+    {
+      "at": 88,
+      "note": "A2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 88.75,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 88.75,
+      "note": "D4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 90,
+      "note": "E4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 90.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 91.25,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 92,
+      "note": "D3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 92.75,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 93,
+      "note": "F#4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 94.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 94.75,
+      "note": "D4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 95.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 95.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "woodwind",
+      "gain": 0.026,
+      "pan": -0.22
+    },
+    {
+      "at": 96,
+      "note": "G2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 96.5,
+      "note": "D4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 96.75,
+      "note": "D3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 97.75,
+      "note": "G4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 98.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 99,
+      "note": "A4",
+      "beats": 0.7,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 99.25,
+      "note": "D3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 100,
+      "note": "A2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 100.75,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 101,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 102.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 103.25,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 104,
+      "note": "C3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 104.75,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 104.75,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 106.25,
+      "note": "D4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 106.5,
+      "note": "B4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 107.25,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 108,
+      "note": "D3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 108.75,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 109,
+      "note": "A4",
+      "beats": 1.7,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 110.25,
+      "note": "F#4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 111.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 112,
+      "note": "E3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 112.5,
+      "note": "B4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 112.75,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 114.25,
+      "note": "G4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 114.25,
+      "note": "G4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 115.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 116,
+      "note": "C3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 116.75,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 117,
+      "note": "E4",
+      "beats": 1.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 118.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 119.25,
+      "note": "G3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 120,
+      "note": "A2",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 120.75,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 120.75,
+      "note": "D4",
+      "beats": 0.8,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 122,
+      "note": "E4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 122.25,
+      "note": "B3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 123.25,
+      "note": "E3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 124,
+      "note": "D3",
+      "beats": 2.9,
+      "instrument": "felt-piano",
+      "gain": 0.046,
+      "pan": -0.15
+    },
+    {
+      "at": 124.75,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 125,
+      "note": "F#4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 126.25,
+      "note": "C4",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    },
+    {
+      "at": 126.75,
+      "note": "D4",
+      "beats": 1,
+      "instrument": "woodwind",
+      "gain": 0.06,
+      "pan": 0.11
+    },
+    {
+      "at": 127.25,
+      "note": "A3",
+      "beats": 1.5,
+      "instrument": "pluck",
+      "gain": 0.031,
+      "pan": 0.24
+    }
+  ]
+}
