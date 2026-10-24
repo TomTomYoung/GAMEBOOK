@@ -1,0 +1,13 @@
+Initial generation
+
+Use case: illustration-story
+Asset type: horizontal gamebook cover, landscape 8:5, opaque.
+Primary request: a peaceful magical public-transport garden gliding gently down through a sunlit valley. A broad circular stone floor carries exactly two simple wooden chairs and a low planted flowerbed with small blue flowers. A continuous transparent cylindrical wind wall rises from the complete circular rim, defined by a few soft cyan reflections. The floor is level and intact. A hillside boarding port and terraced orchard sit higher in the distance, while a winding valley river lies far below. The chairs and flowers form the quiet central focus of this safe ordinary journey.
+Style: limited-palette pixel art with broad flat color planes, chunky rectangular pixel clusters, crisp stepped silhouettes, a base tone and shadow per surface and sparse square highlights. About eight colors of navy, slate, teal, sky blue, cream, sage, warm stone and ochre. Calm clear daylight and generous open space.
+Composition: the whole circular floor is readable, the two chairs sit within its central area, and the valley remains a simple layered backdrop. Pure environmental artwork.
+
+Style revision using draft and approved A reference
+
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 with large flat color planes, broad chunky pixel clusters, crisp stepped silhouettes, about eight coordinated colors, a base tone plus shadow per surface and sparse highlights. Keep the clear daytime sky, valley, circular level stone floor and continuous transparent wind wall. Arrange exactly two wooden chairs side by side, facing the same valley view, with a gap about half a chair seat wide. Place the low blue flowerbed behind and beside the pair, with one small blue bloom reaching into their gap. The pair are neighbours, ready for a quiet conversation. Simplify the forest and village into broad silhouettes. Preserve the overall landscape composition and aspect ratio. Pure environmental artwork.

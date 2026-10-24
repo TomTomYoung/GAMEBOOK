@@ -1,0 +1,92 @@
+{
+  "commit": "b853c21fad66423d750bd2e696d486229ae19566",
+  "workflowRun": "https://github.com/TomTomYoung/GAMEBOOK/actions/runs/40063798715",
+  "unitTests": 111,
+  "totalBrowserCases": 555,
+  "jobs": [
+    {
+      "id": 120782687728,
+      "name": "verify (chromium, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    },
+    {
+      "id": 120782687903,
+      "name": "verify (chromium, new-short)",
+      "conclusion": "success",
+      "browserCases": 77,
+      "browserTotal": 77,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    },
+    {
+      "id": 120782687914,
+      "name": "verify (chromium, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    },
+    {
+      "id": 120782687830,
+      "name": "verify (firefox, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    },
+    {
+      "id": 120782687854,
+      "name": "verify (firefox, new-short)",
+      "conclusion": "success",
+      "browserCases": 77,
+      "browserTotal": 77,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    },
+    {
+      "id": 120782687859,
+      "name": "verify (firefox, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    },
+    {
+      "id": 120782687929,
+      "name": "verify (webkit, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    },
+    {
+      "id": 120782687857,
+      "name": "verify (webkit, new-short)",
+      "conclusion": "success",
+      "browserCases": 77,
+      "browserTotal": 77,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    },
+    {
+      "id": 120782687966,
+      "name": "verify (webkit, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true
+    }
+  ],
+  "initialRun": "https://github.com/TomTomYoung/GAMEBOOK/actions/runs/40062206939",
+  "imageFixRun": "https://github.com/TomTomYoung/GAMEBOOK/actions/runs/40062963426",
+  "visualEvidenceCommit": "777633eccef4afa7c6bfac8e62698196a7c334f2"
+}

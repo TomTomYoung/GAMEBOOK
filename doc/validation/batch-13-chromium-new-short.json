@@ -1,0 +1,588 @@
+{
+  "started": "2026-10-24T04:37:23.852Z",
+  "finished": "2026-10-24T04:41:44.875Z",
+  "url": "file:///home/runner/work/GAMEBOOK/GAMEBOOK/index.html",
+  "browser": "chromium",
+  "platform": "linux",
+  "browserVersion": "151.0.7922.34",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 360,
+      "height": 640
+    },
+    {
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "results": [
+    {
+      "name": "assets-GB21",
+      "status": "passed",
+      "durationMs": 2592
+    },
+    {
+      "name": "assets-GB22",
+      "status": "passed",
+      "durationMs": 2678
+    },
+    {
+      "name": "assets-GB23",
+      "status": "passed",
+      "durationMs": 2478
+    },
+    {
+      "name": "assets-GB24",
+      "status": "passed",
+      "durationMs": 3013
+    },
+    {
+      "name": "assets-GB25",
+      "status": "passed",
+      "durationMs": 2730
+    },
+    {
+      "name": "assets-GB26",
+      "status": "passed",
+      "durationMs": 2912
+    },
+    {
+      "name": "assets-GB27",
+      "status": "passed",
+      "durationMs": 3346
+    },
+    {
+      "name": "assets-GB28",
+      "status": "passed",
+      "durationMs": 3079
+    },
+    {
+      "name": "scene-GB21-06-all-states",
+      "status": "passed",
+      "durationMs": 6149
+    },
+    {
+      "name": "scene-GB22-04-all-states",
+      "status": "passed",
+      "durationMs": 5616
+    },
+    {
+      "name": "scene-GB23-09-all-states",
+      "status": "passed",
+      "durationMs": 4383
+    },
+    {
+      "name": "scene-GB24-05-all-states",
+      "status": "passed",
+      "durationMs": 7483
+    },
+    {
+      "name": "scene-GB25-05-all-states",
+      "status": "passed",
+      "durationMs": 3466
+    },
+    {
+      "name": "scene-GB26-02-all-states",
+      "status": "passed",
+      "durationMs": 3184
+    },
+    {
+      "name": "scene-GB27-03-all-states",
+      "status": "passed",
+      "durationMs": 3617
+    },
+    {
+      "name": "scene-GB28-08-all-states",
+      "status": "passed",
+      "durationMs": 6416
+    },
+    {
+      "name": "new-shorts-shelf-and-pagination",
+      "status": "passed",
+      "durationMs": 973
+    },
+    {
+      "name": "new-short-GB21-playthrough",
+      "status": "passed",
+      "durationMs": 2739
+    },
+    {
+      "name": "new-short-GB21-all-endings",
+      "status": "passed",
+      "durationMs": 3973
+    },
+    {
+      "name": "new-short-GB21-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2846
+    },
+    {
+      "name": "new-short-GB22-playthrough",
+      "status": "passed",
+      "durationMs": 3423
+    },
+    {
+      "name": "new-short-GB22-all-endings",
+      "status": "passed",
+      "durationMs": 3858
+    },
+    {
+      "name": "new-short-GB22-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2860
+    },
+    {
+      "name": "new-short-GB23-playthrough",
+      "status": "passed",
+      "durationMs": 2662
+    },
+    {
+      "name": "new-short-GB23-all-endings",
+      "status": "passed",
+      "durationMs": 3786
+    },
+    {
+      "name": "new-short-GB23-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 3086
+    },
+    {
+      "name": "new-short-GB24-playthrough",
+      "status": "passed",
+      "durationMs": 4055
+    },
+    {
+      "name": "new-short-GB24-all-endings",
+      "status": "passed",
+      "durationMs": 3870
+    },
+    {
+      "name": "new-short-GB24-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 3209
+    },
+    {
+      "name": "new-short-GB25-playthrough",
+      "status": "passed",
+      "durationMs": 2265
+    },
+    {
+      "name": "new-short-GB25-all-endings",
+      "status": "passed",
+      "durationMs": 3934
+    },
+    {
+      "name": "new-short-GB25-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2829
+    },
+    {
+      "name": "new-short-GB26-playthrough",
+      "status": "passed",
+      "durationMs": 3159
+    },
+    {
+      "name": "new-short-GB26-all-endings",
+      "status": "passed",
+      "durationMs": 3822
+    },
+    {
+      "name": "new-short-GB26-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2910
+    },
+    {
+      "name": "new-short-GB27-playthrough",
+      "status": "passed",
+      "durationMs": 4378
+    },
+    {
+      "name": "new-short-GB27-all-endings",
+      "status": "passed",
+      "durationMs": 2938
+    },
+    {
+      "name": "new-short-GB27-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2738
+    },
+    {
+      "name": "new-short-GB28-playthrough",
+      "status": "passed",
+      "durationMs": 2730
+    },
+    {
+      "name": "new-short-GB28-all-endings",
+      "status": "passed",
+      "durationMs": 3843
+    },
+    {
+      "name": "new-short-GB28-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2747
+    },
+    {
+      "name": "new-short-GB29-playthrough",
+      "status": "passed",
+      "durationMs": 3134
+    },
+    {
+      "name": "new-short-GB29-all-endings",
+      "status": "passed",
+      "durationMs": 2910
+    },
+    {
+      "name": "new-short-GB29-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 3091
+    },
+    {
+      "name": "new-short-GB30-playthrough",
+      "status": "passed",
+      "durationMs": 4456
+    },
+    {
+      "name": "new-short-GB30-all-endings",
+      "status": "passed",
+      "durationMs": 3926
+    },
+    {
+      "name": "new-short-GB30-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2872
+    },
+    {
+      "name": "new-short-GB31-playthrough",
+      "status": "passed",
+      "durationMs": 4398
+    },
+    {
+      "name": "new-short-GB31-all-endings",
+      "status": "passed",
+      "durationMs": 3678
+    },
+    {
+      "name": "new-short-GB31-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2279
+    },
+    {
+      "name": "new-short-GB32-playthrough",
+      "status": "passed",
+      "durationMs": 3018
+    },
+    {
+      "name": "new-short-GB32-all-endings",
+      "status": "passed",
+      "durationMs": 4691
+    },
+    {
+      "name": "new-short-GB32-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2099
+    },
+    {
+      "name": "new-short-GB33-playthrough",
+      "status": "passed",
+      "durationMs": 3430
+    },
+    {
+      "name": "new-short-GB33-all-endings",
+      "status": "passed",
+      "durationMs": 3931
+    },
+    {
+      "name": "new-short-GB33-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2253
+    },
+    {
+      "name": "new-short-GB34-playthrough",
+      "status": "passed",
+      "durationMs": 3369
+    },
+    {
+      "name": "new-short-GB34-all-endings",
+      "status": "passed",
+      "durationMs": 3738
+    },
+    {
+      "name": "new-short-GB34-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2337
+    },
+    {
+      "name": "new-short-GB35-playthrough",
+      "status": "passed",
+      "durationMs": 3991
+    },
+    {
+      "name": "new-short-GB35-all-endings",
+      "status": "passed",
+      "durationMs": 3763
+    },
+    {
+      "name": "new-short-GB35-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2284
+    },
+    {
+      "name": "new-short-GB36-playthrough",
+      "status": "passed",
+      "durationMs": 2214
+    },
+    {
+      "name": "new-short-GB36-all-endings",
+      "status": "passed",
+      "durationMs": 5812
+    },
+    {
+      "name": "new-short-GB36-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2404
+    },
+    {
+      "name": "new-short-GB37-playthrough",
+      "status": "passed",
+      "durationMs": 2125
+    },
+    {
+      "name": "new-short-GB37-all-endings",
+      "status": "passed",
+      "durationMs": 4814
+    },
+    {
+      "name": "new-short-GB37-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2120
+    },
+    {
+      "name": "new-short-GB38-playthrough",
+      "status": "passed",
+      "durationMs": 3528
+    },
+    {
+      "name": "new-short-GB38-all-endings",
+      "status": "passed",
+      "durationMs": 2943
+    },
+    {
+      "name": "new-short-GB38-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2343
+    },
+    {
+      "name": "new-short-GB39-playthrough",
+      "status": "passed",
+      "durationMs": 3570
+    },
+    {
+      "name": "new-short-GB39-all-endings",
+      "status": "passed",
+      "durationMs": 3946
+    },
+    {
+      "name": "new-short-GB39-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2600
+    },
+    {
+      "name": "new-short-GB40-playthrough",
+      "status": "passed",
+      "durationMs": 3648
+    },
+    {
+      "name": "new-short-GB40-all-endings",
+      "status": "passed",
+      "durationMs": 3946
+    },
+    {
+      "name": "new-short-GB40-responsive-and-resume",
+      "status": "passed",
+      "durationMs": 2381
+    }
+  ],
+  "diagnostics": [],
+  "screenshots": [
+    "assets-GB21-1280x720.png",
+    "assets-GB21-390x844.png",
+    "assets-GB21-360x640.png",
+    "assets-GB21-844x390.png",
+    "assets-GB22-1280x720.png",
+    "assets-GB22-390x844.png",
+    "assets-GB22-360x640.png",
+    "assets-GB22-844x390.png",
+    "assets-GB23-1280x720.png",
+    "assets-GB23-390x844.png",
+    "assets-GB23-360x640.png",
+    "assets-GB23-844x390.png",
+    "assets-GB24-1280x720.png",
+    "assets-GB24-390x844.png",
+    "assets-GB24-360x640.png",
+    "assets-GB24-844x390.png",
+    "assets-GB25-1280x720.png",
+    "assets-GB25-390x844.png",
+    "assets-GB25-360x640.png",
+    "assets-GB25-844x390.png",
+    "assets-GB26-1280x720.png",
+    "assets-GB26-390x844.png",
+    "assets-GB26-360x640.png",
+    "assets-GB26-844x390.png",
+    "assets-GB27-1280x720.png",
+    "assets-GB27-390x844.png",
+    "assets-GB27-360x640.png",
+    "assets-GB27-844x390.png",
+    "assets-GB28-1280x720.png",
+    "assets-GB28-390x844.png",
+    "assets-GB28-360x640.png",
+    "assets-GB28-844x390.png",
+    "scene-GB21-06-1280x720.png",
+    "scene-GB21-06-390x844.png",
+    "scene-GB21-06-360x640.png",
+    "scene-GB21-06-844x390.png",
+    "scene-GB22-04-1280x720.png",
+    "scene-GB22-04-390x844.png",
+    "scene-GB22-04-360x640.png",
+    "scene-GB22-04-844x390.png",
+    "scene-GB23-09-1280x720.png",
+    "scene-GB23-09-390x844.png",
+    "scene-GB23-09-360x640.png",
+    "scene-GB23-09-844x390.png",
+    "scene-GB24-05-1280x720.png",
+    "scene-GB24-05-390x844.png",
+    "scene-GB24-05-360x640.png",
+    "scene-GB24-05-844x390.png",
+    "scene-GB25-05-1280x720.png",
+    "scene-GB25-05-390x844.png",
+    "scene-GB25-05-360x640.png",
+    "scene-GB25-05-844x390.png",
+    "scene-GB26-02-1280x720.png",
+    "scene-GB26-02-390x844.png",
+    "scene-GB26-02-360x640.png",
+    "scene-GB26-02-844x390.png",
+    "scene-GB27-03-1280x720.png",
+    "scene-GB27-03-390x844.png",
+    "scene-GB27-03-360x640.png",
+    "scene-GB27-03-844x390.png",
+    "scene-GB28-08-1280x720.png",
+    "scene-GB28-08-390x844.png",
+    "scene-GB28-08-360x640.png",
+    "scene-GB28-08-844x390.png",
+    "new-shorts-last-shelf-page.png",
+    "new-short-GB21-ending.png",
+    "new-short-GB21-longest-1280x720.png",
+    "new-short-GB21-longest-390x844.png",
+    "new-short-GB21-longest-360x640.png",
+    "new-short-GB21-longest-844x390.png",
+    "new-short-GB22-ending.png",
+    "new-short-GB22-longest-1280x720.png",
+    "new-short-GB22-longest-390x844.png",
+    "new-short-GB22-longest-360x640.png",
+    "new-short-GB22-longest-844x390.png",
+    "new-short-GB23-ending.png",
+    "new-short-GB23-longest-1280x720.png",
+    "new-short-GB23-longest-390x844.png",
+    "new-short-GB23-longest-360x640.png",
+    "new-short-GB23-longest-844x390.png",
+    "new-short-GB24-ending.png",
+    "new-short-GB24-longest-1280x720.png",
+    "new-short-GB24-longest-390x844.png",
+    "new-short-GB24-longest-360x640.png",
+    "new-short-GB24-longest-844x390.png",
+    "new-short-GB25-ending.png",
+    "new-short-GB25-longest-1280x720.png",
+    "new-short-GB25-longest-390x844.png",
+    "new-short-GB25-longest-360x640.png",
+    "new-short-GB25-longest-844x390.png",
+    "new-short-GB26-ending.png",
+    "new-short-GB26-longest-1280x720.png",
+    "new-short-GB26-longest-390x844.png",
+    "new-short-GB26-longest-360x640.png",
+    "new-short-GB26-longest-844x390.png",
+    "new-short-GB27-ending.png",
+    "new-short-GB27-longest-1280x720.png",
+    "new-short-GB27-longest-390x844.png",
+    "new-short-GB27-longest-360x640.png",
+    "new-short-GB27-longest-844x390.png",
+    "new-short-GB28-ending.png",
+    "new-short-GB28-longest-1280x720.png",
+    "new-short-GB28-longest-390x844.png",
+    "new-short-GB28-longest-360x640.png",
+    "new-short-GB28-longest-844x390.png",
+    "new-short-GB29-ending.png",
+    "new-short-GB29-longest-1280x720.png",
+    "new-short-GB29-longest-390x844.png",
+    "new-short-GB29-longest-360x640.png",
+    "new-short-GB29-longest-844x390.png",
+    "new-short-GB30-ending.png",
+    "new-short-GB30-longest-1280x720.png",
+    "new-short-GB30-longest-390x844.png",
+    "new-short-GB30-longest-360x640.png",
+    "new-short-GB30-longest-844x390.png",
+    "new-short-GB31-ending.png",
+    "new-short-GB31-longest-1280x720.png",
+    "new-short-GB31-longest-390x844.png",
+    "new-short-GB31-longest-360x640.png",
+    "new-short-GB31-longest-844x390.png",
+    "new-short-GB32-ending.png",
+    "new-short-GB32-longest-1280x720.png",
+    "new-short-GB32-longest-390x844.png",
+    "new-short-GB32-longest-360x640.png",
+    "new-short-GB32-longest-844x390.png",
+    "new-short-GB33-ending.png",
+    "new-short-GB33-longest-1280x720.png",
+    "new-short-GB33-longest-390x844.png",
+    "new-short-GB33-longest-360x640.png",
+    "new-short-GB33-longest-844x390.png",
+    "new-short-GB34-ending.png",
+    "new-short-GB34-longest-1280x720.png",
+    "new-short-GB34-longest-390x844.png",
+    "new-short-GB34-longest-360x640.png",
+    "new-short-GB34-longest-844x390.png",
+    "new-short-GB35-ending.png",
+    "new-short-GB35-longest-1280x720.png",
+    "new-short-GB35-longest-390x844.png",
+    "new-short-GB35-longest-360x640.png",
+    "new-short-GB35-longest-844x390.png",
+    "new-short-GB36-ending.png",
+    "new-short-GB36-longest-1280x720.png",
+    "new-short-GB36-longest-390x844.png",
+    "new-short-GB36-longest-360x640.png",
+    "new-short-GB36-longest-844x390.png",
+    "new-short-GB37-ending.png",
+    "new-short-GB37-longest-1280x720.png",
+    "new-short-GB37-longest-390x844.png",
+    "new-short-GB37-longest-360x640.png",
+    "new-short-GB37-longest-844x390.png",
+    "new-short-GB38-ending.png",
+    "new-short-GB38-longest-1280x720.png",
+    "new-short-GB38-longest-390x844.png",
+    "new-short-GB38-longest-360x640.png",
+    "new-short-GB38-longest-844x390.png",
+    "new-short-GB39-ending.png",
+    "new-short-GB39-longest-1280x720.png",
+    "new-short-GB39-longest-390x844.png",
+    "new-short-GB39-longest-360x640.png",
+    "new-short-GB39-longest-844x390.png",
+    "new-short-GB40-ending.png",
+    "new-short-GB40-longest-1280x720.png",
+    "new-short-GB40-longest-390x844.png",
+    "new-short-GB40-longest-360x640.png",
+    "new-short-GB40-longest-844x390.png"
+  ],
+  "_source": {
+    "commit": "777633eccef4afa7c6bfac8e62698196a7c334f2",
+    "workflowRun": "https://github.com/TomTomYoung/GAMEBOOK/actions/runs/40062963426",
+    "job": "https://github.com/TomTomYoung/GAMEBOOK/actions/runs/40062963426/job/120780200682",
+    "artifactId": 12548267917,
+    "artifactZipSha256": "01bc2dde4fef0f922c5a328f34bdc0c3d2ca42d180d0d34e834c474eec33d910"
+  }
+}

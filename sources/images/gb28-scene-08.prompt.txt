@@ -1,0 +1,13 @@
+Initial generation
+
+Use case: illustration-story
+Asset type: horizontal gamebook scene illustration, landscape 8:5, opaque.
+Primary request: the view from a gently descending circular stone garden after passing below a band of cloud. Beyond the transparent wind wall, a broad valley opens around a winding river with narrow silver patches on its faster currents. Far below beside a small transport stop is a small red circular receiving platform. The foreground includes only the continuous curved stone rim, upright blue flowers and a thin clear cyan reflection marking the protective wall. The receiving circle is still distant and the garden is still travelling. The serene river view is the main subject.
+Style: limited-palette pixel art with broad quiet flat color planes, large chunky pixel clusters, crisp stepped contours, two tones per surface and sparse horizontal water highlights. About eight shared colors of navy, slate, teal, blue, sage, cream, pale stone and muted red. Clouds are simple broad shapes.
+Composition: the river fills the central sixty percent, with a modest small red circle lower in the distance. Pure environmental scenery.
+
+Style revision using draft and approved A reference
+
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 with large flat color planes, broad chunky pixel clusters, crisp stepped silhouettes, about eight coordinated colors and a base tone plus shadow per surface. Preserve the daytime river valley, blue flowers in the foreground, continuous curved stone rim and transparent protective wind wall. Simplify the hills, trees, clouds and river into broad quiet shapes. Keep the distant small red circular receiving platform beside the river as a tiny subdued detail, with the garden still travelling above it. Use sparse straight water highlights. Preserve the landscape composition and aspect ratio. Pure environmental artwork.

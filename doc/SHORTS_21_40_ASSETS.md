@@ -1,14 +1,14 @@
 # GB21〜GB40の絵と音楽
 
-**2026-10-24：GB21〜GB24の12素材を導入済みです。GB25〜GB40の48素材は未制作です。** 全20作で表紙20点・挿絵20点・BGM20曲を制作する計画です。全作品のゲーム本体は実装済みです。
+**2026-10-24：GB21〜GB28の24素材を導入済みです。GB29〜GB40の36素材は未制作です。** 全20作で表紙20点・挿絵20点・BGM20曲を制作する計画です。全作品のゲーム本体は実装済みです。
 
-共通本棚・既存作品を含む全体では、画像61点・BGM28曲、計89点を導入済みです。制作台帳は[asset-plan.json](asset-plan.json)、配置は[実行用マニフェスト](../assets/manifest.json)です。`counts`は導入済み、`plannedCounts`は計画全体、`remainingCounts`は未制作を示します。
+共通本棚・既存作品を含む全体では、画像69点・BGM32曲、計101点を導入済みです。制作台帳は[asset-plan.json](asset-plan.json)、配置は[実行用マニフェスト](../assets/manifest.json)です。`counts`は導入済み、`plannedCounts`は計画全体、`remainingCounts`は未制作を示します。
 
 ## 表示と音楽
 
 表紙は本棚・導入・挿絵指定のない節に表示します。挿絵は指定節だけで切り替え、音楽はそのまま継続します。小さい横画面では従来どおり本文を優先します。音楽は初期OFFです。本文・選択肢・結末・記録形式は変更していません。
 
-## 導入済みの4作
+## 導入済みの8作
 
 ### GB21 百足椅子の晩餐
 
@@ -62,31 +62,90 @@
 
 **本文との照合**：音管三本、閉じた扉、黒い鳥の白い尾先を目視照合。珠の取得前後どちらでも使える。解放、傘の損傷、同行の結末を先取りしない。
 
+### GB25 竜の背中の菜園
+
+[本文](drafts/gb21-40/gb25.md)
+
+- **[表紙](../assets/images/gb25-cover.webp)**（`IMG-GB25-COVER`）：昼の谷で休む大きな四足の竜。背中の鱗に積もる土と根の上に、段々畑と小さな家がある。
+  [採用PNG](../sources/images/gb25-cover-a.png)・[未採用初稿](../sources/images/gb25-cover-draft.png)・[英語プロンプト全文](../sources/images/gb25-cover.prompt.txt)。1586×992px、WebP 417,512 bytes。
+
+- **[05「葉の天井」](../assets/images/gb25-scene-05.webp)**（`IMG-GB25-SCENE-05`）：葉の天井から垂れる雨豆。ふくらんだ莢と平たい若い莢が、露を付けて同じ蔓に残る。
+  [採用PNG](../sources/images/gb25-scene-05-a.png)・[未採用初稿](../sources/images/gb25-scene-05-draft.png)・[英語プロンプト全文](../sources/images/gb25-scene-05.prompt.txt)。1584×993px、WebP 277,662 bytes。
+
+**BGM：[背中の水路](../assets/audio/gb25-theme.ogg)**（`BGM-GB25`）。64 BPM・90.00秒。音符と編成は[score.json](../sources/audio/gb25-theme.score.json)。-17.93 LUFS-I、true peak -9.62 dBTP、713,537 bytes。
+
+**本文との照合**：竜は地上を歩く四足として描く。畑の土と根を鱗の上に置き、皮膚を掘る描写にしない。昼の光を保つ。挿絵は収穫前で、莢を取る選択を先取りしない。
+
+### GB26 百年遅れの開演
+
+[本文](drafts/gb21-40/gb26.md)
+
+- **[表紙](../assets/images/gb26-cover.webp)**（`IMG-GB26-COVER`）：古い市民劇場の木の舞台。中央の青い灯、赤い幕、舞台装置の門と袖の道具箱。
+  [採用PNG](../sources/images/gb26-cover-a.png)・[未採用初稿](../sources/images/gb26-cover-draft.png)・[英語プロンプト全文](../sources/images/gb26-cover.prompt.txt)。1586×992px、WebP 172,066 bytes。
+
+- **[02「王が戻る話」](../assets/images/gb26-scene-02.webp)**（`IMG-GB26-SCENE-02`）：開いた道具箱の古い銀色の王冠。欠けた実飾りの針金と布、その隣の底が抜けたやかんと鉄板。
+  [採用PNG](../sources/images/gb26-scene-02-a.png)・[未採用初稿](../sources/images/gb26-scene-02-draft.png)・[英語プロンプト全文](../sources/images/gb26-scene-02.prompt.txt)。1585×992px、WebP 170,628 bytes。
+
+**BGM：[青い灯の幕間](../assets/audio/gb26-theme.ogg)**（`BGM-GB26`）。84 BPM・91.43秒。音符と編成は[score.json](../sources/audio/gb26-theme.score.json)。-17.95 LUFS-I、true peak -7.05 dBTP、749,015 bytes。
+
+**本文との照合**：王冠とやかんは各一つ。王冠の欠けた飾りと短い針金、やかんの開いた底を確認。小道具は選択前で、配役・布の内張り・開演の成否を固定しない。
+
+### GB27 女王のいない盤
+
+[本文](drafts/gb21-40/gb27.md)
+
+- **[表紙](../assets/images/gb27-cover.webp)**（`IMG-GB27-COVER`）：川を望む喫茶店の木の卓。白い鳥の駒と黒い門番、木の盤、旅鞄と胡桃。
+  [採用PNG](../sources/images/gb27-cover-a.png)・[未採用初稿](../sources/images/gb27-cover-draft.png)・[英語プロンプト全文](../sources/images/gb27-cover.prompt.txt)。1584×993px、WebP 289,594 bytes。
+
+- **[03「一手目、正面の椅子」](../assets/images/gb27-scene-03.webp)**（`IMG-GB27-SCENE-03`）：三つの門を描いた木の盤。左は木のある庭、中央はまっすぐな道、右は川の橋。白い鳥と、盤外の伏せた札に乗る黒い門番。
+  [採用PNG](../sources/images/gb27-scene-03-a.png)・[未採用初稿](../sources/images/gb27-scene-03-draft.png)・[英語プロンプト全文](../sources/images/gb27-scene-03.prompt.txt)。1586×992px、WebP 247,780 bytes。
+
+**BGM：[三手のあとで](../assets/audio/gb27-theme.ogg)**（`BGM-GB27`）。80 BPM・96.00秒。音符と編成は[score.json](../sources/audio/gb27-theme.score.json)。-17.96 LUFS-I、true peak -6.67 dBTP、417,843 bytes。
+
+**本文との照合**：本文独自の三門の遊びとして描く。白い鳥と黒い門番は各一つ。門番は伏せた札の上で盤外に待つ。門の左右と中央を照合し、一手目の正解や勝敗を絵で示さない。
+
+### GB28 空から落ちるまでの会話
+
+[本文](drafts/gb21-40/gb28.md)
+
+- **[表紙](../assets/images/gb28-cover.webp)**（`IMG-GB28-COVER`）：透明な風壁に囲まれた円形の石の庭。谷へ向く二脚の隣り合う椅子と青い花、遠くの河川と港。
+  [採用PNG](../sources/images/gb28-cover-a.png)・[未採用初稿](../sources/images/gb28-cover-draft.png)・[英語プロンプト全文](../sources/images/gb28-cover.prompt.txt)。1585×992px、WebP 328,540 bytes。
+
+- **[08「雲の下の水」](../assets/images/gb28-scene-08.webp)**（`IMG-GB28-SCENE-08`）：雲を抜けて降りる庭から望む広い川。手前の透明な風壁と石の縁、青い花、遠くの小さな赤い受け台。
+  [採用PNG](../sources/images/gb28-scene-08-a.png)・[未採用初稿](../sources/images/gb28-scene-08-draft.png)・[英語プロンプト全文](../sources/images/gb28-scene-08.prompt.txt)。1586×992px、WebP 328,468 bytes。
+
+**BGM：[降りてゆく庭](../assets/audio/gb28-theme.ogg)**（`BGM-GB28`）。64 BPM・90.00秒。音符と編成は[score.json](../sources/audio/gb28-theme.score.json)。-17.95 LUFS-I、true peak -10.17 dBTP、565,792 bytes。
+
+**本文との照合**：水平な庭と連続する透明な風壁を保ち、安全な交通機関として描く。表紙の椅子は隣り合う二脚。挿絵は降下中で受け台が遠く、理由を話したかどうかに依存する人物の行動や関係の結末を固定しない。
+
 ## 画像の採用と原本
 
-組込みimagegenで全8点を生成し、各初稿と採用Aを参照して色面・輪郭・陰影を整理しました。GB23表紙では、本文の着衣と混同しやすい窓内の灰色シャツを戸棚へ置き換えました。GB22挿絵では内側の固雪の段を明確にし、外側の氷の細かな亀裂を整理しました。GB24挿絵の音管は三本であることを目視確認しました。
+第12回では組込みimagegenで8点を生成し、各初稿と採用Aを参照して色面・輪郭・陰影を整理しました。GB23表紙では、本文の着衣と混同しやすい窓内の灰色シャツを戸棚へ置き換えました。GB22挿絵では内側の固雪の段を明確にし、外側の氷の細かな亀裂を整理しました。GB24挿絵の音管は三本であることを目視確認しました。
 
-原寸・縦横比を保持したままWebP化し、機械的な縮小・拡大・減色はしていません。PNGとWebPの寸法・デコード・不透明性・容量を確認し、SHA-256は[原本台帳](../sources/images/manifest.json)に保存しています。A・B・Cの参照画像、既存77素材の配布物は保持しています。
+第13回も8点を組込みimagegenで生成し、初稿と採用Aを参照して色面を整理しました。GB25表紙は昼の光へ修正し、GB26挿絵は王冠の針金とやかんの開いた底、GB27挿絵は三門の配置と伏せた札上の門番を確認しました。GB28表紙は本文の隣の椅子に合わせて二脚を並べました。
+
+原寸・縦横比を保持したままWebP化し、機械的な縮小・拡大・減色はしていません。PNGとWebPの寸法・デコード・不透明性・容量を確認し、SHA-256は[原本台帳](../sources/images/manifest.json)に保存しています。A・B・Cの参照画像、第13回追加前の既存89素材の配布物は保持しています。
 
 ## 音楽の制作
 
-作品ごとに新しい旋律と伴奏を書き、既存の加算合成音色で制作しました。第12回の構成元は[compose-batch-12.py](../sources/audio/compose-batch-12.py)、通常の再生成元は4個のscore.jsonです。既存24曲の音符と配布音源は変更していません。
+作品ごとに新しい旋律と伴奏を書き、既存の加算合成音色で制作しました。第12回の構成元は[compose-batch-12.py](../sources/audio/compose-batch-12.py)、通常の再生成元は4個のscore.jsonです。第13回は[compose-batch-13.py](../sources/audio/compose-batch-13.py)と4個のscore.jsonを追加しました。既存28曲の音符と配布音源は変更していません。
 
 - GB21：二歩と休みの撥弦にクラリネットが応える舞曲。
 - GB22：均等な撥弦と木管による、雪面を滑るような流れ。
 - GB23：同じ短句を別の音色で返し、家の温かさと違和感を重ねる。
 - GB24：少しずらした撥弦と木管が、二人の呼吸を作る。
 
-全長・音量・true peak・有限値・容量・ループ境界を測定しました。[render-report.json](../sources/audio/render-report.json)に対象音源のハッシュと結果があります。聴感・圧縮品質・3周連続試聴は未実施です。[試聴ページ](audio-review.html)から28曲を確認できます。
+- GB25：丸い低音と木の響き、間の長い木管で菜園の日常を支える。
+- GB26：撥弦の足取りへクラリネットが応える、劇場の軽いやり取り。
+- GB27：鍵盤と撥弦の短い問いと応答で、考える間を残す。
+- GB28：長い倍音と木管の旋律を柔らかな鍵盤へ渡し、静かな降下を保つ。
+
+全長・音量・true peak・有限値・容量・ループ境界を測定しました。[render-report.json](../sources/audio/render-report.json)に対象音源のハッシュと結果があります。聴感・圧縮品質・3周連続試聴は未実施です。[試聴ページ](audio-review.html)から32曲を確認できます。
 
 ## 次の制作対象
 
-**次はGB25〜GB28の12点です。** 以後も番号順に進みます。次の各作品に表紙1点・挿絵1点・BGM1曲を用意します。挿絵の節、曲名・編成は本文と作者メモを読んでから決定します。台帳の未選定の節・パスはnullで、実行用マニフェストへは未登録です。
+**次はGB29〜GB32の12点です。** 以後も番号順に進みます。次の各作品に表紙1点・挿絵1点・BGM1曲を用意します。挿絵の節、曲名・編成は本文と作者メモを読んでから決定します。台帳の未選定の節・パスはnullで、実行用マニフェストへは未登録です。
 
-- [GB25 竜の背中の菜園](drafts/gb21-40/gb25.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB26 百年遅れの開演](drafts/gb21-40/gb26.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB27 女王のいない盤](drafts/gb21-40/gb27.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB28 空から落ちるまでの会話](drafts/gb21-40/gb28.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB29 ひと晩だけの悪役](drafts/gb21-40/gb29.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB30 牙のない獣の冬](drafts/gb21-40/gb30.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB31 燃えない手紙を燃やす日](drafts/gb21-40/gb31.md)：表紙・挿絵・BGMの3点が未制作。

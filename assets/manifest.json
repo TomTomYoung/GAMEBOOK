@@ -684,24 +684,96 @@
       }
     },
     "GB25": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb25-cover.webp",
+        "alt": "昼の谷で休む大きな四足の竜。背中の鱗に積もる土と根の上に、段々畑と小さな家がある。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb25-theme.ogg",
+        "title": "背中の水路",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb25-scene-05.webp",
+            "alt": "葉の天井から垂れる雨豆。ふくらんだ莢と平たい若い莢が、露を付けて同じ蔓に残る。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB26": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb26-cover.webp",
+        "alt": "古い市民劇場の木の舞台。中央の青い灯、赤い幕、舞台装置の門と袖の道具箱。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb26-theme.ogg",
+        "title": "青い灯の幕間",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "02": {
+          "image": {
+            "src": "assets/images/gb26-scene-02.webp",
+            "alt": "開いた道具箱の古い銀色の王冠。欠けた実飾りの針金と布、その隣の底が抜けたやかんと鉄板。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB27": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb27-cover.webp",
+        "alt": "川を望む喫茶店の木の卓。白い鳥の駒と黒い門番、木の盤、旅鞄と胡桃。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb27-theme.ogg",
+        "title": "三手のあとで",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb27-scene-03.webp",
+            "alt": "三つの門を描いた木の盤。左は木のある庭、中央はまっすぐな道、右は川の橋。白い鳥と、盤外の伏せた札に乗る黒い門番。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB28": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb28-cover.webp",
+        "alt": "透明な風壁に囲まれた円形の石の庭。谷へ向く二脚の隣り合う椅子と青い花、遠くの河川と港。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb28-theme.ogg",
+        "title": "降りてゆく庭",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "08": {
+          "image": {
+            "src": "assets/images/gb28-scene-08.webp",
+            "alt": "雲を抜けて降りる庭から望む広い川。手前の透明な風壁と石の縁、青い花、遠くの小さな赤い受け台。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB29": {
       "image": null,

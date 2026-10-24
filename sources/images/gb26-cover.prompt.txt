@@ -1,0 +1,13 @@
+Initial generation
+
+Use case: illustration-story
+Asset type: horizontal gamebook cover, landscape 8:5, opaque.
+Primary request: the stage of a modest old civic theatre on its centenary night. A small blue flame burns in a low lamp at the centre of the timber stage and spreads a quiet pool of blue light across the boards. A simple wooden castle-gate stage flat stands behind it. Heavy muted red curtains frame the stage, and a warm amber lamp glows in the wing beside a wooden props chest. A cropped foreground row of plain seat backs establishes the auditorium. The focus is the expectant stage and its blue flame.
+Style: limited-palette pixel art with broad flat color planes, large chunky pixel clusters, crisp stepped silhouettes, two tones per surface, sparse rectangular highlights. About eight shared colors of midnight navy, muted blue, pale cyan, maroon, warm brown, amber, cream and slate. Restrained theatrical atmosphere, simple architecture and generous quiet space.
+Composition: the blue flame and wooden gate form a strong central silhouette that reads at thumbnail size. Pure environmental illustration.
+
+Style revision using draft and approved A reference
+
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 with the simplicity of image 2: broad flat color planes, chunky rectangular pixel clusters, crisp stepped outlines, about eight shared colors, a base tone plus shadow per surface, and sparse rectangular highlights. Preserve the original indoor theatre lighting and colors, the central blue flame, stage boards, wooden castle-gate scenery, red curtains, props chest and warm wing lamp. Group the grain, painted masonry and curtain texture into large plain shapes. Preserve the layout and landscape aspect ratio. Pure environmental illustration.

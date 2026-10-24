@@ -33,7 +33,7 @@ async function main() {
     await page.goto(pathToFileURL(path.join(ROOT, 'doc/audio-review.html')).href);
     await page.waitForSelector('html[data-audio-review-ready="true"]');
     await page.evaluate(() => localStorage.setItem('gamebook.shelf.v1', 'untouched-game-save'));
-    assert.equal(await page.locator('#track option').count(), 28);
+    assert.equal(await page.locator('#track option').count(), 32);
     assert(await page.evaluate(() => document.querySelector('audio').paused));
     for (let i = 0; i < tracks.length; i++) {
       await page.locator('#track').selectOption(String(i));
@@ -84,7 +84,7 @@ async function main() {
     await page.locator('#track').selectOption('1');
     assert(await page.evaluate(() => document.querySelector('audio').paused));
     await page.locator('#track').selectOption('0');
-    report.cases.push('28 sources load; playback, pause, seam, three-pass natural end and stable stop; final-pass pause/resume and replay; no automatic listening marks');
+    report.cases.push('32 sources load; playback, pause, seam, three-pass natural end and stable stop; final-pass pause/resume and replay; no automatic listening marks');
 
     await page.locator('#verdict').selectOption('ok');
     assert.equal(await page.locator('#verdict').inputValue(), 'pending');

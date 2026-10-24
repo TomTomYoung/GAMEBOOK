@@ -131,7 +131,7 @@ async function useLegacyEdition(page, legacy) {
   // Substitute the old data as the classic bundle assigns it, then let the
   // next reload use the real bundle once the test enables the current edition.
   await page.addInitScript(legacy => {
-    if (sessionStorage.getItem('gamebook.test.current-edition') === 'yes') return;
+    if (location.hash === '#gamebook-test-current-edition') return;
     Object.defineProperty(globalThis, 'GB_EDITIONS', {
       configurable: true,
       set(value) {
@@ -142,6 +142,17 @@ async function useLegacyEdition(page, legacy) {
       }
     });
   }, legacy);
+}
+
+async function reloadCurrentEdition(page, story) {
+  // The URL fragment survives file:// reloads without depending on storage or
+  // window.name, which WebKit clears for an opaque file origin.
+  await page.evaluate(() => { location.hash = 'gamebook-test-current-edition'; });
+  await page.reload();
+  await page.waitForSelector('html[data-gamebook-ready="true"]');
+  assert.equal(await page.evaluate(id => window.GB_EDITIONS.find(entry => entry.story.id === id).story.revision,
+    story.id), story.revision, 'reload must use the current story bundle');
+  await settle(page);
 }
 
 async function layout(page, label) {
@@ -534,10 +545,7 @@ async function testSavesAndHistory() {
     await page.locator('#import-input').setInputFiles({ name: 'before-rewrite.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
     await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
     assert.equal((await storedShelf(page)).sessions[second.id].contentRevision, 2);
-    await page.evaluate(() => sessionStorage.setItem('gamebook.test.current-edition', 'yes'));
-    await page.reload();
-    await page.waitForSelector('html[data-gamebook-ready="true"]');
-    await settle(page);
+    await reloadCurrentEdition(page, second);
     const saved = await storedShelf(page);
     assert.deepEqual(saved.sessions[second.id], E.replay(second, trail));
     assert.deepEqual(saved.sessions.GB01, seed.sessions.GB01);
@@ -571,10 +579,7 @@ async function testSavesAndHistory() {
     await page.locator('#import-input').setInputFiles({ name: 'revision3.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(seed)) });
     await page.getByRole('button', { name: '置き換えて読み込む', exact: true }).click();
     assert.deepEqual(await storedShelf(page), seed);
-    await page.evaluate(() => sessionStorage.setItem('gamebook.test.current-edition', 'yes'));
-    await page.reload();
-    await page.waitForSelector('html[data-gamebook-ready="true"]');
-    await settle(page);
+    await reloadCurrentEdition(page, second);
     let saved = await storedShelf(page);
     assert.deepEqual(saved.sessions[second.id], E.createSession(second));
     assert.equal(saved.bookmarks[second.id].page, 0, 'revised section 01 restarts at its beginning');
