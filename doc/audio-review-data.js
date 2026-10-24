@@ -266,6 +266,42 @@
     "sha256": "8e008d429d3525ddfa15be455355f36ba2c43c5720d15c90303d27e2a632bc47"
   },
   {
+    "id": "GB29",
+    "storyTitle": "ひと晩だけの悪役",
+    "src": "assets/audio/gb29-theme.ogg",
+    "title": "黒い鐘の七歩",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "bbc531f93e28487d8bce4c38d0411a7e4e9314a165c8b57ba2ee7318ca8b86c3"
+  },
+  {
+    "id": "GB30",
+    "storyTitle": "牙のない獣の冬",
+    "src": "assets/audio/gb30-theme.ogg",
+    "title": "炉のそばの二つの器",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "32f021f2cd8f300ccaf10a83c5e91bfa144c72f6f7292fa3542cfa87f98c0857"
+  },
+  {
+    "id": "GB31",
+    "storyTitle": "燃えない手紙を燃やす日",
+    "src": "assets/audio/gb31-theme.ogg",
+    "title": "折り目の隣に",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "06713f6de71f1a8b8e0cfd5e52e346357858ca215f1d63577232c57464b621d4"
+  },
+  {
+    "id": "GB32",
+    "storyTitle": "砂漠の競売人",
+    "src": "assets/audio/gb32-theme.ogg",
+    "title": "木陰をひらく茶",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "8c7cd7140c6eb765f96342c34ff6f4b6e9e6378e1de924709c4c8fd0888f6c40"
+  },
+  {
     "id": "M01",
     "storyTitle": "潮待ちの劇場",
     "src": "assets/audio/m01-theme.ogg",

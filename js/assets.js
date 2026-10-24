@@ -781,24 +781,96 @@
       }
     },
     "GB29": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb29-cover.webp",
+        "alt": "夜冠祭の支度をする場所。赤い裏地の黒マント、黒帽子、三つの尖りを持つ金塗りの木の冠と赤い腕章。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb29-theme.ogg",
+        "title": "黒い鐘の七歩",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "11": {
+          "image": {
+            "src": "assets/images/gb29-scene-11.webp",
+            "alt": "夜の荷車置き場に下がる黒い鐘。手前には二つの空の布枠があり、周囲を回れる床が空いている。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB30": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb30-cover.webp",
+        "alt": "吹雪の山小屋へ入る老いた灰色の岩犬ムク。白い頬、低い腰、首輪と金具、暖かな炉の光。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb30-theme.ogg",
+        "title": "炉のそばの二つの器",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "08": {
+          "image": {
+            "src": "assets/images/gb30-scene-08.webp",
+            "alt": "山小屋の炉にかかる鍋と、夕食をよそう前の空の椀と皿。片方の縁には小さな欠けがある。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB31": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb31-cover.webp",
+        "alt": "庭の見える昼の台所。斜めの食卓、空いた母の木の椅子、四つ折りの手紙。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb31-theme.ogg",
+        "title": "折り目の隣に",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "02": {
+          "image": {
+            "src": "assets/images/gb31-scene-02.webp",
+            "alt": "朝の炉のそばの鍋敷きに戻した、燃えずに残る火守り紙の手紙。白い縁に赤い光が映る。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB32": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb32-cover.webp",
+        "alt": "昼の砂漠の市場にある荷車一台の茶屋。茶釜、布の日除け、三脚の木の椅子。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb32-theme.ogg",
+        "title": "木陰をひらく茶",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "02": {
+          "image": {
+            "src": "assets/images/gb32-scene-02.webp",
+            "alt": "競売台の折り庭。大木と三つの石の腰掛け、独立した小鉢、めくった敷物の裏に三つの丸い印。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB33": {
       "image": null,

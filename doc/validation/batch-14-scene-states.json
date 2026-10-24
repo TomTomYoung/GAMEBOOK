@@ -1,0 +1,167 @@
+{
+  "GB29": {
+    "nodeId": "11",
+    "arrivals": [
+      {
+        "state": {
+          "name": "威圧",
+          "hat": false
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "05a",
+          "08a"
+        ]
+      },
+      {
+        "state": {
+          "name": "大ぼら",
+          "hat": false
+        },
+        "trail": [
+          "01b",
+          "03a",
+          "06a",
+          "08a"
+        ]
+      },
+      {
+        "state": {
+          "name": "変装",
+          "hat": false
+        },
+        "trail": [
+          "01c",
+          "04a",
+          "06a",
+          "08a"
+        ]
+      }
+    ]
+  },
+  "GB30": {
+    "nodeId": "08",
+    "arrivals": [
+      {
+        "state": {
+          "food": 4,
+          "wood": 1,
+          "feed": 1,
+          "prep": "食料",
+          "dinner": "未定"
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "04a",
+          "05a"
+        ]
+      },
+      {
+        "state": {
+          "food": 1,
+          "wood": 5,
+          "feed": 1,
+          "prep": "薪",
+          "dinner": "未定"
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "04b",
+          "06a"
+        ]
+      },
+      {
+        "state": {
+          "food": 1,
+          "wood": 1,
+          "feed": 1,
+          "prep": "橇",
+          "dinner": "未定"
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "04c",
+          "07a"
+        ]
+      },
+      {
+        "state": {
+          "food": 5,
+          "wood": 1,
+          "feed": 0,
+          "prep": "食料",
+          "dinner": "未定"
+        },
+        "trail": [
+          "01b",
+          "03a",
+          "04a",
+          "05a"
+        ]
+      },
+      {
+        "state": {
+          "food": 2,
+          "wood": 5,
+          "feed": 0,
+          "prep": "薪",
+          "dinner": "未定"
+        },
+        "trail": [
+          "01b",
+          "03a",
+          "04b",
+          "06a"
+        ]
+      },
+      {
+        "state": {
+          "food": 2,
+          "wood": 1,
+          "feed": 0,
+          "prep": "橇",
+          "dinner": "未定"
+        },
+        "trail": [
+          "01b",
+          "03a",
+          "04c",
+          "07a"
+        ]
+      }
+    ]
+  },
+  "GB31": {
+    "nodeId": "02",
+    "arrivals": [
+      {
+        "state": {
+          "margin": false,
+          "sister": false,
+          "table": "未定",
+          "reply": "まだ"
+        },
+        "trail": [
+          "01a"
+        ]
+      }
+    ]
+  },
+  "GB32": {
+    "nodeId": "02",
+    "arrivals": [
+      {
+        "state": {
+          "money": 10
+        },
+        "trail": [
+          "01a"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "commit": "0f67765b081c11e83ca50ad94a791e2ea53895be",
+  "workflowRun": "https://github.com/TomTomYoung/GAMEBOOK/actions/runs/40066520653",
+  "unitTests": 111,
+  "totalBrowserCases": 579,
+  "jobs": [
+    {
+      "id": 120790822738,
+      "name": "verify (webkit, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120790822915,
+      "name": "verify (firefox, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120790822963,
+      "name": "verify (chromium, new-short)",
+      "conclusion": "success",
+      "browserCases": 85,
+      "browserTotal": 85,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": [
+        "GB29/11: 3 reachable states",
+        "GB30/08: 6 reachable states",
+        "GB31/02: 1 reachable states",
+        "GB32/02: 1 reachable states"
+      ]
+    },
+    {
+      "id": 120790822996,
+      "name": "verify (chromium, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120790823008,
+      "name": "verify (chromium, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120790823029,
+      "name": "verify (webkit, new-short)",
+      "conclusion": "success",
+      "browserCases": 85,
+      "browserTotal": 85,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": [
+        "GB29/11: 3 reachable states",
+        "GB30/08: 6 reachable states",
+        "GB31/02: 1 reachable states",
+        "GB32/02: 1 reachable states"
+      ]
+    },
+    {
+      "id": 120790823068,
+      "name": "verify (firefox, new-short)",
+      "conclusion": "success",
+      "browserCases": 85,
+      "browserTotal": 85,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": [
+        "GB29/11: 3 reachable states",
+        "GB30/08: 6 reachable states",
+        "GB31/02: 1 reachable states",
+        "GB32/02: 1 reachable states"
+      ]
+    },
+    {
+      "id": 120790823020,
+      "name": "verify (webkit, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120790822958,
+      "name": "verify (firefox, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    }
+  ]
+}

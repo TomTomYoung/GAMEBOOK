@@ -1,0 +1,22 @@
+{
+  "browser": "chromium",
+  "browserVersion": "151.0.7922.34",
+  "platform": "linux",
+  "listeningReview": "not_performed",
+  "cases": [
+    "36 sources load; playback, pause, seam, three-pass natural end and stable stop; final-pass pause/resume and replay; no automatic listening marks",
+    "per-track notes, explicit verdict, autosave reload and JSON export",
+    "invalid import preserves notes; old audio kept in archive; matching audio imports; game save unchanged",
+    "desktop and narrow mobile layouts have no horizontal overflow"
+  ],
+  "diagnostics": [],
+  "status": "passed",
+  "finished": "2026-10-24T05:32:16.185Z",
+  "_source": {
+    "commit": "0f67765b081c11e83ca50ad94a791e2ea53895be",
+    "workflowRun": "https://github.com/TomTomYoung/GAMEBOOK/actions/runs/40066520653",
+    "job": 120790822963,
+    "artifactId": 12548884154,
+    "artifactZipSha256": "a4a01765330e20ea22199f96a80c6548dcccc594ce35fa48bf65c4bd7177b73e"
+  }
+}
