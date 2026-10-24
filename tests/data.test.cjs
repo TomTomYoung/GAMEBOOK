@@ -138,6 +138,17 @@ test('production ledger counts and progress agree with installed runtime assets'
   assert(plan.nextBatch.every(id => remaining.some(a => a.id === id)));
 });
 
+test('installed image files retain their recorded size and content hash', () => {
+  const images = JSON.parse(fs.readFileSync(path.join(ROOT, 'sources/images/manifest.json'), 'utf8'));
+  for (const image of images) {
+    const bytes = fs.readFileSync(path.join(ROOT, image.path));
+    assert(bytes.length > 0, `${image.path}: empty image`);
+    assert.equal(bytes.length, image.bytes, `${image.path}: recorded size`);
+    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), image.sha256,
+      `${image.path}: recorded content hash`);
+  }
+});
+
 test('check mode reports stale or absent bundles without writing them', t => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'gamebook-build-test-'));
   t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
