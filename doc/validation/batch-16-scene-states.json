@@ -1,0 +1,66 @@
+{
+  "GB37": {
+    "nodeId": "06",
+    "arrivals": [
+      {
+        "state": {
+          "face": "借り顔",
+          "reveal": "まだ"
+        },
+        "trail": [
+          "01a",
+          "02b"
+        ]
+      }
+    ]
+  },
+  "GB38": {
+    "nodeId": "03",
+    "arrivals": [
+      {
+        "state": {
+          "route": "椅子"
+        },
+        "trail": [
+          "01b"
+        ]
+      }
+    ]
+  },
+  "GB39": {
+    "nodeId": "05",
+    "arrivals": [
+      {
+        "state": {
+          "badge": "裏"
+        },
+        "trail": [
+          "01a",
+          "02b"
+        ]
+      },
+      {
+        "state": {
+          "badge": "表"
+        },
+        "trail": [
+          "01b",
+          "03a"
+        ]
+      }
+    ]
+  },
+  "GB40": {
+    "nodeId": "02",
+    "arrivals": [
+      {
+        "state": {
+          "sketch": true
+        },
+        "trail": [
+          "01a"
+        ]
+      }
+    ]
+  }
+}

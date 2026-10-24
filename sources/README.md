@@ -115,3 +115,16 @@ python scripts/render-music.py --only gb33-theme gb34-theme gb35-theme gb36-them
 ```
 
 配置・本文との照合・測定値は[新短編の素材記録](../doc/SHORTS_21_40_ASSETS.md)を参照してください。既存113素材は保持しています。耳による確認は未実施です。
+
+## 第16回：GB37〜GB40（2026-10-24）
+
+4作へ表紙・挿絵・BGMを各1点追加し、計画した全137素材の導入が完了しました。`images/gb37-*`〜`gb40-*`に採用PNG・未採用初稿・英語の生成と修正プロンプト全文があります。組込みimagegenで生成し、採用Aを参照して色面を整理しました。原寸・縦横比を保持してWebPへ変換しています。
+
+音符と編成は `audio/compose-batch-16.py` と各score.jsonにあります。
+
+```sh
+python sources/audio/compose-batch-16.py
+python scripts/render-music.py --only gb37-theme gb38-theme gb39-theme gb40-theme
+```
+
+配置・本文との照合・測定値は[新短編の素材記録](../doc/SHORTS_21_40_ASSETS.md)を参照してください。既存125素材は保持しています。44曲の耳による確認は未実施です。

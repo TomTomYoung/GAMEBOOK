@@ -1,0 +1,1093 @@
+{
+  "id": "gb39-theme",
+  "title": "七つの仕事の隣で",
+  "bpm": 84,
+  "bars": 32,
+  "meter": "4/4",
+  "key": "Bb major / spacious workshop pulse",
+  "form": "A8 B8 A′8 turn8",
+  "description": "丸い低音と電気鍵盤を基調に、クラリネットの短句をずらして重ねる。祭りの楽しさと工房の手仕事を支え、拍手・呼吸・七本目の管を実際の合図として鳴らさない。静かな撤収や翌朝の修理にも余白を残す。",
+  "seed": 2026102639,
+  "events": [
+    {
+      "at": 0,
+      "note": "Bb2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 0.75,
+      "note": "D4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 1.5,
+      "note": "F3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 2.5,
+      "note": "F4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 4,
+      "note": "G2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 4.75,
+      "note": "G4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 5.5,
+      "note": "D3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 6.5,
+      "note": "Bb4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 6.5,
+      "note": "Bb3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 8,
+      "note": "Eb3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 9.5,
+      "note": "Eb5",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 9.5,
+      "note": "Bb3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 12,
+      "note": "F2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 12.75,
+      "note": "C5",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 13.5,
+      "note": "C3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 14.5,
+      "note": "A4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 14.5,
+      "note": "G3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 16,
+      "note": "D3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 16.75,
+      "note": "F4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 17.5,
+      "note": "A3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 18.5,
+      "note": "D4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 20,
+      "note": "Eb3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 21.5,
+      "note": "G4",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 21.5,
+      "note": "Bb3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 22.5,
+      "note": "C4",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 24,
+      "note": "C3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 24.75,
+      "note": "Eb4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 25.5,
+      "note": "G3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 26.5,
+      "note": "G4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 28,
+      "note": "F2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 29.5,
+      "note": "A4",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 29.5,
+      "note": "C3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 30.5,
+      "note": "Eb3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 32,
+      "note": "Bb2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 32.75,
+      "note": "F4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 33.5,
+      "note": "F3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 34.5,
+      "note": "Bb4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 36,
+      "note": "G2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 37.5,
+      "note": "D5",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 37.5,
+      "note": "D3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 38.5,
+      "note": "Bb3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 40,
+      "note": "Eb3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 40.75,
+      "note": "Bb4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 41.5,
+      "note": "Bb3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 42.5,
+      "note": "G4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 44,
+      "note": "F2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 44.75,
+      "note": "A4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 45.5,
+      "note": "C3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 46.5,
+      "note": "C5",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 46.5,
+      "note": "G3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 48,
+      "note": "D3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 48.75,
+      "note": "F5",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 49.5,
+      "note": "A3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 50.5,
+      "note": "D5",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 52,
+      "note": "Eb3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 53.5,
+      "note": "Bb4",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 53.5,
+      "note": "Bb3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 54.5,
+      "note": "C4",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 56,
+      "note": "C3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 56.75,
+      "note": "G4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 57.5,
+      "note": "G3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 58.5,
+      "note": "Eb4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 60,
+      "note": "F2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 60.75,
+      "note": "C5",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 61.5,
+      "note": "C3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 62.5,
+      "note": "A4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 62.5,
+      "note": "Eb3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 64,
+      "note": "Bb2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 64.75,
+      "note": "D4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 65.5,
+      "note": "F3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 66.5,
+      "note": "F4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 68,
+      "note": "G2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 68.75,
+      "note": "G4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 69.5,
+      "note": "D3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 70.5,
+      "note": "Bb4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 70.5,
+      "note": "Bb3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 71.5,
+      "note": "Bb3",
+      "beats": 0.7,
+      "instrument": "felt-piano",
+      "gain": 0.021,
+      "pan": -0.24
+    },
+    {
+      "at": 72,
+      "note": "Eb3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 73.5,
+      "note": "Eb5",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 73.5,
+      "note": "Bb3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 76,
+      "note": "F2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 76.75,
+      "note": "C5",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 77.5,
+      "note": "C3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 78.5,
+      "note": "A4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 78.5,
+      "note": "G3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 80,
+      "note": "D3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 80.75,
+      "note": "F4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 81.5,
+      "note": "A3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 82.5,
+      "note": "D4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 84,
+      "note": "Eb3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 85.5,
+      "note": "G4",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 85.5,
+      "note": "Bb3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 86.5,
+      "note": "C4",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 88,
+      "note": "C3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 88.75,
+      "note": "Eb4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 89.5,
+      "note": "G3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 90.5,
+      "note": "G4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 91.5,
+      "note": "Eb4",
+      "beats": 0.7,
+      "instrument": "felt-piano",
+      "gain": 0.021,
+      "pan": -0.24
+    },
+    {
+      "at": 92,
+      "note": "F2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 93.5,
+      "note": "A4",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 93.5,
+      "note": "C3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 94.5,
+      "note": "Eb3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 96,
+      "note": "Bb2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 96.75,
+      "note": "D4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 97.5,
+      "note": "F3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 98.5,
+      "note": "F4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 100,
+      "note": "G2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 100.75,
+      "note": "G4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 101.5,
+      "note": "D3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 102.5,
+      "note": "Bb4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 102.5,
+      "note": "Bb3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 104,
+      "note": "Eb3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 105.5,
+      "note": "Eb5",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 105.5,
+      "note": "Bb3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 108,
+      "note": "F2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 108.75,
+      "note": "C5",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 109.5,
+      "note": "C3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 110.5,
+      "note": "A4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 110.5,
+      "note": "G3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 112,
+      "note": "D3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 112.75,
+      "note": "F4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 113.5,
+      "note": "A3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 114.5,
+      "note": "D4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 116,
+      "note": "Eb3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 117.5,
+      "note": "G4",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 117.5,
+      "note": "Bb3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 118.5,
+      "note": "C4",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    },
+    {
+      "at": 120,
+      "note": "C3",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 120.75,
+      "note": "Eb4",
+      "beats": 1.0,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 121.5,
+      "note": "G3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 122.5,
+      "note": "G4",
+      "beats": 1.1,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 124,
+      "note": "F2",
+      "beats": 2.5,
+      "instrument": "round-bass",
+      "gain": 0.039,
+      "pan": -0.1
+    },
+    {
+      "at": 125.5,
+      "note": "A4",
+      "beats": 1.4,
+      "instrument": "clarinet",
+      "gain": 0.052,
+      "pan": 0.08
+    },
+    {
+      "at": 125.5,
+      "note": "C3",
+      "beats": 1.7,
+      "instrument": "electric-keys",
+      "gain": 0.032,
+      "pan": -0.22
+    },
+    {
+      "at": 126.5,
+      "note": "Eb3",
+      "beats": 1.2,
+      "instrument": "felt-piano",
+      "gain": 0.025,
+      "pan": 0.2
+    }
+  ]
+}

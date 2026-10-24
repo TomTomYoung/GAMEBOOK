@@ -338,6 +338,42 @@
     "sha256": "a14aa2eed5fcefc9df6667eff8550bd99167f9fbd192e2eae47172e81da005f8"
   },
   {
+    "id": "GB37",
+    "storyTitle": "借りた顔で会いに行く",
+    "src": "assets/audio/gb37-theme.ogg",
+    "title": "茶碗のあいだ",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "1dcff1d8762aa0d2b55fd896f38ddb9d66408daa9a24701f3f98db7e0c521880"
+  },
+  {
+    "id": "GB38",
+    "storyTitle": "地図にない日曜日",
+    "src": "assets/audio/gb38-theme.ogg",
+    "title": "日曜の歩幅",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "d4a50ac2f687b2a253ebd7283db9b30f04454f1e622e012a233947a1269eabe3"
+  },
+  {
+    "id": "GB39",
+    "storyTitle": "栄光を食べる獣",
+    "src": "assets/audio/gb39-theme.ogg",
+    "title": "七つの仕事の隣で",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "f86554043c6a8b031bd96fb08fdeef5ac3e4749ed1bacbd695781afab9949316"
+  },
+  {
+    "id": "GB40",
+    "storyTitle": "最後の頁を盗んだ子",
+    "src": "assets/audio/gb40-theme.ogg",
+    "title": "余白につながる海",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "dd2849dc2a1f483db266c706b755e8c9bf23943d8e0debe59f0f20ea8899d2b2"
+  },
+  {
     "id": "M01",
     "storyTitle": "潮待ちの劇場",
     "src": "assets/audio/m01-theme.ogg",

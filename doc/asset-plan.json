@@ -1,8 +1,8 @@
 {
-  "planVersion": 19,
+  "planVersion": 20,
   "updated": "2026-10-24",
-  "status": "in_progress",
-  "scope": "共通本棚・GB01〜GB36・中編3作へ画像85点・BGM40曲、計125点を導入済み。GB37〜GB40の表紙4点・挿絵4点・BGM4曲、計12点は未制作。挿絵の節は制作前の本文照合で決める。聴感・実機確認は別項目。",
+  "status": "installed_listening_pending",
+  "scope": "共通本棚・短編40作・中編3作へ画像93点・BGM44曲、計137点を導入済み。計画した素材の未制作は0点。耳による試聴・3周連続試聴・実機確認は別途未実施。",
   "runtimeManifest": "assets/manifest.json",
   "imageSpecification": {
     "delivery": "WebP, sRGB, 8:5前後, opaque background。標準目安1600×1000px。生成原本の縦横比と実寸を優先し、寸法合わせの引き伸ばしは行わない。",
@@ -13,7 +13,7 @@
     "text_policy": "題名・UI・読ませる文字を絵に焼き込まない。画像なしでも本文だけで判断できること。"
   },
   "musicSpecification": {
-    "delivery": "Ogg Vorbis, stereo, 44.1kHz。導入済み40曲はVorbis品質4。実ビットレート・音量・時間は制作記録を参照。聴感確認は未完了。",
+    "delivery": "Ogg Vorbis, stereo, 44.1kHz。導入済み44曲はVorbis品質4。実ビットレート・音量・時間は制作記録を参照。聴感確認は未完了。",
     "master": "音符・編成のscore.jsonと合成スクリプトを保管。24bit WAVを一時生成してOggへ変換。WAV自体は常設せず、同じ制作環境で再生成する。",
     "duration_seconds": 90,
     "loop": true,
@@ -23,26 +23,13 @@
     "policy": "歌詞・語り・台詞なし。全分岐と全結末で繰り返し聴ける。選択を急がせる大きな山場、正誤の合図、物語内の行動と混同する効果音を避ける。"
   },
   "counts": {
-    "images": 85,
-    "music": 40,
-    "total": 125,
-    "coreP1": 80,
-    "sceneP2": 45
+    "images": 93,
+    "music": 44,
+    "total": 137,
+    "coreP1": 88,
+    "sceneP2": 49
   },
-  "nextBatch": [
-    "IMG-GB37-COVER",
-    "IMG-GB37-SCENE",
-    "BGM-GB37",
-    "IMG-GB38-COVER",
-    "IMG-GB38-SCENE",
-    "BGM-GB38",
-    "IMG-GB39-COVER",
-    "IMG-GB39-SCENE",
-    "BGM-GB39",
-    "IMG-GB40-COVER",
-    "IMG-GB40-SCENE",
-    "BGM-GB40"
-  ],
+  "nextBatch": [],
   "assets": [
     {
       "id": "IMG-LIBRARY",
@@ -2338,26 +2325,38 @@
       "role": "story",
       "storyId": "GB37",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb37.md",
       "placement": "作品カード、導入、挿絵指定のない節。",
       "path": "assets/images/gb37-cover.webp",
-      "brief": "借りた顔で会いに行く：導入と作者メモを読み、結果や変動する所持品を確定しない横長の作品イメージを作る。",
-      "reviewStatus": "source_review_pending"
+      "brief": "家の玄関の呼び鈴と窓、返しに来た薬缶と鍋敷き。",
+      "reviewStatus": "visual_reviewed",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "alt": "家の玄関の呼び鈴と窓、返しに来た薬缶と鍋敷き。",
+      "position": "center",
+      "constraints": "06節は借り顔のまま、開示前の一状態。人物の顔や反射、肖像の完成、署名を描かず、父の言葉を聞く時間を表す。初稿の手前向きの欠けを修正し、父側へ向けた欠けはこの視点では見せない。和解や名乗りの成立は先取りしない。"
     },
     {
-      "id": "IMG-GB37-SCENE",
+      "id": "IMG-GB37-SCENE-06",
       "kind": "image",
       "role": "scene",
       "storyId": "GB37",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb37.md",
-      "nodeId": null,
-      "placement": "本文と全到達状態を照合して節を選ぶ。現段階は未選定。",
-      "path": null,
-      "brief": "借りた顔で会いに行く：本文と選択後の状態を確認し、その節で共通に見える対象を描く。",
-      "reviewStatus": "source_review_pending"
+      "nodeId": "06",
+      "placement": "指定節のみ。次の節でその節の画像へ戻る。",
+      "path": "assets/images/gb37-scene-06.webp",
+      "brief": "机を挟んで置かれた二つの茶碗と、奥で温まる薬缶。",
+      "reviewStatus": "visual_reviewed",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "alt": "机を挟んで置かれた二つの茶碗と、奥で温まる薬缶。",
+      "position": "center",
+      "constraints": "06節は借り顔のまま、開示前の一状態。人物の顔や反射、肖像の完成、署名を描かず、父の言葉を聞く時間を表す。初稿の手前向きの欠けを修正し、父側へ向けた欠けはこの視点では見せない。和解や名乗りの成立は先取りしない。"
     },
     {
       "id": "BGM-GB37",
@@ -2365,12 +2364,17 @@
       "role": "story",
       "storyId": "GB37",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb37.md",
       "placement": "作品の導入・全節・全結末。初期OFF、オンにした後にループ。",
       "path": "assets/audio/gb37-theme.ogg",
-      "brief": "借りた顔で会いに行く：全節・全結末に使える読書用の専用ループ曲。本文確認後に曲名・編成を決める。",
-      "reviewStatus": "source_review_pending"
+      "brief": "フェルト鍵盤と短い木管の応答を広く離し、帰郷して言葉を聞く時間を支える。顔の解除や和解の効果音、肖像完成の大団円を付けず、用事だけで帰る結末にも同じ余白を保つ。",
+      "reviewStatus": "technical_checks_passed_listening_pending",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "title": "茶碗のあいだ",
+      "bpm": 60
     },
     {
       "id": "IMG-GB38-COVER",
@@ -2378,26 +2382,38 @@
       "role": "story",
       "storyId": "GB38",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb38.md",
       "placement": "作品カード、導入、挿絵指定のない節。",
       "path": "assets/images/gb38-cover.webp",
-      "brief": "地図にない日曜日：導入と作者メモを読み、結果や変動する所持品を確定しない横長の作品イメージを作る。",
-      "reviewStatus": "source_review_pending"
+      "brief": "日曜の正午の橋と、海側・坂・運河沿いへ分かれる道。町の地図の看板は裏面を見せる。",
+      "reviewStatus": "visual_reviewed",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "alt": "日曜の正午の橋と、海側・坂・運河沿いへ分かれる道。町の地図の看板は裏面を見せる。",
+      "position": "center",
+      "constraints": "03節の今日の道が椅子の一状態。椅子は店先にあり、木陰へ運ぶ前。休業日の戸と日差しを示し、移動する鉢の中身や座った体験を先取りしない。表紙は正午で、夕方の再訪とは区別する。"
     },
     {
-      "id": "IMG-GB38-SCENE",
+      "id": "IMG-GB38-SCENE-03",
       "kind": "image",
       "role": "scene",
       "storyId": "GB38",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb38.md",
-      "nodeId": null,
-      "placement": "本文と全到達状態を照合して節を選ぶ。現段階は未選定。",
-      "path": null,
-      "brief": "地図にない日曜日：本文と選択後の状態を確認し、その節で共通に見える対象を描く。",
-      "reviewStatus": "source_review_pending"
+      "nodeId": "03",
+      "placement": "指定節のみ。次の節でその節の画像へ戻る。",
+      "path": "assets/images/gb38-scene-03.webp",
+      "brief": "理髪店の外の緩い坂に置かれた、丸い背もたれと肘掛けのある椅子。後ろ脚の下に折った厚紙。",
+      "reviewStatus": "visual_reviewed",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "alt": "理髪店の外の緩い坂に置かれた、丸い背もたれと肘掛けのある椅子。後ろ脚の下に折った厚紙。",
+      "position": "center",
+      "constraints": "03節の今日の道が椅子の一状態。椅子は店先にあり、木陰へ運ぶ前。休業日の戸と日差しを示し、移動する鉢の中身や座った体験を先取りしない。表紙は正午で、夕方の再訪とは区別する。"
     },
     {
       "id": "BGM-GB38",
@@ -2405,12 +2421,17 @@
       "role": "story",
       "storyId": "GB38",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb38.md",
       "placement": "作品の導入・全節・全結末。初期OFF、オンにした後にループ。",
       "path": "assets/audio/gb38-theme.ogg",
-      "brief": "地図にない日曜日：全節・全結末に使える読書用の専用ループ曲。本文確認後に曲名・編成を決める。",
-      "reviewStatus": "source_review_pending"
+      "brief": "短い撥弦とマリンバに木管が返す軽い散歩の曲。凧・椅子・運河のどの午後にも使え、瓶の三音や五時の合図を再現しない。遠回りや描かずに帰る選択も急がせない。",
+      "reviewStatus": "technical_checks_passed_listening_pending",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "title": "日曜の歩幅",
+      "bpm": 80
     },
     {
       "id": "IMG-GB39-COVER",
@@ -2418,26 +2439,38 @@
       "role": "story",
       "storyId": "GB39",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb39.md",
       "placement": "作品カード、導入、挿絵指定のない節。",
       "path": "assets/images/gb39-cover.webp",
-      "brief": "栄光を食べる獣：導入と作者メモを読み、結果や変動する所持品を確定しない横長の作品イメージを作る。",
-      "reviewStatus": "source_review_pending"
+      "brief": "凱旋車の大きな車輪、連動する鞴と七本の管。木彫りの獣の顔は画面端に一部だけ見える。",
+      "reviewStatus": "visual_reviewed",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "alt": "凱旋車の大きな車輪、連動する鞴と七本の管。木彫りの獣の顔は画面端に一部だけ見える。",
+      "position": "center",
+      "constraints": "05節の名札が裏・表の二状態で成立する。獣は犬に似た四足で金色なのは鼻と吐息。拍手を食べるが、楽器や歓声・記憶を食べる表現は加えない。名札、英雄の位置、車の飾り、破損、縮みきった結末を描かない。"
     },
     {
-      "id": "IMG-GB39-SCENE",
+      "id": "IMG-GB39-SCENE-05",
       "kind": "image",
       "role": "scene",
       "storyId": "GB39",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb39.md",
-      "nodeId": null,
-      "placement": "本文と全到達状態を照合して節を選ぶ。現段階は未選定。",
-      "path": null,
-      "brief": "栄光を食べる獣：本文と選択後の状態を確認し、その節で共通に見える対象を描く。",
-      "reviewStatus": "source_review_pending"
+      "nodeId": "05",
+      "placement": "指定節のみ。次の節でその節の画像へ戻る。",
+      "path": "assets/images/gb39-scene-05.webp",
+      "brief": "通りに立ち、前脚を伸ばして金色の鼻から息を吐く大きな獣。腹は丸く、牙をむかない。",
+      "reviewStatus": "visual_reviewed",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "alt": "通りに立ち、前脚を伸ばして金色の鼻から息を吐く大きな獣。腹は丸く、牙をむかない。",
+      "position": "center",
+      "constraints": "05節の名札が裏・表の二状態で成立する。獣は犬に似た四足で金色なのは鼻と吐息。拍手を食べるが、楽器や歓声・記憶を食べる表現は加えない。名札、英雄の位置、車の飾り、破損、縮みきった結末を描かない。"
     },
     {
       "id": "BGM-GB39",
@@ -2445,12 +2478,17 @@
       "role": "story",
       "storyId": "GB39",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb39.md",
       "placement": "作品の導入・全節・全結末。初期OFF、オンにした後にループ。",
       "path": "assets/audio/gb39-theme.ogg",
-      "brief": "栄光を食べる獣：全節・全結末に使える読書用の専用ループ曲。本文確認後に曲名・編成を決める。",
-      "reviewStatus": "source_review_pending"
+      "brief": "丸い低音と電気鍵盤を基調に、クラリネットの短句をずらして重ねる。祭りの楽しさと工房の手仕事を支え、拍手・呼吸・七本目の管を実際の合図として鳴らさない。静かな撤収や翌朝の修理にも余白を残す。",
+      "reviewStatus": "technical_checks_passed_listening_pending",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "title": "七つの仕事の隣で",
+      "bpm": 84
     },
     {
       "id": "IMG-GB40-COVER",
@@ -2458,26 +2496,38 @@
       "role": "story",
       "storyId": "GB40",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb40.md",
       "placement": "作品カード、導入、挿絵指定のない節。",
       "path": "assets/images/gb40-cover.webp",
-      "brief": "最後の頁を盗んだ子：導入と作者メモを読み、結果や変動する所持品を確定しない横長の作品イメージを作る。",
-      "reviewStatus": "source_review_pending"
+      "brief": "製本机の開いた絵本に描かれた夜の海と光る石の灯台。机には糸巻きと道具、紙の束。",
+      "reviewStatus": "visual_reviewed",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "alt": "製本机の開いた絵本に描かれた夜の海と光る石の灯台。机には糸巻きと道具、紙の束。",
+      "position": "center",
+      "constraints": "02節の朝の下絵取得後の一状態。朝の舟に人を乗せず、未使用の案を祖父の最終意図やミオの旅の達成としない。文字のある余白は重なりで画面外に置く。灯台の光源は石で、火や現実へ出た人物を加えない。"
     },
     {
-      "id": "IMG-GB40-SCENE",
+      "id": "IMG-GB40-SCENE-02",
       "kind": "image",
       "role": "scene",
       "storyId": "GB40",
       "priority": "P2",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb40.md",
-      "nodeId": null,
-      "placement": "本文と全到達状態を照合して節を選ぶ。現段階は未選定。",
-      "path": null,
-      "brief": "最後の頁を盗んだ子：本文と選択後の状態を確認し、その節で共通に見える対象を描く。",
-      "reviewStatus": "source_review_pending"
+      "nodeId": "02",
+      "placement": "指定節のみ。次の節でその節の画像へ戻る。",
+      "path": "assets/images/gb40-scene-02.webp",
+      "brief": "開いた道具箱の手前に並ぶ灯台の下絵三枚。二枚は夜で窓の大きさが異なり、三枚目は朝と空の小舟。",
+      "reviewStatus": "visual_reviewed",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "alt": "開いた道具箱の手前に並ぶ灯台の下絵三枚。二枚は夜で窓の大きさが異なり、三枚目は朝と空の小舟。",
+      "position": "center",
+      "constraints": "02節の朝の下絵取得後の一状態。朝の舟に人を乗せず、未使用の案を祖父の最終意図やミオの旅の達成としない。文字のある余白は重なりで画面外に置く。灯台の光源は石で、火や現実へ出た人物を加えない。"
     },
     {
       "id": "BGM-GB40",
@@ -2485,12 +2535,17 @@
       "role": "story",
       "storyId": "GB40",
       "priority": "P1",
-      "status": "planned",
+      "status": "installed",
       "source": "doc/drafts/gb21-40/gb40.md",
       "placement": "作品の導入・全節・全結末。初期OFF、オンにした後にループ。",
       "path": "assets/audio/gb40-theme.ogg",
-      "brief": "最後の頁を盗んだ子：全節・全結末に使える読書用の専用ループ曲。本文確認後に曲名・編成を決める。",
-      "reviewStatus": "source_review_pending"
+      "brief": "フェルト鍵盤と柔らかな倍音に、木管から電気鍵盤へ受け渡す旋律を置く。元の頁の記憶と新しい線を並べ、灯台の光や本を閉じる動作を効果音にしない。休息・帰還・遠い港・共同制作の全結末を支える。",
+      "reviewStatus": "technical_checks_passed_listening_pending",
+      "installedDate": "2026-10-24",
+      "productionBatch": 16,
+      "productionRecord": "doc/SHORTS_21_40_ASSETS.md",
+      "title": "余白につながる海",
+      "bpm": 64
     }
   ],
   "artDirection": {
@@ -2507,14 +2562,14 @@
     "runtimeInstalled": true
   },
   "progress": {
-    "installedImages": 85,
-    "installedMusic": 40,
-    "installedTotal": 125,
-    "remainingImages": 8,
-    "remainingMusic": 4,
-    "remainingTotal": 12,
-    "remainingCoreP1": 8,
-    "remainingSceneP2": 4
+    "installedImages": 93,
+    "installedMusic": 44,
+    "installedTotal": 137,
+    "remainingImages": 0,
+    "remainingMusic": 0,
+    "remainingTotal": 0,
+    "remainingCoreP1": 0,
+    "remainingSceneP2": 0
   },
   "plannedCounts": {
     "images": 93,
@@ -2522,8 +2577,8 @@
     "total": 137
   },
   "remainingCounts": {
-    "images": 8,
-    "music": 4,
-    "total": 12
+    "images": 0,
+    "music": 0,
+    "total": 0
   }
 }
