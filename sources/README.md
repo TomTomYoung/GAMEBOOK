@@ -89,3 +89,16 @@ python scripts/render-music.py --only gb25-theme gb26-theme gb27-theme gb28-them
 ```
 
 配置・本文との照合・測定値は[新短編の素材記録](../doc/SHORTS_21_40_ASSETS.md)を参照してください。既存89素材は保持しています。耳による確認は未実施です。
+
+## 第14回：GB29〜GB32（2026-10-24）
+
+4作へ表紙・挿絵・BGMを各1点追加しました。`images/gb29-*`〜`gb32-*`に採用PNG・未採用初稿・英語の生成と修正プロンプト全文があります。GB31表紙の中間稿も保存しています。組込みimagegenで生成し、採用Aを参照して色面を整理しました。原寸・縦横比を保持してWebPへ変換しています。
+
+音符と編成は `audio/compose-batch-14.py` と各score.jsonにあります。
+
+```sh
+python sources/audio/compose-batch-14.py
+python scripts/render-music.py --only gb29-theme gb30-theme gb31-theme gb32-theme
+```
+
+配置・本文との照合・測定値は[新短編の素材記録](../doc/SHORTS_21_40_ASSETS.md)を参照してください。既存101素材は保持しています。耳による確認は未実施です。

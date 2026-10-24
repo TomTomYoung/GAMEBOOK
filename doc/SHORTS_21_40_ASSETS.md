@@ -1,14 +1,14 @@
 # GB21〜GB40の絵と音楽
 
-**2026-10-24：GB21〜GB28の24素材を導入済みです。GB29〜GB40の36素材は未制作です。** 全20作で表紙20点・挿絵20点・BGM20曲を制作する計画です。全作品のゲーム本体は実装済みです。
+**2026-10-24：GB21〜GB32の36素材を導入済みです。GB33〜GB40の24素材は未制作です。** 全20作で表紙20点・挿絵20点・BGM20曲を制作する計画です。全作品のゲーム本体は実装済みです。
 
-共通本棚・既存作品を含む全体では、画像69点・BGM32曲、計101点を導入済みです。制作台帳は[asset-plan.json](asset-plan.json)、配置は[実行用マニフェスト](../assets/manifest.json)です。`counts`は導入済み、`plannedCounts`は計画全体、`remainingCounts`は未制作を示します。
+共通本棚・既存作品を含む全体では、画像77点・BGM36曲、計113点を導入済みです。制作台帳は[asset-plan.json](asset-plan.json)、配置は[実行用マニフェスト](../assets/manifest.json)です。`counts`は導入済み、`plannedCounts`は計画全体、`remainingCounts`は未制作を示します。
 
 ## 表示と音楽
 
 表紙は本棚・導入・挿絵指定のない節に表示します。挿絵は指定節だけで切り替え、音楽はそのまま継続します。小さい横画面では従来どおり本文を優先します。音楽は初期OFFです。本文・選択肢・結末・記録形式は変更していません。
 
-## 導入済みの8作
+## 導入済みの12作
 
 ### GB21 百足椅子の晩餐
 
@@ -118,17 +118,75 @@
 
 **本文との照合**：水平な庭と連続する透明な風壁を保ち、安全な交通機関として描く。表紙の椅子は隣り合う二脚。挿絵は降下中で受け台が遠く、理由を話したかどうかに依存する人物の行動や関係の結末を固定しない。
 
+### GB29 ひと晩だけの悪役
+
+[本文](drafts/gb21-40/gb29.md)
+
+- **[表紙](../assets/images/gb29-cover.webp)**（`IMG-GB29-COVER`）：夜冠祭の支度をする場所。赤い裏地の黒マント、黒帽子、三つの尖りを持つ金塗りの木の冠と赤い腕章。
+  [採用PNG](../sources/images/gb29-cover-a.png)・[未採用初稿](../sources/images/gb29-cover-draft.png)・[英語プロンプト全文](../sources/images/gb29-cover.prompt.txt)。1586×992px、WebP 164,006 bytes。
+
+- **[11「鐘まで七歩」](../assets/images/gb29-scene-11.webp)**（`IMG-GB29-SCENE-11`）：夜の荷車置き場に下がる黒い鐘。手前には二つの空の布枠があり、周囲を回れる床が空いている。
+  [採用PNG](../sources/images/gb29-scene-11-a.png)・[未採用初稿](../sources/images/gb29-scene-11-draft.png)・[英語プロンプト全文](../sources/images/gb29-scene-11.prompt.txt)。1585×992px、WebP 192,382 bytes。
+
+**BGM：[黒い鐘の七歩](../assets/audio/gb29-theme.ogg)**（`BGM-GB29`）。84 BPM・91.43秒。音符と編成は[score.json](../sources/audio/gb29-theme.score.json)。-17.95 LUFS-I、true peak -8.16 dBTP、744,357 bytes。
+
+**本文との照合**：木の冠の尖りは三つ、赤い裏地と腕章を保持。挿絵の空の布枠は二つ、鐘の綱は地面から届く位置。名乗り・捕縛・鐘を鳴らす勝敗を絵で固定しない。
+
+### GB30 牙のない獣の冬
+
+[本文](drafts/gb21-40/gb30.md)
+
+- **[表紙](../assets/images/gb30-cover.webp)**（`IMG-GB30-COVER`）：吹雪の山小屋へ入る老いた灰色の岩犬ムク。白い頬、低い腰、首輪と金具、暖かな炉の光。
+  [採用PNG](../sources/images/gb30-cover-a.png)・[未採用初稿](../sources/images/gb30-cover-draft.png)・[英語プロンプト全文](../sources/images/gb30-cover.prompt.txt)。1587×991px、WebP 205,820 bytes。
+
+- **[08「二つの器」](../assets/images/gb30-scene-08.webp)**（`IMG-GB30-SCENE-08`）：山小屋の炉にかかる鍋と、夕食をよそう前の空の椀と皿。片方の縁には小さな欠けがある。
+  [採用PNG](../sources/images/gb30-scene-08-a.png)・[未採用初稿](../sources/images/gb30-scene-08-draft.png)・[英語プロンプト全文](../sources/images/gb30-scene-08.prompt.txt)。1586×992px、WebP 133,208 bytes。
+
+**BGM：[炉のそばの二つの器](../assets/audio/gb30-theme.ogg)**（`BGM-GB30`）。60 BPM・96.00秒。音符と編成は[score.json](../sources/audio/gb30-theme.score.json)。-17.95 LUFS-I、true peak -8.94 dBTP、756,515 bytes。
+
+**本文との照合**：ムクは老いた灰色の荷獣として描き、若い個体や救出後の回復にしない。挿絵は配膳前の空の器二つに絞り、準備・残り食料・薪・給餌回数を固定しない。皿の印は裏側のため見せない。
+
+### GB31 燃えない手紙を燃やす日
+
+[本文](drafts/gb21-40/gb31.md)
+
+- **[表紙](../assets/images/gb31-cover.webp)**（`IMG-GB31-COVER`）：庭の見える昼の台所。斜めの食卓、空いた母の木の椅子、四つ折りの手紙。
+  [採用PNG](../sources/images/gb31-cover-a.png)・[未採用初稿](../sources/images/gb31-cover-draft.png)・[英語プロンプト全文](../sources/images/gb31-cover.prompt.txt)。1586×992px、WebP 185,794 bytes。
+
+- **[02「火のつかない端」](../assets/images/gb31-scene-02.webp)**（`IMG-GB31-SCENE-02`）：朝の炉のそばの鍋敷きに戻した、燃えずに残る火守り紙の手紙。白い縁に赤い光が映る。
+  [採用PNG](../sources/images/gb31-scene-02-a.png)・[未採用初稿](../sources/images/gb31-scene-02-draft.png)・[英語プロンプト全文](../sources/images/gb31-scene-02.prompt.txt)。1586×992px、WebP 140,684 bytes。
+
+**BGM：[折り目の隣に](../assets/audio/gb31-theme.ogg)**（`BGM-GB31`）。64 BPM・90.00秒。音符と編成は[score.json](../sources/audio/gb31-theme.score.json)。-17.95 LUFS-I、true peak -7.93 dBTP、356,881 bytes。
+
+**本文との照合**：手紙は封筒ではなく折り畳んだ紙。挿絵では原本を傷めず、字を絵の必須情報にしない。家庭炉で燃やした原本や、後の家具移動・告白・処分結果を描かない。
+
+### GB32 砂漠の競売人
+
+[本文](drafts/gb21-40/gb32.md)
+
+- **[表紙](../assets/images/gb32-cover.webp)**（`IMG-GB32-COVER`）：昼の砂漠の市場にある荷車一台の茶屋。茶釜、布の日除け、三脚の木の椅子。
+  [採用PNG](../sources/images/gb32-cover-a.png)・[未採用初稿](../sources/images/gb32-cover-draft.png)・[英語プロンプト全文](../sources/images/gb32-cover.prompt.txt)。1586×992px、WebP 200,964 bytes。
+
+- **[02「庭の裏側」](../assets/images/gb32-scene-02.webp)**（`IMG-GB32-SCENE-02`）：競売台の折り庭。大木と三つの石の腰掛け、独立した小鉢、めくった敷物の裏に三つの丸い印。
+  [採用PNG](../sources/images/gb32-scene-02-a.png)・[未採用初稿](../sources/images/gb32-scene-02-draft.png)・[英語プロンプト全文](../sources/images/gb32-scene-02.prompt.txt)。1586×992px、WebP 215,400 bytes。
+
+**BGM：[木陰をひらく茶](../assets/audio/gb32-theme.ogg)**（`BGM-GB32`）。80 BPM・96.00秒。音符と編成は[score.json](../sources/audio/gb32-theme.score.json)。-17.94 LUFS-I、true peak -10.29 dBTP、795,232 bytes。
+
+**本文との照合**：茶屋の椅子と庭の石の腰掛けは各三つ。親木一つと独立した小鉢一つ、敷物の裏の丸印三つを保持。通常の昼の木陰として描き、庭の落札者・小鉢譲渡・残金を先取りしない。
+
 ## 画像の採用と原本
 
 第12回では組込みimagegenで8点を生成し、各初稿と採用Aを参照して色面・輪郭・陰影を整理しました。GB23表紙では、本文の着衣と混同しやすい窓内の灰色シャツを戸棚へ置き換えました。GB22挿絵では内側の固雪の段を明確にし、外側の氷の細かな亀裂を整理しました。GB24挿絵の音管は三本であることを目視確認しました。
 
 第13回も8点を組込みimagegenで生成し、初稿と採用Aを参照して色面を整理しました。GB25表紙は昼の光へ修正し、GB26挿絵は王冠の針金とやかんの開いた底、GB27挿絵は三門の配置と伏せた札上の門番を確認しました。GB28表紙は本文の隣の椅子に合わせて二脚を並べました。
 
-原寸・縦横比を保持したままWebP化し、機械的な縮小・拡大・減色はしていません。PNGとWebPの寸法・デコード・不透明性・容量を確認し、SHA-256は[原本台帳](../sources/images/manifest.json)に保存しています。A・B・Cの参照画像、第13回追加前の既存89素材の配布物は保持しています。
+第14回も8点を組込みimagegenで生成し、初稿と採用Aを参照して色面・輪郭を整理しました。GB29の冠は三つの尖り、空の布枠は二つ。GB30は配膳前の器二つを確認し、皿の裏の印は見せていません。GB31の手紙を封筒から四つ折りの紙へ修正しました。[表紙の中間稿](../sources/images/gb31-cover-intermediate.png)も保存しています。GB32は椅子・腰掛け・折る印の三つずつと、独立した小鉢を確認しました。
+
+原寸・縦横比を保持したままWebP化し、機械的な縮小・拡大・減色はしていません。PNGとWebPの寸法・デコード・不透明性・容量を確認し、SHA-256は[原本台帳](../sources/images/manifest.json)に保存しています。A・B・Cの参照画像、第14回追加前の既存101素材の配布物は保持しています。
 
 ## 音楽の制作
 
-作品ごとに新しい旋律と伴奏を書き、既存の加算合成音色で制作しました。第12回の構成元は[compose-batch-12.py](../sources/audio/compose-batch-12.py)、通常の再生成元は4個のscore.jsonです。第13回は[compose-batch-13.py](../sources/audio/compose-batch-13.py)と4個のscore.jsonを追加しました。既存28曲の音符と配布音源は変更していません。
+作品ごとに新しい旋律と伴奏を書き、既存の加算合成音色で制作しました。第12回の構成元は[compose-batch-12.py](../sources/audio/compose-batch-12.py)、通常の再生成元は4個のscore.jsonです。第13回は[compose-batch-13.py](../sources/audio/compose-batch-13.py)と4個のscore.jsonを追加しました。第14回は[compose-batch-14.py](../sources/audio/compose-batch-14.py)と4個のscore.jsonを追加しました。既存32曲の音符と配布音源は変更していません。
 
 - GB21：二歩と休みの撥弦にクラリネットが応える舞曲。
 - GB22：均等な撥弦と木管による、雪面を滑るような流れ。
@@ -140,16 +198,17 @@
 - GB27：鍵盤と撥弦の短い問いと応答で、考える間を残す。
 - GB28：長い倍音と木管の旋律を柔らかな鍵盤へ渡し、静かな降下を保つ。
 
-全長・音量・true peak・有限値・容量・ループ境界を測定しました。[render-report.json](../sources/audio/render-report.json)に対象音源のハッシュと結果があります。聴感・圧縮品質・3周連続試聴は未実施です。[試聴ページ](audio-review.html)から32曲を確認できます。
+- GB29：撥弦とマリンバにクラリネットが応える、祭りの軽い足取り。
+- GB30：低音とフェルト鍵盤の間に木管を置く、冬の炉の穏やかな曲。
+- GB31：短く途切れる鍵盤の旋律で、言葉を待つ台所の間を残す。
+- GB32：撥弦・マリンバと木管で、昼の市場の会話を支える。
+
+全長・音量・true peak・有限値・容量・ループ境界を測定しました。[render-report.json](../sources/audio/render-report.json)に対象音源のハッシュと結果があります。聴感・圧縮品質・3周連続試聴は未実施です。[試聴ページ](audio-review.html)から36曲を確認できます。
 
 ## 次の制作対象
 
-**次はGB29〜GB32の12点です。** 以後も番号順に進みます。次の各作品に表紙1点・挿絵1点・BGM1曲を用意します。挿絵の節、曲名・編成は本文と作者メモを読んでから決定します。台帳の未選定の節・パスはnullで、実行用マニフェストへは未登録です。
+**次はGB33〜GB36の12点です。** 以後も番号順に進みます。次の各作品に表紙1点・挿絵1点・BGM1曲を用意します。挿絵の節、曲名・編成は本文と作者メモを読んでから決定します。台帳の未選定の節・パスはnullで、実行用マニフェストへは未登録です。
 
-- [GB29 ひと晩だけの悪役](drafts/gb21-40/gb29.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB30 牙のない獣の冬](drafts/gb21-40/gb30.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB31 燃えない手紙を燃やす日](drafts/gb21-40/gb31.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB32 砂漠の競売人](drafts/gb21-40/gb32.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB33 うたわない人魚の伴奏](drafts/gb21-40/gb33.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB34 逆さ城の落とし物](drafts/gb21-40/gb34.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB35 魔王の留守番](drafts/gb21-40/gb35.md)：表紙・挿絵・BGMの3点が未制作。
