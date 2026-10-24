@@ -131,7 +131,7 @@ async function useLegacyEdition(page, legacy) {
   // Substitute the old data as the classic bundle assigns it, then let the
   // next reload use the real bundle once the test enables the current edition.
   await page.addInitScript(legacy => {
-    if (window.name === 'gamebook.test.current-edition') return;
+    if (location.hash === '#gamebook-test-current-edition') return;
     Object.defineProperty(globalThis, 'GB_EDITIONS', {
       configurable: true,
       set(value) {
@@ -145,9 +145,9 @@ async function useLegacyEdition(page, legacy) {
 }
 
 async function reloadCurrentEdition(page, story) {
-  // Keep the fixture switch independent of file:// storage under test.
-  // window.name survives a same-document reload in all three browsers.
-  await page.evaluate(() => { window.name = 'gamebook.test.current-edition'; });
+  // The URL fragment survives file:// reloads without depending on storage or
+  // window.name, which WebKit clears for an opaque file origin.
+  await page.evaluate(() => { location.hash = 'gamebook-test-current-edition'; });
   await page.reload();
   await page.waitForSelector('html[data-gamebook-ready="true"]');
   assert.equal(await page.evaluate(id => window.GB_EDITIONS.find(entry => entry.story.id === id).story.revision,
