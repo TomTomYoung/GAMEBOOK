@@ -969,8 +969,8 @@ async function assertSceneImage(page, image) {
   assert.equal(await page.locator('#scene-art img').getAttribute('alt'), image.alt);
 }
 
-async function testSceneAssets() {
-  for (const story of stories) {
+async function testSceneAssets(collection = stories) {
+  for (const story of collection) {
     const media = assets.stories[story.id];
     for (const [nodeId, scene] of Object.entries(media.scenes || {})) {
       if (!scene.image) continue;
@@ -1157,7 +1157,7 @@ async function testNewShortStories() {
       await page.locator('#search-input').fill(story.id);
       assert.equal(await page.locator('.book-card').count(),1);
       assert.equal(await page.locator('.book-card').getAttribute('data-story-id'),story.id);
-      assert.equal(await page.locator('.book-card img').count(),0);
+      assert.equal(await page.locator('.book-card img').count(),assets.stories[story.id].image ? 1 : 0);
     }
     await page.locator('#search-input').fill('');
     await page.locator('#length-filter').selectOption('all');
@@ -1176,9 +1176,14 @@ async function testNewShortStories() {
       const page=await newPage(VIEWPORTS[0],seed,true);
       await openFromShelf(page,story.id);
       assert(await page.locator('#edition-select').isHidden());
-      assert(await page.locator('#music-button').isHidden());
-      assert.equal(await page.locator('#scene-art img').count(),0);
-      assert.equal(await page.locator('#scene-art .scene-number').textContent(),String(story.number));
+      const media=assets.stories[story.id];
+      assert.equal(await page.locator('#music-button').isHidden(),!media.music);
+      assert.equal(await page.evaluate(() => window.__gamebookAudio.length),0,'initial OFF must not load audio');
+      if(media.image) await assertSceneImage(page,media.image);
+      else {
+        assert.equal(await page.locator('#scene-art img').count(),0);
+        assert.equal(await page.locator('#scene-art .scene-number').textContent(),String(story.number));
+      }
       await readEveryPage(page,introText(story),`${story.id} intro`);
       await page.locator('[data-action="begin"]').click();await page.waitForTimeout(340);
       let session=E.createSession(story);
@@ -1260,7 +1265,11 @@ async function main() {
       await testStoryAssets(medium);
       await testMediumStories();
     }
-    if (suite === 'all' || suite === 'new-short') await testNewShortStories();
+    if (suite === 'all' || suite === 'new-short') {
+      await testStoryAssets(newShorts);
+      await testSceneAssets(newShorts);
+      await testNewShortStories();
+    }
   } finally {
     await browser.close();
     const report = { started, finished: new Date().toISOString(), url: URL, browser: BROWSER, platform: process.platform, browserVersion: version, viewports: VIEWPORTS, results, diagnostics, screenshots };

@@ -194,6 +194,42 @@
     "sha256": "3755c122f21f1bad361b8509f21ddf9b3a846d846e1a42dd82105e2eab4af4df"
   },
   {
+    "id": "GB21",
+    "storyTitle": "百足椅子の晩餐",
+    "src": "assets/audio/gb21-theme.ogg",
+    "title": "二歩と休みの晩餐",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "1ba95ebc12b996d51983d58e43b6def244bf92c93094f5a1a28e87063df519b7"
+  },
+  {
+    "id": "GB22",
+    "storyTitle": "雪原の二番手",
+    "src": "assets/audio/gb22-theme.ogg",
+    "title": "白樺の弧",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "9f4c684a508e9a18284bcb84d9677b80ae1427f269516c7aff87aa94328d89aa"
+  },
+  {
+    "id": "GB23",
+    "storyTitle": "あなたより先に帰った影",
+    "src": "assets/audio/gb23-theme.ogg",
+    "title": "先に灯った窓",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "87fd081fc0c057a2818df3cbe7791d284338efa4dbc8cb43cfb0487db647afa8"
+  },
+  {
+    "id": "GB24",
+    "storyTitle": "赤い傘の相棒",
+    "src": "assets/audio/gb24-theme.ogg",
+    "title": "同じ左を向く",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "e4c95a0b1043f10107a32b23c19091ade6b8d59ea075595883703e47f14fc507"
+  },
+  {
     "id": "M01",
     "storyTitle": "潮待ちの劇場",
     "src": "assets/audio/m01-theme.ogg",

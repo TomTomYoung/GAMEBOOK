@@ -592,24 +592,96 @@
       }
     },
     "GB21": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb21-cover.webp",
+        "alt": "食堂の百足椅子。細い木の脚を持つ空の椅子と銀器、床の丸パン。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb21-theme.ogg",
+        "title": "二歩と休みの晩餐",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb21-scene-06.webp",
+            "alt": "厨房の低い台に置いた、窯から出した洋梨の大パイと鉄板。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB22": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb22-cover.webp",
+        "alt": "青い帆、細い橇、救援綱。凍った入江から白樺の角へ続くコース。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb22-theme.ogg",
+        "title": "白樺の弧",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "04": {
+          "image": {
+            "src": "assets/images/gb22-scene-04.webp",
+            "alt": "白樺の根元を通る短い固雪の段と、長く回り込む滑らかな氷の外側。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB23": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb23-cover.webp",
+        "alt": "帰宅する家の明るい玄関と台所の窓。鍋の湯気と濡れた敷石。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb23-theme.ogg",
+        "title": "先に灯った窓",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "09": {
+          "image": {
+            "src": "assets/images/gb23-scene-09.webp",
+            "alt": "開いた小引出しの横に置いた木の舟。少し傾く帆柱を、新しい白い糸で支えている。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB24": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb24-cover.webp",
+        "alt": "川沿いの逆雨楼と鐘楼、中庭の赤い傘、上へ向かう水筋。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb24-theme.ogg",
+        "title": "同じ左を向く",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb24-scene-05.webp",
+            "alt": "葉のない銀の木の最下段にある閉じた檻。尾先の白い黒い鳥と、留め金の三本の音管。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB25": {
       "image": null,

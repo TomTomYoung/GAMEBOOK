@@ -1,0 +1,9 @@
+Use case: illustration-story.
+Asset type: landscape 8:5 gamebook scene illustration, opaque.
+Style: extremely simple chunky pixel art with the visual scale of a 200 by 125 pixel scene enlarged into a landscape image. Large solid color planes, flat graphic shapes, broad pixel clusters, eight coordinated colors, a base and a shadow per object, crisp stepped edges. Sparse large details. The single central subject remains readable at 176 by 110 pixels. Pure pictorial illustration, plain unmarked surfaces.
+Scene: a warm manor kitchen, a very large freshly baked pear pie on a dark rectangular iron baking tray resting on a low wooden work table. Translucent amber pear slices lie across the golden pastry, one small bubble of syrup glints between them. Thick folded handling cloths sit at the tray sides. Behind is the open mouth of a broad brick oven, and a plain small plate at the table edge. The pie is the main central shape and nearly fills the table. The kitchen scene consists of these food and cooking objects. Navy shadows, walnut wood, muted brick, rose brown, cream, gold and amber.
+
+Revision with the draft and approved A as image references:
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved style reference.
+Simplify image 1 to match the broad flat pixel-art planes and sparse stepped shading of image 2. Keep the original scene, original time of day, composition, objects and landscape aspect ratio of image 1. Use large solid color regions, coarse pixel clusters and a base plus shadow per surface. Group tiny stippled textures into flat shapes. The image remains an atmospheric pictorial illustration readable at 176 by 110 pixels. Keep the central pear pie on its iron tray, cloths, oven and plate. The pear slices become simple golden shapes with just a few broad syrup highlights.
