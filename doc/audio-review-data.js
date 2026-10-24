@@ -302,6 +302,42 @@
     "sha256": "8c7cd7140c6eb765f96342c34ff6f4b6e9e6378e1de924709c4c8fd0888f6c40"
   },
   {
+    "id": "GB33",
+    "storyTitle": "うたわない人魚の伴奏",
+    "src": "assets/audio/gb33-theme.ogg",
+    "title": "返事を置く水辺",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "830959fef17345b0f7d0e49c46cb411779b6d872a2b8e9673c175bee8a48ec16"
+  },
+  {
+    "id": "GB34",
+    "storyTitle": "逆さ城の落とし物",
+    "src": "assets/audio/gb34-theme.ogg",
+    "title": "手すりの曲がる先",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "ed1a412094f31420aacc09bd0a3278fd5e4fb6562b5eeec3a7535d4d76d60e63"
+  },
+  {
+    "id": "GB35",
+    "storyTitle": "魔王の留守番",
+    "src": "assets/audio/gb35-theme.ogg",
+    "title": "鍋が先に行く午後",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "65da4706b62010a9a02ead6315cea1dbff6e46bfecbd6e673f87121fcd77ea6f"
+  },
+  {
+    "id": "GB36",
+    "storyTitle": "雨の中で笑う鎧",
+    "src": "assets/audio/gb36-theme.ogg",
+    "title": "雨の広場で一歩",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "a14aa2eed5fcefc9df6667eff8550bd99167f9fbd192e2eae47172e81da005f8"
+  },
+  {
     "id": "M01",
     "storyTitle": "潮待ちの劇場",
     "src": "assets/audio/m01-theme.ogg",

@@ -1,14 +1,14 @@
 # GB21〜GB40の絵と音楽
 
-**2026-10-24：GB21〜GB32の36素材を導入済みです。GB33〜GB40の24素材は未制作です。** 全20作で表紙20点・挿絵20点・BGM20曲を制作する計画です。全作品のゲーム本体は実装済みです。
+**2026-10-24：GB21〜GB36の48素材を導入済みです。GB37〜GB40の12素材は未制作です。** 全20作で表紙20点・挿絵20点・BGM20曲を制作する計画です。全作品のゲーム本体は実装済みです。
 
-共通本棚・既存作品を含む全体では、画像77点・BGM36曲、計113点を導入済みです。制作台帳は[asset-plan.json](asset-plan.json)、配置は[実行用マニフェスト](../assets/manifest.json)です。`counts`は導入済み、`plannedCounts`は計画全体、`remainingCounts`は未制作を示します。
+共通本棚・既存作品を含む全体では、画像85点・BGM40曲、計125点を導入済みです。制作台帳は[asset-plan.json](asset-plan.json)、配置は[実行用マニフェスト](../assets/manifest.json)です。`counts`は導入済み、`plannedCounts`は計画全体、`remainingCounts`は未制作を示します。
 
 ## 表示と音楽
 
 表紙は本棚・導入・挿絵指定のない節に表示します。挿絵は指定節だけで切り替え、音楽はそのまま継続します。小さい横画面では従来どおり本文を優先します。音楽は初期OFFです。本文・選択肢・結末・記録形式は変更していません。
 
-## 導入済みの12作
+## 導入済みの16作
 
 ### GB21 百足椅子の晩餐
 
@@ -174,6 +174,62 @@
 
 **本文との照合**：茶屋の椅子と庭の石の腰掛けは各三つ。親木一つと独立した小鉢一つ、敷物の裏の丸印三つを保持。通常の昼の木陰として描き、庭の落札者・小鉢譲渡・残金を先取りしない。
 
+### GB33 うたわない人魚の伴奏
+
+[本文](drafts/gb21-40/gb33.md)
+
+- **[表紙](../assets/images/gb33-cover.webp)**（`IMG-GB33-COVER`）：昼の入り江に面した桟橋の足踏みオルガンと腰掛け。鍵盤と二つの踏板、水辺の演奏板。
+  [採用PNG](../sources/images/gb33-cover-a.png)・[未採用初稿](../sources/images/gb33-cover-draft.png)・[英語プロンプト全文](../sources/images/gb33-cover.prompt.txt)。1585×992px、WebP 214,226 bytes。
+
+- **[05「石の名前」](../assets/images/gb33-scene-05.webp)**（`IMG-GB33-SCENE-05`）：浅瀬の演奏板に離して置いた黒・白・赤の石と、桟橋の下の空洞。
+  [採用PNG](../sources/images/gb33-scene-05-a.png)・[未採用初稿](../sources/images/gb33-scene-05-draft.png)・[英語プロンプト全文](../sources/images/gb33-scene-05.prompt.txt)。1586×992px、WebP 138,836 bytes。
+
+**BGM：[返事を置く水辺](../assets/audio/gb33-theme.ogg)**（`BGM-GB33`）。64 BPM・90.00秒。音符と編成は[score.json](../sources/audio/gb33-theme.score.json)。-17.95 LUFS-I、true peak -8.34 dBTP、539,125 bytes。
+
+**本文との照合**：初期の石三つを確認。追加の白石を受け取る前の05節だけに配置する。赤石は中央へ置かず、停止を既成事実にしない。歌唱・治癒・演目の合意を描かず、ネル自身の音への関心と主人公の旋律の双方を尊重する。
+
+### GB34 逆さ城の落とし物
+
+[本文](drafts/gb21-40/gb34.md)
+
+- **[表紙](../assets/images/gb34-cover.webp)**（`IMG-GB34-COVER`）：床の室内履き棚、天井側に靴底を付ける四つの長靴、輪付きの連続した手すり。
+  [採用PNG](../sources/images/gb34-cover-a.png)・[未採用初稿](../sources/images/gb34-cover-draft.png)・[英語プロンプト全文](../sources/images/gb34-cover.prompt.txt)。1585×992px、WebP 176,824 bytes。
+
+- **[06「右上の球」](../assets/images/gb34-scene-06.webp)**（`IMG-GB34-SCENE-06`）：荷送り窓の右上に付く真鍮の球と上枠の羽根。右壁から伸びる棚、左の隙間、左下の空の受け皿。
+  [採用PNG](../sources/images/gb34-scene-06-a.png)・[未採用初稿](../sources/images/gb34-scene-06-draft.png)・[英語プロンプト全文](../sources/images/gb34-scene-06.prompt.txt)。1585×992px、WebP 77,732 bytes。
+
+**BGM：[手すりの曲がる先](../assets/audio/gb34-theme.ogg)**（`BGM-GB34`）。80 BPM・96.00秒。音符と編成は[score.json](../sources/audio/gb34-theme.score.json)。-17.95 LUFS-I、true peak -8.78 dBTP、762,524 bytes。
+
+**本文との照合**：球は一つで右上。棚は右壁から水平に伸び、左壁との間に球が通る隙間がある。上枠は連続し、下枠は左下の出口へ傾く。操作順や正解の矢印を加えず、人物と取っ手は画面外に置く。同行の一人・ミナと二人の双方で成立する。
+
+### GB35 魔王の留守番
+
+[本文](drafts/gb21-40/gb35.md)
+
+- **[表紙](../assets/images/gb35-cover.webp)**（`IMG-GB35-COVER`）：午後の魔王の家。大きな玄関扉、庇、脇の椅子、庭先の荷車がある日常的な住まい。
+  [採用PNG](../sources/images/gb35-cover-a.png)・[未採用初稿](../sources/images/gb35-cover-draft.png)・[英語プロンプト全文](../sources/images/gb35-cover.prompt.txt)。1585×992px、WebP 258,792 bytes。
+
+- **[14「廊下の行進」](../assets/images/gb35-scene-14.webp)**（`IMG-GB35-SCENE-14`）：廊下でモフの前に止まる赤い鍋。鍋の短い脚は二本、モフは目と短い脚のある敷物。
+  [採用PNG](../sources/images/gb35-scene-14-a.png)・[未採用初稿](../sources/images/gb35-scene-14-draft.png)・[英語プロンプト全文](../sources/images/gb35-scene-14.prompt.txt)。1586×992px、WebP 155,124 bytes。
+
+**BGM：[鍋が先に行く午後](../assets/audio/gb35-theme.ogg)**（`BGM-GB35`）。84 BPM・91.43秒。音符と編成は[score.json](../sources/audio/gb35-theme.score.json)。-17.95 LUFS-I、true peak -7.84 dBTP、740,441 bytes。
+
+**本文との照合**：鍋がまだ混ぜられていない14節にだけ配置する。二本の脚と乾いた床を確認。匙はトトの手にあるため画面外とし、蓋に載せた初稿を修正した。方針で変わる客・クッション・布巾・札は描かず、迎える・手伝う・玄関の三状態で成立する。火災・破損・勝敗を付け足さない。
+
+### GB36 雨の中で笑う鎧
+
+[本文](drafts/gb21-40/gb36.md)
+
+- **[表紙](../assets/images/gb36-cover.webp)**（`IMG-GB36-COVER`）：雨の広場の敷物と赤旗、裏面を見せた看板、刃先を丸めた貸剣。
+  [採用PNG](../sources/images/gb36-cover-a.png)・[未採用初稿](../sources/images/gb36-cover-draft.png)・[英語プロンプト全文](../sources/images/gb36-cover.prompt.txt)。1584×993px、WebP 269,940 bytes。
+
+- **[09「負け役はいらない」](../assets/images/gb36-scene-09.webp)**（`IMG-GB36-SCENE-09`）：敷物の上で刃先を丸めた剣を下げて構える黒鉄ジェロ。奥に賞金箱と赤旗、端の目安線。
+  [採用PNG](../sources/images/gb36-scene-09-a.png)・[未採用初稿](../sources/images/gb36-scene-09-draft.png)・[英語プロンプト全文](../sources/images/gb36-scene-09.prompt.txt)。1585×992px、WebP 210,976 bytes。
+
+**BGM：[雨の広場で一歩](../assets/audio/gb36-theme.ogg)**（`BGM-GB36`）。64 BPM・90.00秒。音符と編成は[score.json](../sources/audio/gb36-theme.score.json)。-17.95 LUFS-I、true peak -9.02 dBTP、658,255 bytes。
+
+**本文との照合**：ジェロは自律する鎧として描き、人の顔を入れない。肩・肘・膝がつながり、右足を前に置く。目安線を新しい勝敗条件にせず、破損・転倒・賞金獲得・共演の成立を先取りしない。「間」の有無の二状態で成立する。看板と旗の本文はゲームの文章で読む。
+
 ## 画像の採用と原本
 
 第12回では組込みimagegenで8点を生成し、各初稿と採用Aを参照して色面・輪郭・陰影を整理しました。GB23表紙では、本文の着衣と混同しやすい窓内の灰色シャツを戸棚へ置き換えました。GB22挿絵では内側の固雪の段を明確にし、外側の氷の細かな亀裂を整理しました。GB24挿絵の音管は三本であることを目視確認しました。
@@ -182,11 +238,13 @@
 
 第14回も8点を組込みimagegenで生成し、初稿と採用Aを参照して色面・輪郭を整理しました。GB29の冠は三つの尖り、空の布枠は二つ。GB30は配膳前の器二つを確認し、皿の裏の印は見せていません。GB31の手紙を封筒から四つ折りの紙へ修正しました。[表紙の中間稿](../sources/images/gb31-cover-intermediate.png)も保存しています。GB32は椅子・腰掛け・折る印の三つずつと、独立した小鉢を確認しました。
 
-原寸・縦横比を保持したままWebP化し、機械的な縮小・拡大・減色はしていません。PNGとWebPの寸法・デコード・不透明性・容量を確認し、SHA-256は[原本台帳](../sources/images/manifest.json)に保存しています。A・B・Cの参照画像、第14回追加前の既存101素材の配布物は保持しています。
+第15回も組込みimagegenで8点を生成し、初稿と採用Aを参照して色面・輪郭を整理しました。GB33は三つの石、GB34は天井側の四つの長靴の向きと窓内の棚・隙間を照合。GB35は鍋の二本脚を保ち、14節ではトトが持つ匙を蓋の上から除きました。GB36は敷物を明示し、無傷の鎧と丸めた貸剣を確認しました。
+
+原寸・縦横比を保持したままWebP化し、機械的な縮小・拡大・減色はしていません。PNGとWebPの寸法・デコード・不透明性・容量を確認し、SHA-256は[原本台帳](../sources/images/manifest.json)に保存しています。A・B・Cの参照画像、第15回追加前の既存113素材の配布物は保持しています。
 
 ## 音楽の制作
 
-作品ごとに新しい旋律と伴奏を書き、既存の加算合成音色で制作しました。第12回の構成元は[compose-batch-12.py](../sources/audio/compose-batch-12.py)、通常の再生成元は4個のscore.jsonです。第13回は[compose-batch-13.py](../sources/audio/compose-batch-13.py)と4個のscore.jsonを追加しました。第14回は[compose-batch-14.py](../sources/audio/compose-batch-14.py)と4個のscore.jsonを追加しました。既存32曲の音符と配布音源は変更していません。
+作品ごとに新しい旋律と伴奏を書き、既存の加算合成音色で制作しました。第12回の構成元は[compose-batch-12.py](../sources/audio/compose-batch-12.py)、通常の再生成元は4個のscore.jsonです。第13回は[compose-batch-13.py](../sources/audio/compose-batch-13.py)と4個のscore.jsonを追加しました。第14回は[compose-batch-14.py](../sources/audio/compose-batch-14.py)と4個のscore.jsonを追加しました。第15回は[compose-batch-15.py](../sources/audio/compose-batch-15.py)と4個のscore.jsonを追加しました。既存36曲の音符と配布音源は変更していません。
 
 - GB21：二歩と休みの撥弦にクラリネットが応える舞曲。
 - GB22：均等な撥弦と木管による、雪面を滑るような流れ。
@@ -203,16 +261,17 @@
 - GB31：短く途切れる鍵盤の旋律で、言葉を待つ台所の間を残す。
 - GB32：撥弦・マリンバと木管で、昼の市場の会話を支える。
 
-全長・音量・true peak・有限値・容量・ループ境界を測定しました。[render-report.json](../sources/audio/render-report.json)に対象音源のハッシュと結果があります。聴感・圧縮品質・3周連続試聴は未実施です。[試聴ページ](audio-review.html)から36曲を確認できます。
+- GB33：短い鍵盤と木管が余白を渡し合い、石・水・停止合図を模倣しない。
+- GB34：撥弦と木管の上下する旋律で観察を支え、操作順を指示しない。
+- GB35：丸い低音とマリンバ、クラリネットで家事の喜劇を支える。
+- GB36：穏やかな鍵盤と木管で雨の勝負を支え、勝敗の合図を加えない。
+
+全長・音量・true peak・有限値・容量・ループ境界を測定しました。[render-report.json](../sources/audio/render-report.json)に対象音源のハッシュと結果があります。聴感・圧縮品質・3周連続試聴は未実施です。[試聴ページ](audio-review.html)から40曲を確認できます。
 
 ## 次の制作対象
 
-**次はGB33〜GB36の12点です。** 以後も番号順に進みます。次の各作品に表紙1点・挿絵1点・BGM1曲を用意します。挿絵の節、曲名・編成は本文と作者メモを読んでから決定します。台帳の未選定の節・パスはnullで、実行用マニフェストへは未登録です。
+**次はGB37〜GB40の12点です。** 以後も番号順に進みます。次の各作品に表紙1点・挿絵1点・BGM1曲を用意します。挿絵の節、曲名・編成は本文と作者メモを読んでから決定します。台帳の未選定の節・パスはnullで、実行用マニフェストへは未登録です。
 
-- [GB33 うたわない人魚の伴奏](drafts/gb21-40/gb33.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB34 逆さ城の落とし物](drafts/gb21-40/gb34.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB35 魔王の留守番](drafts/gb21-40/gb35.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB36 雨の中で笑う鎧](drafts/gb21-40/gb36.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB37 借りた顔で会いに行く](drafts/gb21-40/gb37.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB38 地図にない日曜日](drafts/gb21-40/gb38.md)：表紙・挿絵・BGMの3点が未制作。
 - [GB39 栄光を食べる獣](drafts/gb21-40/gb39.md)：表紙・挿絵・BGMの3点が未制作。
@@ -220,4 +279,4 @@
 
 ## 検証と引継ぎ
 
-[現在の検証記録](VALIDATION.md)に今回の結果と未確認範囲を記載します。[PR #16の履歴](validation/HISTORY_PR16.md)は画像追加前の507ケースで、今回の結果とは分けて扱います。新作の69ケースがChromium・Firefox・WebKitでそれぞれ成功しました。4表紙・4曲、4挿絵の全7到達状態、画像切替時のBGM継続、4画面サイズ、保存と再開を確認しています。4表紙・4挿絵のPC画面と、小さい画面も目視確認しました。
+今回の対象はGB33〜GB36の12素材です。以前の成功数を今回の結果に流用せず、[現在の検証記録](VALIDATION.md)へ対象コミット・ジョブ・結果JSONを記載します。[PR #19の検証履歴](validation/HISTORY_PR19.md)は今回の追加前の記録です。追加4挿絵の到達状態は合計8通りで、[状態と選択列](validation/batch-15-scene-states.json)を保存しました。

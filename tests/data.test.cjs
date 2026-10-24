@@ -100,7 +100,7 @@ test('committed generated files match the source data and manifest', () => {
 
 test('listening notebook identifies every installed track by its actual audio bytes', () => {
   const tracks = require('../doc/audio-review-data.js');
-  assert.equal(tracks.length, 36);
+  assert.equal(tracks.length, 40);
   uniqueIds(tracks, 'review track IDs');
   for (const track of tracks) {
     const music = track.id === 'library' ? manifest.library.music : manifest.stories[track.id].music;

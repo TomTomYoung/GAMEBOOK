@@ -1,0 +1,113 @@
+{
+  "GB33": {
+    "nodeId": "05",
+    "arrivals": [
+      {
+        "state": {
+          "melody": false
+        },
+        "trail": [
+          "01b",
+          "03a"
+        ]
+      }
+    ]
+  },
+  "GB34": {
+    "nodeId": "06",
+    "arrivals": [
+      {
+        "state": {
+          "company": "一人"
+        },
+        "trail": [
+          "01a",
+          "02b",
+          "04a",
+          "05a"
+        ]
+      },
+      {
+        "state": {
+          "company": "ミナと二人"
+        },
+        "trail": [
+          "01a",
+          "02b",
+          "04a",
+          "05b",
+          "14b",
+          "08b"
+        ]
+      }
+    ]
+  },
+  "GB35": {
+    "nodeId": "14",
+    "arrivals": [
+      {
+        "state": {
+          "policy": "迎える",
+          "pot": "まだ"
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "05c",
+          "07a",
+          "09a"
+        ]
+      },
+      {
+        "state": {
+          "policy": "手伝う",
+          "pot": "まだ"
+        },
+        "trail": [
+          "01b",
+          "03a",
+          "05c",
+          "07a",
+          "09a"
+        ]
+      },
+      {
+        "state": {
+          "policy": "玄関",
+          "pot": "まだ"
+        },
+        "trail": [
+          "01c",
+          "04a",
+          "05c",
+          "07a",
+          "09a"
+        ]
+      }
+    ]
+  },
+  "GB36": {
+    "nodeId": "09",
+    "arrivals": [
+      {
+        "state": {
+          "timing": false
+        },
+        "trail": [
+          "01c",
+          "04b"
+        ]
+      },
+      {
+        "state": {
+          "timing": true
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "05c"
+        ]
+      }
+    ]
+  }
+}
