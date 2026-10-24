@@ -873,24 +873,96 @@
       }
     },
     "GB33": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb33-cover.webp",
+        "alt": "昼の入り江に面した桟橋の足踏みオルガンと腰掛け。鍵盤と二つの踏板、水辺の演奏板。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb33-theme.ogg",
+        "title": "返事を置く水辺",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb33-scene-05.webp",
+            "alt": "浅瀬の演奏板に離して置いた黒・白・赤の石と、桟橋の下の空洞。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB34": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb34-cover.webp",
+        "alt": "床の室内履き棚、天井側に靴底を付ける四つの長靴、輪付きの連続した手すり。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb34-theme.ogg",
+        "title": "手すりの曲がる先",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb34-scene-06.webp",
+            "alt": "荷送り窓の右上に付く真鍮の球と上枠の羽根。右壁から伸びる棚、左の隙間、左下の空の受け皿。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB35": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb35-cover.webp",
+        "alt": "午後の魔王の家。大きな玄関扉、庇、脇の椅子、庭先の荷車がある日常的な住まい。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb35-theme.ogg",
+        "title": "鍋が先に行く午後",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "14": {
+          "image": {
+            "src": "assets/images/gb35-scene-14.webp",
+            "alt": "廊下でモフの前に止まる赤い鍋。鍋の短い脚は二本、モフは目と短い脚のある敷物。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB36": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb36-cover.webp",
+        "alt": "雨の広場の敷物と赤旗、裏面を見せた看板、刃先を丸めた貸剣。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb36-theme.ogg",
+        "title": "雨の広場で一歩",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "09": {
+          "image": {
+            "src": "assets/images/gb36-scene-09.webp",
+            "alt": "敷物の上で刃先を丸めた剣を下げて構える黒鉄ジェロ。奥に賞金箱と赤旗、端の目安線。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB37": {
       "image": null,
