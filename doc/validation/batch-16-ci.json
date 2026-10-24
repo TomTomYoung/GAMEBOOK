@@ -1,0 +1,113 @@
+{
+  "commit": "dd29370118e59939b10f6b5bc3f92b8673a96d56",
+  "workflowRun": "https://github.com/TomTomYoung/GAMEBOOK/actions/runs/40076234626",
+  "unitTests": 111,
+  "totalBrowserCases": 627,
+  "jobs": [
+    {
+      "id": 120820061867,
+      "name": "verify (chromium, new-short)",
+      "conclusion": "success",
+      "browserCases": 101,
+      "browserTotal": 101,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": [
+        "GB37/06: 1 reachable states",
+        "GB38/03: 1 reachable states",
+        "GB39/05: 2 reachable states",
+        "GB40/02: 1 reachable states"
+      ]
+    },
+    {
+      "id": 120820061964,
+      "name": "verify (webkit, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120820062016,
+      "name": "verify (chromium, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120820062029,
+      "name": "verify (webkit, new-short)",
+      "conclusion": "success",
+      "browserCases": 101,
+      "browserTotal": 101,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": [
+        "GB37/06: 1 reachable states",
+        "GB38/03: 1 reachable states",
+        "GB39/05: 2 reachable states",
+        "GB40/02: 1 reachable states"
+      ]
+    },
+    {
+      "id": 120820062030,
+      "name": "verify (firefox, new-short)",
+      "conclusion": "success",
+      "browserCases": 101,
+      "browserTotal": 101,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": [
+        "GB37/06: 1 reachable states",
+        "GB38/03: 1 reachable states",
+        "GB39/05: 2 reachable states",
+        "GB40/02: 1 reachable states"
+      ]
+    },
+    {
+      "id": 120820062034,
+      "name": "verify (chromium, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120820062038,
+      "name": "verify (firefox, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120820062039,
+      "name": "verify (webkit, medium)",
+      "conclusion": "success",
+      "browserCases": 19,
+      "browserTotal": 19,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    },
+    {
+      "id": 120820062142,
+      "name": "verify (firefox, short)",
+      "conclusion": "success",
+      "browserCases": 89,
+      "browserTotal": 89,
+      "unitTests": 111,
+      "listeningNotebookPassed": true,
+      "sceneStates": []
+    }
+  ]
+}
