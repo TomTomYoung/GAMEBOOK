@@ -1,0 +1,18 @@
+Initial generation
+
+Use case: illustration-story
+Asset type: horizontal gamebook cover, landscape 8:5, opaque.
+Primary request: a colossal peaceful earth dragon walking slowly along a broad mountain valley, carrying a settled garden landscape on its vast rounded back. Its low long neck and broad gentle head extend toward a warm rock at the right. Its four sturdy legs meet the valley ground. The central back bears a tiny timber cottage, vegetable terraces and narrow water channels among enormous overlapping scale ledges, with old roots holding deep layers of soil above the scales. A high row of back ridges makes a dry path. The garden feels like a quiet working rural home many hundreds of metres across.
+Style: atmospheric limited-palette pixel art. Large flat color planes, chunky rectangular pixel clusters, crisp stepped silhouettes, a base tone and a shadow per surface. About eight shared colors of navy, slate, muted teal, moss green, pale leaf green, warm soil, ochre and cream. Simple broad shapes, sparse highlights, generous quiet space.
+Composition: the dragon back and its tiny cottage fill the central area and read clearly as a cultivated living creature even at thumbnail size. Pure pictorial environmental artwork.
+
+Style revision using draft and approved A reference
+
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved style reference.
+Redraw image 1 with the visual simplicity and large color planes of image 2. Preserve the whole scene, layout and landscape aspect ratio. Use about eight shared colors, broad flat shapes, large chunky rectangular pixel clusters, crisp stepped silhouettes, and just a base tone plus shadow per surface. Merge the tiny leaves, stone flecks and scale textures into large solid shapes. The central cottage and terraces remain clear at thumbnail size. Keep the colossal earth dragon grounded on four sturdy legs, its rounded cultivated back, overlapping large scales, root-held soil, high back ridges, gentle head and warm rock. Pure environmental artwork.
+
+Daylight revision
+
+Use case: lighting-weather.
+Change the sky colors of this pixel-art image to clear daytime: pale muted blue sky, broad cream clouds, and calm late-morning sunlight. Preserve the exact dragon, four legs, head, garden, house, scales, terrain, composition, chunky pixel style and landscape aspect ratio. Use the existing restrained palette with the sky sharing pale blue and cream already used by the water and highlights. The story takes place around lunchtime.

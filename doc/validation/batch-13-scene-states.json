@@ -1,0 +1,69 @@
+{
+  "GB25": {
+    "nodeId": "05",
+    "arrivals": [
+      {
+        "state": {
+          "beans": false
+        },
+        "trail": [
+          "01a",
+          "02a"
+        ]
+      }
+    ]
+  },
+  "GB26": {
+    "nodeId": "02",
+    "arrivals": [
+      {
+        "state": {
+          "crown": "未選択"
+        },
+        "trail": [
+          "01a"
+        ]
+      }
+    ]
+  },
+  "GB27": {
+    "nodeId": "03",
+    "arrivals": [
+      {
+        "state": {
+          "passes": 0,
+          "first": "未選択",
+          "second": "未選択"
+        },
+        "trail": [
+          "01b"
+        ]
+      }
+    ]
+  },
+  "GB28": {
+    "nodeId": "08",
+    "arrivals": [
+      {
+        "state": {
+          "reason": "なし"
+        },
+        "trail": [
+          "01c",
+          "04b"
+        ]
+      },
+      {
+        "state": {
+          "reason": "あり"
+        },
+        "trail": [
+          "01a",
+          "02a",
+          "05b",
+          "10b"
+        ]
+      }
+    ]
+  }
+}

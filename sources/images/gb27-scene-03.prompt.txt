@@ -1,0 +1,13 @@
+Initial generation
+
+Use case: illustration-story
+Asset type: horizontal gamebook scene illustration, landscape 8:5, opaque.
+Primary request: an angled close view of a fictional three-gate wooden game board on a cafe table before the first move. The board is one painted landscape with exactly three illustrated arched gates arranged left, centre and right. The left gate leads to a garden path bending around one branching tree. The centre gate leads along a broad straight path. The right gate leads to a small stone bridge over a river. One white bird-shaped wooden playing piece waits on the bare tabletop at the near edge, its right wing carrying a small nick. One single round-headed black keeper piece stands on the plain back of one face-down paper slip on the bare tabletop beyond the board. Two spare plain slips are stacked beside that keeper. All three gates remain open and the board is a landscape painting.
+Style: limited-palette pixel art with broad simple planes, chunky square clusters, crisp stepped contours, two tones per surface and a restrained set of eight shared colors. Warm wood, cream, navy, teal, sage, slate, muted blue and ochre.
+Composition: the three gates occupy the central sixty percent. The two playing pieces are clearly separate from the gate paths. Pure pictorial scene with unmarked paper backs.
+
+Style revision using draft and approved A reference
+
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 with broad flat color planes, large chunky pixel clusters, crisp stepped silhouettes, about eight shared colors and just a base tone plus shadow per surface. Group the tiny leaf, masonry and wood-grain texture into large simple shapes. Preserve the exact composition and landscape aspect ratio, three painted gates with the left garden path and single branching tree, central straight path and right river bridge, exactly one white bird piece with its wing nick at the near tabletop edge, exactly one black keeper standing on one face-down slip at the far tabletop edge, and two spare slips stacked beside it. Preserve daytime colors. The three gate paths remain empty and the paper backs remain plain. Pure pictorial scene.

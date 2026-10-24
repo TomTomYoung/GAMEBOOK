@@ -76,3 +76,16 @@ python scripts/render-music.py --only gb21-theme gb22-theme gb23-theme gb24-them
 ```
 
 本文との照合と配置は[新短編の素材記録](../doc/SHORTS_21_40_ASSETS.md)にあります。既存77素材と既存24曲の音符・配布物は保持しています。耳による確認は未実施です。
+
+## 第13回：GB25〜GB28（2026-10-24）
+
+4作へ表紙・挿絵・BGMを各1点追加しました。`images/gb25-*`〜`gb28-*`に採用PNG・未採用初稿・英語の生成と修正プロンプト全文があります。組込みimagegenで生成し、採用Aを参照して色面を整理しました。原寸・縦横比を保持してWebPへ変換しています。
+
+音符と編成は `audio/compose-batch-13.py` と各score.jsonにあります。
+
+```sh
+python sources/audio/compose-batch-13.py
+python scripts/render-music.py --only gb25-theme gb26-theme gb27-theme gb28-theme
+```
+
+配置・本文との照合・測定値は[新短編の素材記録](../doc/SHORTS_21_40_ASSETS.md)を参照してください。既存89素材は保持しています。耳による確認は未実施です。

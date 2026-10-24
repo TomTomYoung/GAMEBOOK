@@ -230,6 +230,42 @@
     "sha256": "e4c95a0b1043f10107a32b23c19091ade6b8d59ea075595883703e47f14fc507"
   },
   {
+    "id": "GB25",
+    "storyTitle": "竜の背中の菜園",
+    "src": "assets/audio/gb25-theme.ogg",
+    "title": "背中の水路",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "e56bb3db84b2c798723da68bddb7e39b30ada19b9fae4956c0d7f5646ee3e3c3"
+  },
+  {
+    "id": "GB26",
+    "storyTitle": "百年遅れの開演",
+    "src": "assets/audio/gb26-theme.ogg",
+    "title": "青い灯の幕間",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "7ea43d2ef0ef861c0db0ade8c67622a23af0734b3fc6e8793f483405f2c5eaf3"
+  },
+  {
+    "id": "GB27",
+    "storyTitle": "女王のいない盤",
+    "src": "assets/audio/gb27-theme.ogg",
+    "title": "三手のあとで",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "9670b9ea969d20477fa33da2fc4ce1b105cbef82f740e857f5bffb7b0c279af0"
+  },
+  {
+    "id": "GB28",
+    "storyTitle": "空から落ちるまでの会話",
+    "src": "assets/audio/gb28-theme.ogg",
+    "title": "降りてゆく庭",
+    "loop": true,
+    "volume": 0.35,
+    "sha256": "8e008d429d3525ddfa15be455355f36ba2c43c5720d15c90303d27e2a632bc47"
+  },
+  {
     "id": "M01",
     "storyTitle": "潮待ちの劇場",
     "src": "assets/audio/m01-theme.ogg",

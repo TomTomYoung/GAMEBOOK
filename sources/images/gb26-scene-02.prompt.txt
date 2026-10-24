@@ -1,0 +1,13 @@
+Initial generation
+
+Use case: illustration-story
+Asset type: horizontal gamebook scene illustration, landscape 8:5, opaque.
+Primary request: a close view of theatre props beside a wooden chest in a stage wing. One old silver stage crown lies tilted inside the open chest, its round berry ornaments uneven, one ornament position showing a short bent wire and a small piece of lining cloth. Beside the chest is one old metal kettle laid on its side, its circular open underside clearly visible because the bottom is missing. The kettle has a spout, curved handle and fitted lid. A small plain iron plate rests nearby. Faint blue stage light and a warm amber wing lamp illuminate the props. The two possible crowns are still separate objects.
+Style: limited-palette pixel art with big quiet flat color shapes, chunky rectangular clusters, crisp stepped contours and a base tone plus shadow per surface. About eight shared colors of navy, slate, pale metal, cream, brown, muted blue, amber and dusty red. Simplify the grain and ornament into bold readable shapes.
+Composition: crown and kettle occupy the central sixty percent. Pure pictorial still life with plain surfaces.
+
+Style revision using draft and approved A reference
+
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 while preserving the arrangement, indoor night lighting and landscape aspect ratio. Match image 2 in simplicity through big flat color planes, broad chunky pixel clusters, crisp stepped outlines, about eight shared colors, and a base tone plus shadow for each surface. Merge wood grain, metal flecks and tiny reflections into broad simple shapes. Keep exactly one old crown with its missing berry ornament and short exposed wire, exactly one kettle lying on its side with its circular open underside, fitted lid, curved handle and spout, the open chest and the plain iron plate. Pure pictorial still life.

@@ -100,7 +100,7 @@ test('committed generated files match the source data and manifest', () => {
 
 test('listening notebook identifies every installed track by its actual audio bytes', () => {
   const tracks = require('../doc/audio-review-data.js');
-  assert.equal(tracks.length, 28);
+  assert.equal(tracks.length, 32);
   uniqueIds(tracks, 'review track IDs');
   for (const track of tracks) {
     const music = track.id === 'library' ? manifest.library.music : manifest.stories[track.id].music;
@@ -108,6 +108,34 @@ test('listening notebook identifies every installed track by its actual audio by
     assert.equal(track.volume, music.volume);
     assert.equal(track.sha256, crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, music.src))).digest('hex'));
   }
+});
+
+test('production ledger counts and progress agree with installed runtime assets', () => {
+  const plan = JSON.parse(fs.readFileSync(path.join(ROOT, 'doc/asset-plan.json'), 'utf8'));
+  uniqueIds(plan.assets, 'production asset IDs');
+  const installed = plan.assets.filter(asset => asset.status === 'installed');
+  const remaining = plan.assets.filter(asset => asset.status === 'planned');
+  const totals = assets => ({ images: assets.filter(a => a.kind === 'image').length,
+    music: assets.filter(a => a.kind === 'music').length, total: assets.length });
+  const actual = totals(installed), pending = totals(remaining);
+  assert.deepEqual(plan.counts, { ...actual,
+    coreP1: installed.filter(a => a.priority === 'P1').length,
+    sceneP2: installed.filter(a => a.priority === 'P2').length });
+  assert.deepEqual(plan.remainingCounts, pending);
+  assert.deepEqual(plan.plannedCounts, totals(plan.assets));
+  assert.deepEqual(plan.progress, { installedImages: actual.images,
+    installedMusic: actual.music, installedTotal: actual.total,
+    remainingImages: pending.images, remainingMusic: pending.music, remainingTotal: pending.total,
+    remainingCoreP1: remaining.filter(a => a.priority === 'P1').length,
+    remainingSceneP2: remaining.filter(a => a.priority === 'P2').length });
+  const runtimePaths = [];
+  for (const group of [manifest.library, ...Object.values(manifest.stories)]) {
+    for (const slot of [group, ...Object.values(group.scenes || {})]) {
+      for (const kind of ['image', 'music']) if (slot[kind]) runtimePaths.push(slot[kind].src);
+    }
+  }
+  assert.deepEqual(installed.map(a => a.path).sort(), runtimePaths.sort());
+  assert(plan.nextBatch.every(id => remaining.some(a => a.id === id)));
 });
 
 test('check mode reports stale or absent bundles without writing them', t => {

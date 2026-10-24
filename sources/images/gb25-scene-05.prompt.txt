@@ -1,0 +1,13 @@
+Initial generation
+
+Use case: illustration-story
+Asset type: horizontal gamebook scene illustration, landscape 8:5, opaque.
+Primary request: a sheltered green path beneath a canopy of broad rain-bean leaves growing on the back of a gigantic earth dragon. Close hanging vines carry translucent pale green pods, a mixture of plump mature pods and slim young pods, all attached to the same vines. Heavy dew hangs from the leaf tips above dark soft soil. A narrow opening of daylight leads toward a distant curved scaly neck. The pods and leaf ceiling are the clear main subjects.
+Style: atmospheric limited-palette pixel art with very broad flat color planes, chunky pixel clusters, crisp stepped edges, a base tone and shadow per surface and sparse square highlights. About eight shared colors centered on deep navy, teal, moss, pale green, warm earth and cream. Large simple leaf and pod silhouettes remain clear at thumbnail size.
+Composition: immersive low view beneath the leaves, with a few large pods occupying the central sixty percent. Pure pictorial botanical scenery.
+
+Style revision using draft and approved A reference
+
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 while preserving its scene, layout, subject and landscape aspect ratio. Match image 2 in simplicity: large flat color planes, broad chunky pixel clusters, crisp stepped silhouettes, sparse square highlights, about eight coordinated colors, and a base tone plus shadow per surface. Group leaf veins, soil speckles and scale textures into broad solid shapes. Preserve the original green foliage, clear daytime opening, attached plump and slim pods, dew, footpath and distant earth-dragon neck. The main pods remain clear at thumbnail size. Pure pictorial scenery.

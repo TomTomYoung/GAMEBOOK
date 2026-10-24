@@ -1,0 +1,13 @@
+Initial generation
+
+Use case: illustration-story
+Asset type: horizontal gamebook cover, landscape 8:5, opaque.
+Primary request: a quiet small board-game cafe preparing for its last day, beside a window overlooking a river and a stone bridge. A worn timber game table and an empty facing chair are the centre. The near edge of a painted wooden game board enters the foreground, while one small white bird-shaped playing piece and one round-headed black keeper piece rest together on the bare table beside it. A whole walnut and a simple nutcracker lie near the window. A closed travel bag rests beside the chair, and a plain wall clock with stationary hands hangs in the background. The atmosphere is familiar, lived in and ready for one final friendly game.
+Style: limited-palette pixel art with large flat color planes, chunky pixel clusters, crisp stepped silhouettes, two tones per surface and sparse rectangular highlights. About eight colors centered on navy, teal, warm wood, cream, muted blue, amber, sage and pale grey. Broad simple shapes and generous quiet space.
+Composition: the window, table and chair form the central focus; the board is partly cropped by the foreground. Pure environmental illustration with plain decorative surfaces.
+
+Style revision using draft and approved A reference
+
+Use case: style-transfer.
+Image 1 is the edit target. Image 2 is the approved pixel-art style reference.
+Redraw image 1 with the simplicity of image 2: large quiet color planes, broad chunky pixel clusters, crisp stepped silhouettes, about eight shared colors, a base tone and shadow for each surface, sparse rectangular highlights. Preserve the clear daytime cafe, bridge view, chair, bag, one white bird piece, one black keeper, walnut and nutcracker. Simplify the clock face to plain hour tick marks and hands. Render the partly cropped board as a single continuous painted landscape with a garden path at the left, a straight central path and a river with a small bridge at the right, enclosed by one plain wooden frame. Keep the original composition and landscape aspect ratio. Pure environmental illustration with plain decorative surfaces.
