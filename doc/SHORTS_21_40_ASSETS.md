@@ -1,14 +1,14 @@
 # GB21〜GB40の絵と音楽
 
-**2026-10-24：GB21〜GB36の48素材を導入済みです。GB37〜GB40の12素材は未制作です。** 全20作で表紙20点・挿絵20点・BGM20曲を制作する計画です。全作品のゲーム本体は実装済みです。
+**2026-10-24：GB21〜GB40の60素材を導入済みです。未制作は0点です。** 全20作へ表紙20点・挿絵20点・BGM20曲を追加しました。全作品のゲーム本体は実装済みです。
 
-共通本棚・既存作品を含む全体では、画像85点・BGM40曲、計125点を導入済みです。制作台帳は[asset-plan.json](asset-plan.json)、配置は[実行用マニフェスト](../assets/manifest.json)です。`counts`は導入済み、`plannedCounts`は計画全体、`remainingCounts`は未制作を示します。
+共通本棚・既存作品を含む全体では、画像93点・BGM44曲、計137点を導入済みです。制作台帳は[asset-plan.json](asset-plan.json)、配置は[実行用マニフェスト](../assets/manifest.json)です。`counts`は導入済み、`plannedCounts`は計画全体、`remainingCounts`は未制作を示します。
 
 ## 表示と音楽
 
 表紙は本棚・導入・挿絵指定のない節に表示します。挿絵は指定節だけで切り替え、音楽はそのまま継続します。小さい横画面では従来どおり本文を優先します。音楽は初期OFFです。本文・選択肢・結末・記録形式は変更していません。
 
-## 導入済みの16作
+## 導入済みの20作
 
 ### GB21 百足椅子の晩餐
 
@@ -230,6 +230,62 @@
 
 **本文との照合**：ジェロは自律する鎧として描き、人の顔を入れない。肩・肘・膝がつながり、右足を前に置く。目安線を新しい勝敗条件にせず、破損・転倒・賞金獲得・共演の成立を先取りしない。「間」の有無の二状態で成立する。看板と旗の本文はゲームの文章で読む。
 
+### GB37 借りた顔で会いに行く
+
+[本文](drafts/gb21-40/gb37.md)
+
+- **[表紙](../assets/images/gb37-cover.webp)**（`IMG-GB37-COVER`）：家の玄関の呼び鈴と窓、返しに来た薬缶と鍋敷き。
+  [採用PNG](../sources/images/gb37-cover-a.png)・[未採用初稿](../sources/images/gb37-cover-draft.png)・[英語プロンプト全文](../sources/images/gb37-cover.prompt.txt)。1586×992px、WebP 109,482 bytes。
+
+- **[06「自分のいない話」](../assets/images/gb37-scene-06.webp)**（`IMG-GB37-SCENE-06`）：机を挟んで置かれた二つの茶碗と、奥で温まる薬缶。
+  [採用PNG](../sources/images/gb37-scene-06-a.png)・[未採用初稿](../sources/images/gb37-scene-06-draft.png)・[英語プロンプト全文](../sources/images/gb37-scene-06.prompt.txt)。1586×992px、WebP 121,350 bytes。
+
+**BGM：[茶碗のあいだ](../assets/audio/gb37-theme.ogg)**（`BGM-GB37`）。60 BPM・96.00秒。音符と編成は[score.json](../sources/audio/gb37-theme.score.json)。-17.95 LUFS-I、true peak -8.26 dBTP、681,713 bytes。
+
+**本文との照合**：06節は借り顔のまま、開示前の一状態。人物の顔や反射、肖像の完成、署名を描かず、父の言葉を聞く時間を表す。初稿の手前向きの欠けを修正し、父側へ向けた欠けはこの視点では見せない。和解や名乗りの成立は先取りしない。
+
+### GB38 地図にない日曜日
+
+[本文](drafts/gb21-40/gb38.md)
+
+- **[表紙](../assets/images/gb38-cover.webp)**（`IMG-GB38-COVER`）：日曜の正午の橋と、海側・坂・運河沿いへ分かれる道。町の地図の看板は裏面を見せる。
+  [採用PNG](../sources/images/gb38-cover-a.png)・[未採用初稿](../sources/images/gb38-cover-draft.png)・[英語プロンプト全文](../sources/images/gb38-cover.prompt.txt)。1586×992px、WebP 235,834 bytes。
+
+- **[03「店の外の特等席」](../assets/images/gb38-scene-03.webp)**（`IMG-GB38-SCENE-03`）：理髪店の外の緩い坂に置かれた、丸い背もたれと肘掛けのある椅子。後ろ脚の下に折った厚紙。
+  [採用PNG](../sources/images/gb38-scene-03-a.png)・[未採用初稿](../sources/images/gb38-scene-03-draft.png)・[英語プロンプト全文](../sources/images/gb38-scene-03.prompt.txt)。1586×992px、WebP 106,626 bytes。
+
+**BGM：[日曜の歩幅](../assets/audio/gb38-theme.ogg)**（`BGM-GB38`）。80 BPM・96.00秒。音符と編成は[score.json](../sources/audio/gb38-theme.score.json)。-17.95 LUFS-I、true peak -9.60 dBTP、776,400 bytes。
+
+**本文との照合**：03節の今日の道が椅子の一状態。椅子は店先にあり、木陰へ運ぶ前。休業日の戸と日差しを示し、移動する鉢の中身や座った体験を先取りしない。表紙は正午で、夕方の再訪とは区別する。
+
+### GB39 栄光を食べる獣
+
+[本文](drafts/gb21-40/gb39.md)
+
+- **[表紙](../assets/images/gb39-cover.webp)**（`IMG-GB39-COVER`）：凱旋車の大きな車輪、連動する鞴と七本の管。木彫りの獣の顔は画面端に一部だけ見える。
+  [採用PNG](../sources/images/gb39-cover-a.png)・[未採用初稿](../sources/images/gb39-cover-draft.png)・[英語プロンプト全文](../sources/images/gb39-cover.prompt.txt)。1586×992px、WebP 209,144 bytes。
+
+- **[05「獣係の手」](../assets/images/gb39-scene-05.webp)**（`IMG-GB39-SCENE-05`）：通りに立ち、前脚を伸ばして金色の鼻から息を吐く大きな獣。腹は丸く、牙をむかない。
+  [採用PNG](../sources/images/gb39-scene-05-a.png)・[未採用初稿](../sources/images/gb39-scene-05-draft.png)・[英語プロンプト全文](../sources/images/gb39-scene-05.prompt.txt)。1585×992px、WebP 119,604 bytes。
+
+**BGM：[七つの仕事の隣で](../assets/audio/gb39-theme.ogg)**（`BGM-GB39`）。84 BPM・91.43秒。音符と編成は[score.json](../sources/audio/gb39-theme.score.json)。-17.94 LUFS-I、true peak -8.86 dBTP、682,790 bytes。
+
+**本文との照合**：05節の名札が裏・表の二状態で成立する。獣は犬に似た四足で金色なのは鼻と吐息。拍手を食べるが、楽器や歓声・記憶を食べる表現は加えない。名札、英雄の位置、車の飾り、破損、縮みきった結末を描かない。
+
+### GB40 最後の頁を盗んだ子
+
+[本文](drafts/gb21-40/gb40.md)
+
+- **[表紙](../assets/images/gb40-cover.webp)**（`IMG-GB40-COVER`）：製本机の開いた絵本に描かれた夜の海と光る石の灯台。机には糸巻きと道具、紙の束。
+  [採用PNG](../sources/images/gb40-cover-a.png)・[未採用初稿](../sources/images/gb40-cover-draft.png)・[英語プロンプト全文](../sources/images/gb40-cover.prompt.txt)。1586×992px、WebP 175,710 bytes。
+
+- **[02「印刷されなかった朝」](../assets/images/gb40-scene-02.webp)**（`IMG-GB40-SCENE-02`）：開いた道具箱の手前に並ぶ灯台の下絵三枚。二枚は夜で窓の大きさが異なり、三枚目は朝と空の小舟。
+  [採用PNG](../sources/images/gb40-scene-02-a.png)・[未採用初稿](../sources/images/gb40-scene-02-draft.png)・[英語プロンプト全文](../sources/images/gb40-scene-02.prompt.txt)。1585×992px、WebP 142,910 bytes。
+
+**BGM：[余白につながる海](../assets/audio/gb40-theme.ogg)**（`BGM-GB40`）。64 BPM・90.00秒。音符と編成は[score.json](../sources/audio/gb40-theme.score.json)。-17.95 LUFS-I、true peak -9.52 dBTP、572,572 bytes。
+
+**本文との照合**：02節の朝の下絵取得後の一状態。朝の舟に人を乗せず、未使用の案を祖父の最終意図やミオの旅の達成としない。文字のある余白は重なりで画面外に置く。灯台の光源は石で、火や現実へ出た人物を加えない。
+
 ## 画像の採用と原本
 
 第12回では組込みimagegenで8点を生成し、各初稿と採用Aを参照して色面・輪郭・陰影を整理しました。GB23表紙では、本文の着衣と混同しやすい窓内の灰色シャツを戸棚へ置き換えました。GB22挿絵では内側の固雪の段を明確にし、外側の氷の細かな亀裂を整理しました。GB24挿絵の音管は三本であることを目視確認しました。
@@ -240,11 +296,13 @@
 
 第15回も組込みimagegenで8点を生成し、初稿と採用Aを参照して色面・輪郭を整理しました。GB33は三つの石、GB34は天井側の四つの長靴の向きと窓内の棚・隙間を照合。GB35は鍋の二本脚を保ち、14節ではトトが持つ匙を蓋の上から除きました。GB36は敷物を明示し、無傷の鎧と丸めた貸剣を確認しました。
 
-原寸・縦横比を保持したままWebP化し、機械的な縮小・拡大・減色はしていません。PNGとWebPの寸法・デコード・不透明性・容量を確認し、SHA-256は[原本台帳](../sources/images/manifest.json)に保存しています。A・B・Cの参照画像、第15回追加前の既存113素材の配布物は保持しています。
+第16回も組込みimagegenで8点を生成し、初稿と採用Aを参照して色面・輪郭を整理しました。GB37は二つの茶碗と欠けの向き、GB38は丸い背と四本脚・厚紙の支え、GB39は七本の管と金色の鼻・呼気、GB40は三枚の下絵と空の舟を照合しました。GB37の欠けは父側へ向けた視点として見せず、GB38の余分な脚と店の文字を整理し、GB40表紙は夜の青へ修正しています。修正の英語指示も各プロンプトファイルへ保存しています。
+
+原寸・縦横比を保持したままWebP化し、機械的な縮小・拡大・減色はしていません。PNGとWebPの寸法・デコード・不透明性・容量を確認し、SHA-256は[原本台帳](../sources/images/manifest.json)に保存しています。A・B・Cの参照画像、第16回追加前の既存125素材の配布物は保持しています。
 
 ## 音楽の制作
 
-作品ごとに新しい旋律と伴奏を書き、既存の加算合成音色で制作しました。第12回の構成元は[compose-batch-12.py](../sources/audio/compose-batch-12.py)、通常の再生成元は4個のscore.jsonです。第13回は[compose-batch-13.py](../sources/audio/compose-batch-13.py)と4個のscore.jsonを追加しました。第14回は[compose-batch-14.py](../sources/audio/compose-batch-14.py)と4個のscore.jsonを追加しました。第15回は[compose-batch-15.py](../sources/audio/compose-batch-15.py)と4個のscore.jsonを追加しました。既存36曲の音符と配布音源は変更していません。
+作品ごとに新しい旋律と伴奏を書き、既存の加算合成音色で制作しました。第12回の構成元は[compose-batch-12.py](../sources/audio/compose-batch-12.py)、通常の再生成元は4個のscore.jsonです。第13回は[compose-batch-13.py](../sources/audio/compose-batch-13.py)と4個のscore.jsonを追加しました。第14回は[compose-batch-14.py](../sources/audio/compose-batch-14.py)と4個のscore.jsonを追加しました。第15回は[compose-batch-15.py](../sources/audio/compose-batch-15.py)と4個のscore.jsonを追加しました。第16回は[compose-batch-16.py](../sources/audio/compose-batch-16.py)と4個のscore.jsonを追加しました。今回の追加前の40曲の音符と配布音源は変更していません。
 
 - GB21：二歩と休みの撥弦にクラリネットが応える舞曲。
 - GB22：均等な撥弦と木管による、雪面を滑るような流れ。
@@ -266,19 +324,17 @@
 - GB35：丸い低音とマリンバ、クラリネットで家事の喜劇を支える。
 - GB36：穏やかな鍵盤と木管で雨の勝負を支え、勝敗の合図を加えない。
 
-全長・音量・true peak・有限値・容量・ループ境界を測定しました。[render-report.json](../sources/audio/render-report.json)に対象音源のハッシュと結果があります。聴感・圧縮品質・3周連続試聴は未実施です。[試聴ページ](audio-review.html)から40曲を確認できます。
+- GB37：離した鍵盤と木管の応答で、帰郷して言葉を聞く時間を支える。
+- GB38：撥弦とマリンバ、木管で日曜の歩幅を作り、瓶の三音や約束時刻の合図を加えない。
+- GB39：丸い低音と電気鍵盤、クラリネットで工房の手仕事を支え、拍手や獣の呼吸を模倣しない。
+- GB40：木管から電気鍵盤へ旋律を渡し、既存の頁と新しい線を並べる。
 
-## 次の制作対象
+全長・音量・true peak・有限値・容量・ループ境界を測定しました。[render-report.json](../sources/audio/render-report.json)に対象音源のハッシュと結果があります。聴感・圧縮品質・3周連続試聴は未実施です。[試聴ページ](audio-review.html)から44曲を確認できます。
 
-**次はGB37〜GB40の12点です。** 以後も番号順に進みます。次の各作品に表紙1点・挿絵1点・BGM1曲を用意します。挿絵の節、曲名・編成は本文と作者メモを読んでから決定します。台帳の未選定の節・パスはnullで、実行用マニフェストへは未登録です。
+## 制作完了後の確認
 
-- [GB37 借りた顔で会いに行く](drafts/gb21-40/gb37.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB38 地図にない日曜日](drafts/gb21-40/gb38.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB39 栄光を食べる獣](drafts/gb21-40/gb39.md)：表紙・挿絵・BGMの3点が未制作。
-- [GB40 最後の頁を盗んだ子](drafts/gb21-40/gb40.md)：表紙・挿絵・BGMの3点が未制作。
+計画した137素材をすべて導入しました。`remainingCounts` は画像0点・音楽0曲・計0点、`nextBatch` は空です。次は44曲の耳による評価と3周連続試聴、Safari・各OS実機での表示と音楽・保存確認です。[試聴手順](AUDIO_REVIEW.md)に環境と判定の記録方法があります。
 
 ## 検証と引継ぎ
 
-今回の対象はGB33〜GB36の12素材です。単体111件と3ブラウザ合計603ケース、新作各93ケースが成功しました。[現在の検証記録](VALIDATION.md)に対象コミット・ジョブ・結果JSONを記載しています。[PR #19の検証履歴](validation/HISTORY_PR19.md)は今回の追加前の記録です。追加4挿絵の到達状態は合計8通りで、[状態と選択列](validation/batch-15-scene-states.json)を保存しました。
-
-追加4挿絵の全8到達状態で画像切替・BGM継続・保存再開を検査しました。4表紙・4挿絵のPC画面、4挿絵の縦画面、縦の表紙と横の挿絵の代表例を目視確認しました。耳での試聴と実機確認は未実施です。
+今回の対象はGB37〜GB40の12素材です。今回の追加後の結果は[現在の検証記録](VALIDATION.md)へ記載します。[PR #20の検証履歴](validation/HISTORY_PR20.md)は追加前の記録です。4挿絵の到達状態は合計5通りで、[状態と選択列](validation/batch-16-scene-states.json)を保存しました。耳での試聴と実機確認は未実施です。

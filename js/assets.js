@@ -965,24 +965,96 @@
       }
     },
     "GB37": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb37-cover.webp",
+        "alt": "家の玄関の呼び鈴と窓、返しに来た薬缶と鍋敷き。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb37-theme.ogg",
+        "title": "茶碗のあいだ",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "06": {
+          "image": {
+            "src": "assets/images/gb37-scene-06.webp",
+            "alt": "机を挟んで置かれた二つの茶碗と、奥で温まる薬缶。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB38": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb38-cover.webp",
+        "alt": "日曜の正午の橋と、海側・坂・運河沿いへ分かれる道。町の地図の看板は裏面を見せる。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb38-theme.ogg",
+        "title": "日曜の歩幅",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "03": {
+          "image": {
+            "src": "assets/images/gb38-scene-03.webp",
+            "alt": "理髪店の外の緩い坂に置かれた、丸い背もたれと肘掛けのある椅子。後ろ脚の下に折った厚紙。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB39": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb39-cover.webp",
+        "alt": "凱旋車の大きな車輪、連動する鞴と七本の管。木彫りの獣の顔は画面端に一部だけ見える。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb39-theme.ogg",
+        "title": "七つの仕事の隣で",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "05": {
+          "image": {
+            "src": "assets/images/gb39-scene-05.webp",
+            "alt": "通りに立ち、前脚を伸ばして金色の鼻から息を吐く大きな獣。腹は丸く、牙をむかない。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     },
     "GB40": {
-      "image": null,
-      "music": null,
-      "scenes": {}
+      "image": {
+        "src": "assets/images/gb40-cover.webp",
+        "alt": "製本机の開いた絵本に描かれた夜の海と光る石の灯台。机には糸巻きと道具、紙の束。",
+        "position": "center"
+      },
+      "music": {
+        "src": "assets/audio/gb40-theme.ogg",
+        "title": "余白につながる海",
+        "loop": true,
+        "volume": 0.35
+      },
+      "scenes": {
+        "02": {
+          "image": {
+            "src": "assets/images/gb40-scene-02.webp",
+            "alt": "開いた道具箱の手前に並ぶ灯台の下絵三枚。二枚は夜で窓の大きさが異なり、三枚目は朝と空の小舟。",
+            "position": "center"
+          },
+          "music": null
+        }
+      }
     }
   }
 });
