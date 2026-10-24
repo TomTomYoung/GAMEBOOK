@@ -313,9 +313,12 @@ async function openFromShelf(page, id) {
 
 async function playTrail(page, story, trail) {
   await openFromShelf(page, story.id.split('-V')[0]);
-  if (await page.locator('#edition-select').inputValue() !== story.id) {
+  // Books with only one edition have an empty, hidden selector. The saved
+  // active story identifies the opened edition for both kinds of book.
+  if ((await storedShelf(page)).activeStoryId !== story.id) {
     await page.locator('#edition-select').selectOption(story.id);
   }
+  assert.equal((await storedShelf(page)).activeStoryId, story.id);
   await readEveryPage(page, introText(story), `${story.id} save setup`);
   await page.locator('[data-action="begin"]').click();
   await page.waitForTimeout(340);
