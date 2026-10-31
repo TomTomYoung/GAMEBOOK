@@ -558,12 +558,14 @@
     $('modal-footer').hidden = false;
     $('modal-footer').replaceChildren(...actions.map(action => button(action.label, `action-button${action.secondary ? ' secondary' : ''}${action.danger ? ' danger' : ''}`, action.run)));
   }
-  function confirmRestart() {
-    if (!active) return;
-    const id = active;
+  function confirmRestart(id = active) {
+    const story = allStories.find(item => item.id === id);
+    if (!story) return;
     const content = modal('新しい選択で、もう一度。', 'NEW JOURNEY');
-    content.append(el('p', '', `『${currentStory().title}』の現在の栞を、物語のはじめに戻します。集めた結末は残ります。`), el('p', 'note', '現在の進行も残したい場合は、先に「セーブ」でファイルを書き出してください。'));
-    modalActions([{ label: 'つづきを読む', secondary: true, run: closeModal }, { label: '最初から始める', run: () => { closeModal(); openStory(id, true); } }]);
+    const edition = editions.find(item => item.story.id === id);
+    const version = edition ? `第${edition.edition}版` : editions.some(item => item.baseId === id) ? '初版' : '';
+    content.append(el('p', '', `『${story.title}』${version ? `（${version}）` : ''}の現在の栞を、物語のはじめに戻します。集めた結末は残ります。`), el('p', 'note', '現在の進行も残したい場合は、先に「セーブ」でファイルを書き出してください。'));
+    modalActions([{ label: active ? 'つづきを読む' : '戻る', secondary: true, run: active ? closeModal : showSaves }, { label: '最初から始める', run: () => { closeModal(); openStory(id, true); } }]);
   }
   function showGuide() {
     const content = modal('本を開いたら、選んで進む。', 'HOW TO PLAY');
@@ -703,11 +705,31 @@
     const actions = el('div', 'button-row');
     actions.append(button('ファイルに保存', 'action-button', () => { try { exportSave(); } catch (error) { reportError(error); } }), button('ファイルを読み込む', 'action-button secondary', () => { $('import-input').value = ''; $('import-input').click(); }));
     content.append(actions, el('p', 'note', '読み込みは、現在の本棚全体を置き換えます。内容を確認する画面で確定するまでは、進行を変更しません。'));
-    if (active) {
-      const restart = el('div', 'button-row');
-      restart.append(button('最初から始める', 'action-button secondary', confirmRestart));
-      content.append(el('h3', '', 'いまの物語をやり直す'), el('p', '', `『${currentStory().title}』を最初から遊び直します。集めた結末は残ります。`), restart);
+    content.append(el('h3', '', '物語を最初から始める'));
+    let restartId = active;
+    if (!active) {
+      const selector = el('select');
+      selector.id = 'restart-story-select';
+      const label = el('label', 'setting-label', '作品・版を選ぶ');
+      label.htmlFor = selector.id;
+      for (const story of stories) {
+        const versions = editions.filter(item => item.baseId === story.id).sort((a, b) => b.edition - a.edition);
+        const entries = versions.map(item => ({ story: item.story, label: `第${item.edition}版` }));
+        entries.push({ story, label: versions.length ? '初版' : '' });
+        for (const entry of entries) {
+          const option = el('option', '', `${entry.story.id}　${entry.story.title}${entry.label ? `（${entry.label}）` : ''}`);
+          option.value = entry.story.id;
+          selector.append(option);
+        }
+      }
+      restartId = selector.value;
+      selector.addEventListener('change', () => { restartId = selector.value; });
+      content.append(label, selector);
     }
+    content.append(el('p', '', active ? `『${currentStory().title}』を最初から遊び直します。集めた結末は残ります。` : '選んだ作品・版だけを最初から始めます。集めた結末や、ほかの作品・版の進行は残ります。'));
+    const restart = el('div', 'button-row');
+    restart.append(button('最初から始める', 'action-button secondary', () => confirmRestart(restartId)));
+    content.append(restart);
     if (rawRecovery !== null) {
       content.append(el('h3', '', '以前の保存データを保護しています'), el('p', '', '以前のデータを読み込めなかったため、自動で上書きしていません。原本をファイルに取り出してから、必要に応じて現在の進行で保存を再開できます。'), el('p', 'note', storageError));
       const recovery = el('div', 'button-row');
@@ -792,7 +814,7 @@
     $('rules-button').addEventListener('click', showRules);
     $('record-button').addEventListener('click', showRecords);
     $('history-button').addEventListener('click', showHistory);
-    $('restart-button').addEventListener('click', confirmRestart);
+    $('restart-button').addEventListener('click', () => confirmRestart());
     $('save-button').addEventListener('click', showSaves);
     $('modal-close').addEventListener('click', closeModal);
     $('modal').addEventListener('click', event => {

@@ -770,6 +770,45 @@ async function testSavesAndHistory() {
     assert.deepEqual(restarted.endingTrails.GB02, seed.endingTrails.GB02);
     assert.equal(restarted.bookmarks.GB01.intro, true);
   });
+  await runCase('save-menu-restart-from-library', async () => {
+    const story = storyById('GB01-V2');
+    const seed = seededShelf(story.id, ['01a'], false, 22);
+    seed.activeStoryId = null;
+    for (const id of ['GB01', 'GB02']) {
+      const session = E.replay(storyById(id), ['01a']);
+      seed.sessions[id] = session;
+      seed.bookmarks[id] = { intro: false, page: 0, nodeId: session.nodeId, trailLength: session.trail.length };
+    }
+    const endingTrail = ['01a', '02d', '07d', '11a'];
+    const ending = E.getNode(storyById('GB01'), E.replay(storyById('GB01'), endingTrail)).ending;
+    seed.endingTrails.GB01 = { [ending.id]: endingTrail };
+    const page = await newPage(VIEWPORTS[1], seed);
+    await page.locator('#save-button').click();
+    const selector = page.getByLabel('作品・版を選ぶ', { exact: true });
+    assert(await selector.isVisible(), 'the shelf save menu must offer a restart target');
+    assert.equal(await page.locator('#restart-story-select option').count(), allStories.length);
+    await selector.selectOption(story.id);
+    await screenshot(page, 'save-menu-library-390x844');
+    await page.getByRole('button', { name: '最初から始める', exact: true }).click();
+    assert.match(await page.locator('#modal-content').textContent(), /第2版/);
+    assert.deepEqual(await storedShelf(page), seed, 'choosing a restart target must not change any saves');
+    await page.getByRole('button', { name: '戻る', exact: true }).click();
+    assert.deepEqual(await storedShelf(page), seed, 'canceling from the shelf must preserve all saves');
+    await selector.selectOption(story.id);
+    await page.getByRole('button', { name: '最初から始める', exact: true }).click();
+    await page.getByRole('button', { name: '最初から始める', exact: true }).click();
+    await settle(page);
+    const restarted = await storedShelf(page);
+    assert.equal(restarted.activeStoryId, story.id);
+    assert.deepEqual(restarted.sessions[story.id], E.createSession(story));
+    assert.equal(restarted.bookmarks[story.id].intro, true);
+    for (const id of ['GB01', 'GB02']) {
+      assert.deepEqual(restarted.sessions[id], seed.sessions[id], 'other editions and stories must be preserved');
+      assert.deepEqual(restarted.bookmarks[id], seed.bookmarks[id]);
+    }
+    assert.deepEqual(restarted.endingTrails, seed.endingTrails);
+    assert.deepEqual(restarted.preferences, seed.preferences);
+  });
   await runCase('cross-tab-conflict-protects-both-runs', async () => {
     const story = storyById('GB01');
     const first = await newPage(VIEWPORTS[0]);
