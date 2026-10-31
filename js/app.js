@@ -703,6 +703,11 @@
     const actions = el('div', 'button-row');
     actions.append(button('ファイルに保存', 'action-button', () => { try { exportSave(); } catch (error) { reportError(error); } }), button('ファイルを読み込む', 'action-button secondary', () => { $('import-input').value = ''; $('import-input').click(); }));
     content.append(actions, el('p', 'note', '読み込みは、現在の本棚全体を置き換えます。内容を確認する画面で確定するまでは、進行を変更しません。'));
+    if (active) {
+      const restart = el('div', 'button-row');
+      restart.append(button('最初から始める', 'action-button secondary', confirmRestart));
+      content.append(el('h3', '', 'いまの物語をやり直す'), el('p', '', `『${currentStory().title}』を最初から遊び直します。集めた結末は残ります。`), restart);
+    }
     if (rawRecovery !== null) {
       content.append(el('h3', '', '以前の保存データを保護しています'), el('p', '', '以前のデータを読み込めなかったため、自動で上書きしていません。原本をファイルに取り出してから、必要に応じて現在の進行で保存を再開できます。'), el('p', 'note', storageError));
       const recovery = el('div', 'button-row');
