@@ -84,14 +84,30 @@ function authorMaterial(author) {
   return parts.join('\n\n');
 }
 
-function renderStory(story, edition) {
+function introductionMaterial(introduction) {
+  if (!introduction) return [];
+  assert(Array.isArray(introduction.intent) && introduction.intent.length > 0, 'シナリオの意図が必要です。');
+  assert(Array.isArray(introduction.characters) && introduction.characters.length > 0, '主要登場人物が必要です。');
+  const nonempty = value => typeof value === 'string' && value.trim().length > 0;
+  assert(introduction.intent.every(nonempty), 'シナリオの意図に空欄があります。');
+  assert(introduction.characters.every(character => nonempty(character.name) && nonempty(character.principle)),
+    '人物名と行動原理が必要です。');
+  return [
+    '## シナリオの意図', ...introduction.intent.map(prose),
+    '## 主要登場人物と行動原理',
+    introduction.characters.map(character => `- **${markdown(character.name)}**  \n  ${prose(character.principle).replace(/\n/g, '\n  ')}`).join('\n\n')
+  ];
+}
+
+function renderStory(story, edition, introduction) {
   const filename = story.id.toLowerCase();
   const source = edition ? `data/editions/${filename}.json` : `data/stories/${filename}.json`;
   const definitions = new Map(story.state.map(definition => [definition.id, definition]));
   const nodes = new Map(story.nodes.map(node => [node.id, node]));
   const parts = [
-    `<!-- Generated from ${source} by scripts/build-data.cjs. Do not edit. -->`,
+    `<!-- Generated from ${source}${introduction ? ' and doc/scenario-introductions.json' : ''} by scripts/build-data.cjs. Do not edit. -->`,
     `# ${markdown(edition ? edition.baseId : story.id)} ${markdown(story.title)}${edition ? ` — 第${edition.edition}版` : ''}`,
+    ...introductionMaterial(introduction),
     `[全作品の目次](README.md) · [原稿JSON](../../${source}) · [開始節へ](#node-01)`,
     `**作品番号**：${story.number}　**内容版**：${story.revision}　**ジャンル**：${markdown(story.genre)}`,
     prose(story.hook),
@@ -176,6 +192,7 @@ function renderIndex(stories, editions = []) {
   }).join('\n\n'));
   parts.push('## 原稿を更新した場合',
     '初版の正本は [data/stories/](../../data/stories/)、第2版以降の正本は [data/editions/](../../data/editions/) のJSONです。このフォルダは自動生成されます。原稿を編集したら、リポジトリ直下で次を実行するとMarkdownとブラウザ用データを再生成できます。',
+    '第2版の冒頭にある「シナリオの意図」「主要登場人物と行動原理」は、本文と作者用設計資料に基づく解説です。編集元は [doc/scenario-introductions.json](../scenario-introductions.json) です。この解説はMarkdownにのみ出力し、ゲーム本文や保存データには加えません。',
     '```sh\nnode scripts/build-data.cjs\n```',
     '原稿との一致を確認する場合は、次を実行します。`npm run build` / `npm run check` でも同じ処理を行います。',
     '```sh\nnode scripts/build-data.cjs --check\n```',
@@ -183,11 +200,14 @@ function renderIndex(stories, editions = []) {
   return parts.join('\n\n') + '\n';
 }
 
-function scenarioMarkdown(stories, editions = []) {
+function scenarioMarkdown(stories, editions = [], introductions = {}) {
+  for (const edition of editions) {
+    if (edition.edition === 2) assert(introductions[edition.story.id], `${edition.story.id}: 第2版の冒頭解説がありません。`);
+  }
   return [
     ['doc/scenarios/README.md', renderIndex(stories, editions)],
     ...stories.map(story => [`doc/scenarios/${story.id.toLowerCase()}.md`, renderStory(story)]),
-    ...editions.map(edition => [`doc/scenarios/${edition.story.id.toLowerCase()}.md`, renderStory(edition.story, edition)])
+    ...editions.map(edition => [`doc/scenarios/${edition.story.id.toLowerCase()}.md`, renderStory(edition.story, edition, introductions[edition.story.id])])
   ];
 }
 

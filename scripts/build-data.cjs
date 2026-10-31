@@ -132,6 +132,8 @@ function build({ root = ROOT, check = false } = {}) {
   const medium = readMediumStories(root);
   for (const story of [...newShorts,...medium]) require('../js/engine.js').createSession(story);
   const editions = readEditions(stories, root);
+  const introductions = editions.length
+    ? JSON.parse(fs.readFileSync(path.join(root, 'doc', 'scenario-introductions.json'), 'utf8')) : {};
   const assetStories = [...stories, ...newShorts, ...medium];
   const manifest = validateAssets(JSON.parse(fs.readFileSync(path.join(root, 'assets', 'manifest.json'), 'utf8')), assetStories, root);
   const reviewTracks = [
@@ -150,7 +152,7 @@ function build({ root = ROOT, check = false } = {}) {
     ['js/editions.js', classicBundle('GB_EDITIONS', 'data/editions/*.json', editions)],
     ['js/assets.js', classicBundle('GB_ASSETS', 'assets/manifest.json', manifest)],
     ['doc/audio-review-data.js', classicBundle('GB_AUDIO_REVIEW_TRACKS', 'short and medium stories and assets/manifest.json with audio SHA-256', reviewTracks)],
-    ...scenarioMarkdown(stories, editions)
+    ...scenarioMarkdown(stories, editions, introductions)
   ];
   const changed = outputs.filter(([filename, text]) => {
     const target = path.join(root, filename);

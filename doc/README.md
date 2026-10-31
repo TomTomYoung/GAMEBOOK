@@ -43,6 +43,7 @@
 
 - **短編の初版**：`data/stories/gb01.json`〜`gb20.json`。取得時の識別情報は[data/source-manifest.json](../data/source-manifest.json)に保持しています。
 - **短編の第2版**：`data/editions/gb01-v2.json`〜`gb20-v2.json`。初版と別の正本です。
+- **第2版の冒頭解説**：[scenario-introductions.json](scenario-introductions.json)。各作の「シナリオの意図」「主要登場人物と行動原理」を編集する正本です。本文と作者用設計資料に基づき、`doc/scenarios/gb01-v2.md`〜`gb20-v2.md`のタイトル直下へ生成されます。ゲーム本文や保存データには加えません。
 - **GB21〜GB40の本文**：`doc/drafts/gb21-40/gb21.md`〜`gb40.md`。条件・更新の対応定義は `data/short-adapters/`。[実装仕様](SHORTS_21_40_IMPLEMENTATION.md)に編集と検査の手順があります。
 - **中編の本文**：`doc/drafts/medium01/`〜`medium03/`の章別Markdown。導入・記録の宣言と変換処理は[scripts/medium-stories.cjs](../scripts/medium-stories.cjs)にあります。
 - **素材の配置**：[assets/manifest.json](../assets/manifest.json)。作品・節と、実際に使う画像・音楽を結び付けます。

@@ -96,6 +96,8 @@
 
 初版の正本は [data/stories/](../../data/stories/)、第2版以降の正本は [data/editions/](../../data/editions/) のJSONです。このフォルダは自動生成されます。原稿を編集したら、リポジトリ直下で次を実行するとMarkdownとブラウザ用データを再生成できます。
 
+第2版の冒頭にある「シナリオの意図」「主要登場人物と行動原理」は、本文と作者用設計資料に基づく解説です。編集元は [doc/scenario-introductions.json](../scenario-introductions.json) です。この解説はMarkdownにのみ出力し、ゲーム本文や保存データには加えません。
+
 ```sh
 node scripts/build-data.cjs
 ```
