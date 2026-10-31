@@ -752,6 +752,15 @@ async function testSavesAndHistory() {
     assert(ending);
     assert.deepEqual((await storedShelf(page)).endingTrails.GB01[ending.id], session.trail);
     await page.locator('#restart-button').click();
+    await page.getByRole('button', { name: 'つづきを読む', exact: true }).click();
+    const beforeRestart = await storedShelf(page);
+    await page.locator('#save-button').click();
+    await page.getByRole('button', { name: '最初から始める', exact: true }).click();
+    assert.deepEqual(await storedShelf(page), beforeRestart, 'opening restart confirmation must leave the shelf unchanged');
+    await page.getByRole('button', { name: 'つづきを読む', exact: true }).click();
+    assert.deepEqual(await storedShelf(page), beforeRestart, 'canceling restart must leave the shelf unchanged');
+    await page.locator('#save-button').click();
+    await page.getByRole('button', { name: '最初から始める', exact: true }).click();
     await page.getByRole('button', { name: '最初から始める', exact: true }).click();
     await settle(page);
     const restarted = await storedShelf(page);
